@@ -1,0 +1,388 @@
+{% extends "base.html" %}
+
+{% block title %}Introduction to Complex Numbers - K4Maths{% endblock %}
+
+{% block head %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Learn Introduction to Complex Numbers - Step-by-step guide with examples and practice">
+  
+  <!-- MathJax for LaTeX rendering -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
+{% endblock %}
+
+{% block content %}
+<div class="lesson-page">
+  <!-- Back navigation -->
+  <a href="{{ url_for('complex_numbers') }}" class="back-to-home">🔙 Back to Complex Numbers</a>
+
+  <div class="lesson-container">
+    
+    <!-- Lesson Header -->
+    <header class="lesson-header">
+      <h1 class="lesson-title">Introduction to Complex Numbers</h1>
+      <p class="lesson-subtitle">Understanding the fundamentals of complex numbers and their applications</p>
+      
+      <div class="lesson-meta">
+        <span class="meta-item">📚 Further Mathematics</span>
+        <span class="meta-item">🎯 Difficulty: ⭐⭐</span>
+        <span class="meta-item">⏱️ Reading time: 15-20 mins</span>
+        <span class="meta-item">📋 Edexcel A-Level</span>
+      </div>
+    </header>
+
+    <!-- Table of Contents -->
+    <nav class="table-of-contents">
+      <h3 class="toc-title">📖 Contents</h3>
+      <ul class="toc-list">
+        <li class="toc-item"><a href="#introduction" class="toc-link">Introduction</a></li>
+        <li class="toc-item"><a href="#key-concepts" class="toc-link">Key Concepts</a></li>
+        <li class="toc-item"><a href="#examples" class="toc-link">Worked Examples</a></li>
+        <li class="toc-item"><a href="#practice" class="toc-link">Practice Problems</a></li>
+        <li class="toc-item"><a href="#summary" class="toc-link">Summary</a></li>
+      </ul>
+    </nav>
+
+    <!-- Lesson Navigation -->
+    <div class="lesson-nav">
+      <a href="#" class="nav-button">← Previous Lesson</a>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 0%;"></div>
+      </div>
+      <a href="#" class="nav-button">Next Lesson →</a>
+    </div>
+
+    <!-- Introduction Section -->
+    <section id="introduction" class="lesson-section">
+      <h2 class="section-heading">📚 Introduction</h2>
+      
+      <p class="lesson-text">
+        Complex numbers are important to grasp as they extend our understanding of numbers beyond the real number line. They are used in various fields including engineering, physics, and applied mathematics to solve problems that cannot be addressed using just real numbers.<br><br>Further Mathematics students must be confident with Complex Numbers as they are a fundamental topic in the syllabus.
+      </p>
+      <div class="definition-box">
+        <h4 class="box-title">🎯 Learning Objectives</h4>
+        <p class="lesson-text">
+          By the end of this lesson, you will be able to:
+        </p>
+        <ul class="lesson-text">
+          <li>Know what a complex number is</li>
+          <li>Understand the concept of imaginary numbers</li>
+          <li>Perform basic operations with complex numbers</li>
+          <li>Notice the geometric representation of complex numbers and other terms.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Key Concepts Section -->
+    <section id="key-concepts" class="lesson-section">
+      <h2 class="section-heading">🔑 Key Concepts</h2>
+      
+      <h3 class="subsection-heading">What are Complex Numbers?</h3>
+      <p class="lesson-text">
+                Complex numbers are numbers that have both real parts and imaginary parts. They're given as $a + bi$ where $a$ and $b$ are real numbers and $i$ is the imaginary number. <br>The real part is just any known number, like 1, -423, 234.42, $ \pi $, etc. <br>An 'imaginary part' is the part that has the imaginary number. <br>An imaginary number is denoted (or written as) '$i$' and it equals $ \sqrt{-1} $. <br>This means that $ i^2 = -1 $. 
+      </p>
+<div class="tip-box">
+        <h4 class="box-title">💡 Tip - Good to know</h4>
+        <p class="lesson-text">
+            Complex numbers are usually given as $z = a + bi$.<br>
+            $Re(z)$ means 'Real parts of ($z$)' <br>
+            $Im(z)$ means 'Imaginary parts of ($z$)'
+            <br>Since $z = a + bi$, then: $$Re(z) = a \quad \text{and} \quad Im(z) = bi$$
+            <br>$i^2 = -1$ because: $$i = \sqrt{-1}$$
+            $$i^2 = (\sqrt{-1})^2$$
+            <br>The power of 2 cancels and gets rid of the square root, leaving us with $-1$.<br>
+            <br> $z \in \mathbb{C}$ simply means that '$z$' is a complex number.
+            <br> $\mathbb{C}$ is the set of all complex numbers, and $\in$ simply means 'a member of', so $z \in \mathbb{C}$ means '$z$ is a member of complex numbers'.
+        </p>
+      </div>
+
+      <div class="definition-box">
+        <h4 class="box-title">📖 Example 1:</h4>
+        <p class="lesson-text">
+          <strong>Question:<br>A complex number $z = 3 + 2i$ is given. What are the real and imaginary parts?</strong>
+            <br><br>
+            <strong>Answer:</strong>
+            <br>The real part $Re(z) = 3$<br> 
+            The imaginary part $Im(z) = 2$.
+        </p>
+      </div>
+
+      <!-- LaTeX Math Example 
+      <div class="math-display">
+        $$\text{LATEX_FORMULA_HERE}$$
+      </div>
+-->
+      <h3 class="subsection-heading">Addition and Subtraction of Complex Numbers</h3>
+      <p class="lesson-text">
+        To add or subtract complex numbers, you work on the real and imaginary parts separately. Here's an example with addition: 
+      </p>
+            <div class="definition-box">
+        <h4 class="box-title">📖 Example 2:</h4>
+        <p class="lesson-text">
+          <strong>Question:<br>Complex numbers $z = 4 + 5i$ and $w = 2 + i$ are given. Solve $z + w$ and $z - w$.</strong>
+            <br><br>
+            Answer:
+            <br><strong>For addition:</strong>
+            <br>$z + w$ means: $(4 + 5i) + (2 + i)$<br>
+            So, lets get the real and imaginary parts of both, and add them.<br><br>
+            <strong>For $z$:</strong><br>
+            Real part of $z$ is: $Re(z) = 4$<br>
+            Imaginary part of $z$ is: $Im(z) = 5$<br><br>
+            <strong>For $w$:</strong><br>
+            Real part of $w$ is: $Re(w) = 2$<br>
+            Imaginary part of $w$ is: $Im(w) = 1$<br><br>
+            So, we add the real parts and the imaginary parts separately:
+            <br><strong>✅ Final Answer:</strong> $z + w = (4 + 2) + (5 + 1)i = 6 + 6i$<br>
+            <br><strong>For subtraction:</strong><br>
+            $Re(z) - Re(w) = 4 - 2 = 2$<br>
+            $Im(z) - Im(w) = 5 - 1 = 4$ <br>
+            <strong>✅ Final Answer:</strong> $z - w = (4 - 2) + (5 - 1)i = 2 + 4i$
+
+        </p>
+      </div>
+
+    </section>
+
+    <!-- Worked Examples Section -->
+    <section id="examples" class="lesson-section">
+      <h2 class="section-heading">📝 Worked Example:</h2>
+
+      <div class="example-box">
+        <h4 class="box-title">📋 Example 1:</h4>
+        
+        <p class="lesson-text"><strong>Question:</strong> $z = 3 - i, w = 5 + i$. Solve $z + w$</p>
+        
+        <div class="solution-steps">
+          <h5 class="subsection-heading">Solution:</h5>
+          
+          <div class="step">
+            <div class="step-number">Step 1:</div>
+            <p class="lesson-text">Combine the real and imaginary parts:</p>
+            <div class="math-display">
+              $$\text{Re}(z) + \text{Re}(w) + (\text{Im}(z) + \text{Im}(w))i$$
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">Step 2:</div>
+            <p class="lesson-text">Which is equivalent to:</p>
+            <div class="math-display">
+              $$(3 + 5) + (-1 + 1)i$$<br>
+              $$\text{because } Re(z) = 3, Re(w) = 5, Im(z) = -1, Im(w) = 1$$
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">Final Answer:</div>
+            <p class="lesson-text">0 multiplied by anything is zero, so:</p>
+            <div class="math-display">
+              $$(3 + 5 ) = 8$$
+              $$(-1 + 1)i = 0i$$
+              $$\text{Final Answer: } 8 + 0i = 8$$
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- 
+      <div class="example-box">
+        <h4 class="box-title">📋 Example 2: EXAMPLE_2_TITLE_HERE</h4>
+        <p class="lesson-text">EXAMPLE_2_CONTENT_HERE</p>
+      </div>
+    </section>
+-->
+    <!-- Common Mistakes Section 
+    <section class="lesson-section">
+      <h2 class="section-heading">⚠️ Common Mistakes</h2>
+      
+      <div class="warning-box">
+        <h4 class="box-title">🚫 Mistake 1: MISTAKE_TITLE_HERE</h4>
+        <p class="lesson-text">
+          <strong>What students often do wrong:</strong> MISTAKE_DESCRIPTION_HERE
+        </p>
+        <p class="lesson-text">
+          <strong>Why it's wrong:</strong> EXPLANATION_HERE
+        </p>
+        <p class="lesson-text">
+          <strong>How to avoid it:</strong> SOLUTION_HERE
+        </p>
+      </div>
+
+      <div class="warning-box">
+        <h4 class="box-title">🚫 Mistake 2: MISTAKE_2_TITLE_HERE</h4>
+        <p class="lesson-text">MISTAKE_2_CONTENT_HERE</p>
+      </div>
+    </section>
+-->
+    <!-- Practice Problems Section -->
+    <section id="practice" class="lesson-section">
+      <h2 class="section-heading">💪 Practice Problems</h2>
+      
+      <p class="lesson-text lesson-text-center">
+        Try these problems to test yourself. I suggest you check your answer immediately after completing the question.
+      </p>
+      <div class="example-box">
+        <h4 class="box-title">🎯 Practice Questions A </h4>
+        <p class="lesson-text"> <br>
+        (A)  (2 + 3$i$) + (4 + 5$i$) =<br>
+        (B)  (1 + 7$i$) + (3 + 2$i$) =<br>
+        (C)  (5 + 2$i$) + (−1 + 6$i$) =  <br>
+        (D)  (0 + 4$i$) + (2 + 0$i$) + (6 - 4$i$) =</p>
+
+        <details style="margin-top: 15px;">
+          <summary style="cursor: pointer; color: var(--accent-blue); font-weight: 600;">
+            🔍 Show Solutions
+          </summary>
+          <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(74, 158, 255, 0.2);">
+            <p class="lesson-text">(A) 6 + 8$i$ <br>
+            (B) 4 + 9$i$ <br>
+            (C) 4 + 8$i$ <br>
+            (D) 8 + 0$i$ = 8 <br></p>
+          </div>
+        </details>
+      </div>
+
+      <div class="example-box">
+        <h4 class="box-title">🎯 Practice Question 2</h4>
+        <p class="lesson-text">(A) (6 + 8$i$) − (2 + 3$i$)=<br>
+        (B) (10 + 5$i$) − (3 + 2$i$)=<br>
+        (C) (7 + 6$i$) − (2 + 4$i$)=<br>
+        (D) (9 + 3$i$) − (3 + 0$i$) − (2 − 1$i$) =<br></p>
+        
+        <details style="margin-top: 15px;">
+          <summary style="cursor: pointer; color: var(--accent-blue); font-weight: 600;">
+            🔍 Show Solutions
+          </summary>
+          <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(74, 158, 255, 0.2);">
+            <p class="lesson-text">(A) 4 + 5$i$<br>
+            (B) 7 + 3$i$<br>
+            (C) 5 + 2$i$<br>
+            (D) 4 + 2$i$<br></p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- Summary Section -->
+    <section id="summary" class="lesson-section">
+      <h2 class="section-heading">📋 Summary</h2>
+      
+      <div class="definition-box">
+        <h4 class="box-title">🎯 Key Takeaways</h4>
+        <ul class="lesson-text">
+          <li>Equate imaginary and real parts separately.</li>
+          <li>Writing out real and imaginary parts separately can help avoid mistakes.</li>
+          <li>Practice with different forms of complex numbers.</li>
+        </ul>
+      </div>
+
+      <div class="tip-box">
+        <h4 class="box-title">📚 What's Next?</h4>
+        <p class="lesson-text">
+          Next, we will explore multiplication and division of complex Numbers.
+        </p>
+      </div>
+    </section>
+
+    <!-- Lesson Navigation -->
+    <div class="lesson-nav">
+      <a href="#" class="nav-button">← Previous Lesson</a>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 100%;"></div>
+      </div>
+      <a href="#" class="nav-button">Next Lesson →</a>
+    </div>
+
+  </div>
+
+  <!-- Back to top button -->
+  <div style="text-align: center; margin: 30px 0;">
+    <a href="#top" class="nav-button">⬆️ Back to Top</a>
+  </div>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Smooth scrolling for table of contents
+    const tocLinks = document.querySelectorAll('.toc-link');
+    tocLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Progress bar animation based on scroll
+    const progressBar = document.querySelector('.progress-fill');
+    if (progressBar) {
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.body.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            progressBar.style.width = Math.min(scrollPercent, 100) + '%';
+        });
+    }
+
+    // Highlight current section in table of contents
+    const sections = document.querySelectorAll('.lesson-section');
+    const tocNavLinks = document.querySelectorAll('.toc-link');
+    
+    function highlightTOC() {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (window.pageYOffset >= (sectionTop - 200)) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        tocNavLinks.forEach(link => {
+            link.style.background = '';
+            link.style.borderLeftColor = 'transparent';
+            if (link.getAttribute('href') === '#' + current) {
+                link.style.background = 'rgba(74, 158, 255, 0.1)';
+                link.style.borderLeftColor = 'var(--accent-blue)';
+            }
+        });
+    }
+    
+    window.addEventListener('scroll', highlightTOC);
+    
+    // Initialize MathJax rendering
+    if (window.MathJax) {
+        MathJax.typesetPromise().then(() => {
+            console.log('MathJax rendering complete');
+        });
+    }
+});
+</script>
+{% endblock %}

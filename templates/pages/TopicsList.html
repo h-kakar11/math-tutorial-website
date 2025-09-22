@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block title %}Topics List - K4Maths{% endblock %}
+
+{% block head %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="topics-container">
+  <div class="list">
+    <h1>Topics List</h1>
+    <h2>Mathematics Topics</h2>
+
+<ul id="maths-topics-list">
+  <li><a href="/algebraic-expressions"><span>Algebraic Expressions</span></a></li>
+  <li><a href="/algebraic-methods"><span>Algebraic Methods</span></a></li>
+  <li><a href="/binomial-estimation"><span>Binomial Estimation</span></a></li>
+  <li><a href="/binomial-expansion"><span>Binomial Expansion</span></a></li>
+  <li><a href="/circles"><span>Circles</span></a></li>
+  <li><a href="{{ url_for('complex_numbers') }}"><span>Complex Numbers</span></a></li>
+  <li><a href="/differential-equations"><span>Differential Equations</span></a></li>
+  <li><a href="/differentiation"><span>Differentiation</span></a></li>
+  <li><a href="/equations-inequalities"><span>Equations and Inequalities</span></a></li>
+  <li><a href="/exponentials-logarithms"><span>Exponentials and Logarithms</span></a></li>
+  <li><a href="/functions-graphs"><span>Functions and Graphs</span></a></li>
+  <li><a href="/further-algebra"><span>Further Algebra</span></a></li>
+  <li><a href="/further-calculus"><span>Further Calculus</span></a></li>
+  <li><a href="/further-functions"><span>Further Functions</span></a></li>
+  <li><a href="{{ url_for('further_vectors') }}"><span>Further Vectors</span></a></li>
+  <li><a href="/graphs-transformations"><span>Graphs and Transformations</span></a></li>
+  <li><a href="/hyperbolic-functions"><span>Hyperbolic Functions</span></a></li>
+  <li><a href="/integration"><span>Integration</span></a></li>
+  <li><a href="/matrices"><span>Matrices</span></a></li>
+  <li><a href="/parametric-equations"><span>Parametric Equations</span></a></li>
+  <li><a href="/polar-coordinates"><span>Polar Coordinates</span></a></li>
+  <li><a href="/proof"><span>Proof</span></a></li>
+  <li><a href="/quadratics"><span>Quadratics</span></a></li>
+  <li><a href="/radians"><span>Radians</span></a></li>
+  <li><a href="/sequences-series"><span>Sequences and Series</span></a></li>
+  <li><a href="/straight-line-graphs"><span>Straight Line Graphs</span></a></li>
+  <li><a href="/trigonometric-functions"><span>Trigonometric Functions</span></a></li>
+  <li><a href="/trigonometric-identities-equations"><span>Trigonometric Identities and Equations</span></a></li>
+  <li><a href="/trigonometric-ratios"><span>Trigonometric Ratios</span></a></li>
+  <li><a href="/trigonometry-modelling"><span>Trigonometry and Modelling</span></a></li>
+  <li><a href="/vectors"><span>Vectors</span></a></li>
+</ul>
+    <h2>OCR-A Physics Topics</h2>
+    <ul id="physics-topics-list">
+      <li><a href="/MechanicsPhysics"><span>Mechanics</span></a></li>
+      <li><a href="/Electricity"><span>Electricity</span></a></li>
+      <li><a href="/Waves"><span>Waves</span></a></li>
+      <li><a href="/QuantumPhysics"><span>Quantum Physics</span></a></li>
+      <li><a href="/Materials"><span>Materials</span></a></li>
+      <li><a href="/Fields"><span>Fields</span></a></li>
+      <li><a href="/NuclearPhysics"><span>Nuclear Physics</span></a></li>
+      <li><a href="/Astrophysics"><span>Astrophysics</span></a></li>
+      <li><a href="/MedicalPhysics"><span>Medical Physics</span></a></li>
+    </ul>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Apply animation delay to list items
+  const mathsItems = document.querySelectorAll('#maths-topics-list li');
+  const physicsItems = document.querySelectorAll('#physics-topics-list li');
+  mathsItems.forEach((item, index) => {
+    const delay = (index / 10) + 's';
+    item.style.webkitAnimationDelay = delay;
+    item.style.mozAnimationDelay = delay;
+    item.style.animationDelay = delay;
+  });
+  // Add extra delay for physics list so it starts after maths list
+  const extraDelay = mathsItems.length / 10;
+  physicsItems.forEach((item, index) => {
+    const delay = (extraDelay + index / 10) + 's';
+    item.style.webkitAnimationDelay = delay;
+    item.style.mozAnimationDelay = delay;
+    item.style.animationDelay = delay;
+  });
+});
+
+</script>
+{% endblock %}

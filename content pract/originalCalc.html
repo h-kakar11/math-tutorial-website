@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scientific Calculator</title>
+<style>
+body {
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #e0e0e0;
+}
+
+#calculator {
+  background: #d3d3d3;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 4px 4px 10px rgba(0,0,0,0.2);
+  width: 320px;
+}
+
+#display {
+  width: 100%;
+  height: 50px;
+  background: #fff;
+  border: 2px solid #888;
+  border-radius: 6px;
+  text-align: right;
+  font-size: 24px;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  overflow-x: auto;
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 5px;
+}
+
+button {
+  font-size: 16px;
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background: #f2f2f2;
+  transition: 0.1s;
+}
+
+button:active {
+  background: #aaa;
+  color: #fff;
+}
+
+button.function { background: #b0c4de; }
+button.operator { background: #dcdcdc; }
+button.equal { background: #ff7f7f; color: #fff; }
+button.clear { background: #ff5555; color: #fff; }
+
+.radio-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 5px;
+  font-size: 12px;
+}
+.radio-container input { margin-left: 5px; margin-right: 2px; }
+</style>
+</head>
+<body>
+<div id="calculator">
+  <div id="display">0</div>
+  <div class="radio-container">
+    <label>Deg<input type="radio" name="angle" value="deg" checked></label>
+    <label>Rad<input type="radio" name="angle" value="rad"></label>
+  </div>
+  <div class="button-grid">
+    <button class="function" data-func="sin">sin</button>
+    <button class="function" data-func="cos">cos</button>
+    <button class="function" data-func="tan">tan</button>
+    <button class="function" data-func="ln">ln</button>
+    <button class="function" data-func="log">log</button>
+
+    <button class="function" data-func="asin">sin⁻¹</button>
+    <button class="function" data-func="acos">cos⁻¹</button>
+    <button class="function" data-func="atan">tan⁻¹</button>
+    <button class="function" data-func="sqrt">√</button>
+    <button class="function" data-func="exp">eˣ</button>
+
+    <button class="operator" data-func="^">xʸ</button>
+    <button class="operator" data-func="x²">x²</button>
+    <button class="operator" data-func="x³">x³</button>
+    <button class="operator" data-func="1/x">1/x</button>
+    <button class="operator" data-func="%">%</button>
+
+    <button class="number" data-func="7">7</button>
+    <button class="number" data-func="8">8</button>
+    <button class="number" data-func="9">9</button>
+    <button class="operator" data-func="/">÷</button>
+    <button class="function" data-func="C">C</button>
+
+    <button class="number" data-func="4">4</button>
+    <button class="number" data-func="5">5</button>
+    <button class="number" data-func="6">6</button>
+    <button class="operator" data-func="*">×</button>
+    <button class="function" data-func="MR">MR</button>
+
+    <button class="number" data-func="1">1</button>
+    <button class="number" data-func="2">2</button>
+    <button class="number" data-func="3">3</button>
+    <button class="operator" data-func="-">-</button>
+    <button class="function" data-func="M+">M+</button>
+
+    <button class="number" data-func="0">0</button>
+    <button class="number" data-func=".">.</button>
+    <button class="operator" data-func="+/-">±</button>
+    <button class="operator" data-func="+">+</button>
+    <button class="equal" data-func="=">=</button>
+  </div>
+</div>
+
+<script>
+let display = document.getElementById('display');
+let currentValue = '';
+let memory = 0;
+let angleMode = 'deg';
+
+// Update angle mode
+document.querySelectorAll('input[name="angle"]').forEach(radio => {
+  radio.addEventListener('change', e => angleMode = e.target.value);
+});
+
+function safeEval(expr) {
+  try {
+    return Function('return ' + expr)();
+  } catch {
+    return 'Error';
+  }
+}
+
+function calculate(func) {
+  if (!isNaN(func) || func === '.') {
+    currentValue += func;
+    display.textContent = currentValue;
+    return;
+  }
+
+  switch(func) {
+    case 'C': currentValue = ''; break;
+    case '=': currentValue = safeEval(currentValue); break;
+    case '+/-': currentValue = (parseFloat(currentValue) * -1); break;
+    case 'MR': currentValue = memory; break;
+    case 'M+': memory += parseFloat(currentValue); break;
+    case 'sin':
+      currentValue = Math.sin(angleMode === 'deg' ? currentValue*Math.PI/180 : currentValue);
+      break;
+    case 'cos':
+      currentValue = Math.cos(angleMode === 'deg' ? currentValue*Math.PI/180 : currentValue);
+      break;
+    case 'tan':
+      currentValue = Math.tan(angleMode === 'deg' ? currentValue*Math.PI/180 : currentValue);
+      break;
+    case 'asin':
+      currentValue = angleMode === 'deg' ? Math.asin(currentValue)*180/Math.PI : Math.asin(currentValue);
+      break;
+    case 'acos':
+      currentValue = angleMode === 'deg' ? Math.acos(currentValue)*180/Math.PI : Math.acos(currentValue);
+      break;
+    case 'atan':
+      currentValue = angleMode === 'deg' ? Math.atan(currentValue)*180/Math.PI : Math.atan(currentValue);
+      break;
+    case 'ln': currentValue = Math.log(currentValue); break;
+    case 'log': currentValue = Math.log10(currentValue); break;
+    case 'sqrt': currentValue = Math.sqrt(currentValue); break;
+    case 'exp': currentValue = Math.exp(currentValue); break;
+    case 'x²': currentValue = Math.pow(currentValue, 2); break;
+    case 'x³': currentValue = Math.pow(currentValue, 3); break;
+    case '1/x': currentValue = 1/currentValue; break;
+    case '%': currentValue = currentValue/100; break;
+    case '^': currentValue += '**'; break;
+    default: currentValue += func;
+  }
+  display.textContent = currentValue;
+}
+
+document.querySelectorAll('button').forEach(btn => {
+  btn.addEventListener('click', () => calculate(btn.dataset.func));
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+    coding ghost files - stuff that didnt make the final cut
+    
+    
+    
+    <!-- Introduction Section -->
+    <section id="introduction" class="lesson-section">
+      <h2 class="section-heading">📚 Introduction</h2>
+      
+      <p class="lesson-text">
+        Complex numbers are important to grasp as they extend our understanding of numbers beyond the real number line. They are used in various fields including engineering, physics, and applied mathematics to solve problems that cannot be addressed using just real numbers.<br><br>Further Mathematics students must be confident with Complex Numbers as they are a fundamental topic in the syllabus.
+      </p>
+      <div class="definition-box">
+        <h4 class="box-title">🎯 Learning Objectives</h4>
+        <p class="lesson-text">
+          By the end of this lesson, you will be able to:
+        </p>
+        <ul class="lesson-text">
+          <li>Know what a complex number is</li>
+          <li>Understand the concept of imaginary numbers</li>
+          <li>Perform basic operations with complex numbers</li>
+          <li>Notice the geometric representation of complex numbers and other terms.</li>
+        </ul>
+      </div>
+    </section>
+
+
+
+
+
+
+
+    model step:
+
+            <div class="step">
+                <div class="step-number">Step 3:</div>
+                    <p class="lesson-text">Lets solve the denominator first.<br>We have: $(2 + 3i)(2 - 3i)$ so lets expand the brackets.<br>Remember, $i^{2} = -1, \text{ because: } i = \sqrt{-1}, \text{ and } (\sqrt{-1})^2 = -1$</p>
+                        <div class="math-display">
+                            $$(2 + 3i)(2 - 3i) = 4 - 6i + 6i - 9i^{2}$$
+                            $$ -6i + 6i = 0, \text{ so we have: }$$
+                            $$= 4 - 9i^{2} = 4 - 9(-1) = 4 + 9 = \boxed{13}$$
+                            $$\text{because: } i^{2} = -1$$
+                        </div>
+                </div>
+            </div>
+
+
+
+
+            /* this whole block is for the intel.html file and is for the boxes */
+.subject-card {
+  padding: 20px 30px;
+  background: linear-gradient(135deg, #27568bae, #9c4381);
+  color: white;                    /*this whole block is for the intel.html file and is for the boxes*/
+  text-decoration: none;
+  border-radius: 15px;
+  font-weight: bold;
+  transition: transform 0.5s;
+  width: 430px;
+}
+.subject-card:hover {                        /*this whole block is for the intel.html file and is for the boxes*/
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+a.subject-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px;
+  font-size: 24px;
+  text-align: center;
+  padding: 15px 25px;
+  height: 100px;
+  width: 430px;
+  border-radius: 15px;
+  font-weight: bold;
+  transition: transform 0.5s;
+  color: white;
+  text-decoration: none;
+}
+
+
+
+
+{% extends "base.html" %}
+
+{% block title %}Factorising - K4Maths{% endblock %}
+
+{% block head %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Learn Factorising - Step-by-step guide with examples and practice">
+  
+  <!-- MathJax for LaTeX rendering -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
+{% endblock %}
+
+{% block content %}
+
+-- content here --
+
+{% endblock %}
+
+
+

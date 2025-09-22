@@ -1,0 +1,170 @@
+{% extends "base.html" %}
+
+{% block title %}Rationalising Denominators - K4Maths{% endblock %}
+
+{% block head %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Rationalising the Denominator - Learn to eliminate surds from denominators with step-by-step examples.">
+  
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
+{% endblock %}
+
+{% block content %}
+  <a href="{{ url_for('maths') }}" class="back-to-home">🔙 Back to Maths Topics</a>
+
+  <div class="lesson-container">
+    <header class="lesson-header">
+      <h1 class="lesson-title">Rationalising the Denominator</h1>
+      <p class="lesson-subtitle">Eliminating surds from the bottom of fractions</p>
+      
+      <div class="lesson-meta">
+        <span class="meta-item">📚 Mathematics</span>
+        <span class="meta-item">🎯 Difficulty: ⭐</span>
+        <span class="meta-item">⏱️ Reading time: 20 minutes</span>
+        <span class="meta-item">📋 Edexcel & AQA</span>
+      </div>
+    </header>
+
+    <nav class="table-of-contents">
+      <h3 class="toc-title">📖 Contents</h3>
+      <ul class="toc-list">
+        <li class="toc-item"><a href="#introduction" class="toc-link">Introduction</a></li>
+        <li class="toc-item"><a href="#why" class="toc-link">Why Rationalise?</a></li>
+        <li class="toc-item"><a href="#methods" class="toc-link">Methods</a></li>
+        <li class="toc-item"><a href="#examples" class="toc-link">Worked Examples</a></li>
+        <li class="toc-item"><a href="#practice" class="toc-link">Practice Problems</a></li>
+        <li class="toc-item"><a href="#summary" class="toc-link">Summary</a></li>
+      </ul>
+    </nav>
+
+    <div class="lesson-nav">
+      <a href="{{ url_for('surds') }}" class="nav-button">← Previous Lesson</a>
+      <div class="progress-bar"><div class="progress-fill" style="width: 0%;"></div></div>
+      <a href="{{ url_for('index_laws') }}" class="nav-button">Next Lesson →</a>
+    </div>
+
+    <section id="introduction" class="lesson-section">
+      <h2 class="section-heading">📚 Introduction</h2>
+      <p class="lesson-text">
+        When a surd appears in the denominator of a fraction, it’s often desirable to “rationalise” it — that is, to eliminate the surd from the denominator. Rationalising helps simplify expressions and prepares them for further algebraic manipulation.
+      </p>
+      <div class="definition-box">
+        <h4 class="box-title">🎯 Learning Objectives</h4>
+        <ul class="lesson-text">
+          <li>Understand why rationalising the denominator is useful</li>
+          <li>Apply rationalising techniques to single and binomial surd denominators</li>
+          <li>Recognise when rationalisation is necessary</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="why" class="lesson-section">
+      <h2 class="section-heading">🤔 Why Rationalise?</h2>
+      <p class="lesson-text">
+        Historically, having surds in the denominator was considered “untidy,” especially before calculators. More importantly, rationalising makes it easier to compare or combine expressions, particularly in algebra and calculus.
+      </p>
+    </section>
+
+    <section id="methods" class="lesson-section">
+      <h2 class="section-heading">🛠️ Methods</h2>
+
+      <h3 class="subsection-heading">Case 1: Single Surd Denominator</h3>
+      <p class="lesson-text">To rationalise $\frac{1}{\sqrt{3}}$, multiply both numerator and denominator by $\sqrt{3}$:</p>
+      <div class="math-display">
+        $$\frac{1}{\sqrt{3}} \times \frac{\sqrt{3}}{\sqrt{3}} = \frac{\sqrt{3}}{3}$$
+      </div>
+
+      <h3 class="subsection-heading">Case 2: Binomial Surd Denominator</h3>
+      <p class="lesson-text">To rationalise a denominator like $\frac{1}{2 + \sqrt{3}}$, multiply top and bottom by the conjugate of the denominator.</p>
+      <div class="math-display">
+        \[
+        \frac{1}{2 + \sqrt{3}} \times \frac{2 - \sqrt{3}}{2 - \sqrt{3}} = \frac{2 - \sqrt{3}}{(2 + \sqrt{3})(2 - \sqrt{3})} = \frac{2 - \sqrt{3}}{4 - 3} = \frac{2 - \sqrt{3}}{1} = \boxed{2 - \sqrt{3}}
+        \]
+      </div>
+    </section>
+
+    <section id="examples" class="lesson-section">
+      <h2 class="section-heading">📝 Worked Examples</h2>
+
+      <div class="example-box">
+        <h4 class="box-title">Example 1</h4>
+        <p class="lesson-text"><strong>Question:</strong> Rationalise $\frac{5}{\sqrt{2}}$.</p>
+        <p class="lesson-text"><strong>Solution:</strong></p>
+        <div class="math-display">
+          \[
+          \frac{5}{\sqrt{2}} \times \frac{\sqrt{2}}{\sqrt{2}} = \frac{5\sqrt{2}}{2}
+          \]
+        </div>
+      </div>
+
+      <div class="example-box">
+        <h4 class="box-title">Example 2</h4>
+        <p class="lesson-text"><strong>Question:</strong> Rationalise $\frac{3}{1 - \sqrt{2}}$.</p>
+        <p class="lesson-text"><strong>Solution:</strong></p>
+        <div class="math-display">
+          $$ \frac{3}{1 - \sqrt{2}} \times \frac{1 + \sqrt{2}}{1 + \sqrt{2}} = \frac{3(1 + \sqrt{2})}{(1 - \sqrt{2})(1 + \sqrt{2})} = \frac{3(1 + \sqrt{2})}{1 - 2} $$ $$= \frac{3(1 + \sqrt{2})}{-1} = \boxed{-3 - 3\sqrt{2}}$$
+        </div>
+      </div>
+    </section>
+
+      <div class="example-box">
+        <h4 class="box-title">🎯 Practice Question 1</h4>
+        <p class="lesson-text">
+        (A) Rationalise: $\frac{7}{\sqrt{5}}$<br><br>
+        (B) Rationalise: $\frac{2}{\sqrt{6} + 1}$<br><br>
+        (C) Rationalise: $\frac{4}{3 - \sqrt{2}}$<br><br>
+        (D) Rationalise: $\frac{5}{\sqrt{3} - \sqrt{2}}$ 
+      </p>
+        <details style="margin-top: 15px;">
+          <summary style="cursor: pointer; color: var(--accent-blue); font-weight: 600;">
+            🔍 Show Solution
+          </summary>
+          <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(74, 158, 255, 0.2);">
+            <p class="lesson-text">
+              <strong>Solutions:</strong><br><br>
+                (A) $\frac{7}{\sqrt{5}} \times \frac{\sqrt{5}}{\sqrt{5}} = \frac{7\sqrt{5}}{5}$<br><br>
+                (B) $\frac{2}{\sqrt{6} + 1} \times \frac{\sqrt{6} - 1}{\sqrt{6} - 1} = \frac{2(\sqrt{6} - 1)}{6 - 1} = \frac{2\sqrt{6} - 2}{5}$<br><br>
+                (C) $\frac{4}{3 - \sqrt{2}} \times \frac{3 + \sqrt{2}}{3 + \sqrt{2}} = \frac{4(3 + \sqrt{2})}{9 - 2} = \frac{12 + 4\sqrt{2}}{7}$<br><br>
+                (D) $\frac{5}{\sqrt{3} - \sqrt{2}} \times \frac{\sqrt{3} + \sqrt{2}}{\sqrt{3} + \sqrt{2}} = \frac{5(\sqrt{3} + \sqrt{2})}{3 - 2} = 5\sqrt{3} + 5\sqrt{2}$
+            </p>
+          </div>
+        </details>
+      </div>
+
+    <section id="summary" class="lesson-section">
+      <h2 class="section-heading">🧾 Summary</h2>
+      <ul class="lesson-text">
+        <li>Rationalising the denominator means removing surds from the denominator of a fraction</li>
+        <li>For single surds, multiply top and bottom by the surd</li>
+        <li>For binomial denominators, use the conjugate to simplify</li>
+        <li>Helps simplify expressions and is useful in higher-level maths</li>
+      </ul>
+    </section>
+
+    <div class="lesson-nav">
+      <a href="{{ url_for('surds') }}" class="nav-button">← Previous Lesson</a>
+      <div class="progress-bar"><div class="progress-fill" style="width: 0%;"></div></div>
+      <a href="{{ url_for('index_laws') }}" class="nav-button">Next Lesson →</a>
+    </div>
+  </div>
+{% endblock %}

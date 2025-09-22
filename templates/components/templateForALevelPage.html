@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TopicName</title>                  <!-- Change this title to the topic name -->
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<nav>
+  <a href="{{ url_for('index') }}">Home</a> |
+  <a href="{{ url_for('further_maths') }}">Further Mathematics</a> |
+  <a href="{{ url_for('maths') }}">Mathematics</a> |
+  <a href="{{ url_for('physics') }}">OCR-A Physics</a> |
+  <a href="{{ url_for('topics_list') }}">Topics</a> |
+  <a href="{{ url_for('who_am_i') }}">Who I Am</a> |
+  <a href="{{ url_for('contact_me') }}">Contact Me</a> |
+  <a href="#">Toggle Dark Mode</a> |
+  <img src="{{ url_for('static', filename='maths-navbar.png') }}" alt="Logo" class="navbar-img">
+</nav>
+  <hr>
+  <h1>Topic Name - Exam board</h1>
+  <h2>insert header 2 here//</h2>
+  <a href="{{ url_for('index') }}">🏠︎ - Back to Home<br></a>     <a href="">← Back To Topics<br><!--ADD THE 'BACK' BUTTON HERE--> </a>
+  
+</body>
+
+<div class="topics-grid">
+  <div class="topic-card topic-card-blue">
+    <a href=""> <!-- Add the link to the topic here -->
+    <h6>Topic Name 1 (Edexcel, AQA, OCR) - CORE PURE 1</h6>
+    <p class="TopicsList">Introduction, Mastery, and Guide to solve exam questions here</p></a>
+        </a> 
+</div>
+
+
+  <div class="topic-card topic-card-orangutan">
+    <a href=""> <!-- Add the link to the topic here -->
+    <h6>Topic Name 2 (exam boards) - unit of a level</h6>
+    <p class="TopicsList">Introduction, Mastery, and Guide to solve exam questions here</p></a>
+  </div>
+
+
+  <div class="topic-card topic-card-red">
+    <a href=""> <!-- Add the link to the topic here -->
+  <h6>Topic Name 3 (exam boards) - unit of a level</h6>
+  <p class="TopicsList">Introduction, Mastery, and Guide to solve exam questions here</p></a>
+</div> 
+
+
+<div class   =   "topic-card topic-card-orange">
+    <a href=""> <!-- Add the link to the topic here -->
+  <h6>Topic Name 4 (exam boards) - unit of a level</h6>
+  <p class= "TopicsList">Introduction, Mastery, and Guide to solve exam questions here</p></a>
+    </a>
+</div>
+
+
+<div class="topic-card topic-card-purple">
+    <a href=""> <!-- Add the link to the topic here -->
+    <h6>Topic Name 5 (exam boards) - unit of a level</h6>
+  <p class="TopicsList">Introduction, Mastery, and Guide to solve exam questions here</p></a>
+    </a>
+</div>
+
+
+<div class="topic-card topic-card-teal">
+    <a href="" > <!-- Add the link to the topic here --> 
+  <h6>Topic Name 6 (exam boards) - unit of a level</h6>
+  <p class="TopicsList">Introduction, Mastery, and Guide to solve exam questions here</p></a>
+</a>
+</div>
+
+<div class="topic-card topic-card-pink">
+    <a href=""> <!-- Add the link to the topic here -->
+  <h6>Topic Name 7 (exam boards) - unit of a level</h6>
+  <p class="TopicsList">Introduction, Mastery, and Guide to solve exam questions here</p></a>
+    </div>
+
+<div class="topic-card topic-card-yellow">
+    <a href=""> <!-- Add the link to the topic here -->
+  <h6>Topic Name 8 (exam boards) - unit of a level</h6>
+  <p class="TopicsList">Introduction, Mastery, and Guide to solve exam questions here</p></a>
+</div> 
+
+<div class= "topic-card topic-card-brown">
+    <a href=""> <!-- Add the link to the topic here -->
+  <h6>Topic Name 9 (exam boards) - unit of a level</h6>
+  <p class="TopicsList">Introduction, Mastery, and Guide to solve exam questions here</p></a>
+</div>
+
+<div class= "topic-card topic-card-cyan">
+    <a href=""> <!-- Add the link to the topic here -->
+  <h6>Topic Name 10 (exam boards) - unit of a level</h6>
+  <p class="TopicsList">    Introduction, Mastery, and Guide to solve exam questions here</p></a>
+</div>
+
+<div class="topic-card topic-card-lime">    
+    <a href=""> <!-- Add the link to the topic here -->
+  <h6>Topic Name 11 (exam boards) - unit of a level </h6>
+  <p class="TopicsList">Introduction, Mastery, and Guide to solve exam questions here</p></a>
+    </a>
+</div>
+
+<div class="topic-card topic-card-navy">
+    <a href=""> <!-- Add the link to the topic here -->
+  <h6>Topic Name 12 (exam boards) - unit of a level</h6>
+  <p class="TopicsList">Introduction, Mastery, and Guide to solve exam questions here</p></a>
+</div>
+
+  <!-- repeat more for more topics -->
+
+
+
+<footer>
+  <div class="footer-row">                  
+    <span class="footer-text">© 2025 K4MATHS.COM</span>         <!--        use span for elements grouping and have multiple texts on teh same line-->
+    <span class="footer-text">· Made with ❤️ by Hamim Kakar</span>
+    <span class="footer-text">· Not affiliated with any exam board</span>
+  </div>
+  <div class="footer-row">
+    <span class="footer-text">For questions: <a class="footer-text" href="{{ url_for('contact_me') }}">Contact me</a></span>
+    <span class="footer-text">· Last updated: xx/xx/xxxx</span>
+  </div>
+  <div class="footer-row">
+    <span class="footer-text">This website is still in development, so please be patient with me.</span>
+    <span class="footer-text">·   Please share this website with your friends and family!</span>
+    <span class="footer-text">Thank you for visiting!</span>
+  </div>
+</footer>

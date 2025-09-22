@@ -1,0 +1,271 @@
+{% extends "base.html" %}
+
+{% block title %}Surds - K4Maths{% endblock %}
+
+{% block head %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Learn Surds - Step-by-step guide with examples and practice">
+  
+  <!-- MathJax for LaTeX rendering -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
+{% endblock %}
+
+{% block content %}
+  <!-- Back navigation -->
+  <a href="{{ url_for('maths') }}" class="back-to-home">🔙 Back to Maths Topics</a>
+
+  <div class="lesson-container">
+    
+    <!-- Lesson Header -->
+    <header class="lesson-header">
+      <h1 class="lesson-title">Surds</h1>
+      <p class="lesson-subtitle">Working with irrational roots in exact form</p>
+      
+      <div class="lesson-meta">
+        <span class="meta-item">📚 Mathematics</span>
+        <span class="meta-item">🎯 Difficulty: ⭐⭐</span>
+        <span class="meta-item">⏱️ Reading time: 25 minutes</span>
+        <span class="meta-item">📋 Edexcel & AQA</span>
+      </div>
+    </header>
+
+    <!-- Table of Contents -->
+    <nav class="table-of-contents">
+      <h3 class="toc-title">📖 Contents</h3>
+      <ul class="toc-list">
+        <li class="toc-item"><a href="#introduction" class="toc-link">Introduction</a></li>
+        <li class="toc-item"><a href="#key-concepts" class="toc-link">Key Concepts</a></li>
+        <li class="toc-item"><a href="#examples" class="toc-link">Worked Examples</a></li>
+        <li class="toc-item"><a href="#practice" class="toc-link">Practice Problems</a></li>
+        <li class="toc-item"><a href="#summary" class="toc-link">Summary</a></li>
+      </ul>
+    </nav>
+
+    <!-- Lesson Navigation -->
+    <div class="lesson-nav">
+      <a href="{{ url_for('neg_and_frac_indices') }}" class="nav-button">← Previous Lesson</a>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 0%;"></div>
+      </div>
+      <a href="{{ url_for('rational_deno') }}" class="nav-button">Next Lesson →</a>
+    </div>
+
+    <!-- Introduction Section -->
+    <section id="introduction" class="lesson-section">
+      <h2 class="section-heading">📚 Introduction</h2>
+      
+      <p class="lesson-text">
+        When we take the square root of a number that's not a perfect square (like $\sqrt{2}$ or $\sqrt{3}$), we get an irrational number that can't be written as a simple fraction. These expressions are called surds, and they're essential in mathematics because they allow us to represent exact values rather than decimal approximations.
+      </p>
+
+      <div class="definition-box">
+        <h4 class="box-title">🎯 Learning Objectives</h4>
+        <p class="lesson-text">
+          By the end of this lesson, you will be able to:
+        </p>
+        <ul class="lesson-text">
+          <li>Understand what surds are and why they're used</li>
+          <li>Simplify surd expressions by taking out perfect square factors</li>
+          <li>Add, subtract, multiply and divide surds</li>
+          <li>Distinguish between rational and irrational numbers</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Key Concepts Section -->
+    <section id="key-concepts" class="lesson-section">
+      <h2 class="section-heading">🔑 Key Concepts</h2>
+      
+      <h3 class="subsection-heading">What are Surds?</h3>
+      <p class="lesson-text">
+        Surds are irrational numbers that are expressed using root symbols. They cannot be written as exact decimals or fractions because their decimal expansions go on forever without repeating.
+      </p>
+
+      <div class="definition-box">
+        <h4 class="box-title">📖 Definition</h4>
+        <p class="lesson-text">
+          <strong>Surd:</strong> An irrational number that can be expressed as the root of a rational number. Common examples include $\sqrt{2}$, $\sqrt{3}$, $\sqrt{5}$.
+        </p>
+      </div>
+
+      <p class="lesson-text">
+        Not all roots are surds. For example, $\sqrt{4} = 2$ and $\sqrt{9} = 3$ are rational numbers, not surds, because they can be simplified to exact integers.
+      </p>
+
+      <h3 class="subsection-heading">Rational vs. Irrational Numbers</h3>
+      
+      <div class="definition-box">
+        <h4 class="box-title">📖 Definition</h4>
+        <p class="lesson-text">
+          <strong>Rational Number:</strong> Any number that can be expressed as a fraction $\frac{p}{q}$ where $p$ and $q$ are integers and $q \neq 0$.
+        </p>
+        <p class="lesson-text">
+          <strong>Irrational Number:</strong> Any real number that cannot be expressed as a fraction of integers.
+        </p>
+      </div>
+      
+      <p class="lesson-text">
+        Surds are a specific type of irrational number. Other famous irrational numbers include π (pi) and e (Euler's number).
+      </p>
+
+      <h3 class="subsection-heading">Simplifying Surds</h3>
+      <p class="lesson-text">
+        A surd is in its simplest form when:
+        <ol class="lesson-text">
+          <li>The number under the root symbol has no perfect square factors (for square roots), or perfect cube factors (for cube roots), etc.</li>
+          <li>There are no fractions under the root symbol</li>
+        </ol>
+      </p>
+
+      <div class="tip-box">
+        <h4 class="box-title">💡 Pro Tip</h4>
+        <p class="lesson-text">
+          To simplify a surd, look for the largest square number that divides into the number under the square root. For example, to simplify $\sqrt{12}$, notice that $12 = 4 \times 3$, and $4$ is a perfect square. So $\sqrt{12} = \sqrt{4 \times 3} = \sqrt{4} \times \sqrt{3} = 2\sqrt{3}$.
+        </p>
+      </div>
+
+      <h3 class="subsection-heading">Operations with Surds</h3>
+      <p class="lesson-text">
+        Just like with other numbers, we can add, subtract, multiply, and divide surds.
+      </p>
+
+      <div class="definition-box">
+        <h4 class="box-title">📖 Rules for Surds</h4>
+        <p class="lesson-text">
+          <strong>Addition/Subtraction:</strong> We can only add or subtract surds if they are "like surds" (have the same irrational part).
+          <br>For example: $2\sqrt{5} + 3\sqrt{5} = 5\sqrt{5}$
+        </p>
+        <p class="lesson-text">
+          <strong>Multiplication:</strong> $\sqrt{a} \times \sqrt{b} = \sqrt{ab}$
+        </p>
+        <p class="lesson-text">
+          <strong>Division:</strong> $\frac{\sqrt{a}}{\sqrt{b}} = \sqrt{\frac{a}{b}}$
+        </p>
+      </div>
+    </section>
+
+    <!-- Worked Examples Section -->
+    <section id="examples" class="lesson-section">
+      <h2 class="section-heading">📝 Worked Examples</h2>
+      
+      <div class="example-box">
+        <h4 class="box-title">📋 Example 1: Simplifying Surds</h4>
+        
+        <p class="lesson-text"><strong>Question:</strong> Simplify $\sqrt{20}$.</p>
+        
+        <div class="solution-steps">
+          <h5 class="subsection-heading">Solution:</h5>
+          
+          <div class="step">
+            <div class="step-number">Step 1:</div>
+            <p class="lesson-text">Find the largest perfect square factor of 20.</p>
+            <p class="lesson-text">The factors of 20 are: 1, 2, 4, 5, 10, 20</p>
+            <p class="lesson-text">Of these, the largest perfect square is 4.</p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">Step 2:</div>
+            <p class="lesson-text">Express 20 as a product of this perfect square and another number.</p>
+            <div class="math-display">
+              $$20 = 4 \times 5$$
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">Step 3:</div>
+            <p class="lesson-text">Apply the rule $\sqrt{a \times b} = \sqrt{a} \times \sqrt{b}$.</p>
+            <div class="math-display">
+              $$\sqrt{20} = \sqrt{4 \times 5} = \sqrt{4} \times \sqrt{5} = 2\sqrt{5}$$
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="example-box">
+        <h4 class="box-title">📋 Example 2: Adding and Subtracting Surds</h4>
+        
+        <p class="lesson-text"><strong>Question:</strong> Simplify $3\sqrt{12} - 2\sqrt{27}$.</p>
+        
+        <div class="solution-steps">
+          <h5 class="subsection-heading">Solution:</h5>
+          
+          <div class="step">
+            <div class="step-number">Step 1:</div>
+            <p class="lesson-text">First, simplify each surd.</p>
+            <div class="math-display">
+              $$3\sqrt{12} = 3\sqrt{4 \times 3} = 3 \times 2 \times \sqrt{3} = 6\sqrt{3}$$
+              $$2\sqrt{27} = 2\sqrt{9 \times 3} = 2 \times 3 \times \sqrt{3} = 6\sqrt{3}$$
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">Step 2:</div>
+            <p class="lesson-text">Now that both terms have the same surd part, we can perform the subtraction.</p>
+            <div class="math-display">
+              $$3\sqrt{12} - 2\sqrt{27} = 6\sqrt{3} - 6\sqrt{3} = 0$$
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Practice Problems Section -->
+    <section id="practice" class="lesson-section">
+      <h2 class="section-heading">💪 Practice Problems</h2>
+      <div class="example-box">
+        <h4 class="box-title">🎯 Practice Questions</h4>
+        <ol class="lesson-text">
+          <li>Simplify $\sqrt{18}$</li>
+          <li>Simplify $\sqrt{32} + \sqrt{50}$</li>
+          <li>Simplify $\sqrt{8} \times \sqrt{6}$</li>
+          <li>Simplify $\frac{4}{\sqrt{5}}$</li>
+        </ol>
+        <details style="margin-top: 15px;">
+          <summary style="cursor: pointer; color: var(--accent-blue); font-weight: 600;">🔍 Show Solutions</summary>
+          <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(74, 158, 255, 0.2);">
+            <p><strong>1.</strong> $3\sqrt{2}$</p>
+            <p><strong>2.</strong> $7\sqrt{2}$</p>
+            <p><strong>3.</strong> $2\sqrt{12} = 4\sqrt{3}$</p>
+            <p><strong>4.</strong> $\frac{4\sqrt{5}}{5}$</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- Summary Section -->
+    <section id="summary" class="lesson-section">
+      <h2 class="section-heading">📋 Summary</h2>
+      <div class="definition-box">
+        <h4 class="box-title">🎯 Key Takeaways</h4>
+        <ul class="lesson-text">
+          <li>Surds are irrational numbers expressed as roots of rational numbers.</li>
+          <li>Surds are used to give exact values rather than decimal approximations.</li>
+          <li>To simplify a surd, find the largest perfect square factor and apply the rule $\sqrt{a \times b} = \sqrt{a} \times \sqrt{b}$.</li>
+          <li>You can only add or subtract surds if they have the same irrational part (like surds).</li>
+          <li>When multiplying surds, use the rule $\sqrt{a} \times \sqrt{b} = \sqrt{ab}$.</li>
+          <li>When dividing surds, rationalize the denominator if necessary.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+{% endblock %}

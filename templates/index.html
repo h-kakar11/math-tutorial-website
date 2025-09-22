@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block title %}K4Maths - Home{% endblock %}
+
+{% block head %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Learn Factorising - Step-by-step guide with examples and practice">
+  
+    <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    }
+    </script>
+{% endblock %}
+
+{% block content %}
+<a href="{{ url_for('survey') }}" class="survey-popup">
+  Take our survey!
+</a>
+
+    <h1><br><br>Welcome to <strong>K4MATHS.COM</strong> $\rightarrow$ The website to master Maths and Physics.</h1><br><br><br>
+
+    <div class="intro-text">
+        <p><br>This site is designed mainly around the <strong>Edexcel</strong> specification, but a lot of the material overlaps with <strong>AQA</strong>, <strong>OCR</strong>, and other UK exam boards. If a topic is specific to one board, it'll be clearly marked.</p>
+
+        <p>All tutorials here are carefully explained, exam-focused, and written to actually help you understand — not just memorise and do. Whether you're stuck on trig identities, differential equations, or projectile motion, you'll find a tutorial that breaks it down step-by-step.</p>
+        <p>Every resource is completely <strong>free</strong>, and more may be added - stay tuned.</p>
+
+        <p><a href="{{ url_for('topics_list') }}"><strong>Browse Topics</strong></a> or <a href="{{ url_for('contact_me') }}"><strong>get in touch</strong></a> if you have questions or tutorial requests.</p>
+        <p> All content and tutorials on this website are handcrafted by me, in the easiest, most explainable way i could think of, ensuring everyone understands the topic. My main goal for this website is to show people that academics aren't just gifted to some, it can be earned with hard work. I break down these complex topics in an understandable manner, to show people that <strong>THEY CAN DO THIS.</strong></p>
+    </div>
+
+<div class="topics-container">
+  <div class="list">
+    <h1>ALL topics</h1>
+
+    <h2>OCR-A Physics Topics</h2>
+    <ul id="physics-topics-list">
+      <li><a href="/MechanicsPhysics"><span>Mechanics</span></a></li>
+      <li><a href="/Electricity"><span>Electricity</span></a></li>
+      <li><a href="/Waves"><span>Waves</span></a></li>
+      <li><a href="/QuantumPhysics"><span>Quantum Physics</span></a></li>
+      <li><a href="/Materials"><span>Materials</span></a></li>
+      <li><a href="/Fields"><span>Fields</span></a></li>
+      <li><a href="/NuclearPhysics"><span>Nuclear Physics</span></a></li>
+      <li><a href="/Astrophysics"><span>Astrophysics</span></a></li>
+      <li><a href="/MedicalPhysics"><span>Medical Physics</span></a></li>
+    </ul>
+    <h2>Mathematics Topics</h2>
+    <ul id="maths-topics-list">
+      <li><a href="/AlgebraicExpressions"><span>Algebraic Expressions</span></a></li>
+      <li><a href="/ComplexNumbers"><span>Complex Numbers</span></a></li>
+</ul>
+
+  </div>
+</div>
+{% endblock %}

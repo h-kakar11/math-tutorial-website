@@ -1,0 +1,69 @@
+<nav>
+  <a href="{{ url_for('index') }}">Home</a> |
+  <a href="{{ url_for('further_maths') }}">Further Mathematics</a> |
+  <a href="{{ url_for('maths') }}">Mathematics</a> |
+  <a href="{{ url_for('physics') }}">OCR-A Physics</a> |
+  <a href="{{ url_for('topics_list') }}">Topics</a> |
+  
+  <!-- Calculator Dropdown -->
+  <div class="calculator-container">
+    <a href="#" id="calculator-toggle">🧮 Calculator</a>
+    <div class="calculator-dropdown" id="calculator-dropdown">
+      <div id="calculator">
+        <div id="display">0</div>
+        <div class="radio-container">
+          <label>Deg<input type="radio" name="angle" value="deg" checked></label>
+          <label>Rad<input type="radio" name="angle" value="rad"></label>
+        </div>
+        <div class="button-grid">
+          <button class="function" data-func="sin">sin</button>
+          <button class="function" data-func="cos">cos</button>
+          <button class="function" data-func="tan">tan</button>
+          <button class="function" data-func="ln">ln</button>
+          <button class="function" data-func="log">log</button>
+
+          <button class="function" data-func="asin">sin⁻¹</button>
+          <button class="function" data-func="acos">cos⁻¹</button>
+          <button class="function" data-func="atan">tan⁻¹</button>
+          <button class="function" data-func="sqrt">√</button>
+          <button class="function" data-func="exp">eˣ</button>
+
+          <button class="operator" data-func="^">xʸ</button>
+          <button class="operator" data-func="x²">x²</button>
+          <button class="operator" data-func="x³">x³</button>
+          <button class="operator" data-func="1/x">1/x</button>
+          <button class="operator" data-func="%">%</button>
+
+          <button class="number" data-func="7">7</button>
+          <button class="number" data-func="8">8</button>
+          <button class="number" data-func="9">9</button>
+          <button class="operator" data-func="/">÷</button>
+          <button class="function" data-func="C">C</button>
+
+          <button class="number" data-func="4">4</button>
+          <button class="number" data-func="5">5</button>
+          <button class="number" data-func="6">6</button>
+          <button class="operator" data-func="*">×</button>
+          <button class="function" data-func="MR">MR</button>
+
+          <button class="number" data-func="1">1</button>
+          <button class="number" data-func="2">2</button>
+          <button class="number" data-func="3">3</button>
+          <button class="operator" data-func="-">-</button>
+          <button class="function" data-func="M+">M+</button>
+
+          <button class="number" data-func="0">0</button>
+          <button class="number" data-func=".">.</button>
+          <button class="operator" data-func="+/-">±</button>
+          <button class="operator" data-func="+">+</button>
+          <button class="equal" data-func="=">=</button>
+        </div>
+      </div>
+    </div>
+  </div> |
+  
+  <a href="{{ url_for('who_am_i') }}">About Me</a> |
+  <a href="{{ url_for('contact_me') }}">Contact Me</a> |
+  <img src="{{ url_for('static', filename='maths-navbar.png') }}" alt="Logo" class="navbar-img">
+</nav>
+

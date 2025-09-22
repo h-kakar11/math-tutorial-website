@@ -1,0 +1,140 @@
+{% extends "base.html" %}
+
+{% block title %}Complex Numbers - K4Maths{% endblock %}
+
+{% block head %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+  <meta name="description" content="Learn about Complex Numbers - Edexcel specification">
+{% endblock %}
+
+{% block content %}
+  <a href="{{ url_for('further_maths') }}" class="back-to-home">🔙 Back to Further Mathematics</a>
+  
+  <section class="topic-header">
+    <h1>Complex Numbers - (Edexcel, AQA) - CORE PURE</h1>
+    <h2>Master Complex Numbers with comprehensive guides, examples, and exam practice</h2>
+  </section>
+
+  <section class="topic-intro">
+    <p style="text-align: center; padding: 5px 0px;">
+      <strong>Complex Numbers</strong> is a key topic in the Edexcel specification for CORE PURE 1 and 2. Its also covered by AQA Further Maths, and I highly recommend learning it to a high degree. 
+      <br><br>
+      Choose a section below to start your learning journey with this topic.
+      <br><br>
+      (minor disclaimer: The difficulty rating is subjective and may not reflect your own experience. It is based on my personal experiences.)
+      <br><br>
+      Difficulty rating: ⭐⭐⭐ out of 5 stars
+    </p>
+  </section>
+  
+  <div style="margin-top: 20px;">
+    <a href="{{ url_for('index') }}" style="margin-right: 20px; margin-left: 20px;">🏠︎ - Back to Home<br></a>
+  </div>
+
+  <main class="topics-grid">
+
+    <!-- intro Section -->
+      <a href="{{ url_for('intro_to_complex_numbers') }}" aria-label="Introduction to Complex Numbers">
+        <article class="topic-card topic-card-blue">
+          <h3>📚 Introduction & basic operations</h3>
+          <p class="TopicsList"  >Get started with the basics of complex numbers</p>
+          <p class="TopicsList"  >Know how to add and subtract complex numbers</p>
+          <p class="TopicsList"  >Difficulty rating: ⭐</p>
+        </article>
+      </a>  
+    <!-- simplifying surds -->
+    <a href="{{ url_for('simplifying_surds') }}" aria-label="Simplifying Surds">
+      <article class="topic-card topic-card-orangutan">
+        <h3>🔤 Multiplying Complex Numbers</h3>
+        <p class="TopicsList"  >Learn about the fundamental structure of complex numbers</p>
+        <p class="TopicsList"  >Real parts, imaginary parts, and the imaginary unit i</p>
+        <p class="TopicsList">Difficulty rating: ⭐</p>
+      </article>
+    </a>
+
+    <!--mod arg -->
+    <a href="{{ url_for('mod_arg_complex') }}" aria-label="Modulus-Argument Form">
+      <article class="topic-card topic-card-teal">
+        <h3>⚡ Modulus and Argument</h3>
+        <p class="TopicsList"  >Master addition, subtraction, multiplication, and division</p>
+        <p class="TopicsList"  >Complex arithmetic, conjugates, and algebraic manipulation</p>
+        <p class="TopicsList"  >Difficulty rating: ⭐⭐</p>
+      </article>
+    </a>
+
+    <!-- dividing  -->
+    <a href="{{ url_for('division_complex') }}" aria-label="Dividing Complex Numbers">
+      <article class="topic-card topic-card-orange">
+        <h3>🧮 Division of Complex Numbers</h3>
+        <p class="TopicsList"  >Divide complex numbers simply</p>
+        <p class="TopicsList"  >Know what the conjugate is and how to spot it.</p>
+        <p class="TopicsList"  >Difficulty rating: ⭐⭐</p>
+      </article>
+    </a>
+
+    <!-- multiplying -->
+    <a href="{{ url_for('multiply_complex') }}" aria-label="Multiplying Complex Numbers">
+      <article class="topic-card topic-card-purple">
+        <h3>🔤 Multiplying Complex Numbers</h3>
+        <p class="TopicsList"  >Learn about the fundamental structure of complex numbers</p>
+        <p class="TopicsList"  >Real parts, imaginary parts, and the imaginary unit i</p>
+        <p class="TopicsList">Difficulty rating: ⭐</p>
+      </article>
+    </a>
+
+    <!-- Worked Examples -->
+  <a href="{{ url_for('simplifying_surds') }}" aria-label="Simplifying Surds">
+    <article class="topic-card topic-card-red">
+        <h3>📝 Simplifying Surds</h3>
+        <p class="TopicsList">Simplify Surds easily by applying laws</p>
+        <p class="TopicsList">Learn laws and techniques for algebraic manipulation</p>
+        <p class="TopicsList">Difficulty rating: ⭐⭐</p>
+    </article>
+  </a>
+
+    <!-- Quadratic Equations -->      
+  <a href="/ComplexCubicEquations" aria-label="Complex Cubic Equations">
+    <article class="topic-card topic-card-pink">
+        <h3>📋 Solving Cubics </h3>
+        <p class="TopicsList">Solve cubic equations with complex roots.</p>
+        <p class="TopicsList">Know how to apply different methods for complex numbers.</p>
+        <p class="TopicsList">Difficulty rating: ⭐⭐⭐</p>
+    </article>
+  </a>
+
+    <!-- Cubic Equations 
+  <a href="#" aria-label="Cubic Equations with Complex numbers">
+    <article class="topic-card topic-card-yellow">
+        <h3>📋 Solving Cubic Equations</h3>
+        <p class="TopicsList">Know how to tackle Exam questions</p>
+        <p class="TopicsList">Learn how to solve cubics with complex roots.</p>
+        <p class="TopicsList">Difficulty rating: ⭐⭐</p>
+    </article>
+  </a>-->
+
+    <!-- Revision Summary -->
+  <a href="#revision" aria-label="Revision Summary">
+    <article class="topic-card topic-card-brown">
+        <h3>📖 Exam Questions - COMING SOON</h3>
+        <p class="TopicsList">Bulletproof yourself with exam questions</p>
+        <p class="TopicsList">Key formulas, important points, last-minute revision</p>
+        <p class="TopicsList">Difficulty rating: ⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐</p>
+    </article>
+  </a>
+
+  </main>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+

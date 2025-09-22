@@ -1,0 +1,481 @@
+{% extends "base.html" %}
+
+{% block title %}Negative and Fractional Indices - K4Maths{% endblock %}
+
+{% block head %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Learn Negative and Fractional Indices - Step-by-step guide with examples and practice">
+  
+  <!-- MathJax for LaTeX rendering -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
+{% endblock %}
+
+{% block content %}
+  <!-- Back navigation -->
+  <a href="{{ url_for('maths') }}" class="back-to-home">🔙 Back to Maths Topics</a>
+
+  <div class="lesson-container">
+    
+    <!-- Lesson Header -->
+    <header class="lesson-header">
+      <h1 class="lesson-title">Negative and Fractional Indices</h1>
+      <p class="lesson-subtitle">Understanding powers beyond the positive integers</p>
+      
+      <div class="lesson-meta">
+        <span class="meta-item">📚 Mathematics</span>
+        <span class="meta-item">🎯 Difficulty: ⭐⭐</span>
+        <span class="meta-item">⏱️ Reading time: 20 minutes</span>
+        <span class="meta-item">📋 Edexcel & AQA</span>
+      </div>
+    </header>
+
+    <!-- Table of Contents -->
+    <nav class="table-of-contents">
+      <h3 class="toc-title">📖 Contents</h3>
+      <ul class="toc-list">
+        <li class="toc-item"><a href="#introduction" class="toc-link">Introduction</a></li>
+        <li class="toc-item"><a href="#key-concepts" class="toc-link">Key Concepts</a></li>
+        <li class="toc-item"><a href="#examples" class="toc-link">Worked Examples</a></li>
+        <li class="toc-item"><a href="#practice" class="toc-link">Practice Problems</a></li>
+        <li class="toc-item"><a href="#summary" class="toc-link">Summary</a></li>
+      </ul>
+    </nav>
+
+    <!-- Lesson Navigation -->
+    <div class="lesson-nav">
+      <a href="{{ url_for('factoring') }}" class="nav-button">← Previous Lesson</a>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 0%;"></div>
+      </div>
+      <a href="{{ url_for('surds') }}" class="nav-button">Next Lesson →</a>
+    </div>
+
+    <!-- Introduction Section -->
+    <section id="introduction" class="lesson-section">
+      <h2 class="section-heading">📚 Introduction</h2>
+      
+      <p class="lesson-text">
+        So far, you might have worked with positive whole number indices (powers), like $x^2$ or $x^3$. But what happens when we have negative indices like $x^{-2}$, or fractional indices like $x^{\frac{1}{2}}$? These extensions to the index laws allow us to express a wider range of mathematical ideas compactly, from reciprocals to roots of numbers.
+      </p>
+
+      <div class="definition-box">
+        <h4 class="box-title">🎯 Learning Objectives</h4>
+        <p class="lesson-text">
+          By the end of this lesson, you will be able to:
+        </p>
+        <ul class="lesson-text">
+          <li>Understand and interpret negative indices as reciprocals</li>
+          <li>Recognize fractional indices as roots of numbers</li>
+          <li>Apply the laws of indices to expressions with negative and fractional powers</li>
+          <li>Calculate numerical values of expressions with negative and fractional indices</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Key Concepts Section -->
+    <section id="key-concepts" class="lesson-section">
+      <h2 class="section-heading">🔑 Key Concepts</h2>
+      
+      <h3 class="subsection-heading">Negative Indices</h3>
+      <p class="lesson-text">
+        A negative index indicates the reciprocal of the base raised to the corresponding positive power.
+      </p>
+
+      <div class="definition-box">
+        <h4 class="box-title">📖 Definition</h4>
+        <p class="lesson-text">
+          <strong>Negative Index:</strong> For any non-zero number $a$ and positive number $n$:
+        </p>
+      </div>
+
+      <!-- LaTeX Math Example -->
+      <div class="math-display">
+        $$a^{-n} = \frac{1}{a^n}$$
+      </div>
+
+      <p class="lesson-text">
+        This means that when we see a negative index, we take the reciprocal of the base raised to the positive value of that index.
+      </p>
+
+      <div class="tip-box">
+        <h4 class="box-title">💡 Pro Tip</h4>
+        <p class="lesson-text">
+          When working with negative indices, you can first convert them to fractions with positive indices before proceeding with further calculations. This often simplifies the problem.
+        </p>
+      </div>
+
+      <h3 class="subsection-heading">Fractional Indices</h3>
+      
+      <div class="definition-box">
+        <h4 class="box-title">📖 Definition</h4>
+        <p class="lesson-text">
+          <strong>Fractional Index:</strong> For any non-negative number $a$ and positive integers $m$ and $n$:
+        </p>
+      </div>
+
+      <div class="math-display">
+        $$a^{\frac{1}{n}} = \sqrt[n]{a}$$
+        $$a^{\frac{m}{n}} = \sqrt[n]{a^m} = (\sqrt[n]{a})^m$$
+      </div>
+
+      <p class="lesson-text">
+        This means that:
+        <ul class="lesson-text">
+          <li>$a^{\frac{1}{n}}$ represents the $n$th root of $a$</li>
+          <li>$a^{\frac{m}{n}}$ represents the $n$th root of $a^m$, or the $m$th power of the $n$th root of $a$</li>
+        </ul>
+      </p>
+
+      <h3 class="subsection-heading">Combining Negative and Fractional Indices</h3>
+      <p class="lesson-text">
+        We can also have indices that are both negative and fractional. The rules still apply:
+      </p>
+
+      <div class="math-display">
+        $$a^{-\frac{m}{n}} = \frac{1}{a^{\frac{m}{n}}} = \frac{1}{\sqrt[n]{a^m}}$$
+      </div>
+    </section>
+
+    <!-- Worked Examples Section -->
+    <section id="examples" class="lesson-section">
+      <h2 class="section-heading">📝 Worked Examples</h2>
+      
+      <div class="example-box">
+        <h4 class="box-title">📋 Example 1: Negative Indices</h4>
+        
+        <p class="lesson-text"><strong>Question:</strong> Evaluate $2^{-3}$.</p>
+        
+        <div class="solution-steps">
+          <h5 class="subsection-heading">Solution:</h5>
+          
+          <div class="step">
+            <div class="step-number">Step 1:</div>
+            <p class="lesson-text">Apply the negative index rule: $a^{-n} = \frac{1}{a^n}$</p>
+            <div class="math-display">
+              $$2^{-3} = \frac{1}{2^3}$$
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">Step 2:</div>
+            <p class="lesson-text">Calculate $2^3$.</p>
+            <div class="math-display">
+              $$2^3 = 2 \times 2 \times 2 = 8$$
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">Final Answer:</div>
+            <p class="lesson-text">Therefore:</p>
+            <div class="math-display">
+              $$2^{-3} = \frac{1}{2^3} = \frac{1}{8} = 0.125$$
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="example-box">
+        <h4 class="box-title">📋 Example 2: Fractional Indices</h4>
+        
+        <p class="lesson-text"><strong>Question:</strong> Evaluate $9^{\frac{1}{2}}$.</p>
+        
+        <div class="solution-steps">
+          <h5 class="subsection-heading">Solution:</h5>
+          
+          <div class="step">
+            <div class="step-number">Step 1:</div>
+            <p class="lesson-text">Apply the fractional index rule: $a^{\frac{1}{n}} = \sqrt[n]{a}$</p>
+            <div class="math-display">
+              $$9^{\frac{1}{2}} = \sqrt{9}$$
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">Final Answer:</div>
+            <p class="lesson-text">Therefore:</p>
+            <div class="math-display">
+              $$9^{\frac{1}{2}} = \sqrt{9} = 3$$
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="example-box">
+        <h4 class="box-title">📋 Example 3: Mixed Fractional Indices</h4>
+        
+        <p class="lesson-text"><strong>Question:</strong> Evaluate $8^{\frac{2}{3}}$.</p>
+        
+        <div class="solution-steps">
+          <h5 class="subsection-heading">Solution:</h5>
+          
+          <div class="step">
+            <div class="step-number">Step 1:</div>
+            <p class="lesson-text">Apply the fractional index rule: $a^{\frac{m}{n}} = \sqrt[n]{a^m}$ or $a^{\frac{m}{n}} = (\sqrt[n]{a})^m$</p>
+            <p class="lesson-text">Let's use the second form:</p>
+            <div class="math-display">
+              $$8^{\frac{2}{3}} = (8^{\frac{1}{3}})^2 = (\sqrt[3]{8})^2$$
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">Step 2:</div>
+            <p class="lesson-text">Calculate $\sqrt[3]{8}$.</p>
+            <div class="math-display">
+              $$\sqrt[3]{8} = 2$$
+            </div>
+            <p class="lesson-text">because $2^3 = 8$.</p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">Final Answer:</div>
+            <p class="lesson-text">Therefore:</p>
+            <div class="math-display">
+              $$8^{\frac{2}{3}} = (8^{\frac{1}{3}})^2 = (\sqrt[3]{8})^2 = 2^2 = 4$$
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="example-box">
+        <h4 class="box-title">📋 Example 4: Combined Negative and Fractional Indices</h4>
+        
+        <p class="lesson-text"><strong>Question:</strong> Simplify $4^{-\frac{1}{2}}$.</p>
+        
+        <div class="solution-steps">
+          <h5 class="subsection-heading">Solution:</h5>
+          
+          <div class="step">
+            <div class="step-number">Step 1:</div>
+            <p class="lesson-text">Apply the negative index rule: $a^{-n} = \frac{1}{a^n}$</p>
+            <div class="math-display">
+              $$4^{-\frac{1}{2}} = \frac{1}{4^{\frac{1}{2}}}$$
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">Step 2:</div>
+            <p class="lesson-text">Apply the fractional index rule: $a^{\frac{1}{n}} = \sqrt[n]{a}$</p>
+            <div class="math-display">
+              $$4^{\frac{1}{2}} = \sqrt{4} = 2$$
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">Final Answer:</div>
+            <p class="lesson-text">Therefore:</p>
+            <div class="math-display">
+              $$4^{-\frac{1}{2}} = \frac{1}{4^{\frac{1}{2}}} = \frac{1}{2} = 0.5$$
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Common Mistakes Section -->
+    <section class="lesson-section">
+      <h2 class="section-heading">⚠️ Common Mistakes</h2>
+      
+      <div class="warning-box">
+        <h4 class="box-title">🚫 Mistake 1: Confusing $a^{-n}$ with $-a^n$</h4>
+        <p class="lesson-text">
+          <strong>What students often do wrong:</strong> Thinking that $a^{-n}$ is the same as $-a^n$.
+        </p>
+        <p class="lesson-text">
+          <strong>Why it's wrong:</strong> $a^{-n}$ means $\frac{1}{a^n}$, while $-a^n$ means the negative of $a^n$.
+        </p>
+        <p class="lesson-text">
+          <strong>How to avoid it:</strong> Remember that the negative sign in the exponent means reciprocal, not negative value. For example, $2^{-3} = \frac{1}{2^3} = \frac{1}{8}$, but $-2^3 = -(2^3) = -8$.
+        </p>
+      </div>
+
+      <div class="warning-box">
+        <h4 class="box-title">🚫 Mistake 2: Incorrect Simplification of Fractional Indices</h4>
+        <p class="lesson-text">
+          <strong>What students often do wrong:</strong> Incorrectly applying the rules for fractional indices or trying to use shortcuts.
+        </p>
+        <p class="lesson-text">
+          <strong>Why it's wrong:</strong> Fractional indices have specific meanings related to roots and powers, and incorrect application can lead to wrong answers.
+        </p>
+        <p class="lesson-text">
+          <strong>How to avoid it:</strong> Remember that $a^{\frac{m}{n}} = \sqrt[n]{a^m} = (\sqrt[n]{a})^m$. Always double-check your work and use the correct sequence of operations.
+        </p>
+      </div>
+    </section>
+
+    <!-- Practice Problems Section -->
+    <section id="practice" class="lesson-section">
+      <h2 class="section-heading">💪 Practice Problems</h2>
+      
+      <p class="lesson-text lesson-text-center">
+        Try these problems to test your understanding:
+      </p>
+
+      <div class="example-box">
+        <h4 class="box-title">🎯 Practice Question 1</h4>
+        <p class="lesson-text">Evaluate the following:</p>
+        <p class="lesson-text">(a) $5^{-2}$</p>
+        <p class="lesson-text">(b) $16^{\frac{1}{2}}$</p>
+        <p class="lesson-text">(c) $27^{\frac{2}{3}}$</p>
+        <p class="lesson-text">(d) $25^{-\frac{1}{2}}$</p>
+        
+        <details style="margin-top: 15px;">
+          <summary style="cursor: pointer; color: var(--accent-blue); font-weight: 600;">
+            🔍 Show Solution
+          </summary>
+          <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(74, 158, 255, 0.2);">
+            <p class="lesson-text">(a) $5^{-2} = \frac{1}{5^2} = \frac{1}{25} = 0.04$</p>
+            <p class="lesson-text">(b) $16^{\frac{1}{2}} = \sqrt{16} = 4$</p>
+            <p class="lesson-text">(c) $27^{\frac{2}{3}} = (\sqrt[3]{27})^2 = 3^2 = 9$</p>
+            <p class="lesson-text">(d) $25^{-\frac{1}{2}} = \frac{1}{25^{\frac{1}{2}}} = \frac{1}{\sqrt{25}} = \frac{1}{5} = 0.2$</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="example-box">
+        <h4 class="box-title">🎯 Practice Question 2</h4>
+        <p class="lesson-text">Simplify the following expressions:</p>
+        <p class="lesson-text">(a) $2^3 \times 2^{-5}$</p>
+        <p class="lesson-text">(b) $\frac{3^{-2}}{3^{-4}}$</p>
+        <p class="lesson-text">(c) $(4^{\frac{1}{2}})^3$</p>
+        <p class="lesson-text">(d) $9^{\frac{3}{2}} \div 9^{\frac{1}{2}}$</p>
+        
+        <details style="margin-top: 15px;">
+          <summary style="cursor: pointer; color: var(--accent-blue); font-weight: 600;">
+            🔍 Show Solution
+          </summary>
+          <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(74, 158, 255, 0.2);">
+            <p class="lesson-text">(a) $2^3 \times 2^{-5} = 2^{3 + (-5)} = 2^{-2} = \frac{1}{2^2} = \frac{1}{4} = 0.25$</p>
+            <p class="lesson-text">(b) $\frac{3^{-2}}{3^{-4}} = 3^{-2-(-4)} = 3^{-2+4} = 3^2 = 9$</p>
+            <p class="lesson-text">(c) $(4^{\frac{1}{2}})^3 = 4^{\frac{1}{2} \times 3} = 4^{\frac{3}{2}} = (\sqrt{4})^3 = 2^3 = 8$</p>
+            <p class="lesson-text">(d) $9^{\frac{3}{2}} \div 9^{\frac{1}{2}} = 9^{\frac{3}{2} - \frac{1}{2}} = 9^1 = 9$</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- Summary Section -->
+    <section id="summary" class="lesson-section">
+      <h2 class="section-heading">📋 Summary</h2>
+      
+      <div class="definition-box">
+        <h4 class="box-title">🎯 Key Takeaways</h4>
+        <ul class="lesson-text">
+          <li>Negative indices represent reciprocals: $a^{-n} = \frac{1}{a^n}$</li>
+          <li>Fractional indices represent roots: $a^{\frac{1}{n}} = \sqrt[n]{a}$</li>
+          <li>Mixed fractional indices combine both concepts: $a^{\frac{m}{n}} = \sqrt[n]{a^m} = (\sqrt[n]{a})^m$</li>
+          <li>The standard laws of indices still apply for negative and fractional indices</li>
+          <li>Negative fractional indices represent the reciprocal of a root: $a^{-\frac{m}{n}} = \frac{1}{a^{\frac{m}{n}}} = \frac{1}{\sqrt[n]{a^m}}$</li>
+        </ul>
+      </div>
+
+      <div class="tip-box">
+        <h4 class="box-title">📚 What's Next?</h4>
+        <p class="lesson-text">
+          Now that you understand negative and fractional indices, you're ready to learn about surds - irrational numbers expressed using root symbols. Surds are closely related to fractional indices and are essential for exact calculations in advanced mathematics.
+        </p>
+      </div>
+    </section>
+
+    <!-- Lesson Navigation -->
+    <div class="lesson-nav">
+      <a href="{{ url_for('factoring') }}" class="nav-button">← Previous Lesson</a>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 100%;"></div>
+      </div>
+      <a href="{{ url_for('surds') }}" class="nav-button">Next Lesson →</a>
+    </div>
+
+  </div>
+
+  <!-- Back to top button -->
+  <div style="text-align: center; margin: 30px 0;">
+    <a href="#top" class="nav-button">⬆️ Back to Top</a>
+  </div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Smooth scrolling for table of contents
+    const tocLinks = document.querySelectorAll('.toc-link');
+    tocLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Progress bar animation based on scroll
+    const progressBar = document.querySelector('.progress-fill');
+    if (progressBar) {
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.body.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            progressBar.style.width = Math.min(scrollPercent, 100) + '%';
+        });
+    }
+
+    // Highlight current section in table of contents
+    const sections = document.querySelectorAll('.lesson-section');
+    const tocNavLinks = document.querySelectorAll('.toc-link');
+    
+    function highlightTOC() {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (window.pageYOffset >= (sectionTop - 200)) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        tocNavLinks.forEach(link => {
+            link.style.background = '';
+            link.style.borderLeftColor = 'transparent';
+            if (link.getAttribute('href') === '#' + current) {
+                link.style.background = 'rgba(74, 158, 255, 0.1)';
+                link.style.borderLeftColor = 'var(--accent-blue)';
+            }
+        });
+    }
+    
+    window.addEventListener('scroll', highlightTOC);
+    
+    // Initialize MathJax rendering
+    if (window.MathJax) {
+        MathJax.typesetPromise().then(() => {
+            console.log('MathJax rendering complete');
+        });
+    }
+});
+</script>
+{% endblock %}

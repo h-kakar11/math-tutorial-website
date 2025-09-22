@@ -1,0 +1,473 @@
+{% extends "base.html" %}
+
+{% block title %}Dividing Complex Numbers - K4Maths{% endblock %}
+
+{% block head %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Learn LESSON_TITLE_HERE - Step-by-step guide with examples and practice">
+  
+  <!-- MathJax for LaTeX rendering -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
+{% endblock %}
+
+{% block content %}
+  <!-- Back navigation -->
+  <a href="{{ url_for('complex_numbers') }}" class="back-to-home">🔙 Back to Complex Numbers</a>
+
+  <div class="lesson-container">
+    
+    <!-- Lesson Header -->
+    <header class="lesson-header">
+      <h1 class="lesson-title">Dividing Complex Numbers</h1>
+      <p class="lesson-subtitle">Learn how to divide complex numbers with ease.</p>
+
+      <div class="lesson-meta">
+        <span class="meta-item">📚 Further Mathematics</span>
+        <span class="meta-item">🎯 Difficulty: ⭐⭐</span>
+        <span class="meta-item">⏱️ Reading time: 15 minutes</span>
+        <span class="meta-item">📋 Edexcel & AQA</span>
+      </div>
+    </header>
+
+    <!-- Table of Contents -->
+    <nav class="table-of-contents">
+      <h3 class="toc-title">📖 Contents</h3>
+      <ul class="toc-list">
+        <li class="toc-item"><a href="#introduction" class="toc-link">Introduction</a></li>
+        <li class="toc-item"><a href="#key-concepts" class="toc-link">Key Concepts</a></li>
+        <li class="toc-item"><a href="#examples" class="toc-link">Worked Examples</a></li>
+        <li class="toc-item"><a href="#practice" class="toc-link">Practice Problems</a></li>
+        <li class="toc-item"><a href="#summary" class="toc-link">Summary</a></li>
+      </ul>
+    </nav>
+
+    <!-- Lesson Navigation -->
+    <div class="lesson-nav">
+      <a href="#" class="nav-button">← Previous Lesson</a>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 0%;"></div>
+      </div>
+      <a href="#" class="nav-button">Next Lesson →</a>
+    </div>
+
+    <!-- Introduction Section -->
+    <section id="introduction" class="lesson-section">
+      <h2 class="section-heading">📚 Introduction</h2>
+      
+      <p class="lesson-text">
+        In this lesson, we will explore the process of dividing complex numbers. Understanding this concept is crucial for solving advanced problems in mathematics, particularly in fields like engineering and physics. It seems tricky, but it's quite easy.
+      </p>
+
+      <div class="definition-box">
+        <h4 class="box-title">🎯 Learning Objectives</h4>
+        <p class="lesson-text">
+          By the end of this lesson, you will be able to:
+        </p>
+        <ul class="lesson-text">
+          <li>Understand the concept of dividing complex numbers.</li>
+          <li>Apply the division algorithm to complex numbers.</li>
+          <li>Understand what happens when we divide.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Key Concepts Section -->
+    <section id="key-concepts" class="lesson-section">
+      <h2 class="section-heading">🔑 Key Concepts</h2>
+
+      <h3 class="subsection-heading">Must knows before tackling division</h3>
+      <p class="lesson-text">
+        Before we dive into dividing complex numbers, it's essential to grasp a few key concepts:<br>
+          What complex numbers are (in the form a + bi).<br>    
+          The concept of the conjugate of a complex number.
+      </p>
+
+      <div class="definition-box">
+        <h4 class="box-title">📖 Definition</h4>
+        <p class="lesson-text">
+          <strong>Conjugate Of Complex number:</strong> If $z = a + bi, \quad a, b \in \mathbb{R}$, then the conjugate is: $z = a - bi$<br>
+          Its simply just flipping the sign in a complex number.
+          <br> If a complex number is $z$, then the conjugate is denoted as:<br> $$\overline{z}\quad  \text{or,}\quad z^{-1}\quad  \text{or,}\quad z^*$$
+        </p>
+      </div>
+
+      <!-- LaTeX Math Example -->
+      <div class="math-display">
+        $$\text{if } z = a + bi, \quad a, b \in \mathbb{R} \text{ then: } \overline{z} = a - bi$$
+      </div>
+
+      <h3 class="subsection-heading">Simple division of Complex numbers</h3>
+      <p class="lesson-text">
+        Dividing a complex number by a real number is very easy. <br>
+        Just divide both the real and imaginary parts by that number.      
+    </p>
+    <div class="definition-box">
+        <h4 class="box-title">📖 Example of Simple Division</h4>
+            <p class="lesson-text">
+                <strong>$z = 9 + 12i$. Solve: $\frac{z}{3}$</strong> <br>
+                To divide by 3, we divide both the real and imaginary parts by 3: <br>
+                $$\frac{z}{3} = \frac{9 + 12i}{3} = \frac{9}{3} + \frac{12i}{3} = 3 + 4i$$
+            </p>
+    </div>
+
+<h3 class="subsection-heading"><br>Complex Division</h3>
+    <p class="lesson-text">
+        This is where you divide a Complex number by another complex number. <br>
+        To do this, we multiply the top and bottom by the conjugate of the denominator.<br>
+        Allow me to show you an example (after the tip).
+    </p>
+
+      <div class="tip-box">
+        <h4 class="box-title">💡 Pro Tip</h4>
+        <p class="lesson-text">
+            For simple division, its really easy if you write $a$ and $b$ clearly. Then, you can simply do: $$\frac{a}{\text{denominator}} + \frac{bi}{\text{denominator}}$$
+            <br> Remember, to find the conjugate, just flip the sign. Example:
+            $$\text{let } z = 3 + 4i, \text{ then } \overline{z} = 3 - 4i$$
+            <br> Dont forget, the conjugate is also sometimes given as:
+            $$z^*, \text{ or } z^{-1}$$
+        </p>
+      </div>
+    </section>
+
+    <!-- Worked Examples Section -->
+    <section id="examples" class="lesson-section">
+      <h2 class="section-heading">📝 Worked Examples</h2>
+      
+      <div class="example-box">
+        <h4 class="box-title">📋 Example 1: Dividing Complex number by another complex number.</h4>
+
+        <p class="lesson-text"><strong>Question:</strong> If $z = 5 + 10i$, and $w = 2 + 3i$, solve: $\frac{z}{w}$</p>
+        <div class="solution-steps">
+          <h5 class="subsection-heading">Solution:</h5>
+          <div class="step">
+            <div class="step-number">Step 1:</div>
+            <p class="lesson-text">Find the conjugate of the Denominator - just flip the sign.</p>
+            <div class="math-display">
+                $$ \text{Since } w \text{ is the denominator, its conjugate is } \boxed{\overline{w} = 2 - 3i}$$
+            </div>
+          </div>
+
+        <div class="step">
+            <div class="step-number">Step 2:</div>
+                <p class="lesson-text">Now multiply the numerator and denominator by the conjugate of the denominator.<br>The question asked for $\frac{z}{w}$, so write it clearly:</p>
+                    <div class="math-display">
+                    $$\text{The question asked for } \frac{z}{w} = \frac{(5 + 10i)}{(2 + 3i)}$$
+                    <br>$\text{Multiply top and bottom by the conjugate of denominator:}$
+                    $$= \frac{(5 + 10i)(2 - 3i)}{(2 + 3i)(2 - 3i)}$$
+                    </div>
+            </div>
+
+
+        <div class="step">
+          <div class="step-number">Step 3:</div>
+          <p class="lesson-text">Let's solve the denominator first.<br>We have: $(2 + 3i)(2 - 3i)$ so let's expand the brackets.<br>Remember, $i^{2} = -1, \text{ because: } i = \sqrt{-1}, \text{ and } (\sqrt{-1})^2 = -1$</p>
+          <div class="math-display">
+            $$(2 + 3i)(2 - 3i) = 4 - 6i + 6i - 9i^{2}$$
+            $$ -6i + 6i = 0, \text{ so we have: }$$
+            $$= 4 - 9i^{2} = 4 - 9(-1) = 4 + 9 = \boxed{13}$$
+            $$\text{because: } i^{2} = -1$$
+            $$\boxed{\text{So the Denominator = 13}}$$
+
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">Step 4:</div>
+          <p class="lesson-text">Let's solve the numerator now.<br>We have: $(5 + 10i)(2 - 3i)$ so let's expand the brackets.<br>Remember, $i^{2} = -1, \text{ because: } i = \sqrt{-1}, \text{ and } (\sqrt{-1})^2 = -1$</p>
+          <div class="math-display">
+            $$(5 + 10i)(2 - 3i) = 10 - 15i + 20i - 30i^{2}$$
+            $$\text{Remember: } i^{2} = -1, \text{ so } -30i^{2} \rightarrow -30(-1) = +30$$
+            $$\text{Now we have: }  10 - 15i + 20i + 30$$
+            $$\text{Combine Imaginary and Real parts separately:}$$
+            $$= (10 + 30) + (-15i + 20i) = \boxed{40 + 5i}$$
+            $$\boxed{\text{So the Numerator }= 40 + 5i}$$
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">Step 5:</div>
+          <p class="lesson-text">Now we can complete the division by putting our results together:<br>Its best to give exact answers, so you can leave the answer in fraction form.</p>
+          <div class="math-display">
+            $$\frac{z}{w} = \frac{40 + 5i}{13} $$
+            $$\text{perform simple division on each term:}$$
+            $$\frac{z}{w} = \frac{40}{13} + \frac{5i}{13} = \boxed{\frac{40}{13} + \frac{5}{13}i}$$
+            $$\text{Final answers:}$$
+            $$\frac{z}{w} = \boxed{\frac{40}{13} + \frac{5}{13}i} \text{ or } \boxed{\frac{40}{13} + \frac{5i}{13}}$$
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Common Mistakes Section -->
+    <section class="lesson-section">
+      <h2 class="section-heading">⚠️ Common Mistakes</h2>
+      
+      <div class="warning-box">
+        <h4 class="box-title">🚫 Mistake 1: Forgetting $i^2 = -1$</h4>
+        <p class="lesson-text">
+          <strong>What students often do wrong:</strong> They forget to apply the fact that $i^2 = -1$ when simplifying expressions involving $i$.
+        </p>
+        <p class="lesson-text">
+          <strong>Why it's wrong:</strong> This leads to incorrect simplifications and ultimately wrong answers.
+        </p>
+        <p class="lesson-text">
+          <strong>How to avoid it:</strong> Always remember to substitute $i^2$ with $-1$ when simplifying expressions.
+        </p>
+      </div>
+
+      <div class="warning-box">
+        <h4 class="box-title">🚫 Mistake 2: Adding like terms incorrectly, or forgetting it completely.</h4>
+        <p class="lesson-text">
+          <strong>What students often do wrong:</strong> They either forget to combine like terms or do it incorrectly.
+        </p>
+        <p class="lesson-text">
+          <strong>Why it's wrong:</strong> This can easily lead to incorrect answers, especially in complex expressions.
+        </p>
+        <p class="lesson-text">
+          <strong>How to avoid it:</strong> Always double-check your work to ensure that like terms are combined correctly, and practice further.
+        </p>
+      </div>
+    </section>
+
+    <!-- Practice Problems Section -->
+    <section id="practice" class="lesson-section">
+      <h2 class="section-heading">💪 Practice Problems</h2>
+      
+      <p class="lesson-text lesson-text-center">
+        Try these problems to test your understanding:
+      </p>
+
+      <div class="example-box">
+        <h4 class="box-title">🎯 Practice Questions A</h4>
+        <p class="lesson-text">
+            (A) $j = 3 + 4i$, and $k = 5 - 2i$, find  $j^{*}$ and $k^{*}$<br><br>
+            (B) $m = 64 + 48i$, Solve simple division: $\frac{m}{8}$<br><br>
+            (C) $p = 8 + 6i$, and $q = 2 + 3i$, Solve: $p^{*}+q^{*}$<br><br>
+            (D) $q = 2 + 3i$. find $qq^{*}$
+        </p>
+        
+        <details style="margin-top: 15px;">
+          <summary style="cursor: pointer; color: var(--accent-blue); font-weight: 600;">
+            🔍 Show Solution
+          </summary>
+          <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(74, 158, 255, 0.2);">
+            <p class="lesson-text">
+                (A) $j^{*} = 3 - 4i$, and $k^{*} = \boxed{5 + 2i}$<br><br>
+                (B) $\frac{m}{8} = \frac{64 + 48i}{8} = \frac{64}{8} + \frac{48i}{8} = \boxed{8 + 6i}$<br><br>
+                (C) $p^{*}+q^{*} = (8 - 6i) + (2 - 3i) = \boxed{10 - 9i}$<br><br>
+                (D) $qq^{*} = (2 + 3i)(2 - 3i) = 4 - 9i^{2} = 4 + 9 = \boxed{13}$
+            </p>
+          </div>
+        </details>
+      </div>
+
+      <div class="example-box">
+        <h4 class="box-title">🎯 Practice Questions B</h4>
+        <p class="lesson-text">
+            (A) $z = 7 + 6i$, and $w = 3 + 2i$, Solve: $\frac{z}{w}$<br><br>
+            (B) $a = 4 + 5i$, and $b = 1 - 2i$, Solve: $\frac{a}{b}$<br><br>
+            (C) $c = 1 + i$, and $d = 1 - i$, Solve: $\frac{c}{d}$<br><br>
+            (D) $e = 2 + 3i$, and $f = 4 + i$, Solve: $\frac{e}{f}$
+        </p>
+        
+        <details style="margin-top: 15px;">
+          <summary style="cursor: pointer; color: var(--accent-blue); font-weight: 600;">
+            🔍 Show Solution
+          </summary>
+          <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(74, 158, 255, 0.2);">
+            <p class="lesson-text">
+                (A) $\frac{z}{w} = \frac{(7 + 6i)(3 - 2i)}{(3 + 2i)(3 - 2i)} = \frac{21 - 14i + 18i - 12i^{2}}{9 - 4i^{2}} = \frac{21 + 4i + 12}{9 + 4} = \frac{33 + 4i}{13} = \boxed{\frac{33}{13} + \frac{4}{13}i}$<br><br>
+                (B) $\frac{a}{b} = \frac{(4 + 5i)(1 + 2i)}{(1 - 2i)(1 + 2i)} = \frac{4 + 8i + 5i + 10i^{2}}{1 - 4i^{2}} = \frac{4 + 13i - 10}{1 + 4} = \frac{-6 + 13i}{5} = \boxed{-\frac{6}{5} + \frac{13}{5}i}$<br><br>
+                (C) $\frac{c}{d} = \frac{(1 + i)(1 + i)}{(1 - i)(1 + i)} = \frac{1 + i + i + i^{2}}{1 - i^{2}} = \frac{1 + 2i - 1}{1 + 1} = \frac{2i}{2} = \boxed{i}$<br><br>
+                (D) $\frac{e}{f} = \frac{(2 + 3i)(4 - i)}{(4 + i)(4 - i)} = \frac{8 - 2i + 12i - 3i^{2}}{16 - i^{2}} = \frac{8 + 10i + 3}{16 + 1} = \frac{11 + 10i}{17} = \boxed{\frac{11}{17} + \frac{10}{17}i}$
+            </p>
+        </div>
+      </details>
+      </div>
+      
+    </section>
+
+    <!-- Challenge Exam Question Section -->
+    <section id="challenge" class="lesson-section">
+      <h2 class="section-heading">🏆 Challenge Exam Question</h2>
+      
+      <div class="example-box">
+        <h4 class="box-title">📋 Exam-Style Question</h4>
+        <p class="lesson-text">
+            Give your answers in exact value. <br>$h = \frac{6 + 8i}{2 + 3i}$, and $j = \frac{5 + 7i}{1 - 4i}$. <br><br>
+            (A) Find the modulus of $h$ (3 marks)<br><br>
+            (B) Find the argument of $j$. Give your answer in Radians. (3 marks)<br><br>
+            (C) Solve $h + j$ (4 marks)
+        </p>
+        
+        <details style="margin-top: 15px;">
+          <summary style="cursor: pointer; color: var(--accent-blue); font-weight: 600;">
+            🔍 Show Solution
+          </summary>
+          <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(74, 158, 255, 0.2);">
+            <p class="lesson-text">
+                <strong>(A)</strong> First, find $h$:<br>
+                $$h = \frac{6 + 8i}{2 + 3i} = \frac{(6 + 8i)(2 - 3i)}{(2 + 3i)(2 - 3i)}$$
+                $$= \frac{12 - 18i + 16i - 24i^{2}}{4 - 9i^{2}} = \frac{12 - 2i + 24}{4 + 9}$$
+                $$= \frac{36 - 2i}{13} = \frac{36}{13} - \frac{2}{13}i$$
+                
+                Now find the modulus of $h$:
+                $$|h| = \sqrt{\left(\frac{36}{13}\right)^2 + \left(-\frac{2}{13}\right)^2}$$
+                $$= \sqrt{\frac{1296}{169} + \frac{4}{169}} = \sqrt{\frac{1300}{169}}$$
+                $$= \frac{\sqrt{1300}}{13} = \frac{\sqrt{100 \cdot 13}}{13} = \frac{10\sqrt{13}}{13}$$
+                $$\boxed{|h| = \frac{10\sqrt{13}}{13}}$$<br><br>
+                
+                <strong>(B)</strong> First, find $j$:<br>
+                $$j = \frac{5 + 7i}{1 - 4i} = \frac{(5 + 7i)(1 + 4i)}{(1 - 4i)(1 + 4i)}$$
+                $$= \frac{5 + 20i + 7i + 28i^{2}}{1 - 16i^{2}} = \frac{5 + 27i - 28}{1 + 16}$$
+                $$= \frac{-23 + 27i}{17} = -\frac{23}{17} + \frac{27}{17}i$$
+                
+                Now find the argument of $j$:
+                $$\arg(j) = \tan^{-1}\left(\frac{\text{Imaginary part}}{\text{Real part}}\right) = \tan^{-1}\left(\frac{\frac{27}{17}}{-\frac{23}{17}}\right)$$
+                $$= \tan^{-1}\left(-\frac{27}{23}\right)$$
+                
+                Since the real part is negative and the imaginary part is positive, $j$ is in the second quadrant. Therefore, we add $\pi$:
+                $$\arg(j) = \tan^{-1}\left(-\frac{27}{23}\right) + \pi$$
+                $$= \pi - \tan^{-1}\left(\frac{27}{23}\right)$$
+                $$\boxed{\arg(j) = \pi - \tan^{-1}\left(\frac{27}{23}\right) \text{ radians}}$$<br><br>
+                
+                <strong>(C)</strong> Find $h + j$:<br>
+                $$h + j = \left(\frac{36}{13} - \frac{2}{13}i\right) + \left(-\frac{23}{17} + \frac{27}{17}i\right)$$
+                
+                For the real parts (finding common denominator):
+                $$\frac{36}{13} - \frac{23}{17} = \frac{36 \cdot 17 - 23 \cdot 13}{13 \cdot 17} = \frac{612 - 299}{221} = \frac{313}{221}$$
+                
+                For the imaginary parts:
+                $$-\frac{2}{13} + \frac{27}{17} = \frac{-2 \cdot 17 + 27 \cdot 13}{13 \cdot 17} = \frac{-34 + 351}{221} = \frac{317}{221}$$
+                
+                Therefore:
+                $$\boxed{h + j = \frac{313}{221} + \frac{317}{221}i}$$
+            </p>
+          </div>
+        </details>
+      </div>
+    </section>    <!-- Summary Section -->
+    <section id="summary" class="lesson-section">
+      <h2 class="section-heading">📋 Summary</h2>
+      
+      <div class="definition-box">
+        <h4 class="box-title">🎯 Key Takeaways</h4>
+        <ul class="lesson-text">
+          <li>To find the conjugate of a complex number, flip the sign.</li>
+          <li>To divide complex numbers, multiply numerator and denominator by the denominator's conjugate.</li>
+          <li>To divide complex numbers by a real number, simply divide both the real and imaginary parts by the real number.</li>
+        </ul>
+      </div>
+
+      <div class="tip-box">
+        <h4 class="box-title">📚 What's Next?</h4>
+        <p class="lesson-text">
+          Now that you understand how to divide complex numbers, you can explore more advanced topics. I suggest doing some past paper questions to strengthen your understanding, or doing modulus and argument of complex numbers.<br> <a href = "/ModArgComplex">Click here to learn the modulus and argument of complex numbers:</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Lesson Navigation -->
+    <div class="lesson-nav">
+      <a href="#" class="nav-button">← Previous Lesson</a>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 100%;"></div>
+      </div>
+      <a href="#" class="nav-button">Next Lesson →</a>
+    </div>
+
+  </div>
+
+  <!-- Back to top button -->
+  <div style="text-align: center; margin: 30px 0;">
+    <a href="#top" class="nav-button">⬆️ Back to Top</a>
+  </div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Smooth scrolling for table of contents
+    const tocLinks = document.querySelectorAll('.toc-link');
+    tocLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Progress bar animation based on scroll
+    const progressBar = document.querySelector('.progress-fill');
+    if (progressBar) {
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.body.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            progressBar.style.width = Math.min(scrollPercent, 100) + '%';
+        });
+    }
+
+    // Highlight current section in table of contents
+    const sections = document.querySelectorAll('.lesson-section');
+    const tocNavLinks = document.querySelectorAll('.toc-link');
+    
+    function highlightTOC() {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (window.pageYOffset >= (sectionTop - 200)) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        tocNavLinks.forEach(link => {
+            link.style.background = '';
+            link.style.borderLeftColor = 'transparent';
+            if (link.getAttribute('href') === '#' + current) {
+                link.style.background = 'rgba(74, 158, 255, 0.1)';
+                link.style.borderLeftColor = 'var(--accent-blue)';
+            }
+        });
+    }
+    
+    window.addEventListener('scroll', highlightTOC);
+    
+    // Initialize MathJax rendering
+    if (window.MathJax) {
+        MathJax.typesetPromise().then(() => {
+            console.log('MathJax rendering complete');
+        });
+    }
+});
+</script>
+{% endblock %}

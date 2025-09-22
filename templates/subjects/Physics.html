@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+
+{% block title %}OCR A Physics Topics - K4Maths{% endblock %}
+
+{% block head %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+{% endblock %}
+
+{% block content %}
+  <a href="{{ url_for('index') }}" class="back-to-home">🏠 Back to Home</a>
+  
+  <section class="topic-header">
+    <h1>OCR A Physics - Full Topic Coverage</h1>
+    <h2>Here you'll find every OCR A Physics topic, organised for revision and mastery. Exam-style questions coming soon!</h2>
+  </section>
+
+  <section class="topic-intro">
+    <p style="text-align: center; padding: 5px 0px;">
+      The <strong>OCR A Physics</strong> specification covers all these topics.  
+      <br><br>
+      These are Year 1 and Year 2 topics — Mechanics, Electrons, Waves, and Quantum are just the start!  
+      <br><br>
+      (Minor disclaimer: The difficulty rating is subjective and based on my experience. Yours may differ.)
+      <br><br>
+      Difficulty ratings are out of 5 stars, with 1 being easiest and 5 being hardest.
+    </p>
+  </section>
+
+  <div style="margin-top: 20px;">
+    <a href="{{ url_for('index') }}" style="margin-right: 20px; margin-left: 20px;">🏠︎ - Back to Home<br></a>
+  </div>
+
+  <main class="topics-grid">
+
+  <div class="topic-card topic-card-blue">
+    <a href="">
+      <h6>Forces and Motion</h6>
+      <p class="TopicsList">Introduction, Mastery, and Guide to solve exam questions here</p>
+      <p class="TopicsList">Kinematics, dynamics, and Newton's laws explained with <br>examples</p>
+    </a>
+    <p class="TopicsList">Difficulty ⭐⭐</p>
+  </div>
+
+  <div class="topic-card topic-card-orangutan">
+    <a href="">
+      <h6>Waves and Interference</h6>
+      <p class="TopicsList">Introduction, Mastery, and Guide to solve exam questions here</p>
+      <p class="TopicsList">Introduction to progressive waves, superposition, and<br> diffraction</p>
+    </a>
+    <p class="TopicsList">Difficulty ⭐⭐⭐</p>
+  </div>
+
+  <div class="topic-card topic-card-red">
+    <a href="">
+      <h6>Electricity</h6>
+      <p class="TopicsList">Introduction, Mastery, and Guide to solve exam questions here</p>
+      <p class="TopicsList">Circuit theory, Ohm’s law, and resistivity covered in detail</p>
+    </a>
+    <p class="TopicsList">Difficulty ⭐⭐</p>
+  </div>
+
+  <div class="topic-card topic-card-orange">
+    <a href="">
+      <h6>Quantum Physics</h6>
+      <p class="TopicsList">Introduction, Mastery, and Guide to solve exam questions here</p>
+      <p class="TopicsList">Photons, the photoelectric effect, and wave-particle duality</p>
+    </a>
+    <p class="TopicsList">Difficulty ⭐⭐⭐⭐</p>
+  </div>
+
+  <div class="topic-card topic-card-purple">
+    <a href="">
+      <h6>Thermal Physics</h6>
+      <p class="TopicsList">Introduction, Mastery, and Guide to solve exam questions here</p>
+      <p class="TopicsList">Internal energy, specific heat, and gas laws</p>
+    </a>
+    <p class="TopicsList">Difficulty ⭐⭐⭐</p>
+  </div>
+
+  <div class="topic-card topic-card-teal">
+    <a href="">
+      <h6>Fields</h6>
+      <p class="TopicsList">Introduction, Mastery, and Guide to solve exam questions here</p>
+      <p class="TopicsList">Gravitational, electric, and magnetic fields compared</p>
+    </a>
+    <p class="TopicsList">Difficulty ⭐⭐⭐⭐</p>
+  </div>
+
+  <div class="topic-card topic-card-pink">
+    <a href="">
+      <h6>Simple Harmonic Motion</h6>
+      <p class="TopicsList">Introduction, Mastery, and Guide to solve exam questions here</p>
+      <p class="TopicsList">Oscillations, resonance, and damping explained</p>
+    </a>
+    <p class="TopicsList">Difficulty ⭐⭐⭐</p>
+  </div>
+
+  <div class="topic-card topic-card-yellow">
+    <a href="">
+      <h6>Capacitors</h6>
+      <p class="TopicsList">Introduction, Mastery, and Guide to solve exam questions here</p>
+      <p class="TopicsList">Charging, discharging, and time constant derivations</p>
+    </a>
+    <p class="TopicsList">Difficulty ⭐⭐</p>
+  </div>
+
+  <div class="topic-card topic-card-brown">
+    <a href="">
+      <h6>Astrophysics</h6>
+      <p class="TopicsList">Introduction, Mastery, and Guide to solve exam questions here</p>
+      <p class="TopicsList">The life cycle of stars, cosmology, and spectral analysis</p>
+    </a>
+    <p class="TopicsList">Difficulty ⭐⭐⭐⭐</p>
+  </div>
+
+  <!-- Topic Card: More Topics Coming Soon -->
+  <div class="topic-card topic-card-blue">
+    <a href="">
+      <h6>More Topics Coming Soon</h6>
+      <p class="TopicsList">Introduction, Mastery, and Guide to solve exam questions here</p>
+      <p class="TopicsList">Additional units and practice questions are on their way</p>
+    </a>
+    <p class="TopicsList">Difficulty ♾️</p>
+  </div>
+
+</div>
+
+
+<footer>
+  <div class="footer-row">
+    <span class="footer-text">© 2025 K4MATHS.COM</span>
+    <span class="footer-text">· Made with ❤️, solely by Hamim Kakar</span>
+    <span class="footer-text">· Not affiliated with any exam board</span>
+  </div>
+  <div class="footer-row">
+    <span class="footer-text">For questions: <a class="footer-text" href="{{ url_for('contact_me') }}">Contact me</a></span>
+    <span class="footer-text">· Last updated: xx/xx/xxxx</span>
+  </div>
+  <div class="footer-row">
+    <span class="footer-text">This website is still in development, so please be patient with me.</span>
+    <span class="footer-text">· Please share this website with your friends and family!</span>
+    <span class="footer-text">Thank you for visiting!</span>
+  </div>
+  <div class="footer-row">
+    <span class="footer-text">Shoutout to my dear friends: Arya, Owen, Kyle, and Tyrese</span>
+  </div>
+</footer>
+
+</body>
+</html>

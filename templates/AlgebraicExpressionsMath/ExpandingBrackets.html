@@ -1,0 +1,241 @@
+{% extends "base.html" %}
+
+{% block title %}Expanding Brackets - K4Maths{% endblock %}
+
+{% block head %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Master expanding brackets in algebra, from single brackets to double brackets using FOIL and the grid method. Step-by-step examples and practice">
+  
+  <!-- MathJax for LaTeX rendering -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
+{% endblock %}
+
+{% block content %}
+  <!-- Back navigation -->
+  <a href="{{ url_for('maths') }}" class="back-to-home">🔙 Back to Maths Topics</a>
+
+  <div class="lesson-container">
+    
+    <!-- Lesson Header -->
+    <header class="lesson-header">
+      <h1 class="lesson-title">Mastering Expanding Brackets</h1>
+      <p class="lesson-subtitle">From simple distribution to tackling double brackets with confidence.</p>
+      
+      <div class="lesson-meta">
+        <span class="meta-item">📚 GCSE / A-Level Foundation</span>
+        <span class="meta-item">🎯 Difficulty: ⭐</span>
+        <span class="meta-item">⏱️ Reading time: 15 minutes</span>
+        <span class="meta-item">📋 All Exam Boards</span>
+      </div>
+    </header>
+
+    <!-- Table of Contents -->
+    <nav class="table-of-contents">
+      <h3 class="toc-title">📖 Contents</h3>
+      <ul class="toc-list">
+        <li class="toc-item"><a href="#introduction" class="toc-link">Introduction</a></li>
+        <li class="toc-item"><a href="#single-brackets" class="toc-link">Expanding Single Brackets</a></li>
+        <li class="toc-item"><a href="#double-brackets" class="toc-link">Expanding Double Brackets (FOIL)</a></li>
+        <li class="toc-item"><a href="#grid-method" class="toc-link">The Grid Method</a></li>
+        <li class="toc-item"><a href="#common-mistakes" class="toc-link">Common Mistakes</a></li>
+        <li class="toc-item"><a href="#practice" class="toc-link">Practice Problems</a></li>
+        <li class="toc-item"><a href="#summary" class="toc-link">Summary</a></li>
+      </ul>
+    </nav>
+
+    <!-- Introduction Section -->
+    <section id="introduction" class="lesson-section">
+      <h2 class="section-heading">📚 Introduction</h2>
+      <p class="lesson-text">
+        Expanding brackets is a fundamental skill in algebra. It's the process of removing brackets from an expression by multiplying everything inside the bracket by the term outside. It's like unlocking a puzzle to reveal a simpler expression inside.
+      </p>
+      <div class="definition-box">
+        <h4 class="box-title">🎯 Learning Objectives</h4>
+        <ul class="lesson-text">
+          <li>Expand expressions with single brackets.</li>
+          <li>Expand the product of two brackets (double brackets) using the FOIL method.</li>
+          <li>Use the grid method as a visual alternative for expanding.</li>
+          <li>Simplify expressions by collecting like terms after expanding.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Single Brackets Section -->
+    <section id="single-brackets" class="lesson-section">
+        <h2 class="section-heading">📝 Expanding Single Brackets</h2>
+        <p class="lesson-text">The rule is simple: multiply the term on the outside by <strong>every</strong> term on the inside. This is called the distributive law.</p>
+        <div class="example-box">
+            <h4 class="box-title">📋 Example 1: Expand $5(x + 3)$</h4>
+            <p class="lesson-text">Multiply 5 by $x$ and then multiply 5 by 3.</p>
+            <div class="math-display">
+                $$ 5(x+3) = (5 \times x) + (5 \times 3) = \boxed{5x + 15} $$
+            </div>
+        </div>
+        <div class="example-box">
+            <h4 class="box-title">📋 Example 2: Expand $3x(2x - 7)$</h4>
+            <p class="lesson-text">Be careful with the signs and indices!</p>
+            <div class="math-display">
+                $$ 3x(2x - 7) = (3x \times 2x) + (3x \times -7) = \boxed{6x^2 - 21x} $$
+            </div>
+        </div>
+    </section>
+
+    <!-- Double Brackets Section -->
+    <section id="double-brackets" class="lesson-section">
+        <h2 class="section-heading">🚀 Expanding Double Brackets (The FOIL Method)</h2>
+        <p class="lesson-text">When you have two brackets multiplied together, like $(a+b)(c+d)$, you need to multiply every term in the first bracket by every term in the second. A great way to remember this is **FOIL**.</p>
+        <div class="definition-box">
+            <h4 class="box-title">📖 FOIL Method</h4>
+            <ul class="lesson-text">
+                <li><strong>F</strong>irst: Multiply the first terms in each bracket.</li>
+                <li><strong>O</strong>uter: Multiply the outermost terms.</li>
+                <li><strong>I</strong>nner: Multiply the innermost terms.</li>
+                <li><strong>L</strong>ast: Multiply the last terms in each bracket.</li>
+            </ul>
+        </div>
+        <div class="example-box">
+            <h4 class="box-title">📋 Example 3: Expand $(x+4)(x+5)$</h4>
+            <div class="math-display">
+                $$ (x+4)(x+5) $$
+                $$ \text{F: } x \times x = x^2 $$
+                $$ \text{O: } x \times 5 = 5x $$
+                $$ \text{I: } 4 \times x = 4x $$
+                $$ \text{L: } 4 \times 5 = 20 $$
+                $$ \text{Combine them: } x^2 + 5x + 4x + 20 $$
+                $$ \text{Simplify by collecting like terms: } \boxed{x^2 + 9x + 20} $$
+            </div>
+        </div>
+    </section>
+
+    <!-- Grid Method Section -->
+    <section id="grid-method" class="lesson-section">
+        <h2 class="section-heading">Visualising with the Grid Method</h2>
+        <p class="lesson-text">If FOIL feels a bit abstract, the grid method is a fantastic visual tool. It works just like a multiplication grid you might have used in primary school.</p>
+        <div class="example-box">
+            <h4 class="box-title">📋 Example 4: Expand $(x-3)(2x+1)$ using the grid method</h4>
+            <p class="lesson-text">Draw a 2x2 grid. Write the terms of the first bracket along the side and the terms of the second bracket along the top.</p>
+            <table class="multiplication-grid">
+                <tr>
+                    <td class="grid-op">×</td>
+                    <td class="grid-term">2x</td>
+                    <td class="grid-term">+1</td>
+                </tr>
+                <tr>
+                    <td class="grid-term">x</td>
+                    <td class="grid-result">$2x^2$</td>
+                    <td class="grid-result">$+x$</td>
+                </tr>
+                <tr>
+                    <td class="grid-term">-3</td>
+                    <td class="grid-result">$-6x$</td>
+                    <td class="grid-result">$-3$</td>
+                </tr>
+            </table>
+            <p class="lesson-text" style="margin-top: 15px;">Now, add up all the terms from the results boxes and simplify:</p>
+            <div class="math-display">
+                $$ 2x^2 + x - 6x - 3 = \boxed{2x^2 - 5x - 3} $$
+            </div>
+        </div>
+    </section>
+
+    <!-- Common Mistakes Section -->
+    <section id="common-mistakes" class="lesson-section">
+      <h2 class="section-heading">⚠️ Common Mistakes</h2>
+      <div class="warning-box">
+        <h4 class="box-title">🚫 Mistake 1: Forgetting the signs</h4>
+        <p class="lesson-text"><strong>What students do wrong:</strong> When expanding $(x-5)(x+2)$, they might write $x^2 + 2x + 5x + 10$.</p>
+        <p class="lesson-text"><strong>Why it's wrong:</strong> The 5 is negative. You must multiply by $-5$, not 5.</p>
+        <p class="lesson-text"><strong>How to avoid it:</strong> Always include the sign with the term. The inner multiplication is $(-5) \times x = -5x$. The last is $(-5) \times 2 = -10$. The correct expansion is $x^2 + 2x - 5x - 10 = x^2 - 3x - 10$.</p>
+      </div>
+      <div class="warning-box">
+        <h4 class="box-title">🚫 Mistake 2: Only multiplying the first terms</h4>
+        <p class="lesson-text"><strong>What students do wrong:</strong> For $4(x+y)$, they write $4x+y$.</p>
+        <p class="lesson-text"><strong>Why it's wrong:</strong> The distributive law says you must multiply the outer term by <strong>all</strong> inner terms.</p>
+        <p class="lesson-text"><strong>How to avoid it:</strong> Draw arrows from the outer term to every inner term to remind yourself to multiply everything. $4(x+y) = 4x + 4y$.</p>
+      </div>
+    </section>
+
+    <!-- Practice Problems Section -->
+    <section id="practice" class="lesson-section">
+      <h2 class="section-heading">💪 Practice Problems</h2>
+      <div class="example-box">
+        <h4 class="box-title">🎯 Practice Questions</h4>
+        <p class="lesson-text">Expand and simplify the following expressions:</p>
+        <ol class="lesson-text">
+            <li>$7(2x - 3)$</li>
+            <li>$-4y(y^2 + 5)$</li>
+            <li>$(x+2)(x+6)$</li>
+            <li>$(x-8)(x+3)$</li>
+            <li>$(2x+1)(3x-4)$</li>
+        </ol>
+        <details style="margin-top: 15px;">
+          <summary style="cursor: pointer; color: var(--accent-blue); font-weight: 600;">🔍 Show Solutions</summary>
+          <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(74, 158, 255, 0.2);">
+            <p><strong>1.</strong> $14x - 21$</p>
+            <p><strong>2.</strong> $-4y^3 - 20y$</p>
+            <p><strong>3.</strong> $x^2 + 8x + 12$</p>
+            <p><strong>4.</strong> $x^2 - 5x - 24$</p>
+            <p><strong>5.</strong> $6x^2 - 5x - 4$</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- Summary Section -->
+    <section id="summary" class="lesson-section">
+      <h2 class="section-heading">📋 Summary</h2>
+      <div class="definition-box">
+        <h4 class="box-title">🎯 Key Takeaways</h4>
+        <ul class="lesson-text">
+          <li>Expanding brackets means multiplying out terms to remove the brackets.</li>
+          <li>For single brackets, multiply the outside term by every term inside.</li>
+          <li>For double brackets, use the FOIL or Grid method to ensure you multiply all term pairs.</li>
+          <li>Always simplify your final answer by collecting any like terms.</li>
+        </ul>
+      </div>
+    </section>
+
+  </div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Smooth scrolling for table of contents
+    const tocLinks = document.querySelectorAll('.toc-link');
+    tocLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+});
+</script>
+{% endblock %}

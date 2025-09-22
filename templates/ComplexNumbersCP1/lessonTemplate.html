@@ -1,0 +1,335 @@
+{% extends "base.html" %}
+
+{% block title %}LESSON_TITLE_HERE - K4Maths{% endblock %}
+
+{% block head %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Learn LESSON_TITLE_HERE - Step-by-step guide with examples and practice">
+  
+  <!-- MathJax for LaTeX rendering -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
+{% endblock %}
+
+{% block content %}
+  <!-- Back navigation -->
+  <a href="{{ url_for('PARENT_ROUTE_HERE') }}" class="back-to-home">🔙 Back to PARENT_PAGE_NAME_HERE</a>
+
+  <div class="lesson-container">
+    
+    <!-- Lesson Header -->
+    <header class="lesson-header">
+      <h1 class="lesson-title">LESSON_TITLE_HERE</h1>
+      <p class="lesson-subtitle">LESSON_SUBTITLE_HERE</p>
+      
+      <div class="lesson-meta">
+        <span class="meta-item">📚 SUBJECT_AREA_HERE</span>
+        <span class="meta-item">🎯 Difficulty: DIFFICULTY_LEVEL_HERE</span>
+        <span class="meta-item">⏱️ Reading time: ESTIMATED_TIME_HERE</span>
+        <span class="meta-item">📋 EXAM_BOARD_HERE</span>
+      </div>
+    </header>
+
+    <!-- Table of Contents -->
+    <nav class="table-of-contents">
+      <h3 class="toc-title">📖 Contents</h3>
+      <ul class="toc-list">
+        <li class="toc-item"><a href="#introduction" class="toc-link">Introduction</a></li>
+        <li class="toc-item"><a href="#key-concepts" class="toc-link">Key Concepts</a></li>
+        <li class="toc-item"><a href="#examples" class="toc-link">Worked Examples</a></li>
+        <li class="toc-item"><a href="#practice" class="toc-link">Practice Problems</a></li>
+        <li class="toc-item"><a href="#summary" class="toc-link">Summary</a></li>
+      </ul>
+    </nav>
+
+    <!-- Lesson Navigation -->
+    <div class="lesson-nav">
+      <a href="#" class="nav-button">← Previous Lesson</a>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 0%;"></div>
+      </div>
+      <a href="#" class="nav-button">Next Lesson →</a>
+    </div>
+
+    <!-- Introduction Section -->
+    <section id="introduction" class="lesson-section">
+      <h2 class="section-heading">📚 Introduction</h2>
+      
+      <p class="lesson-text">
+        INTRODUCTION_CONTENT_HERE - This should be an engaging introduction that explains what students will learn and why it's important.
+      </p>
+
+      <div class="definition-box">
+        <h4 class="box-title">🎯 Learning Objectives</h4>
+        <p class="lesson-text">
+          By the end of this lesson, you will be able to:
+        </p>
+        <ul class="lesson-text">
+          <li>OBJECTIVE_1_HERE</li>
+          <li>OBJECTIVE_2_HERE</li>
+          <li>OBJECTIVE_3_HERE</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Key Concepts Section -->
+    <section id="key-concepts" class="lesson-section">
+      <h2 class="section-heading">🔑 Key Concepts</h2>
+      
+      <h3 class="subsection-heading">CONCEPT_1_TITLE_HERE</h3>
+      <p class="lesson-text">
+        CONCEPT_1_EXPLANATION_HERE
+      </p>
+
+      <div class="definition-box">
+        <h4 class="box-title">📖 Definition</h4>
+        <p class="lesson-text">
+          <strong>TERM_HERE:</strong> DEFINITION_HERE
+        </p>
+      </div>
+
+      <!-- LaTeX Math Example -->
+      <div class="math-display">
+        $$\text{LATEX_FORMULA_HERE}$$
+      </div>
+
+      <h3 class="subsection-heading">CONCEPT_2_TITLE_HERE</h3>
+      <p class="lesson-text">
+        CONCEPT_2_EXPLANATION_HERE
+      </p>
+
+      <div class="tip-box">
+        <h4 class="box-title">💡 Pro Tip</h4>
+        <p class="lesson-text">
+          TIP_CONTENT_HERE
+        </p>
+      </div>
+    </section>
+
+    <!-- Worked Examples Section -->
+    <section id="examples" class="lesson-section">
+      <h2 class="section-heading">📝 Worked Examples</h2>
+      
+      <div class="example-box">
+        <h4 class="box-title">📋 Example 1: EXAMPLE_TITLE_HERE</h4>
+        
+        <p class="lesson-text"><strong>Question:</strong> QUESTION_TEXT_HERE</p>
+        
+        <div class="solution-steps">
+          <h5 class="subsection-heading">Solution:</h5>
+          
+          <div class="step">
+            <div class="step-number">Step 1:</div>
+            <p class="lesson-text">STEP_1_EXPLANATION_HERE</p>
+            <div class="math-display">
+              $$\text{STEP_1_MATH_HERE}$$
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">Step 2:</div>
+            <p class="lesson-text">STEP_2_EXPLANATION_HERE</p>
+            <div class="math-display">
+              $$\text{STEP_2_MATH_HERE}$$
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">Final Answer:</div>
+            <p class="lesson-text">FINAL_ANSWER_EXPLANATION_HERE</p>
+            <div class="math-display">
+              $$\boxed{\text{FINAL_ANSWER_HERE}}$$
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="example-box">
+        <h4 class="box-title">📋 Example 2: EXAMPLE_2_TITLE_HERE</h4>
+        <p class="lesson-text">EXAMPLE_2_CONTENT_HERE</p>
+      </div>
+    </section>
+
+    <!-- Common Mistakes Section -->
+    <section class="lesson-section">
+      <h2 class="section-heading">⚠️ Common Mistakes</h2>
+      
+      <div class="warning-box">
+        <h4 class="box-title">🚫 Mistake 1: MISTAKE_TITLE_HERE</h4>
+        <p class="lesson-text">
+          <strong>What students often do wrong:</strong> MISTAKE_DESCRIPTION_HERE
+        </p>
+        <p class="lesson-text">
+          <strong>Why it's wrong:</strong> EXPLANATION_HERE
+        </p>
+        <p class="lesson-text">
+          <strong>How to avoid it:</strong> SOLUTION_HERE
+        </p>
+      </div>
+
+      <div class="warning-box">
+        <h4 class="box-title">🚫 Mistake 2: MISTAKE_2_TITLE_HERE</h4>
+        <p class="lesson-text">MISTAKE_2_CONTENT_HERE</p>
+      </div>
+    </section>
+
+    <!-- Practice Problems Section -->
+    <section id="practice" class="lesson-section">
+      <h2 class="section-heading">💪 Practice Problems</h2>
+      
+      <p class="lesson-text lesson-text-center">
+        Try these problems to test your understanding:
+      </p>
+
+      <div class="example-box">
+        <h4 class="box-title">🎯 Practice Question 1</h4>
+        <p class="lesson-text">PRACTICE_QUESTION_1_HERE</p>
+        
+        <details style="margin-top: 15px;">
+          <summary style="cursor: pointer; color: var(--accent-blue); font-weight: 600;">
+            🔍 Show Solution
+          </summary>
+          <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(74, 158, 255, 0.2);">
+            <p class="lesson-text">SOLUTION_1_HERE</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="example-box">
+        <h4 class="box-title">🎯 Practice Question 2</h4>
+        <p class="lesson-text">PRACTICE_QUESTION_2_HERE</p>
+        
+        <details style="margin-top: 15px;">
+          <summary style="cursor: pointer; color: var(--accent-blue); font-weight: 600;">
+            🔍 Show Solution
+          </summary>
+          <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(74, 158, 255, 0.2);">
+            <p class="lesson-text">SOLUTION_2_HERE</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- Summary Section -->
+    <section id="summary" class="lesson-section">
+      <h2 class="section-heading">📋 Summary</h2>
+      
+      <div class="definition-box">
+        <h4 class="box-title">🎯 Key Takeaways</h4>
+        <ul class="lesson-text">
+          <li>KEY_POINT_1_HERE</li>
+          <li>KEY_POINT_2_HERE</li>
+          <li>KEY_POINT_3_HERE</li>
+        </ul>
+      </div>
+
+      <div class="tip-box">
+        <h4 class="box-title">📚 What's Next?</h4>
+        <p class="lesson-text">
+          NEXT_STEPS_HERE - What should students learn next or how to apply this knowledge.
+        </p>
+      </div>
+    </section>
+
+    <!-- Lesson Navigation -->
+    <div class="lesson-nav">
+      <a href="#" class="nav-button">← Previous Lesson</a>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 100%;"></div>
+      </div>
+      <a href="#" class="nav-button">Next Lesson →</a>
+    </div>
+
+  </div>
+
+  <!-- Back to top button -->
+  <div style="text-align: center; margin: 30px 0;">
+    <a href="#top" class="nav-button">⬆️ Back to Top</a>
+  </div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Smooth scrolling for table of contents
+    const tocLinks = document.querySelectorAll('.toc-link');
+    tocLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Progress bar animation based on scroll
+    const progressBar = document.querySelector('.progress-fill');
+    if (progressBar) {
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.body.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            progressBar.style.width = Math.min(scrollPercent, 100) + '%';
+        });
+    }
+
+    // Highlight current section in table of contents
+    const sections = document.querySelectorAll('.lesson-section');
+    const tocNavLinks = document.querySelectorAll('.toc-link');
+    
+    function highlightTOC() {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (window.pageYOffset >= (sectionTop - 200)) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        tocNavLinks.forEach(link => {
+            link.style.background = '';
+            link.style.borderLeftColor = 'transparent';
+            if (link.getAttribute('href') === '#' + current) {
+                link.style.background = 'rgba(74, 158, 255, 0.1)';
+                link.style.borderLeftColor = 'var(--accent-blue)';
+            }
+        });
+    }
+    
+    window.addEventListener('scroll', highlightTOC);
+    
+    // Initialize MathJax rendering
+    if (window.MathJax) {
+        MathJax.typesetPromise().then(() => {
+            console.log('MathJax rendering complete');
+        });
+    }
+});
+</script>
+{% endblock %}

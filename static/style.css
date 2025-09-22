@@ -1,0 +1,1847 @@
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* CSS Variables for consistent color scheme */
+:root {
+  /* Primary Colors */
+  --primary-dark: #031b37;
+  --primary-purple: #52003a;
+  --accent-blue: #4a9eff;
+  --accent-cyan: #00f7ff;
+  
+  /* Background Colors */
+  --bg-light: #f8f9fa;
+  --bg-dark: #0a0d14;
+  --card-light: #ffffff;
+  --card-dark: #16213e;
+  
+  /* Text Colors */
+  --text-light: #333333;
+  --text-dark: #e8e9ea;
+  --text-muted-light: #666666;
+  --text-muted-dark: rgba(255, 255, 255, 0.7);
+  
+  /* Border Colors */
+  --border-light: #dee2e6;
+  --border-dark: #3a4553;
+  
+  /* Shadow Colors */
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --shadow-dark: rgba(178, 0, 142, 0.3);
+}
+
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+.left {
+  text-align: left;
+}
+
+/*--------------------------------------------------------------------------------*/
+
+body {
+  font-family: 'monospace', sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+h1 {
+  font-family: "Oswald", sans-serif;
+  text-align: center;
+  color: var(--accent-blue);
+  padding: 15px 0;
+}
+h2 {
+  text-align: center;
+  color: var(--text-dark);
+  padding: 5px 0 20px 0;
+}
+
+h3 {
+  text-align: left;
+  color: var(--accent-blue);
+  padding: 12px 20px;
+}
+
+p {
+  font-size: 18px;
+  text-align: center;
+  padding: 15px 0;
+  color: var(--text-dark);
+}
+
+form {
+  align-items: center;
+}
+
+div.intro-text {
+  margin: 20px auto;
+  padding: 10px 15px;
+  max-width: 1200px;
+  background-color: var(--card-dark);
+  color: var(--text-dark);
+}
+
+b {
+  color: var(--text-dark);
+  text-align: justify;
+}
+
+a {
+  color: var(--accent-cyan);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-blue);
+  text-decoration: underline;
+}
+
+.home-topic-boxes {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin: 40px 0;
+  align-items: center;
+}
+
+h6 {
+  font-family: "Oswald", sans-serif;
+  padding: 25px 0 0 10px;
+  font-size: large;
+}
+
+p.TopicsList {
+  color: rgba(255, 255, 255, 0.9);
+  padding: 3px 3px 0 30px;
+  text-align: left;
+}
+
+
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+
+
+/*--------------------------------------------------------------------------------*/
+/* different subject card styles */
+a.subject-card.math {
+  background: linear-gradient(135deg, #27568b, #00c3ff);
+  box-shadow: -15px 15px 25px rgba(0, 0, 0, 0.45), -5px 5px 15px rgba(39, 86, 139, 0.3);
+  transition: transform 0.5s ease, box-shadow 0.4s ease, filter 0.3s ease;
+}
+a.subject-card.math:hover {
+  box-shadow: -20px 20px 35px rgba(0, 0, 0, 0.6), -8px 8px 25px rgba(39, 86, 139, 0.5);
+  filter: brightness(0.85);
+  transform: scale(1.05);
+}
+
+a.subject-card.furthermaths {
+  background: linear-gradient(135deg, #9c4381, #ffb347);
+  box-shadow: 0 0 50px 12px rgba(0, 0, 0, 0.45), 0 8px 25px rgba(156, 67, 129, 0.4);
+  transition: transform 0.5s ease, box-shadow 0.4s ease, filter 0.3s ease;
+}
+a.subject-card.furthermaths:hover {
+  box-shadow: 0 0 65px 18px rgba(0, 0, 0, 0.6), 0 12px 35px rgba(156, 67, 129, 0.6);
+  filter: brightness(0.85);
+  transform: scale(1.05);
+}
+a.subject-card.survey {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  box-shadow: 15px 15px 25px rgba(0, 0, 0, 0.45), 5px 5px 15px rgba(72, 67, 206, 0.3);
+  transition: transform 0.5s ease, box-shadow 0.4s ease, filter 0.3s ease;
+  width: 1000px; /* Full width to match three cards below */
+  padding: 25px 25px; /* More vertical padding */
+}
+a.subject-card.survey:hover {
+  box-shadow: 20px 20px 35px rgba(0, 0, 0, 0.6), 8px 8px 25px rgba(212, 0, 0, 0.5);
+  filter: brightness(0.85);
+  transform: scale(1.05);
+}
+
+a.subject-card.physics {
+  background: linear-gradient(135deg, #91873b, #13894e);
+  box-shadow: 15px 15px 25px rgba(0, 0, 0, 0.45), 5px 5px 15px rgba(72, 67, 206, 0.3);
+  transition: transform 0.5s ease, box-shadow 0.4s ease, filter 0.3s ease;
+}
+a.subject-card.physics:hover {
+  box-shadow: 20px 20px 35px rgba(0, 0, 0, 0.6), 8px 8px 25px rgba(72, 67, 206, 0.5);
+  filter: brightness(0.85);
+  transform: scale(1.05);
+}
+/* Survey box styles
+a.survey-box{
+  align-items: center;
+  position: center;
+  
+}
+.survey-box {
+  margin: 20px auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+*/
+/* Survey container */
+.survey-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.survey-container iframe {
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+/*--------------------------------------------------------------------------------*/
+nav {
+  position: static;
+  z-index: 9998;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  height: 70px;
+  background: linear-gradient(135deg, #031b37, #52003a, #031b37, #52003a);
+  box-shadow: 0 4px 20px rgba(178, 0, 142, 0.6);
+  border-radius: 50px;
+  margin: 20px;
+  transform: translateY(0px) scale(1);
+  transition: transform 0.8s ease-out, box-shadow 0.8s ease-out !important;
+  overflow: visible;
+  contain: layout style;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links a {
+  margin: 0 12px;
+  color: #ffb3e6;
+  text-shadow: 0 0 5px rgba(255, 179, 230, 0.8);
+  text-decoration: none;
+  font-size: 18px;
+  font-family: monospace, sans-serif;
+  font-weight: bold;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: translateY(0);
+  /* Removed will-change for better performance */
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+  transform: translateY(-4px);
+  text-shadow: 
+    0 0 8px rgba(255, 255, 255, 0.9),
+    0 0 15px rgba(255, 179, 230, 0.6);
+}
+
+.navbar-img {
+  height: 120px;
+  margin: 0 20px 0 0;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: translateY(0);
+}
+
+.navbar-img:hover {
+  transform: translateY(-3px) scale(1.05);
+  filter: brightness(1.1) drop-shadow(0 4px 15px rgba(255, 179, 230, 0.4));
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  margin: 0 15px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-family: monospace, sans-serif;
+  font-weight: bold;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+  display: inline-block;
+  transform: translateY(0px) scale(1);
+  transition: transform 0.6s ease-out, color 0.6s ease-out, text-shadow 0.6s ease-out !important;
+}
+
+nav a:hover {
+  color: #ffb3e6 !important;
+  transform: translateY(-8px) scale(1.15) !important;
+  text-shadow: 
+    0 0 15px rgba(255, 179, 230, 0.9),
+    0 0 25px rgba(255, 179, 230, 0.7),
+    0 0 35px rgba(255, 179, 230, 0.5) !important;
+  filter: brightness(1.3);
+  box-shadow: 0 8px 25px rgba(255, 179, 230, 0.5);
+}
+
+.nav {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+nav:hover {
+  transform: translateY(-8px) scale(1.015) !important;
+  box-shadow: 
+    0 15px 50px rgba(178, 0, 142, 0.9),
+    0 20px 80px rgba(3, 27, 55, 0.5) !important;
+}
+
+/* Shine effects removed for cleaner navbar appearance */
+
+
+/*--------------------------------------------------------------------------------*/
+
+.item a {
+  position: relative;
+  user-select: none;
+  font-size: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin: 0 20px;
+}
+
+.item a:before {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0px;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  box-shadow: 1px 1px 1px #000;
+  transform: scaleX(0);
+  transition: 400ms cubic-bezier(0.7, -0.6, 0.3, 1.2) transform;
+}
+
+.item a:hover {
+  text-shadow: 1px 1px 1px #000;
+  letter-spacing: 5px;
+}
+
+.item a:hover:before {
+  transform: scaleX(1);
+}
+
+
+
+p.lessoncontent {
+  font-size: 20px;
+  line-height: 1.6;                   /*this whole block is for the intel.html file and is for the boxes*/
+  color: #000000;
+  padding: 10px 20px;
+  margin: 10px 10px 10px 10px;
+  font-family: 'monospace', sans-serif;
+  font-weight: normal;
+  background-color: #f9f9f9; /* Light background for contrast */
+  border-radius: 8px; /* Rounded corners for a softer look */
+  position: left;
+}
+
+/* Footer styles */
+.footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin: 4px 0;
+  position: relative;
+  z-index: 1;
+}
+
+p.footer-text {
+  color: #ffffff;
+  text-align: center;
+  padding: 3px 3px;
+  font-size: 12px;
+  font-family: monospace, sans-serif;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-text {
+  color: #ffffff;
+  font-size: 15px;
+  padding: 10px 0px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+a.footer-text:hover {
+  color: #00f7ff;
+}
+footer {
+  background: linear-gradient(135deg, #031b37, #52003a, #031b37, #52003a);
+  background-size: 400% 400%;
+  animation: footerFlow 8s ease-in-out infinite;
+  padding: 20px 10px;
+  position: relative;
+  width: 100%;
+  flex-shrink: 0;
+  margin-top: auto;
+  min-height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Add elegant flowing overlay to footer */
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.03),
+    transparent,
+    rgba(82, 0, 58, 0.1),
+    transparent
+  );
+  animation: footerWave 12s ease-in-out infinite;
+  pointer-events: none;
+}
+
+footer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    240deg,
+    transparent,
+    rgba(3, 27, 55, 0.08),
+    transparent,
+    rgba(255, 255, 255, 0.02),
+    transparent
+  );
+  animation: footerWave 15s ease-in-out infinite reverse;
+  pointer-events: none;
+}
+
+/* Footer flowing animations */
+@keyframes footerFlow {
+  0%, 100% { 
+    background-position: 0% 50%; 
+  }
+  25% { 
+    background-position: 100% 25%; 
+  }
+  50% { 
+    background-position: 50% 100%; 
+  }
+  75% { 
+    background-position: 25% 75%; 
+  }
+}
+
+@keyframes footerWave {
+  0% { 
+    left: -100%; 
+    opacity: 0;
+  }
+  25% { 
+    opacity: 0.6;
+  }
+  50% { 
+    left: 50%; 
+    opacity: 1;
+  }
+  75% { 
+    opacity: 0.4;
+  }
+  100% { 
+    left: 200%; 
+    opacity: 0;
+  }
+}
+a.footer-text {
+  color: #006aff;
+  text-align: center;
+  padding: 3px 3px;
+  font-size: 12px;
+  font-family: monospace, sans-serif;
+}
+/*the image in the footer, middle*/
+
+/* Footer logo styling */
+.footer-logos {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  z-index: 1;
+}
+
+.footer-logo {
+  max-width: 80px;
+  height: auto;
+  filter: brightness(0.8) opacity(0.8);
+  transition: all 0.3s ease;
+}
+
+.footer-logo:hover {
+  filter: brightness(1) opacity(1);
+  transform: scale(1.05);
+}
+
+img.footer-logo {
+  max-width: 120px;
+  height: auto;
+  display: block;
+  filter: opacity(0.9);
+}
+
+
+/*--------------------------------------------------------------------------------*/
+/* good topics list per a level Design */
+
+/* This is the design for the topics list per a level page. It has a grid style layout with cards for each topic. 
+.topic-card {
+  color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 20px 75px rgba(0,0,0,0.18);
+  padding: 18px 24px;                                             its redudnant but it works its redundant because its only 1 topic for each row, below is 2 topics per row
+  margin: 18px auto;
+  max-width: 600px;
+}
+
+.topic-card h6 {
+  color: white;
+  margin: 0 0 8px 0;
+  position: center;
+  font-size: 20px; 
+  font-family: monospace, sans-serif;
+}
+
+.topic-card a {
+  color: #fff;
+  text-decoration: underline;
+  font-weight: bold;
+}
+*/
+/* This is the design for the topics list per a level page. It has a grid style layout with cards for each topic.
+.topic-card:hover {
+  color: #fff; brighter text 
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 50px 150px rgba(0,0,0,0.10);
+  filter: brightness(2.05) ; darkens background of the text box to 0.8 
+}
+*/
+
+/*--------------------------------------------------------------------------------*/
+
+/*for grid style:*/
+
+.topics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 24px;
+  margin: 40px auto;
+  max-width: 1400px;
+  padding: 20px;
+}
+
+.topic-card {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  padding: 24px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  min-height: 160px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.topic-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.05);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 16px;
+}
+
+.topic-card:hover::before {
+  opacity: 1;
+}
+
+.topic-card h6 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+  line-height: 1.3;
+  color: #fff;
+}
+
+.topic-card a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  transition: all 0.3s ease;
+  flex-grow: 1;
+}
+
+.topic-card > a:only-child {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.topic-card p.TopicsList {
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 8px 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 400;
+  width: 100%;
+}
+
+.topic-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.18);
+  
+}
+
+.topic-card:hover h6 {
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.topic-card:hover p {
+  color: #fff;
+}
+
+@media (max-width: 800px) {
+  .topics-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Modern topic card color schemes with gradients - these should be visible now! */
+.topic-card-red    { background: linear-gradient(135deg, #e74c3c, #c0392b) !important; }
+.topic-card-orange { background: linear-gradient(135deg, #f39c12, #e67e22) !important; color: #fff; }
+.topic-card-purple { background: linear-gradient(135deg, #8e44ad, #6c5ce7) !important; }
+.topic-card-teal   { background: linear-gradient(135deg, #1abc9c, #00b894) !important; }
+.topic-card-pink   { background: linear-gradient(135deg, #e91e63, #fd79a8) !important; }
+.topic-card-yellow { background: linear-gradient(135deg, #f1c40f, #f39c12) !important; color: #fff; }
+.topic-card-brown  { background: linear-gradient(135deg, #8b4513, #a0522d) !important; }
+.topic-card-cyan   { background: linear-gradient(135deg, #17a2b8, #00cec9) !important; }
+.topic-card-lime   { background: linear-gradient(135deg, #8bc34a, #badc58) !important; color: #fff; }
+.topic-card-navy   { background: linear-gradient(135deg, #34495e, #4d5977) !important; }
+.topic-card-blue   { background: linear-gradient(135deg, #3498db, #2980b9) !important; }
+.topic-card-orangutan { background: linear-gradient(135deg, #ff5722, #ff6b6b) !important; }
+
+/* Gold coin shine animation */
+.gold-coin {
+  background: linear-gradient(135deg, #4d17b0, #0b3c7d, #802564, #8c1a1a);
+  background-size: 200% 200%;
+  position: relative;
+  overflow: hidden;
+  animation: goldShimmer 2s ease-in-out infinite;
+  border-radius: 8px;
+}
+
+.gold-coin::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  animation: goldSweep 3s ease-in-out infinite;
+}
+
+.gold-coin::after {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 255, 255, 0.4),
+    transparent 50%
+  );
+  border-radius: inherit;
+  animation: goldGlow 2.5s ease-in-out infinite alternate;
+}
+
+/* Keyframe animations */
+@keyframes goldShimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes goldSweep {
+  0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+  50% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+  100% { transform: translateX(200%) translateY(200%) rotate(45deg); }
+}
+
+@keyframes goldGlow {
+  0% { opacity: 0.6; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1.1); }
+}
+
+/* Enhanced hover effect for gold coins */
+.gold-coin:hover {
+  animation-duration: 1s; /* Faster animation on hover */
+  box-shadow: 
+    0 0 30px rgba(81, 0, 255, 0.8),
+    0 0 60px rgba(115, 0, 255, 0.4),
+    inset 0 0 20px rgb(80, 0, 0);
+  transform: scale(1.05) rotateY(15deg);
+}
+
+
+/* Back to Home button with gold effect */
+.back-to-home {
+  display: inline-block;
+  padding: 12px 24px;
+  margin: 20px 0;
+  background: linear-gradient(135deg, #4a9eff, #52003a, #031b37, #4a9eff);
+  background-size: 200% 200%;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 25px;
+  text-shadow: 1px 1px 2px rgba(123, 0, 255, 0.671);
+  box-shadow: 0 4px 15px rgb(212, 0, 255);
+  position: relative;
+  overflow: hidden;
+  animation: goldShimmer 2s ease-in-out infinite;
+  transition: all 0.3s ease;
+  border: 2px solid rgb(28, 1, 57);
+}
+
+.back-to-home::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  animation: goldSweep 3s ease-in-out infinite;
+}
+
+.back-to-home:hover {
+  animation-duration: 1s;
+  box-shadow: 
+    0 0 30px rgba(17, 0, 255, 0.542),
+    0 0 60px rgba(112, 4, 155, 0.771),
+    inset 0 0 20px rgb(3, 1, 82);
+  transform: scale(1.05) translateY(-2px);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.home-link:hover {
+  color: white !important;
+  text-shadow: 0 0 10px rgba(255,255,255,0.8);
+}
+
+/* Survey Pop-out Icon */
+.survey-popup {
+  position: fixed;
+  top: 150px;
+  right: 20px;
+  z-index: 1001; /* Above navbar */
+  background: linear-gradient(135deg, #031b37, #52003a, #031b37, #52003a);
+  background-size: 400% 400%;
+  animation: footerFlow 8s ease-in-out infinite;
+  color: white;
+  padding: 12px 16px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  box-shadow: 0 4px 15px rgba(72, 67, 206, 0.4);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow: hidden;
+}
+
+/* Add flowing wave overlay to survey popup */
+.survey-popup::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.03),
+    transparent,
+    rgba(82, 0, 58, 0.1),
+    transparent
+  );
+  animation: footerWave 12s ease-in-out infinite;
+  border-radius: inherit;
+}
+
+/* Survey popup icon */
+.survey-popup::after {
+  content: '📋';
+  font-size: 16px;
+  animation: surveyBounce 2s ease-in-out infinite;
+  position: relative;
+  z-index: 1;
+}
+
+.survey-popup:hover {
+  transform: scale(1.1) translateX(-5px);
+  box-shadow: 0 6px 25px rgba(72, 67, 206, 0.6);
+  color: white;
+  text-decoration: none;
+}
+
+/* Removed duplicate hover rule */
+
+.survey-popup::before {
+  content: '📋';
+  font-size: 16px;
+  animation: surveyBounce 2s ease-in-out infinite;
+}
+
+@keyframes surveyPulse {
+  0%, 100% { 
+    box-shadow: 0 4px 15px rgba(72, 67, 206, 0.4);
+  }
+  50% { 
+    box-shadow: 0 4px 25px rgba(72, 67, 206, 0.8);
+  }
+}
+
+@keyframes surveyBounce {
+  0%, 100% { 
+    transform: translateY(0px);
+  }
+  50% { 
+    transform: translateY(-3px);
+  }
+}
+
+/*--------------------------------------------------------------------------------*/
+
+/* Calculator Dropdown Styles */
+.calculator-container {
+  position: relative;
+  display: inline-block;
+}
+
+#calculator-toggle {
+  color: white !important;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+#calculator-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+  text-shadow: 0 0 10px rgba(255,255,255,0.8);
+}
+
+#calculator-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: linear-gradient(135deg, #031b37, #52003a);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  padding: 15px;
+  min-width: 320px;
+  transform: translateY(-20px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 9999;
+  border: 2px solid rgba(255, 179, 230, 0.3);
+  margin-top: 10px;
+}
+
+#calculator-dropdown.show {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Calculator Styles - Adapted from your original */
+#calculator {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 15px;
+  border-radius: 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#display {
+  width: 100%;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid rgba(255, 179, 230, 0.5);
+  border-radius: 6px;
+  text-align: right;
+  font-size: 18px;
+  padding: 5px 15px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  overflow-x: auto;
+  color: #031b37;
+  font-weight: bold;
+  font-family: 'Courier New', monospace;
+  line-height: 38px;
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 5px;
+}
+
+#calculator-dropdown button {
+  font-size: 12px;
+  padding: 8px 4px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: bold;
+  color: #031b37;
+  min-height: 35px;
+}
+
+#calculator-dropdown button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#calculator-dropdown button:active {
+  transform: translateY(0);
+  background: #aaa !important;
+  color: #fff !important;
+}
+
+#calculator-dropdown button.function { 
+  background: #b0c4de; 
+}
+
+#calculator-dropdown button.operator { 
+  background: #dcdcdc; 
+}
+
+#calculator-dropdown button.equal { 
+  background: #ff7f7f; 
+  color: #fff; 
+}
+
+#calculator-dropdown button.number {
+  background: #f2f2f2;
+}
+
+.radio-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+  font-size: 12px;
+  color: #ffb3e6;
+  gap: 10px;
+}
+
+.radio-container label { 
+  color: #ffb3e6;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.radio-container input[type="radio"] {
+  margin: 0;
+}
+
+/* Dark Mode Toggle Button */
+#dark-mode-toggle {
+  color: white !important;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+#dark-mode-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+  text-shadow: 0 0 10px rgba(255,255,255,0.8);
+}
+
+/* Dark mode is now the default - no overrides needed */
+
+.intro-text {
+  background-color: var(--card-dark);
+  color: var(--text-dark);
+}
+
+/* Topic cards now use their original colorful backgrounds in dark mode */
+
+/* Enhanced topic card text styling for colorful backgrounds */
+.topic-card h3,
+.topic-card h6 {
+  color: #ffffff !important;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.topic-card p,
+.topic-card span,
+.topic-card a {
+  color: rgba(255, 255, 255, 0.95) !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Elements now use dark styling by default */
+
+.subject-card {
+  filter: brightness(0.8);
+}
+
+.footer-text {
+  color: #b8bcc0;
+}
+
+#calculator-dropdown {
+  background: linear-gradient(135deg, #0f0f23, #2d1b3d);
+  border-color: rgba(74, 158, 255, 0.3);
+}
+
+#display {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(74, 158, 255, 0.5);
+}
+
+/* Topics list styling */
+.list h1,
+.list h2 {
+  color: var(--accent-blue);
+}
+
+#maths-topics-list li,
+#physics-topics-list li {
+  background: rgba(0, 0, 0, 0.3) !important;
+}
+
+#maths-topics-list li span,
+#physics-topics-list li span {
+  color: var(--text-dark);
+}
+
+#maths-topics-list li:hover span,
+#physics-topics-list li:hover span {
+  color: #111;
+}
+
+/* Additional default dark styling */
+h4, h5, h6 {
+  color: var(--accent-blue) !important;
+}
+
+.content-container,
+.content-box {
+  background-color: var(--card-dark);
+  color: var(--text-dark);
+}
+
+strong {
+  color: #ffffff !important;
+}
+
+.back-to-home {
+  color: var(--accent-blue) !important;
+  background-color: rgba(74, 158, 255, 0.1);
+  border: 1px solid rgba(74, 158, 255, 0.3);
+}
+
+.back-to-home:hover {
+  background-color: rgba(74, 158, 255, 0.2);
+  color: #ffffff !important;
+}
+
+/* Default styling for centered content */
+div[style*="text-align: center"] p {
+  color: var(--text-dark) !important;
+}
+
+div[style*="text-align: center"] strong {
+  color: #ffffff !important;
+}
+
+/* Default topic card links styling */
+.topics-grid .topic-card a {
+  color: inherit !important;
+}
+
+.topics-grid .topic-card a:hover {
+  color: inherit !important;
+}
+
+/* Default navbar styling */
+nav a {
+  color: #ffffff !important;
+}
+
+nav a:hover {
+  color: var(--accent-blue) !important;
+}
+
+.nav-links a {
+  color: #ffffff !important;
+}
+
+/* Global transitions */
+* {
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Override inline styles for better dark mode compatibility */
+[style*="color: white"],
+[style*="color: #fff"],
+[style*="color: #ffffff"] {
+  color: var(--text-dark) !important;
+}
+
+[style*="color: black"],
+[style*="color: #000"],
+[style*="color: #000000"] {
+  color: var(--text-dark) !important;
+}
+
+/* Default paragraph text styling */
+p, span, div {
+  color: var(--text-dark);
+}
+
+/* HR elements styling */
+hr {
+  border-color: rgba(74, 158, 255, 0.3);
+  background-color: rgba(74, 158, 255, 0.3);
+}
+
+/* Override light backgrounds */
+[style*="background-color: #f"] {
+  background-color: var(--card-dark) !important;
+}
+
+[style*="background-color: white"] {
+  background-color: var(--card-dark) !important;
+}
+
+/* Dark mode transitions */
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Text elements transition - exclude navigation elements */
+p:not(nav p), h1:not(nav h1), h2:not(nav h2), h3:not(nav h3), h4:not(nav h4), h5:not(nav h5), h6:not(nav h6), strong:not(nav strong), .TopicsList, span:not(nav span), div:not(nav div):not(.nav-links div) {
+  transition: color 0.3s ease;
+}
+
+/* Navbar specific transitions - override any global rules */
+nav, nav *, nav a, .nav-links a {
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+
+/*--------------------------------------------------------------------------------*/
+/* Rolldown List Animation Styles */
+html,body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font: 1.2em/1.4 'Oswald', sans-serif;
+  color: #fff;
+  text-align: right;
+}
+
+.rolldown-list {
+  text-align: left;
+  padding: 0;
+  margin: 0;
+}
+
+.rolldown-list li {
+  padding: 1em;
+  margin-bottom: .125em;
+  display: block;
+  list-style: none;
+  text-transform: uppercase;
+}
+
+.rolldown-list li {
+  visibility: hidden;
+  animation: rolldown .7s 1;
+  transform-origin: 50% 0;
+  animation-fill-mode: forwards;
+}
+
+.rolldown-list li:nth-child(2n) {
+  background-color: #444;
+}
+
+.rolldown-list li:nth-child(2n+1) {
+  background-color: #333;
+}
+
+#myList {
+  position: absolute;
+  width: 50%; 
+  left: 50%;
+  margin-left: -25%;
+}
+
+#btnReload {
+  float: right;
+  color: #333;
+  background: #ccc;
+  text-transform: uppercase;
+  border: none;
+  padding: .5em 1em;
+}
+
+#btnReload:hover {
+  background: #ddd;
+}
+
+@keyframes rolldown {
+  0% {
+    visibility: visible;
+    transform: rotateX(180deg) perspective(500px);
+  }
+  70% {
+    visibility: visible;
+    transform: rotateX(-20deg);
+  }
+  100% {
+    visibility: visible;
+    transform: rotateX(0deg);
+  }
+}
+
+/*================================================================================*/
+/* TOPICS LIST PAGE STYLES */
+/*================================================================================*/
+
+.topics-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 60vh;
+  padding: 40px 20px;
+}
+
+.list {
+  position: relative;
+  max-width: 800px;
+  width: 100%;
+}
+
+.list h1 {
+  color: #fff;
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.list h2 {
+  color: #fff;
+  font-family: "Oswald", sans-serif;
+  font-weight: 600;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  margin: 30px 0 15px 0;
+  text-transform: uppercase;
+}
+
+.list ul {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+#maths-topics-list li,
+#physics-topics-list li {
+  position: relative;
+  left: 0;
+  list-style: none;
+  margin: 6px 0;
+  border-left: 3px solid;
+  border: 1px solid;
+  border-radius: 8px;
+  transition: 0.5s ease;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slideIn 0.6s ease forwards;
+  background: rgba(255, 255, 255, 0.05) !important;
+  text-align: left !important;
+  padding: 0 !important;
+  text-transform: none !important;
+  visibility: visible !important;
+}
+
+/* Different colors for Mathematics topics */
+#maths-topics-list li:nth-child(1) { border-color: #ff6b6b; }
+#maths-topics-list li:nth-child(2) { border-color: #4ecdc4; }
+#maths-topics-list li:nth-child(3) { border-color: #45b7d1; }
+#maths-topics-list li:nth-child(4) { border-color: #96ceb4; }
+#maths-topics-list li:nth-child(5) { border-color: #ffeaa7; }
+#maths-topics-list li:nth-child(6) { border-color: #dda0dd; }
+#maths-topics-list li:nth-child(7) { border-color: #98d8c8; }
+#maths-topics-list li:nth-child(8) { border-color: #f7dc6f; }
+#maths-topics-list li:nth-child(9) { border-color: #bb8fce; }
+#maths-topics-list li:nth-child(10) { border-color: #85c1e9; }
+#maths-topics-list li:nth-child(11) { border-color: #f8c471; }
+#maths-topics-list li:nth-child(12) { border-color: #82e0aa; }
+#maths-topics-list li:nth-child(13) { border-color: #f1948a; }
+#maths-topics-list li:nth-child(14) { border-color: #85c1e9; }
+#maths-topics-list li:nth-child(15) { border-color: #d7bde2; }
+#maths-topics-list li:nth-child(16) { border-color: #a9dfbf; }
+#maths-topics-list li:nth-child(17) { border-color: #f9e79f; }
+#maths-topics-list li:nth-child(18) { border-color: #aed6f1; }
+#maths-topics-list li:nth-child(19) { border-color: #fadbd8; }
+#maths-topics-list li:nth-child(20) { border-color: #ff9ff3; }
+#maths-topics-list li:nth-child(21) { border-color: #54a0ff; }
+#maths-topics-list li:nth-child(22) { border-color: #5f27cd; }
+#maths-topics-list li:nth-child(23) { border-color: #00d2d3; }
+#maths-topics-list li:nth-child(24) { border-color: #ff9f43; }
+#maths-topics-list li:nth-child(25) { border-color: #ff3838; }
+#maths-topics-list li:nth-child(26) { border-color: #2ed573; }
+#maths-topics-list li:nth-child(27) { border-color: #3742fa; }
+#maths-topics-list li:nth-child(28) { border-color: #f368e0; }
+#maths-topics-list li:nth-child(29) { border-color: #ff9500; }
+#maths-topics-list li:nth-child(30) { border-color: #26de81; }
+#maths-topics-list li:nth-child(31) { border-color: #fc5c65; }
+
+#maths-topics-list li:hover,
+#physics-topics-list li:hover {
+  left: 15px;
+  box-shadow: 0 5px 15px rgba(255,255,255,0.1);
+  border-left-width: 3px;
+}
+
+#maths-topics-list li a,
+#physics-topics-list li a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#maths-topics-list li span,
+#physics-topics-list li span {
+  position: relative;
+  padding: 12px 16px;
+  padding-left: 20px;
+  display: inline-block;
+  z-index: 1;
+  transition: 0.5s ease;
+  color: #fce4ec;
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#maths-topics-list li:hover span,
+#physics-topics-list li:hover span {
+  color: #111;
+  font-weight: 500;
+}
+
+#maths-topics-list li:before,
+#physics-topics-list li:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--hover-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: 0.5s ease;
+  z-index: 0;
+}
+
+/* Mathematics topics hover backgrounds */
+#maths-topics-list li:nth-child(1):before { background: #ff0000; }
+#maths-topics-list li:nth-child(2):before { background: #4ecdc4; }
+#maths-topics-list li:nth-child(3):before { background: #45b7d1; }
+#maths-topics-list li:nth-child(4):before { background: #96ceb4; }
+#maths-topics-list li:nth-child(5):before { background: #ffeaa7; }
+#maths-topics-list li:nth-child(6):before { background: #dda0dd; }
+#maths-topics-list li:nth-child(7):before { background: #98d8c8; }
+#maths-topics-list li:nth-child(8):before { background: #f7dc6f; }
+#maths-topics-list li:nth-child(9):before { background: #bb8fce; }
+#maths-topics-list li:nth-child(10):before { background: #85c1e9; }
+#maths-topics-list li:nth-child(11):before { background: #f8c471; }
+#maths-topics-list li:nth-child(12):before { background: #82e0aa; }
+#maths-topics-list li:nth-child(13):before { background: #f1948a; }
+#maths-topics-list li:nth-child(14):before { background: #85c1e9; }
+#maths-topics-list li:nth-child(15):before { background: #d7bde2; }
+#maths-topics-list li:nth-child(16):before { background: #a9dfbf; }
+#maths-topics-list li:nth-child(17):before { background: #f9e79f; }
+#maths-topics-list li:nth-child(18):before { background: #aed6f1; }
+#maths-topics-list li:nth-child(19):before { background: #fadbd8; }
+#maths-topics-list li:nth-child(20):before { background: #ff9ff3; }
+#maths-topics-list li:nth-child(21):before { background: #54a0ff; }
+#maths-topics-list li:nth-child(22):before { background: #5f27cd; }
+#maths-topics-list li:nth-child(23):before { background: #00d2d3; }
+#maths-topics-list li:nth-child(24):before { background: #ff9f43; }
+#maths-topics-list li:nth-child(25):before { background: #ff3838; }
+#maths-topics-list li:nth-child(26):before { background: #2ed573; }
+#maths-topics-list li:nth-child(27):before { background: #3742fa; }
+#maths-topics-list li:nth-child(28):before { background: #f368e0; }
+#maths-topics-list li:nth-child(29):before { background: #ff9500; }
+#maths-topics-list li:nth-child(30):before { background: #26de81; }
+#maths-topics-list li:nth-child(31):before { background: #fc5c65; }
+
+#maths-topics-list li:hover:before,
+#physics-topics-list li:hover:before {
+  transform: scaleX(1);
+}
+
+/* Physics list different colors */
+#physics-topics-list li:nth-child(1) { border-color: #e74c3c; }
+#physics-topics-list li:nth-child(2) { border-color: #3498db; }
+#physics-topics-list li:nth-child(3) { border-color: #2ecc71; }
+#physics-topics-list li:nth-child(4) { border-color: #f39c12; }
+#physics-topics-list li:nth-child(5) { border-color: #9b59b6; }
+#physics-topics-list li:nth-child(6) { border-color: #1abc9c; }
+#physics-topics-list li:nth-child(7) { border-color: #e67e22; }
+#physics-topics-list li:nth-child(8) { border-color: #34495e; }
+#physics-topics-list li:nth-child(9) { border-color: #16a085; }
+
+/* Physics topics hover backgrounds */
+#physics-topics-list li:nth-child(1):before { background: #e74c3c; }
+#physics-topics-list li:nth-child(2):before { background: #3498db; }
+#physics-topics-list li:nth-child(3):before { background: #2ecc71; }
+#physics-topics-list li:nth-child(4):before { background: #f39c12; }
+#physics-topics-list li:nth-child(5):before { background: #9b59b6; }
+#physics-topics-list li:nth-child(6):before { background: #1abc9c; }
+#physics-topics-list li:nth-child(7):before { background: #e67e22; }
+#physics-topics-list li:nth-child(8):before { background: #34495e; }
+#physics-topics-list li:nth-child(9):before { background: #16a085; }
+
+/* Slide-in animation for topics list */
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* =================================================================
+  LESSON PAGES STYLING
+   ================================================================= */
+
+/* Lesson page container - full width background, constrained content */
+.lesson-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--bg-dark), #1a1a2e);
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+.lesson-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(22, 33, 62, 0.95), rgba(26, 26, 46, 0.95));
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(74, 158, 255, 0.2);
+}
+
+.lesson-header {
+  text-align: center;
+  padding: 30px 0;
+  border-bottom: 2px solid var(--accent-blue);
+  margin-bottom: 40px;
+}
+
+.lesson-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2.5rem;
+  color: var(--accent-blue);
+  margin-bottom: 15px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.lesson-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-muted-dark);
+  margin-bottom: 20px;
+}
+
+.lesson-meta {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.meta-item {
+  background: rgba(74, 158, 255, 0.1);
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid rgba(74, 158, 255, 0.3);
+  font-size: 0.9rem;
+  color: var(--text-dark);
+}
+
+/* Content sections */
+.lesson-section {
+  margin: 40px 0;
+  padding: 0 20px;
+}
+
+.section-heading {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.8rem;
+  color: var(--accent-cyan);
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(0, 247, 255, 0.3);
+  text-align: center;
+}
+
+.subsection-heading {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.4rem;
+  color: #ffffff;
+  margin: 30px 0 15px 0;
+  font-weight: 600;
+}
+
+.lesson-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-dark);
+  text-align: justify;
+  margin: 20px 0;
+}
+
+.lesson-text-center {
+  text-align: center;
+}
+
+/* Example and definition boxes */
+.example-box {
+  background: linear-gradient(135deg, rgba(46, 204, 113, 0.1), rgba(26, 188, 156, 0.1));
+  border-left: 4px solid #2ecc71;
+  padding: 25px;
+  margin: 25px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(46, 204, 113, 0.1);
+}
+
+.definition-box {
+  background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(74, 158, 255, 0.1));
+  border-left: 4px solid var(--accent-blue);
+  padding: 25px;
+  margin: 25px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(74, 158, 255, 0.1);
+}
+
+.warning-box {
+  background: linear-gradient(135deg, rgba(231, 76, 60, 0.1), rgba(192, 57, 43, 0.1));
+  border-left: 4px solid #e74c3c;
+  padding: 25px;
+  margin: 25px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.1);
+}
+
+.tip-box {
+  background: linear-gradient(135deg, rgba(241, 196, 15, 0.1), rgba(243, 156, 18, 0.1));
+  border-left: 4px solid #f1c40f;
+  padding: 25px;
+  margin: 25px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(241, 196, 15, 0.1);
+}
+
+.box-title {
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-dark);
+}
+
+/* Lesson images */
+.lesson-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 30px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(74, 158, 255, 0.2);
+  border: 1px solid rgba(74, 158, 255, 0.1);
+}
+
+/* Math styling */
+.math-display {
+  text-align: center;
+  margin: 30px 0;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  border: 1px solid rgba(74, 158, 255, 0.2);
+}
+
+/* Step-by-step solutions */
+.solution-steps {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  border-radius: 10px;
+  margin: 20px 0;
+  border: 1px solid rgba(74, 158, 255, 0.2);
+}
+
+.step {
+  margin: 15px 0;
+  padding: 15px;
+  background: rgba(74, 158, 255, 0.05);
+  border-radius: 6px;
+  border-left: 3px solid var(--accent-blue);
+}
+
+.step-number {
+  font-weight: 600;
+  color: var(--accent-blue);
+  margin-bottom: 8px;
+}
+
+/* Navigation elements */
+.lesson-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px 0;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.nav-button {
+  background: linear-gradient(135deg, var(--accent-blue), #2980b9);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-button:hover {
+  background: linear-gradient(135deg, #2980b9, var(--accent-blue));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(74, 158, 255, 0.3);
+  color: white;
+  text-decoration: none;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 6px;
+  background: rgba(74, 158, 255, 0.2);
+  border-radius: 3px;
+  margin: 0 20px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan));
+  width: 0%;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+/* Table of contents */
+.table-of-contents {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  border-radius: 10px;
+  margin: 30px 0;
+  border: 1px solid rgba(74, 158, 255, 0.2);
+  z-index: 1;
+  height: fit-content;
+}
+
+.toc-title {
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: var(--accent-blue);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+}
+
+.toc-item {
+  margin: 10px 0;
+}
+
+.toc-link {
+  color: var(--text-dark);
+  text-decoration: none;
+  padding: 8px 15px;
+  display: block;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+}
+
+.toc-link:hover {
+  background: rgba(74, 158, 255, 0.1);
+  border-left-color: var(--accent-blue);
+  color: var(--accent-cyan);
+  text-decoration: none;
+}
+
+/* Responsive design for lessons */
+@media (max-width: 768px) {
+  .lesson-container {
+    margin: 10px;
+    padding: 15px;
+  }
+  
+  .lesson-title {
+    font-size: 2rem;
+  }
+  
+  .lesson-meta {
+    gap: 15px;
+  }
+  
+  .lesson-nav {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .progress-bar {
+    order: -1;
+    margin: 0 0 20px 0;
+  }
+}
+
+/* Print styles for lessons */
+@media print {
+  .lesson-nav, .table-of-contents {
+    display: none;
+  }
+  
+  .lesson-container {
+    box-shadow: none;
+    background: white;
+  }
+  
+  .lesson-text, .box-title {
+    color: black !important;
+  }
+}

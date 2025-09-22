@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+
+{% block title %}Further Mathematics{% endblock %}
+
+{% block head %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<a href="{{ url_for('index') }}" class="back-to-home">🏠 Back to Home</a>
+
+<h1><br><br>A-Level Mathematics - Full Topic Coverage</h1>
+<h2>All Edexcel A-Level Maths topics, organised for revision and mastery. Exam-style questions coming soon!</h2>
+<br><br>
+<hr><hr><hr><hr><hr>
+<br><br>
+
+<p style="text-align: center; padding: 5px 0px;">
+  The <strong>A-Level Mathematics</strong> specification covers Pure Maths, Statistics, and Mechanics.
+  <br><br>
+  These topics range from algebra and calculus to probability and motion.  
+  <br><br>
+  (Minor disclaimer: The difficulty rating is subjective and based on my experience. Yours may differ.)
+  <br><br>
+  Difficulty ratings are out of 5 stars, with 1 being easiest and 5 being hardest.
+</p>
+
+<div style="margin-top: 20px;">
+  <a href="{{ url_for('index') }}" style="margin-right: 20px; margin-left: 20px;">🏠︎ - Back to Home<br></a>
+</div>
+
+<div class="topics-grid">
+
+  <div class="topic-card topic-card-blue">
+    <a href="">
+      <h6>Algebra & Functions</h6>
+      <p class="TopicsList">Introduction, Mastery, and Guide to solve exam questions here</p>
+      <p class="TopicsList">Polynomials, inequalities, function transformations, and algebraic manipulation techniques</p>
+    </a>
+    <p class="TopicsList">Difficulty ⭐⭐⭐</p>
+  </div>
+
+  <div class="topic-card topic-card-orange">
+    <a href="">
+      <h6>Coordinate Geometry</h6>
+      <p class="TopicsList">Introduction, Mastery, and Guide to solve exam questions here</p>
+      <p class="TopicsList">Straight lines, circles, parametric equations, and geometric problem-solving</p>
+    </a>
+    <p class="TopicsList">Difficulty ⭐⭐</p>
+  </div>
+
+  <div class="topic-card topic-card-red">
+    <a href="">
+      <h6>Differentiation</h6>
+      <p class="TopicsList">Introduction, Mastery, and Guide to solve exam questions here</p>
+      <p class="TopicsList">Chain rule, product rule, quotient rule, implicit differentiation, and optimization</p>
+    </a>
+    <p class="TopicsList">Difficulty ⭐⭐⭐⭐</p>
+  </div>
+
+  <div class="topic-card topic-card-purple">
+    <a href="">
+      <h6>Integration</h6>
+      <p class="TopicsList">Introduction, Mastery, and Guide to solve exam questions here</p>
+      <p class="TopicsList">Integration by substitution, by parts, partial fractions, and areas under curves</p>
+    </a>
+    <p class="TopicsList">Difficulty ⭐⭐⭐⭐</p>
+  </div>
+
+  <div class="topic-card topic-card-teal">
+    <a href="">
+      <h6>Sequences & Series</h6>
+      <p class="TopicsList">Introduction, Mastery, and Guide to solve exam questions here</p>
+      <p class="TopicsList">Arithmetic and geometric progressions, binomial expansion, and sigma notation</p>
+    </a>
+    <p class="TopicsList">Difficulty ⭐⭐</p>
+  </div>
+
+  <div class="topic-card topic-card-pink">
+    <a href="">
+      <h6>Trigonometry</h6>
+      <p class="TopicsList">Introduction, Mastery, and Guide to solve exam questions here</p>
+      <p class="TopicsList">Trigonometric identities, inverse functions, solving equations, and radians</p>
+    </a>
+    <p class="TopicsList">Difficulty ⭐⭐⭐</p>
+  </div>
+
+  <div class="topic-card topic-card-yellow">
+    <a href="">
+      <h6>Statistics</h6>
+      <p class="TopicsList">Introduction, Mastery, and Guide to solve exam questions here</p>
+      <p class="TopicsList">Probability distributions, normal distribution, hypothesis testing, and correlation</p>
+    </a>
+    <p class="TopicsList">Difficulty ⭐⭐⭐</p>
+  </div>
+
+  <div class="topic-card topic-card-brown">
+    <a href="">
+      <h6>Mechanics</h6>
+      <p class="TopicsList">Introduction, Mastery, and Guide to solve exam questions here</p>
+      <p class="TopicsList">Kinematics with constant acceleration, forces, Newton's laws, and projectile motion</p>
+    </a>
+    <p class="TopicsList">Difficulty ⭐⭐⭐⭐</p>
+  </div>
+
+  <div class="topic-card topic-card-blue">
+    <a href="">
+      <h6>More Topics Coming Soon</h6>
+      <p class="TopicsList">Introduction, Mastery, and Guide to solve exam questions here</p>
+      <p class="TopicsList">Additional units and practice questions are on their way</p>
+    </a>
+    <p class="TopicsList">Difficulty ♾️</p>
+  </div>
+
+</div>
+
+{% endblock%}

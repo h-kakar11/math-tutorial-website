@@ -1,0 +1,603 @@
+{% extends "base.html" %}
+
+{% block title %}Simplifying Surds to Complex Numbers - K4Maths{% endblock %}
+
+{% block head %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Learn Simplifying Surds to Complex Numbers - Step-by-step guide with examples and practice">
+  
+  <!-- MathJax for LaTeX rendering -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
+{% endblock %}
+
+{% block content %}
+  <!-- Back navigation -->
+  <a href="{{ url_for('complex_numbers') }}" class="back-to-home">🔙 Back to Complex Numbers</a>
+
+  <div class="lesson-container">
+    
+    <!-- Lesson Header -->
+    <header class="lesson-header">
+      <h1 class="lesson-title">Simplifying Surds to Complex Numbers</h1>
+      <p class="lesson-subtitle">From basic surd manipulation to solving quadratic equations with complex roots</p>
+      
+      <div class="lesson-meta">
+        <span class="meta-item">📚 Further Mathematics</span>
+        <span class="meta-item">🎯 Difficulty: ⭐⭐</span>
+        <span class="meta-item">⏱️ Reading time: 25 minutes</span>
+        <span class="meta-item">📋 Edexcel A-Level</span>
+      </div>
+    </header>
+
+    <!-- Table of Contents -->
+    <nav class="table-of-contents">
+      <h3 class="toc-title">📖 Contents</h3>
+      <ul class="toc-list">
+        <li class="toc-item"><a href="#introduction" class="toc-link">Introduction</a></li>
+        <li class="toc-item"><a href="#key-concepts" class="toc-link">Key Concepts</a></li>
+        <li class="toc-item"><a href="#examples" class="toc-link">Worked Examples</a></li>
+        <li class="toc-item"><a href="#practice" class="toc-link">Practice Problems</a></li>
+        <li class="toc-item"><a href="#summary" class="toc-link">Summary</a></li>
+      </ul>
+    </nav>
+
+    <!-- Lesson Navigation -->
+    <div class="lesson-nav">
+      <a href="#" class="nav-button">← Previous Lesson</a>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 0%;"></div>
+      </div>
+      <a href="#" class="nav-button">Next Lesson →</a>
+    </div>
+
+    <!-- Introduction Section -->
+<section id="introduction" class="lesson-section">
+  <h2 class="section-heading">📚 Introduction</h2>
+  
+  <p class="lesson-text">
+    This lesson bridges the gap between surd manipulation and complex number theory.<br>
+    We'll explore how the fundamental rules of surds extend naturally into the complex plane, especially when working with negative square roots.<br>
+    Understanding this progression is key to solving quadratic equations that have no real solutions.<br>
+    It also lays the groundwork for more advanced topics in Further Mathematics.
+  </p>
+
+  <div class="definition-box">
+    <h4 class="box-title">🎯 Learning Objectives</h4>
+    <p class="lesson-text">
+      By the end of this lesson, you will be able to:
+    </p>
+    <ul class="lesson-text">
+      <li>Apply surd laws intuitively and manipulate complex surds</li>
+      <li>Express numbers in the form $a + bi$ where $a, b \in \mathbb{R}$</li>
+      <li>Solve quadratic equations with complex roots in the form $\pm hi$</li>
+      <li>Understand why negative discriminants produce $\pm$ complex solutions</li>
+    </ul>
+  </div>
+
+  <div class="tip-box">
+    <h4 class="box-title">💡 Clarification: What's a Surd Again?</h4>
+    <p class="lesson-text">
+      A <strong>surd</strong> is an irrational root — for example, $\sqrt{2}$ or $\sqrt{5}$. You can't simplify them into whole numbers, but they follow specific algebraic rules (surd laws).<br>
+      In this lesson, we’ll extend those rules to handle square roots of <strong>negative numbers</strong>, by introducing the concept of <strong>imaginary numbers</strong>.
+    </p>
+  </div>
+
+  <div class="tip-box"> 
+    <h4 class="box-title">💡 Why Complex Numbers?</h4>
+    <p class="lesson-text">
+      Not all equations have real solutions. For example, the equation $x^2 + 4 = 0$ has no real answer because no real number squared gives a negative result.<br>
+      But when we allow the idea of $\sqrt{-1} = i$, we can solve these equations — and that's where complex numbers become essential.
+    </p>
+  </div>
+</section>
+
+    <!-- Key Concepts Section -->
+    <section id="key-concepts" class="lesson-section">
+      <h2 class="section-heading">🔑 Key Concepts</h2>
+      
+      <h3 class="subsection-heading">Revisiting Surd Laws</h3>
+      <p class="lesson-text">
+        Before we venture into complex territory, let's refresh the fundamental surd laws that you already know. These rules will extend naturally to complex numbers:
+      </p>
+
+      <div class="definition-box">
+        <h4 class="box-title">📖 Surd Laws - Remember, they go both ways.</h4>
+        <div class="lesson-text">
+          <strong>Law 1:</strong> $\quad \text{If } a \text{ and } b \text{ are over } 0, \text{ then }\rightarrow \sqrt{a} \times \sqrt{b} \quad \text{can be written as: }  \sqrt{a \times b}$<br>
+          <strong>Law 2:</strong> $\quad \text{If } a \text{ and } b \text{ are over } 0, \text{ then }\rightarrow \sqrt{\frac{a}{b}}\quad \text{can be written as: } \frac{\sqrt{a}}{\sqrt{b}}$<br>
+          <strong>Law 3:</strong> $\quad \text{If } a \text{ is over } 0, \text { then }\rightarrow (\sqrt{a})^2 \quad \text{ is just } a \text{ (exponent cancels square root)}$<br>
+          <strong>Law 4:</strong> $\sqrt{a^2} \rightleftharpoons |a| \text { for any real value of } a$ <br>
+          <strong>Law 4 extended (modulus): $\text{For complex numbers: } |z| = |a + bi| = \sqrt{a^2 + b^2}$</strong>
+        </div>
+      </div>
+
+      <h3 class="subsection-heading">The Bridge to Complex Numbers</h3>
+      <p class="lesson-text">
+        Remember the golden rule:  ($\rightleftharpoons$ means it goes both ways.)
+      </p>
+
+      <div class="math-display">
+        $$i \rightleftharpoons \sqrt{-1} \quad \text{and} \quad i^2 \rightleftharpoons -1$$
+      </div>
+    </section>
+
+    <!-- Surd Laws in Action Section -->
+    <section id="surd-laws-examples" class="lesson-section">
+      <h2 class="section-heading">📝 Surd Laws in Action</h2>
+      
+      <div class="example-box">
+        <h4 class="box-title">📋 1st Law:</h4>        
+        <div class="solution-steps">
+          <h5 class="subsection-heading">Solution:</h5>
+          
+          <div class="step">
+            <div class="step-number">1st law:</div>
+            <p class="lesson-text">Simplify $\sqrt{9} \times \sqrt{16}$</p>
+            <div class="math-display">
+              $$\text{Using Law 1: } \sqrt{a} \times \sqrt{b} = \sqrt{a \times b}$$
+              $$\text{So: }$$
+              $$\sqrt{9} \times \sqrt{16} = \sqrt{9 \times 16} = \sqrt{144} = \boxed{12}$$
+            </div>
+          </div>
+        </div>
+
+          <h4 class="box-title">📋 2nd Law:</h4>        
+        <div class="solution-steps">
+          <h5 class="subsection-heading">Solution:</h5>
+          
+          <div class="step">
+            <div class="step-number">2nd law:</div>
+            <p class="lesson-text">Simplify $\frac{\sqrt{25}}{\sqrt{16}}$</p>
+            <div class="math-display">
+              $$\text{Using Law 2: } \sqrt{\frac{a}{b}} = \frac{\sqrt{a}}{\sqrt{b}}$$
+              $$\text{So: }$$
+              $$\frac{\sqrt{25}}{\sqrt{16}} = \boxed{\frac{5}{4}}$$
+            </div>
+          </div>
+        </div>
+        <h4 class="box-title">📋 3rd Law:</h4>        
+        <div class="solution-steps">
+          <h5 class="subsection-heading">Solution:</h5>
+          
+          <div class="step">
+            <div class="step-number">3rd law:</div>
+            <p class="lesson-text">Simplify: $i^2$<br> Technically, Law 3 applies to positive real numbers. In the case of $i = \sqrt{-1}$, this extends the idea into complex numbers.</p>
+            <div class="math-display">
+              $$\text{Using Law 3: } (\sqrt{a})^2 = a$$
+              $$\text{And remember: } i = \sqrt{-1}$$
+              $$\text{So: } $$
+              $$i^2 = \sqrt{-1}^2 = \boxed{-1}$$
+            </div>
+          </div>
+        </div>
+
+        <h4 class="box-title">📋 4th Law:</h4>        
+        <div class="solution-steps">
+          <h5 class="subsection-heading">Solution:</h5>
+          
+          <div class="step">
+            <div class="step-number">4th law:</div>
+            <p class="lesson-text">$z = 4i.$ solve: $|z|$</p>
+            <div class="math-display">
+              $$\text{Using Law 4 extended: } |z| = |a + bi| = \sqrt{a^2 + b^2}$$
+              $$\text{For } z = 4i = 0 + 4i \text{, we have } a = 0 \text{ and } b = 4$$
+              $$|z| = |4i| = \sqrt{0^2 + 4^2} = \sqrt{0 + 16} = \sqrt{16} = \boxed{4}$$
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+      <h3 class="subsection-heading">Complex Number Form</h3>
+      <p class="lesson-text">
+        A complex number is written in the form $z = a + bi$ where:
+      </p>
+      <ul class="lesson-text">
+        <li>$a$ is the real part (Re$(z)$)</li>
+        <li>$b$ is the imaginary part (Im$(z)$)</li>
+        <li>$a, b \in \mathbb{R}$ (both are real numbers)</li>
+      </ul>
+
+      <div class="definition-box">
+        <h4 class="box-title">📖  Note</h4>
+        <p class="lesson-text">
+          <strong>Pure imaginary numbers:</strong> When $a = 0$, we have $z = bi$ (purely imaginary because $bi$ is the imaginary part of the complex number) <br>
+          <strong>Real numbers:</strong> When $b = 0$, we have $z = a$ (purely real because $a$ is the real part of the complex number)<br>
+          <strong>$a, b \in \mathbb{R}$: </strong> simply means that $a$ and $b$ are members of real numbers ($\mathbb{R}$)<br>
+          <strong>Symbol meanings:</strong>
+            <ul class="lesson-text">
+            <li class = "lesson-text">$\mathbb{R} \quad \rightarrow $ Set of all real numbers</li>
+            <li class = "lesson-text">$\mathbb{C} \quad \rightarrow $ Set of all complex numbers</li>
+            <li class = "lesson-text">$\mathbb{I} \quad \rightarrow $ Set of all imaginary numbers</li>
+            <li class = "lesson-text">$\mathbb{Z} \quad \rightarrow $ Set of all integers</li>
+            <li class = "lesson-text">$\mathbb{Q} \quad \rightarrow $ Set of all rational numbers</li>
+            <li class = "lesson-text">$\mathbb{N} \quad \rightarrow $ Set of all natural numbers</li>
+            </ul>
+        </p>
+      </div>
+    </section>
+
+    <!-- Worked Examples Section -->
+    <section id="examples" class="lesson-section">
+      <h2 class="section-heading">📝 Worked Examples</h2>
+      
+      <div class="example-box">
+        <h4 class="box-title">📋 Example 1: Converting to Standard Form</h4>
+        
+        <p class="lesson-text"><strong>Question:</strong> Write $\sqrt{-49}$ in the form $a + bi$</p>
+        
+        <div class="solution-steps">
+          <h5 class="subsection-heading">Solution:</h5>
+          
+          <div class="step">
+            <div class="step-number">Step 1:</div>
+            <p class="lesson-text">Simplify what's under the square root:</p>
+            <div class="math-display">
+              $$\text{Remember the first law: } \sqrt{a \times b} = \sqrt{a} \times \sqrt{b}$$
+              $$-49 \text{ can be written as: } 49 \times -1$$
+              $$\text{So this becomes: } \sqrt{49 \times -1}$$
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">Step 2:</div>
+            <p class="lesson-text">Apply the surd law:</p>
+            <div class="math-display">
+              $$\text{Now we can apply the first law: }$$
+              $$=\sqrt{49 \times -1} \rightarrow \sqrt{49} \times \sqrt{-1}$$
+              $$\text{And: } \sqrt{-1} = i$$
+              $$\text{So it becomes: } \sqrt{49} \times i$$
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">Final Answer:</div>
+            <p class="lesson-text">Answer:</p>
+            <div class="math-display">
+              $$\text{We have: } \sqrt{49} \times i$$
+              $$ \sqrt{49} = 7$$
+              $$\text{So it becomes: } 7 \times i = 7i$$
+              $$\text{In the form: } a + bi \rightarrow 0 + 7i \text{ (there is no a)}$$
+            </div>
+          </div>
+        </div>
+      </div>
+<div class="example-box">
+  <h4 class="box-title">📋 Example 2: Finding roots of complex numbers using surd simplifications</h4>
+  <p class="lesson-text"><strong>Question:</strong> Solve $g^2 + 4g + 13 = 0$</p>
+  <div class="solution-steps">
+    <h5 class="subsection-heading">Solution:</h5>
+    <div class="step">
+      <div class="step-number">Step 1:</div>
+      <p class="lesson-text">Use the quadratic formula (simplest method)</p>
+      <div class="math-display">
+          $$\text{The Quadratic formula is:}$$
+          $$ \frac{-(b) \pm \sqrt{(b)^2 - 4(a)(c)}}{2(a)}$$
+          $$\quad$$
+          $$\text{Here, } a = 1, b = 4, c = 13. \text{ Let's plug them in:}$$
+          $$g = \frac{-4 \pm \sqrt{4^2 - 4(1)(13)}}{2(1)}$$
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number">Step 2:</div>
+      <p class="lesson-text">Simplify the square root:</p>
+      <div class="math-display">
+          $$\text{The square root is: } \sqrt{4^2 - 4(1)(13)}$$
+          $$\text{Simplified: } \sqrt{16 - 52} = \sqrt{-36}$$
+          $$\text{Use 1st law: } \sqrt{-36} = \sqrt{36} \times \sqrt{-1}$$
+          $$\sqrt{-1} = i, \text{ so } \sqrt{36} \times \sqrt{-1} = \sqrt{36} \times i$$
+          $$\text{Final simplified surd: } 6 \times i$$
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number">Final Answer:</div>
+      <p class="lesson-text">Throw it back into the quadratic formula:</p>
+      <div class="math-display">
+        $$\text{The surd was: }6 \times i \equiv 6i$$
+        $$\text{Putting it in the quadratic formula:}$$
+        $$g = \frac{-4 \pm 6i}{2} = \frac{-4}{2} \pm \frac{6i}{2}$$
+        $$\text{Remember, the } \pm \text{ means you must do it twice:}$$
+        $$\text{Leave your answer in exact form:}$$
+        $$g = -2 + 3i \text{ and } g = -2 - 3i$$
+        $$\text{So: } \boxed{g = -2 + 3i, -2 - 3i}$$
+      </div>
+        <div class="tip-box"> 
+    <h4 class="box-title">💡Look closely</h4>
+    <p class="lesson-text">
+      The solutions were: $\boxed{-2 + 3i}$ and $\boxed{-2 - 3i}$.<br>
+      Notice how the solutions are complex conjugates of each other? This feature is important.<br>
+      <strong>If a quadratic has 1 complex root, the other root will also be complex and will be its conjugate.</strong>
+    </p>
+  </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="example-box">
+  <h4 class="box-title">📋 Example 3: Understanding the $\pm$ in Complex Solutions</h4>
+  
+  <p class="lesson-text"><strong>Question:</strong> Solve $z^2 + 36 = 0$ and explain why we get $\pm$ solutions</p>
+  
+  <div class="solution-steps">
+    <h5 class="subsection-heading">Solution:</h5>
+    
+    <div class="step">
+      <div class="step-number">Step 1:</div>
+      <p class="lesson-text">Rearrange: $z^2 = -36$</p>
+    </div>
+
+    <div class="step">
+      <div class="step-number">Step 2:</div>
+      <p class="lesson-text">Take square roots of both sides:</p>
+      <div class="math-display">
+        $$z = \pm\sqrt{-36}$$
+        $$\text{Use the identity } \sqrt{-1} = i \text{ to simplify:}$$
+        $$\sqrt{-36} = \sqrt{36} \cdot \sqrt{-1} = 6i$$
+        $$\therefore z = \pm 6i$$
+      </div>
+      <p class="lesson-text">$\therefore \quad \longrightarrow \quad $ Means 'therefore'
+      </p>
+    </div>
+
+    <div class="step">
+      <div class="step-number">Step 3:</div>
+      <p class="lesson-text">Verification - let's check both solutions work:</p>
+      <div class="math-display">
+        $$\text{For } z = 6i: \quad (6i)^2 = 36i^2 = 36(-1) = \boxed{-36} \quad $$
+        $$\text{For } z = -6i: \quad (-6i)^2 = 36i^2 = 36(-1) = \boxed{-36} \quad $$
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number">Explanation:</div>
+      <p class="lesson-text">
+        We get $\pm$ because when we square either $+6i$ or $-6i$, we get the same result: $-36$. 
+        This is why quadratic equations often have two solutions — both the positive and negative square roots satisfy the original equation.
+      </p>
+    </div>
+  </div>
+</div>
+
+    <!-- Common Mistakes Section -->
+    <section class="lesson-section">
+      <h2 class="section-heading">⚠️ Common Mistakes</h2>
+      
+      <div class="warning-box">
+        <h4 class="box-title">🚫 Mistake 1: Forgetting the $\pm$ in square roots</h4>
+        <p class="lesson-text">
+          <strong>What students often do wrong:</strong> Writing $z = \sqrt{-16} = 4i$ and stopping there
+        </p>
+        <p class="lesson-text">
+          <strong>Why it's wrong:</strong> Every quadratic equation has two solutions (unless it's a repeated root)
+        </p>
+        <p class="lesson-text">
+          <strong>How to avoid it:</strong> Always write $z = \pm\sqrt{-16} = \pm 4i$ when solving $z^2 = -16$
+        </p>
+      </div>
+
+      <div class="warning-box">
+        <h4 class="box-title">🚫 Mistake 2: Incorrect surd manipulation with negatives</h4>
+        <p class="lesson-text">
+          <strong>What students often do wrong:</strong> $\sqrt{-9} \times \sqrt{-4} = \sqrt{(-9) \times (-4)} = \sqrt{36} = 6$
+        </p>
+        <p class="lesson-text">
+          <strong>Why it's wrong:</strong> The surd law $\sqrt{a} \times \sqrt{b} = \sqrt{ab}$ only works when both $a$ and $b$ are non-negative
+        </p>
+        <p class="lesson-text">
+          <strong>How to avoid it:</strong> Convert to $i$ form first: $\sqrt{-9} \times \sqrt{-4} = 3i \times 2i = 6i^2 = -6$
+        </p>
+      </div>
+
+      <div class="warning-box">
+        <h4 class="box-title">🚫 Mistake 3: Confusing the imaginary part</h4>
+        <p class="lesson-text">
+          <strong>What students often do wrong:</strong> For $z = 3 + 7i$, saying the imaginary part is $7i$
+        </p>
+        <p class="lesson-text">
+          <strong>Why it's wrong:</strong> The imaginary part is the coefficient of $i$, not including $i$ itself
+        </p>
+        <p class="lesson-text">
+          <strong>How to avoid it:</strong> $Im(z) = 7$, not $7i$
+        </p>
+      </div>
+    </section>
+
+    <!-- Practice Problems Section -->
+    <section id="practice" class="lesson-section">
+      <h2 class="section-heading">💪 Practice Problems</h2>
+      
+      <p class="lesson-text lesson-text-center">
+        Try these problems to test your understanding:
+      </p>
+
+      <div class="example-box">
+        <h4 class="box-title">🎯 Practice Questions A</h4>
+        <p class="lesson-text">Write each of the following in the form $a + bi$ where $a, b \in \mathbb{R}$, and in simplest form:<br>Do not use any forms of a calculator.</p>
+        <p class="lesson-text">
+        (A) Simplify $\sqrt{-121}$ <br>
+        (B) Simplify $\sqrt{-16}$
+        (C) Simplify $\sqrt{-55}$<br>
+        (D) Solve $z^2 + 16 = 0$
+        </p>
+        <details style="margin-top: 15px;">
+          <summary style="cursor: pointer; color: var(--accent-blue); font-weight: 600;">
+        🔍 Show Solution
+          </summary>
+          <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(74, 158, 255, 0.2);">
+          <div style="text-align: center; font-weight: bold;">(A)</div>
+          $$\sqrt{-121} = \sqrt{121} \times \sqrt{-1} = \boxed{11i}$$
+          
+          <div style="text-align: center; font-weight: bold;">(B)</div>
+          $$\sqrt{-16} = \sqrt{16} \times \sqrt{-1} = \boxed{4i}$$
+          
+          <div style="text-align: center; font-weight: bold;">(C)</div>
+          $$\sqrt{-55} = \sqrt{55} \times \sqrt{-1} = \boxed{\sqrt{55}i}$$
+          
+          <div style="text-align: center; font-weight: bold;">(D)</div>
+          $$z^2 + 16 = 0 \Rightarrow z^2 = -16 \Rightarrow z = \pm\sqrt{-16} = \boxed{\pm 4i}$$
+        </div>
+          </div>
+        </details>
+
+      <div class="example-box">
+        <h4 class="box-title">🎯 Practice Questions B</h4>
+        <p class="lesson-text">Solve the quadratic equations, giving your answers in the form $a + bi$ where $b$ is simplified:<br>Do not use any forms of a calculator.</p>
+        <p class="lesson-text">
+          (A) $z^2 + 64z + 16 = 0$ Find $z$ in the form $a + bi , a, b \in \mathbb{R}$ <br>
+          (B) $s^2 +6s + 25 = 0$ Find $s$ in the form $a + bi , a, b \in \mathbb{R}$<br>
+          (C) $t^2 + 8t + 20 = 0$ Find $t$ in the form $a + bi , a, b \in \mathbb{R}$<br>
+          (D) $f(z) = z^2 - 2z + 17$. Show $(1 - 4i)$ is a solution to $f(z) = 0$.
+        </p>
+        
+        <details style="margin-top: 15px;">
+          <summary style="cursor: pointer; color: var(--accent-blue); font-weight: 600;">
+        🔍 Show Solution
+          </summary>
+          <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(74, 158, 255, 0.2);">
+        <div class="lesson-text">
+            <div style="text-align: center; font-weight: bold; font-family: 'Oswald', sans-serif;">(A)</div>
+            $$z = \frac{-(-64) \pm \sqrt{(-64)^2 - 4(1)(16)}}{2(1)} = \frac{64 \pm \sqrt{4096 - 64}}{2} = \frac{64 \pm \sqrt{4032}}{2} $$ $$= \frac{64 \pm 8\sqrt{63}}{2} = \boxed{32 \pm 4\sqrt{63} \rightarrow \text{purely real}}$$
+            
+            <div style="text-align: center; font-weight: bold; font-family: 'Oswald', sans-serif;">(B)</div>
+            $$s = \frac{-6 \pm \sqrt{6^2 - 4(1)(25)}}{2(1)} = \frac{-6 \pm \sqrt{36 - 100}}{2} = \frac{-6 \pm \sqrt{-64}}{2} = \frac{-6 \pm 8i}{2}$$ $$ = \boxed{-3 + 4i}, \boxed{-3 - 4i}$$
+            
+            <div style="text-align: center; font-weight: bold; font-family: 'Oswald', sans-serif;">(C)</div>
+            $$t = \frac{-8 \pm \sqrt{8^2 - 4(1)(20)}}{2(1)} = \frac{-8 \pm \sqrt{64 - 80}}{2} = \frac{-8 \pm \sqrt{-16}}{2} = \frac{-8 \pm 4i}{2} $$ $$= \boxed{-4 + 2i}, \boxed{-4 - 2i}$$
+            
+            <div style="text-align: center; font-weight: bold; font-family: 'Oswald', sans-serif;">(D)</div>
+          $$f(1 - 4i) = (1 - 4i)^2 - 2(1 - 4i) + 17 = (1 - 8i + 16i^2) - (2 - 8i) + 17$$ $$ = (1 - 16) + (-8i + 8i) + (17 - 2) = 0$$
+          $$\text{So, } 1 - 4i \text{ is indeed a solution to } f(z) = 0$$
+        </div>
+          </div>
+        </details>
+      </div>
+
+<!-- Summary Section -->
+<section id="summary" class="lesson-section">
+  <h2 class="section-heading">📋 Summary</h2>
+  
+  <div class="definition-box">
+    <h4 class="box-title">🎯 Key Takeaways</h4>
+    <ul class="lesson-text">
+      <li>Complex numbers expand the real number system by introducing $\sqrt{-1} = i$</li>
+      <li>Any complex number can be written in the form $z = a + bi$ where $a, b \in \mathbb{R}$</li>
+      <li>Quadratic equations with negative discriminants have imaginary solutions of the form $\pm hi$</li>
+      <li>The $\pm$ appears because both $+hi$ and $-hi$ square to the same value</li>
+      <li>Always convert square roots of negative numbers to $i$ form before applying surd laws</li>
+    </ul>
+  </div>
+
+  <div class="tip-box">
+    <h4 class="box-title">📚 What's Next?</h4>
+    <p class="lesson-text">
+      Now that you understand the basics of complex numbers, you're ready to move on to arithmetic with complex numbers (addition, multiplication, division), visualising them on the complex plane, and applying the quadratic formula to equations with complex roots. These tools are crucial for Further Maths topics such as complex analysis and advanced algebra.
+    </p>
+  </div>
+</section>
+
+    <!-- Lesson Navigation -->
+    <div class="lesson-nav">
+      <a href="#" class="nav-button">← Previous Lesson</a>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 100%;"></div>
+      </div>
+      <a href="#" class="nav-button">Next Lesson →</a>
+    </div>
+
+  </div>
+
+  <!-- Back to top button -->
+  <div style="text-align: center; margin: 30px 0;">
+    <a href="#top" class="nav-button">⬆️ Back to Top</a>
+  </div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Smooth scrolling for table of contents
+    const tocLinks = document.querySelectorAll('.toc-link');
+    tocLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Progress bar animation based on scroll
+    const progressBar = document.querySelector('.progress-fill');
+    if (progressBar) {
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.body.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            progressBar.style.width = Math.min(scrollPercent, 100) + '%';
+        });
+    }
+
+    // Highlight current section in table of contents
+    const sections = document.querySelectorAll('.lesson-section');
+    const tocNavLinks = document.querySelectorAll('.toc-link');
+    
+    function highlightTOC() {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (window.pageYOffset >= (sectionTop - 200)) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        tocNavLinks.forEach(link => {
+            link.style.background = '';
+            link.style.borderLeftColor = 'transparent';
+            if (link.getAttribute('href') === '#' + current) {
+                link.style.background = 'rgba(74, 158, 255, 0.1)';
+                link.style.borderLeftColor = 'var(--accent-blue)';
+            }
+        });
+    }
+    
+    window.addEventListener('scroll', highlightTOC);
+    
+    // Initialize MathJax rendering
+    if (window.MathJax) {
+        MathJax.typesetPromise().then(() => {
+            console.log('MathJax rendering complete');
+        });
+    }
+});
+</script>
+{% endblock %}

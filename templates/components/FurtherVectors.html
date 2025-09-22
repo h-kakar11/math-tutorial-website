@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}Further Vectors{% endblock %}
+
+{% block head %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+  <hr>
+  <p><a href="{{ url_for('index') }}">🏠︎ - Back to Home</a></p>
+  <h1>Further Vectors</h1>
+  <p>You have probably seen and learned vectors from A-Level Maths, and quite briefly in GCSE.<br><br>These were just 2D vectors for the x axis and y axis.<br><br>In Further Maths, we start to look at vectors in 3D.</p>
+  <p class="lessoncontent"> 
+    As you probably know, a 2d vector comes in the column form:<br>
+\[
+\begin{pmatrix}
+x \\
+y
+\end{pmatrix}
+\\
+\quad\quad
+\text{where: } x = \text{x axis unit}, \quad y = \text{y axis unit}
+\]
+<br> Or, 'IJ' form:
+\[
+xi + yj
+\quad\quad 
+\text{where: } x = \text{x axis unit}, \quad y = \text{y axis unit} 
+\]
+<br>
+<br> Similarly, a 3D vector is in the column form: 
+<br>
+\[
+\begin{pmatrix}
+x \\
+y \\
+z
+\end{pmatrix}
+\quad\quad
+\text{where: } x = \text{x axis unit}, \quad y = \text{y axis unit}, \quad z = \text{z axis unit}
+\]
+<br> Or, 'IJK form':
+\[
+xi + yj + zk
+\quad\quad
+\text{where: } x = \text{x axis unit}, \quad y = \text{y axis unit}, \quad z = \text{z axis unit}
+\]
+<br>
+<br>
+the equation of a straight line in vector form is given as:
+<br>
+\[
+r = a + lambda b
+\]
+  </p class ="lessoncontent">
+</body>
+</html>
+
+{% endblock %}

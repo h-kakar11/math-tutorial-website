@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Page{% endblock %}
+
+{% block content %}
+  <a href="{{ url_for('index') }}" class="back-to-home">🏠 Back to Home</a>
+  
+  <h1>Methods to contact me</h1>
+  <p>Please only use the contact form below for the following: </p>
+  <p>
+    General Requests<br>Issues/Bugs<br>
+    Recommendations and/or suggestions<br>
+    Reporting errors, inaccuracies, etc<br>
+    Feedback on the content
+  </p>
+
+  <form action="/submit_contact" method="post" style="display:flex;flex-direction:column;align-items:center;max-width:400px;margin:0 auto;">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name" required><br>
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required><br>
+    <label for="message">Write your message below: </label><br>
+    <textarea id="message" name="message" rows="4" required></textarea><br>
+    <input type="submit" value="Send">
+    <br>    <br>
+    <br>    <br>
+    <br>    <br>
+  </form>
+
+{% endblock %}

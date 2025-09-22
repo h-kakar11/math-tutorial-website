@@ -1,0 +1,511 @@
+{% extends "base.html" %}
+
+{% block title %}Factorising - K4Maths{% endblock %}
+
+{% block head %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Learn Factorising - Step-by-step guide with examples and practice">
+  
+  <!-- MathJax for LaTeX rendering -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
+{% endblock %}
+
+{% block content %}
+  <!-- Back navigation -->
+  <a href="{{ url_for('maths') }}" class="back-to-home">🔙 Back to Maths Topics</a>
+
+  <div class="lesson-container">
+    
+    <!-- Lesson Header -->
+    <header class="lesson-header">
+      <h1 class="lesson-title">Factorising</h1>
+      <p class="lesson-subtitle">Breaking down expressions into their simplest factors</p>
+      
+      <div class="lesson-meta">
+        <span class="meta-item">📚 Mathematics</span>
+        <span class="meta-item">🎯 Difficulty: ⭐⭐</span>
+        <span class="meta-item">⏱️ Reading time: 20 minutes</span>
+        <span class="meta-item">📋 Edexcel & AQA</span>
+      </div>
+    </header>
+
+    <!-- Table of Contents -->
+    <nav class="table-of-contents">
+      <h3 class="toc-title">📖 Contents</h3>
+      <ul class="toc-list">
+        <li class="toc-item"><a href="#introduction" class="toc-link">Introduction</a></li>
+        <li class="toc-item"><a href="#key-concepts" class="toc-link">Key Concepts</a></li>
+        <li class="toc-item"><a href="#examples" class="toc-link">Worked Examples</a></li>
+        <li class="toc-item"><a href="#practice" class="toc-link">Practice Problems</a></li>
+        <li class="toc-item"><a href="#summary" class="toc-link">Summary</a></li>
+      </ul>
+    </nav>
+
+    <!-- Lesson Navigation -->
+    <div class="lesson-nav">
+      <a href="{{ url_for('expanding_brackets') }}" class="nav-button">← Previous Lesson</a>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 0%;"></div>
+      </div>
+      <a href="{{ url_for('neg_and_frac_indices') }}" class="nav-button">Next Lesson →</a>
+    </div>
+
+    <!-- Introduction Section -->
+    <section id="introduction" class="lesson-section">
+      <h2 class="section-heading">📚 Introduction</h2>
+      
+      <p class="lesson-text">
+        Factorising is the reverse process of expanding brackets. It involves expressing a mathematical expression as a product of its factors. This skill is essential for simplifying expressions, solving equations, and working with algebraic fractions.
+      </p>
+
+      <div class="definition-box">
+        <h4 class="box-title">🎯 Learning Objectives</h4>
+        <p class="lesson-text">
+          By the end of this lesson, you will be able to:
+        </p>
+        <ul class="lesson-text">
+          <li>Identify and extract common factors from expressions</li>
+          <li>Factorise quadratic expressions of the form $ax^2 + bx + c$</li>
+          <li>Recognise and factorise the difference of two squares</li>
+          <li>Apply factorising techniques to more complex expressions</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Key Concepts Section -->
+    <section id="key-concepts" class="lesson-section">
+      <h2 class="section-heading">🔑 Key Concepts</h2>
+      
+      <h3 class="subsection-heading">Taking Out Common Factors</h3>
+      <p class="lesson-text">
+        The simplest form of factorising involves identifying and extracting common factors from each term in an expression.
+      </p>
+
+      <div class="definition-box">
+        <h4 class="box-title">📖 Definition</h4>
+        <p class="lesson-text">
+          <strong>Common Factor:</strong> A term that divides exactly into every term of an expression.
+        </p>
+      </div>
+
+      <p class="lesson-text">
+        To factorise by taking out common factors:
+      </p>
+      <ol class="lesson-text">
+        <li>Identify the highest common factor (HCF) of all terms</li>
+        <li>Express each term as the HCF multiplied by what remains</li>
+        <li>Write the expression as the HCF multiplied by a bracket containing the remaining terms</li>
+      </ol>
+
+      <h3 class="subsection-heading">Factorising Quadratics</h3>
+      <p class="lesson-text">
+        A quadratic expression is of the form $ax^2 + bx + c$, where $a$, $b$, and $c$ are constants, and $a \neq 0$.
+      </p>
+      
+      <div class="definition-box">
+        <h4 class="box-title">📖 Definition</h4>
+        <p class="lesson-text">
+          <strong>Factorising Quadratics:</strong> Expressing a quadratic expression as a product of two linear factors.
+        </p>
+      </div>
+
+      <p class="lesson-text">
+        For quadratics in the form $x^2 + bx + c$, we need to find two numbers that:
+      </p>
+      <ul class="lesson-text">
+        <li>Multiply to give $c$</li>
+        <li>Sum to give $b$</li>
+      </ul>
+
+      <h3 class="subsection-heading">Difference of Two Squares</h3>
+      
+      <div class="definition-box">
+        <h4 class="box-title">📖 Definition</h4>
+        <p class="lesson-text">
+          <strong>Difference of Two Squares:</strong> An expression in the form $a^2 - b^2$, which can always be factorised as $(a+b)(a-b)$.
+        </p>
+      </div>
+
+      <!-- LaTeX Math Example -->
+      <div class="math-display">
+        $$a^2 - b^2 = (a+b)(a-b)$$
+      </div>
+
+      <div class="tip-box">
+        <h4 class="box-title">💡 Pro Tip</h4>
+        <p class="lesson-text">
+          Always look to take out common factors first before attempting other factorising methods. This can often simplify the problem significantly.
+        </p>
+      </div>
+    </section>
+
+    <!-- Worked Examples Section -->
+    <section id="examples" class="lesson-section">
+      <h2 class="section-heading">📝 Worked Examples</h2>
+      
+      <div class="example-box">
+        <h4 class="box-title">📋 Example 1: Taking Out Common Factors</h4>
+        
+        <p class="lesson-text"><strong>Question:</strong> Factorise $6x^3 + 9x^2 - 12x$.</p>
+        
+        <div class="solution-steps">
+          <h5 class="subsection-heading">Solution:</h5>
+          
+          <div class="step">
+            <div class="step-number">Step 1:</div>
+            <p class="lesson-text">Identify the highest common factor (HCF) of all terms.</p>
+            <p class="lesson-text">The HCF of $6x^3$, $9x^2$, and $-12x$ is $3x$ because:</p>
+            <ul class="lesson-text">
+              <li>The HCF of 6, 9, and 12 is 3</li>
+              <li>$x$ appears in all terms, with the lowest power being $x^1$</li>
+            </ul>
+          </div>
+
+          <div class="step">
+            <div class="step-number">Step 2:</div>
+            <p class="lesson-text">Express each term as the HCF multiplied by what remains.</p>
+            <div class="math-display">
+              \begin{align}
+              6x^3 &= 3x \times 2x^2\\
+              9x^2 &= 3x \times 3x\\
+              -12x &= 3x \times (-4)
+              \end{align}
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">Final Answer:</div>
+            <p class="lesson-text">Write the expression as the HCF multiplied by a bracket containing the remaining terms.</p>
+            <div class="math-display">
+              $$6x^3 + 9x^2 - 12x = 3x(2x^2 + 3x - 4)$$
+            </div>
+            <p class="lesson-text">We have factorised the expression by taking out the common factor $3x$.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="example-box">
+        <h4 class="box-title">📋 Example 2: Factorising a Quadratic Expression</h4>
+        
+        <p class="lesson-text"><strong>Question:</strong> Factorise $x^2 + 7x + 12$.</p>
+        
+        <div class="solution-steps">
+          <h5 class="subsection-heading">Solution:</h5>
+          
+          <div class="step">
+            <div class="step-number">Step 1:</div>
+            <p class="lesson-text">We need to find two numbers that multiply to give 12 and add to give 7.</p>
+            <p class="lesson-text">Let's list the factors of 12: (1, 12), (2, 6), (3, 4)</p>
+            <p class="lesson-text">Check which pair adds to 7:</p>
+            <ul class="lesson-text">
+              <li>$1 + 12 = 13$ (too large)</li>
+              <li>$2 + 6 = 8$ (too large)</li>
+              <li>$3 + 4 = 7$ (correct!)</li>
+            </ul>
+          </div>
+
+          <div class="step">
+            <div class="step-number">Final Answer:</div>
+            <p class="lesson-text">The numbers we need are 3 and 4. So we can factorise the expression as:</p>
+            <div class="math-display">
+              $$\boxed{x^2 + 7x + 12 = (x+3)(x+4)}$$
+            </div>
+            <p class="lesson-text">Check: Expanding $(x+3)(x+4)$ gives $x^2 + 4x + 3x + 12 = x^2 + 7x + 12$ ✓</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="example-box">
+        <h4 class="box-title">📋 Example 3: Difference of Two Squares</h4>
+        
+        <p class="lesson-text"><strong>Question:</strong> Factorise $16x^2 - 25$.</p>
+        
+        <div class="solution-steps">
+          <h5 class="subsection-heading">Solution:</h5>
+          
+          <div class="step">
+            <div class="step-number">Step 1:</div>
+            <p class="lesson-text">Identify this as a difference of two squares by expressing each term as a square.</p>
+            <div class="math-display">
+              $$16x^2 - 25 = (4x)^2 - 5^2$$
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">Final Answer:</div>
+            <p class="lesson-text">Apply the difference of two squares formula: $a^2 - b^2 = (a+b)(a-b)$</p>
+            <div class="math-display">
+              $$\boxed{16x^2 - 25 = (4x)^2 - 5^2 = (4x+5)(4x-5)}$$
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="example-box">
+        <h4 class="box-title">📋 Example 4: Factorising More Complex Quadratics</h4>
+        
+        <p class="lesson-text"><strong>Question:</strong> Factorise $2x^2 + 5x - 3$.</p>
+        
+        <div class="solution-steps">
+          <h5 class="subsection-heading">Solution:</h5>
+          
+          <div class="step">
+            <div class="step-number">Step 1:</div>
+            <p class="lesson-text">For a quadratic in the form $ax^2 + bx + c$ where $a \neq 1$, we need to find two numbers $p$ and $q$ such that:</p>
+            <ul class="lesson-text">
+              <li>$p \times q = a \times c = 2 \times (-3) = -6$</li>
+              <li>$p + q = b = 5$</li>
+            </ul>
+          </div>
+
+          <div class="step">
+            <div class="step-number">Step 2:</div>
+            <p class="lesson-text">Find two numbers that multiply to give -6 and add to give 5.</p>
+            <p class="lesson-text">The possible pairs of factors of -6 are: (-1, 6), (1, -6), (-2, 3), (2, -3)</p>
+            <p class="lesson-text">Check which pair adds to 5:</p>
+            <ul class="lesson-text">
+              <li>$-1 + 6 = 5$ (correct!)</li>
+              <li>$1 + (-6) = -5$ (not right)</li>
+              <li>$-2 + 3 = 1$ (not right)</li>
+              <li>$2 + (-3) = -1$ (not right)</li>
+            </ul>
+            <p class="lesson-text">So our numbers are -1 and 6.</p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">Step 3:</div>
+            <p class="lesson-text">Rewrite the middle term using these numbers:</p>
+            <div class="math-display">
+              $$2x^2 + 5x - 3 = 2x^2 - x + 6x - 3$$
+            </div>
+            <p class="lesson-text">Now group the terms:</p>
+            <div class="math-display">
+              $$2x^2 - x + 6x - 3 = (2x^2 - x) + (6x - 3)$$
+            </div>
+          </div>
+          
+          <div class="step">
+            <div class="step-number">Step 4:</div>
+            <p class="lesson-text">Factor out common terms from each group:</p>
+            <div class="math-display">
+              \begin{align}
+              (2x^2 - x) + (6x - 3) &= x(2x - 1) + 3(2x - 1)\\
+              &= (2x - 1)(x + 3)
+              \end{align}
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">Final Answer:</div>
+            <div class="math-display">
+              $$\boxed{2x^2 + 5x - 3 = (2x - 1)(x + 3)}$$
+            </div>
+            <p class="lesson-text">Check: Expanding $(2x - 1)(x + 3)$ gives $2x^2 + 6x - x - 3 = 2x^2 + 5x - 3$ ✓</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Common Mistakes Section -->
+    <section class="lesson-section">
+      <h2 class="section-heading">⚠️ Common Mistakes</h2>
+      
+      <div class="warning-box">
+        <h4 class="box-title">🚫 Mistake 1: Missing Common Factors</h4>
+        <p class="lesson-text">
+          <strong>What students often do wrong:</strong> Jumping straight to factorising quadratics without first checking for common factors.
+        </p>
+        <p class="lesson-text">
+          <strong>Why it's wrong:</strong> This can make the problem much harder than necessary and often leads to errors.
+        </p>
+        <p class="lesson-text">
+          <strong>How to avoid it:</strong> Always check for common factors first before applying other factorisation methods.
+        </p>
+      </div>
+
+      <div class="warning-box">
+        <h4 class="box-title">🚫 Mistake 2: Incorrect Signs When Factorising</h4>
+        <p class="lesson-text">
+          <strong>What students often do wrong:</strong> Getting the signs wrong in the brackets when factorising expressions like $x^2 - 5x + 6$.
+        </p>
+        <p class="lesson-text">
+          <strong>Why it's wrong:</strong> The signs must be chosen so that when you expand the brackets, you get the original expression back.
+        </p>
+        <p class="lesson-text">
+          <strong>How to avoid it:</strong> Be systematic when finding factors. For the constant term, find factors that multiply to give $c$. For the middle term, these factors must add to give $b$. Always check your answer by expanding the brackets.
+        </p>
+      </div>
+    </section>
+
+    <!-- Practice Problems Section -->
+    <section id="practice" class="lesson-section">
+      <h2 class="section-heading">💪 Practice Problems</h2>
+      
+      <p class="lesson-text lesson-text-center">
+        Try these problems to test your understanding:
+      </p>
+
+      <div class="example-box">
+        <h4 class="box-title">🎯 Practice Question 1</h4>
+        <p class="lesson-text">Factorise completely:</p>
+        <p class="lesson-text">(a) $4x^2y + 8xy^2$</p>
+        <p class="lesson-text">(b) $x^2 - 9$</p>
+        <p class="lesson-text">(c) $x^2 + 8x + 15$</p>
+        
+        <details style="margin-top: 15px;">
+          <summary style="cursor: pointer; color: var(--accent-blue); font-weight: 600;">
+            🔍 Show Solution
+          </summary>
+          <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(74, 158, 255, 0.2);">
+            <p class="lesson-text">(a) $4x^2y + 8xy^2 = 4xy(x + 2y)$</p>
+            <p class="lesson-text">(b) $x^2 - 9 = x^2 - 3^2 = (x+3)(x-3)$</p>
+            <p class="lesson-text">(c) $x^2 + 8x + 15 = (x+3)(x+5)$</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="example-box">
+        <h4 class="box-title">🎯 Practice Question 2</h4>
+        <p class="lesson-text">Factorise the following expressions:</p>
+        <p class="lesson-text">(a) $3x^2 - 12$</p>
+        <p class="lesson-text">(b) $x^2 - 5x - 14$</p>
+        <p class="lesson-text">(c) $2x^2 + 7x - 4$</p>
+        
+        <details style="margin-top: 15px;">
+          <summary style="cursor: pointer; color: var(--accent-blue); font-weight: 600;">
+            🔍 Show Solution
+          </summary>
+          <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(74, 158, 255, 0.2);">
+            <p class="lesson-text">(a) $3x^2 - 12 = 3(x^2 - 4) = 3(x+2)(x-2)$</p>
+            <p class="lesson-text">(b) $x^2 - 5x - 14 = (x-7)(x+2)$</p>
+            <p class="lesson-text">(c) $2x^2 + 7x - 4 = (2x-1)(x+4)$</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- Summary Section -->
+    <section id="summary" class="lesson-section">
+      <h2 class="section-heading">📋 Summary</h2>
+      
+      <div class="definition-box">
+        <h4 class="box-title">🎯 Key Takeaways</h4>
+        <ul class="lesson-text">
+          <li>Always look for common factors first when factorising any expression</li>
+          <li>For quadratic expressions of the form $x^2 + bx + c$, find numbers that multiply to give $c$ and add to give $b$</li>
+          <li>Remember the difference of two squares formula: $a^2 - b^2 = (a+b)(a-b)$</li>
+          <li>For quadratics with a coefficient of $x^2$ (i.e., $ax^2 + bx + c$ where $a \neq 1$), the factorisation process is more complex and may require the grouping method</li>
+        </ul>
+      </div>
+
+      <div class="tip-box">
+        <h4 class="box-title">📚 What's Next?</h4>
+        <p class="lesson-text">
+          Now that you understand factorising, you're ready to learn about negative and fractional indices, which will expand your algebraic toolbox and allow you to work with more complex expressions.
+        </p>
+      </div>
+    </section>
+
+    <!-- Lesson Navigation -->
+    <div class="lesson-nav">
+      <a href="{{ url_for('expanding_brackets') }}" class="nav-button">← Previous Lesson</a>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 100%;"></div>
+      </div>
+      <a href="{{ url_for('neg_and_frac_indices') }}" class="nav-button">Next Lesson →</a>
+    </div>
+
+  </div>
+
+  <!-- Back to top button -->
+  <div style="text-align: center; margin: 30px 0;">
+    <a href="#top" class="nav-button">⬆️ Back to Top</a>
+  </div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Smooth scrolling for table of contents
+    const tocLinks = document.querySelectorAll('.toc-link');
+    tocLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Progress bar animation based on scroll
+    const progressBar = document.querySelector('.progress-fill');
+    if (progressBar) {
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.body.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            progressBar.style.width = Math.min(scrollPercent, 100) + '%';
+        });
+    }
+
+    // Highlight current section in table of contents
+    const sections = document.querySelectorAll('.lesson-section');
+    const tocNavLinks = document.querySelectorAll('.toc-link');
+    
+    function highlightTOC() {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (window.pageYOffset >= (sectionTop - 200)) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        tocNavLinks.forEach(link => {
+            link.style.background = '';
+            link.style.borderLeftColor = 'transparent';
+            if (link.getAttribute('href') === '#' + current) {
+                link.style.background = 'rgba(74, 158, 255, 0.1)';
+                link.style.borderLeftColor = 'var(--accent-blue)';
+            }
+        });
+    }
+    
+    window.addEventListener('scroll', highlightTOC);
+    
+    // Initialize MathJax rendering
+    if (window.MathJax) {
+        MathJax.typesetPromise().then(() => {
+            console.log('MathJax rendering complete');
+        });
+    }
+});
+</script>
+{% endblock %}

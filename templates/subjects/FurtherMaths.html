@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+
+{% block title %}Further Mathematics{% endblock %}
+
+{% block head %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+  <a href="{{ url_for('index') }}" class="back-to-home">🏠 Back to Home</a>
+  
+  <h1><br><br>Further Mathematics - mostly Edexcel, unless otherwise stated.</h1>
+  <h2>Here, you'll find all Further Maths content that you can revise. Exam Questions coming soon!</h2>
+  <br><br>
+  <hr><hr><hr><hr><hr>
+<br><br>
+  <p style="text-align: center; padding: 5px 0px;">The <strong>Further Mathematics</strong> specification by Edexcel covers all these topics. <br><br>These are only Core Pure Y1 topics, But Mechanics, Statistics, and CP2 coming soon - stay tuned.
+  <br><br>
+(minor disclaimer: The difficulty rating is subective and may not reflect your own experience. It is based on my personal experiences.) <br><br>
+Difficulty rating: ratings are out of 5 stars, with 1 being the easiest and 5 being the hardest.
+</p>
+<div style="margin-top: 20px;">
+  <a href="{{ url_for('index') }}" style="margin-right: 20px; margin-left: 20px;">🏠︎ - Back to Home<br></a>
+</div>
+
+<div class="topics-grid">
+  <div class="topic-card topic-card-blue">
+    <a href="{{ url_for('complex_numbers') }}"><h6>Complex Numbers - (Edexcel, AQA) - CORE PURE</h6>
+      <p class="TopicsList">Introduction, Mastery, and Guide to solve exam questions here</p>
+      <p class="TopicsList">Real and imaginary parts, operations, modulus-argument form, and De Moivre's theorem</p>
+    </a>
+    <p class="TopicsList">Difficulty rating: ⭐⭐⭐</p>
+  </div>
+
+  <div class="topic-card topic-card-orangutan">
+    <a href="">
+      <h6>Matrices - (Edexcel, AQA) - CORE PURE</h6>
+      <p class="TopicsList">Introduction, Mastery, and Guide to solve exam questions here</p>
+      <p class="TopicsList">Matrix arithmetic, determinants, inverse matrices, and linear transformations</p>
+    </a>
+    <p class="TopicsList">Difficulty rating: ⭐⭐</p>
+  </div>
+
+  <div class="topic-card topic-card-red">
+    <a href="">
+      <h6>Argand Diagrams (Edexcel, AQA) - CORE PURE</h6>
+      <p class="TopicsList">Introduction, Mastery, and Guide to solve exam questions here</p>
+      <p class="TopicsList">Complex plane representation, loci, and geometric interpretations of complex numbers</p>
+    </a>
+    <p class="TopicsList">Difficulty rating: ⭐⭐⭐</p>
+  </div>
+
+  <div class="topic-card topic-card-orange">
+    <a href="">
+      <h6>Series (Edexcel) - CORE PURE</h6>
+      <p class="TopicsList">Introduction, Mastery, and Guide to solve exam questions here</p>
+      <p class="TopicsList">Method of differences, Maclaurin series, and series expansions</p>
+    </a>
+    <p class="TopicsList">Difficulty rating: ⭐⭐</p>
+  </div>
+
+
+<div class="topic-card topic-card-purple">
+    <a href="">
+        <h6>Roots of Polynomials (Edexcel) - CORE PURE</h6>
+        <p class="TopicsList">Introduction, Mastery, and Guide to solve exam questions here</p>
+        <p class="TopicsList">Relationships between roots and coefficients, sum and product of roots</p>
+    </a>
+    <p class="TopicsList">Difficulty rating: ⭐⭐⭐</p>
+</div>
+
+<div class="topic-card topic-card-teal">
+    <a href="">
+        <h6>Volumes of Revolution - (Edexcel) - CORE PURE</h6>
+        <p class="TopicsList">Introduction, Mastery, and Guide to solve exam questions here</p>
+        <p class="TopicsList">Rotation about x-axis, y-axis, and calculating volumes using integration</p>
+    </a>
+    <p class="TopicsList">Difficulty rating: ⭐⭐</p>
+</div>
+
+<div class="topic-card topic-card-pink">
+    <a href="">
+        <h6>Linear Transformations - (Edexcel) - CORE PURE</h6>
+        <p class="TopicsList">Introduction, Mastery, and Guide to solve exam questions here</p>
+        <p class="TopicsList">Matrix transformations, rotations, reflections, enlargements, and invariant lines</p>
+    </a>
+    <p class="TopicsList">Difficulty rating: ⭐⭐⭐</p>
+</div>
+
+<div class="topic-card topic-card-yellow">
+    <a href="">
+        <h6>Proof By Induction - (Edexcel) - CORE PURE</h6>
+        <p class="TopicsList">Introduction, Mastery, and Guide to solve exam questions here</p>
+        <p class="TopicsList">Mathematical induction for series, divisibility, and inequalities</p>
+    </a>
+    <p class="TopicsList">Difficulty rating: ⭐</p>
+</div> 
+
+<div class="topic-card topic-card-brown">
+  <a href=""> <!-- Add the link to the topic here -->
+    <h6>Vectors (Edexcel) - CORE PURE</h6>
+    <p class="TopicsList">Introduction, Mastery, and Guide to solve exam questions here</p>
+    <p class="TopicsList">3D vectors, scalar and vector products, lines and planes in vector form</p>
+  </a>
+  <p class="TopicsList"> Difficulty rating: ⭐⭐⭐⭐</p>
+</div>
+
+<div class="topic-card topic-card-blue">
+  <a href=""> <!-- Add the link to the topic here -->
+    <h6>MORE TOPICS COMING SOON</h6>
+    <p class="TopicsList">Please be patient, more topics and content will arrive very shortly</p>
+  </a>
+  <p class="TopicsList"> Difficulty rating: ♾️</p>
+</div>
+
+
+  <!-- repeat more for more topics -->
+
+</div> <!--DONT TOUCH THIS LMAO-->
+
+
+{% endblock %}

@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+
+{% block title %}Algebraic Expressions - K4Maths{% endblock %}
+
+{% block head %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+  <meta name="description" content="Learn about Algebraic Expressions - Edexcel and AQA specification">
+{% endblock %}
+
+{% block content %}
+  <a href="{{ url_for('maths') }}" class="back-to-home">🔙 Back to Mathematics</a>
+  
+  <section class="topic-header">
+    <h1>Algebraic Expressions - (Edexcel, AQA)</h1>
+    <h2>Master algebraic techniques with comprehensive guides, examples, and exam practice</h2>
+  </section>
+
+  <section class="topic-intro">
+    <p style="text-align: center; padding: 5px 0px;">
+      <strong>Algebraic Expressions</strong> form the foundation of mathematical skills for both GCSE and A-Level. This topic is essential for Edexcel and AQA Mathematics, and mastering these concepts will help you excel in more advanced topics. 
+      <br><br>
+      Choose a section below to start your learning journey with this topic.
+      <br><br>
+      (minor disclaimer: The difficulty rating is subjective and may not reflect your own experience. It is based on my personal experiences.)
+      <br><br>
+      Difficulty rating: ⭐⭐ out of 5 stars
+    </p>
+  </section>
+  
+  <div style="margin-top: 20px;">
+    <a href="/index.html" style="margin-right: 20px; margin-left: 20px;">🏠︎ - Back to Home<br></a>
+  </div>
+
+  <main class="topics-grid">
+
+    <!-- expanding brackets Section -->
+      <a href="/ExpandingBrackets" aria-label="Expanding Brackets">
+        <article class="topic-card topic-card-blue">
+          <h3>📚 Expanding Brackets</h3>
+          <p class="TopicsList" style="text-align: left;">Get started with the basics of algebra and expanding brackets</p>
+          <p class="TopicsList" style="text-align: left;">Key concepts: like terms, coefficients, and the distributive property</p>
+          <p class="TopicsList" style="text-align: left;">Difficulty rating: ⭐</p>
+        </article>
+      </a>  
+    <!-- Factoring -->
+    <a href="/Factoring" aria-label="Factoring">
+      <article class="topic-card topic-card-red">
+        <h3>⚡ Factoring</h3>
+        <p class="TopicsList" style="text-align: left;">Master factoring - a key algebraic skill</p>
+        <p class="TopicsList" style="text-align: left;">Learn to find common factors, difference of squares, and quadratics</p>
+        <p class="TopicsList" style="text-align: left;">Difficulty rating: ⭐⭐</p>
+      </article>
+    </a>
+
+    <!-- Negative and Fractional Indices -->
+    <a href="/NegAndFracIndices" aria-label="Negative and Fractional Indices">
+      <article class="topic-card topic-card-orange">
+        <h3>🧮 Negative & Fractional Indices</h3>
+        <p class="TopicsList" style="text-align: left;">Understand negative and fractional powers</p>
+        <p class="TopicsList" style="text-align: left;">Apply laws to simplify with negative and fractional exponents</p>
+        <p class="TopicsList" style="text-align: left;">Difficulty rating: ⭐⭐</p>
+      </article>
+    </a>
+
+    <!-- Surds -->
+    <a href="/Surds" aria-label="Surds">
+      <article class="topic-card topic-card-orangutan">
+        <h3>🔤 Surds</h3>
+        <p class="TopicsList" style="text-align: left;">Working with irrational roots in exact form</p>
+        <p class="TopicsList" style="text-align: left;">Learn to simplify, add, subtract, and multiply surds</p>
+        <p class="TopicsList">Difficulty rating: ⭐⭐</p>
+      </article>
+    </a>
+
+    <!-- Rationalising Denominators -->
+    <a href="/RationalDeno" aria-label="Rationalising Denominators">
+      <article class="topic-card topic-card-purple">
+        <h3>� Rationalising Denominators</h3>
+        <p class="TopicsList" style="text-align: left;">Eliminate surds from the denominator of fractions</p>
+        <p class="TopicsList" style="text-align: left;">Learn key techniques for simplifying expressions with surd denominators</p>
+        <p class="TopicsList">Difficulty rating: ⭐</p>
+      </article>
+    </a>
+
+    <!-- Index Laws -->
+    <a href="/IndexLaws" aria-label="Index Laws">
+      <article class="topic-card topic-card-teal">
+        <h3>� Index Laws</h3>
+        <p class="TopicsList" style="text-align: left;">Understanding and applying the rules of exponents</p>
+        <p class="TopicsList" style="text-align: left;">Master the key laws for manipulating powers and indices</p>
+        <p class="TopicsList">Difficulty rating: ⭐⭐</p>
+      </article>
+    </a>
+
+  </main>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+

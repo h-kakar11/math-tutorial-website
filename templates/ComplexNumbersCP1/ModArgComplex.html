@@ -1,0 +1,492 @@
+{% extends "base.html" %}
+
+{% block title %}Modulus and Argument of Complex Numbers - K4Maths{% endblock %}
+
+{% block head %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Learn Modulus and Argument of Complex Numbers - Step-by-step guide with examples and practice">
+  
+  <!-- MathJax for LaTeX rendering -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
+{% endblock %}
+
+{% block content %}
+<div class="lesson-page">
+  <!-- Back navigation -->
+  <a href="{{ url_for('complex_numbers') }}" class="back-to-home">🔙 Back to Complex Numbers</a>
+
+    <div class="lesson-container">
+    
+    <!-- Lesson Header -->
+    <header class="lesson-header">
+        <h1 class="lesson-title">Modulus and Argument of Complex Numbers</h1>
+        <p class="lesson-subtitle">Understanding polar form and geometric representation of complex numbers</p>
+        <div class="lesson-meta">
+        <span class="meta-item">📚 Further Mathematics</span>
+        <span class="meta-item">🎯 Difficulty: ⭐⭐</span>
+        <span class="meta-item">⏱️ Reading time: 25 minutes</span>
+        <span class="meta-item">📋 Edexcel & AQA</span>
+        </div>
+    </header>
+
+    <!-- Table of Contents -->
+    <nav class="table-of-contents">
+        <h3 class="toc-title">📖 Contents</h3>
+        <ul class="toc-list">
+        <li class="toc-item"><a href="#introduction" class="toc-link">Introduction</a></li>
+        <li class="toc-item"><a href="#key-concepts" class="toc-link">Key Concepts</a></li>
+        <li class="toc-item"><a href="#examples" class="toc-link">Worked Examples</a></li>
+        <li class="toc-item"><a href="#practice" class="toc-link">Practice Problems</a></li>
+        <li class="toc-item"><a href="#summary" class="toc-link">Summary</a></li>
+        </ul>
+    </nav>
+
+    <!-- Lesson Navigation -->
+    <div class="lesson-nav">
+    <a href="{{ url_for('intro_to_complex_numbers') }}" class="nav-button">← Previous Lesson</a>
+    <div class="progress-bar">
+    <div class="progress-fill" style="width: 0%;"></div>
+    </div>
+    <a href="#" class="nav-button">Next Lesson →</a>
+    </div>
+
+    <!-- Introduction Section -->
+    <section id="introduction" class="lesson-section">
+    <h2 class="section-heading">📚 Introduction</h2>
+    <p class="lesson-text">
+        Every complex number can be shown as a point on a graph.
+        The modulus is how far that point is from the origin, like the length of a line from the center to the point.
+        The argument is the angle that line makes with the x-axis (real axis) in radians.
+        <br><br>Make sure your calculator is in Radian mode.
+        <br>Look below. The modulus of $z$, $|z|$, is the hypotenuse of the triangle, with height of the imaginary part $bi$, and base of the real part $a$. Finding the modulus is just the hypotenuse.
+    </p>
+    <img src="{{ url_for('static', filename='mod-arg-diagram.png') }}" class="lesson-image">
+
+    <div class="definition-box">
+        <h4 class="box-title">🎯 Learning Objectives</h4>
+        <p class="lesson-text">
+        By the end of this lesson, you must be able to:
+        </p>
+        <ul class="lesson-text">
+        <li>Calculate the modulus (absolute value) of a complex number</li>
+        <li>Find the argument (angle in radians) of a complex number</li>
+        <li>Know what each the Modulus and Argument is.</li>
+        </ul>
+    </div>
+    </section>
+
+    <!-- Key Concepts Section -->
+    <section id="key-concepts" class="lesson-section">
+    <h2 class="section-heading">🔑 Key Concepts</h2>
+    <h3 class="subsection-heading">The Modulus</h3>
+    <p class="lesson-text">
+        The modulus of a complex number represents its distance from the origin in the complex plane.<br><br>
+        Modulus is like the hypotenuse of a right angle triangle with the real part as the base of the triangle, and the imaginary part as the height.
+        It is denoted by $|z|$ and can be calculated using the formula:
+    </p>
+
+<div class="definition-box">
+        <h4 class="box-title">📖 Definition</h4>
+        <p class="lesson-text">
+        <strong>Modulus:</strong> The distance from origin to complex number which is:
+        </p>
+</div>
+
+    <!-- LaTeX Math Example -->
+    <div class="math-display">
+        Let $z = a + bi$, the modulus of $z$ is
+        $$|z| = |a + bi| = \sqrt{a^2 + b^2}$$
+    </div>
+
+    <h3 class="subsection-heading">The Argument</h3>
+    <p class="lesson-text">
+        The argument of a complex number is the angle it makes with the positive real axis, measured counterclockwise, and in radians.
+        <br> Its a key component to knowing where a complex number is on a diagram.
+    </p>
+
+    <div class="definition-box">
+        <h4 class="box-title">📖 Definition</h4>
+        <p class="lesson-text">
+        <strong>Argument:</strong> For a complex number $z = a + bi$, the argument is $\arg(z) = \arctan\left(\frac{b}{a}\right)$ (in radians)
+        <br><br> however, you must know what quadrant the complex number is in. 
+        <br><br> Here are the quadrant rules:
+        <br> If $z = a + bi$:
+        <ul class="lesson-text">
+            <li>Quadrant I (a > 0, b > 0): $\arg(z) = \arctan\left(\frac{b}{a}\right)$</li>
+            <li>Quadrant II (a < 0, b > 0): $\arg(z) = \arctan\left(\frac{b}{a}\right) + \pi$</li>
+            <li>Quadrant III (a < 0, b < 0): $\arg(z) = \arctan\left(\frac{b}{a}\right) - \pi$</li>
+            <li>Quadrant IV (a > 0, b < 0): $\arg(z) = \arctan\left(\frac{b}{a}\right)$</li>
+            This means if the complex number is in quadrant II or III, you must add or subtract pi respectively.
+            <br><br> If the complex number is on an axis, then the argument is either 0, $\frac{\pi}{2}$, $\pi$, or $-\frac{\pi}{2}$ depending on which axis.
+            <br><br> Here is a diagram to help you visualise the quadrants:
+            <img src="{{ url_for('static', filename='quadrants.png') }}" style="display: block; margin: 0 auto;">
+            Make sure you know how to plot complex numbers before doing this lesson, and ensure your are in radian mode.
+        </ul>
+    </div>
+
+    <div class="tip-box">
+        <h4 class="box-title">💡 Tip</h4>
+        <p class="lesson-text">
+        Remember $\rightarrow \arctan = \tan^{-1}$ on your calculator.
+        Make sure use the first diagram to help you out. Click <a href="#introduction">here</a> to jump to it.
+        <br>Radians are measured from the positive real axis (the right side of the horizontal axis).
+        </p>
+    </div>
+    </section>
+
+    <!-- Worked Example 1 Section -->
+    <section id="examples" class="lesson-section">
+    <h2 class="section-heading">📝 Worked Examples</h2>
+    <div class="example-box">
+        <h4 class="box-title">📋 Example 1: Finding the modulus and argument</h4>
+        <p class="lesson-text"><strong>Question:</strong> $z = 3 + 4i$. Find $|z|$ and $\arg(z)$.</p>
+        <div class="solution-steps">
+        <h5 class="subsection-heading">Solution:</h5>
+
+        <div class="step">
+            <div class="step-number">Step 1:</div>
+            <p class="lesson-text">First lets find the modulus, $|z|$:</p>
+            <div class="math-display">
+            $$|z| = |3 + 4i| = \sqrt{3^2 + 4^2} = \sqrt{9 + 16} = \sqrt{25} = 5$$
+            So, the modulus of $z$, $|z| = 5$.
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">Step 2:</div>
+            <p class="lesson-text">Now lets find the argument, $\arg(z)$:</p>
+            <div class="math-display">
+            $$\arg(z) = \arctan\left(\frac{4}{3}\right) \approx 0.93... \text{ radians}$$
+            Since 3 + 4i is in quadrant $I$, we do not need to add or subtract $\pi$.
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">Final Answer:</div>
+            <p class="lesson-text">The modulus and argument of $z$ are:</p>
+            <div class="math-display">
+            $$\boxed{|z| = 5, \quad \quad \arg(z) \approx 0.93 \text{ radians}}$$
+            </div>
+        </div>
+        </div>
+    </div>
+
+<div class="definition-box">
+        <h4 class="box-title">📖 Extra Rules to Know:</h4>
+        <p class="lesson-text">
+        <strong>Modulus and argument rules:</strong> if $z_1 = a + bi$ and $z_2 = c + di,\quad z_1, z_2 \in \mathbb{C}$, then:
+        <br> the above just means: if $z_1$ and $z_2$ are complex numbers, then the following rules apply:
+        <ul class="lesson-text">
+            <li>$|z_1 z_2| = |z_1| |z_2|$</li>
+            <li>$\left|\frac{z_1}{z_2}\right| = \frac{|z_1|}{|z_2|}$</li>
+            <li>$\arg(z_1 z_2) = \arg(z_1) + \arg(z_2)$</li>
+            <li>$\arg\left(\frac{z_1}{z_2}\right) = \arg(z_1) - \arg(z_2)$</li>
+        </p>
+</div>
+
+    <!-- more Worked Example 2 Section -->
+    <section id="examples2" class="lesson-section">
+    <h2 class="section-heading">📝 Harder Worked Examples</h2>
+    <div class="example-box">
+        <h4 class="box-title">📋 Example 2: Finding the modulus and argument</h4>
+        <p class="lesson-text"><strong>Question:</strong> $z = 3 + 4i$ and $w = -5 + 10i$. Find $\quad$ $|wz|$ $\quad$and$\quad$ $\arg\left(\frac{w}{z}\right)$.</p>
+        <div class="solution-steps">
+        <h5 class="subsection-heading">Solution:</h5>
+
+        <div class="step">
+            <div class="step-number">Step 1:</div>
+            <p class="lesson-text">Lets find $|z|$ and $|w|$:</p>
+            <div class="math-display">
+            $$|z| = |3 + 4i| = \sqrt{3^2 + 4^2} = \sqrt{9 + 16}$$ $$|z| = \sqrt{9 + 16} = \sqrt{25} = 5$$
+            $|z| = 5$.
+            <br><br>Now for $w$:
+            <br><br>
+            $$|w| = |-5 + 10i| = \sqrt{(-5)^2 + 10^2} = \sqrt{25 + 100} $$ $$ |w| = \sqrt{25 + 100} = \sqrt{125} = 5\sqrt{5}$$
+            $|w| = 5\sqrt{5}$.
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">Step 2:</div>
+            <p class="lesson-text">Now lets find the argument for $z$ and $w$, $\arg(z)$ and $\arg(w)$:</p>
+            <div class="math-display">
+            $$\arg(z) = \arctan\left(\frac{4}{3}\right) \approx 0.93... \text{ radians}$$
+            Since 3 + 4i is in quadrant $I$, we do not need to add or subtract $\pi$.
+            <br><br>
+            $$\arg(w) = \arctan\left(\frac{10}{-5}\right) = \arctan(-2) \approx -1.11... \text{ radians}$$
+            Since -5 + 10i is in quadrant $II$, we must add $\pi$.
+            $$\arg(w) = -1.11... + \pi \approx 2.03... \text{ radians}$$
+            </div>
+        </div>
+        <div class="tip-box">
+            <h4 class="box-title">💡 Tip</h4>
+            <p class="lesson-text">
+            Remember $\rightarrow \arctan = \tan^{-1}$ on your calculator.
+            Make sure use the first diagram to help you out. Click <a href="#introduction">here</a> to jump to it.
+            <br>Make sure you're in radian mode
+            </p>
+        </div>
+        <div class="step">
+            <div class="step-number">Final Answer:</div>
+            <p class="lesson-text">Lets use our Mod and Arg rules to solve for $|wz|$ and $\arg\left(\frac{w}{z}\right)$:</p>
+            <div class="math-display">
+                Remember: $|z_1 z_2| = |z_1| \times |z_2|$, so:
+            $$|wz| = |w| \times |z|$$
+            $$|w| \times |z| = 5\sqrt{5} \times 5 = \boxed{25\sqrt{5}}$$
+            Remember:  $\arg\left(\frac{z_1}{z_2}\right) = \arg(z_1) - \arg(z_2)$
+            $$ \arg\left(\frac{w}{z}\right) = \arg(w) - \arg(z)$$
+            $$\arg(w) - \arg(z) \approx 2.03 - 0.93 = \boxed{1.1 \text{ radians}}$$
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+<!-- Common Mistakes Section -->
+<section class="lesson-section">
+<h2 class="section-heading">⚠️ Common Mistakes</h2>
+
+<div class="warning-box">
+    <h4 class="box-title">🚫 Mistake: Ignoring the Quadrant When Finding Argument</h4>
+    <p class="lesson-text">
+    Many students use \( \tan^{-1} \left( \frac{b}{a} \right) \) to find the argument but forget to check the sign of the real and imaginary parts. This leads to incorrect angles for complex numbers in Quadrants II, III, and IV.  
+    <br><br>
+    👉 Always consider the signs of both real and imaginary parts before finalising the angle. You may need to <strong>add or subtract π</strong> (or 180°) to get the correct value.
+    </p>
+</div>
+</section>
+
+    <!-- Practice Problems Section -->
+    <section id="practice" class="lesson-section">
+    <h2 class="section-heading">💪 Practice Problems</h2>
+    
+    <p class="lesson-text lesson-text-center">
+        Try these problems to test your understanding and strengthen your skills:
+    </p>
+
+      <div class="example-box">
+        <h4 class="box-title">🎯 Practice Questions A</h4>
+        <p class="lesson-text">
+            <strong>(A):</strong> $z = 3 + 4i$. Find $|z|$ and $\arg(z)$.<br><br>
+            <strong>(B):</strong> $z = -5 + 12i$. Find $|z|$ and $\arg(z)$.<br><br>
+            <strong>(C):</strong> $z = -7 - 7i$. Find $|z|$ and $\arg(z)$.<br><br>
+            <strong>(D):</strong> $z = \frac{1}{2} - \sqrt{3}i$. Find $|z|$ and $\arg(z)$.
+</p>
+
+<details style="margin-top: 15px;">
+          <summary style="cursor: pointer; color: var(--accent-blue); font-weight: 600;">
+            🔍 Show Solution
+          </summary>
+          <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(74, 158, 255, 0.2);">
+            <p class="lesson-text">
+<strong>(A):</strong> $|z| = 5$, $\arg(z) = \arctan\left(\frac{4}{3}\right) \approx \boxed{0.9273}$ radians <br><br>
+<strong>(B):</strong> $|z| = 13$, $\arg(z) = \arctan\left(\frac{12}{-5}\right) + \pi \approx \boxed{1.966}$ radians <br><br>
+<strong>(C):</strong> $|z| = 7\sqrt{2}$, $\arg(z) = \boxed{-\frac{3\pi}{4}}$ (or $\boxed{\frac{5\pi}{4}}$) $\approx \boxed{-2.3562}$ radians <br><br>
+<strong>(D):</strong> $|z| = \frac{\sqrt{13}}{2}$, $\arg(z) = -\arctan(2\sqrt{3}) \approx \boxed{-1.289}$ radians
+</p>
+          </div>
+        </details>
+      </div>
+
+
+<div class="example-box">
+  <h4 class="box-title">🎯 Practice Questions B</h4>
+  <p class="lesson-text">
+    <strong>(A):</strong> $z = 1 + \sqrt{3}\,i$ and $w = -2 + 2i$. Find $|wz|$ and $\arg\left(\frac{w}{z}\right)$.<br><br>
+    <strong>(B):</strong> $z = -3 + 4i$ and $w = 6 + 8i$. Find $|wz|$ and $\arg\left(\frac{w}{z}\right)$.<br><br>
+    <strong>(C):</strong> $z = -5 - 5i$ and $w = 5 - 5i$. Find $|wz|$ and $\arg\left(\frac{w}{z}\right)$.<br><br>
+    <strong>(D):</strong> $z = \sqrt{3} - i$ and $w = -2 + 2\sqrt{3}\,i$. Find $\left|\frac{w^2}{z}\right|$ and $\arg(z^2w)$.
+  </p>
+
+  <details style="margin-top: 15px;">
+    <summary style="cursor: pointer; color: var(--accent-blue); font-weight: 600;">
+      🔍 Show Solution
+    </summary>
+    <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(74, 158, 255, 0.2);">
+      <p class="lesson-text">
+        <strong>(A):</strong> $\boxed{|wz| = 4\sqrt{2}}$, $\arg\left(\frac{w}{z}\right) = \boxed{\frac{5\pi}{12}}$ radians <br><br>
+        <strong>(B):</strong> $\boxed{|wz| = 50}$, $\arg\left(\frac{w}{z}\right) = \boxed{-1.287\text{ rad}}$ <br><br>
+        <strong>(C):</strong> $\boxed{|wz| = 50}$, $\arg\left(\frac{w}{z}\right) = \boxed{\frac{\pi}{2}}$ radians <br><br>
+        <strong>(D):</strong> $\boxed{\left|\frac{w^2}{z}\right| = 8}$, $\arg(z^2w) = \boxed{\frac{\pi}{3}}$ radians
+      </p>
+    </div>
+  </details>
+</div>
+    </section>
+
+    <!-- Challenge Question Section -->
+    <section id="challenge" class="lesson-section">
+        <h2 class="section-heading">🏆 Challenge Exam Question</h2>
+        
+        <div class="example-box">
+            <h4 class="box-title">📋 Exam-style Question:</h4>
+            <p class="lesson-text">
+                The complex numbers $z_1$ and $z_2$ are given by:<br>
+                $z_1 = 2 - i$ and $z_2 = -8 + 9i$
+            </p>
+            <p class="lesson-text">
+                <strong>(a)</strong> Plot $z_1$ and $z_2$ on a single diagram. (1 mark)<br><br>
+                Find, showing your working:<br>
+                <strong>(b)</strong> the value of $|z_1|$, (2 marks)<br>
+                <strong>(c)</strong> the value of $\arg(z_1)$, giving your answer in radians to 2 decimal places, (2 marks)<br>
+            </p>
+
+            <details style="margin-top: 15px;">
+                <summary style="cursor: pointer; color: var(--accent-blue); font-weight: 600;">
+                    🔍 Show Solution
+                </summary>
+                <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(74, 158, 255, 0.2);">
+                    <div class="solution-steps">
+                        <h5 class="subsection-heading">Solution:</h5>
+                        
+                        <div class="step">
+                            <div class="step-number">Part (a):</div>
+                            <p class="lesson-text">Plot $z_1 = 2 - i$ at point (2, -1) and $z_2 = -8 + 9i$ at point (-8, 9) on a diagram.</p>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">Part (b):</div>
+                            <p class="lesson-text">Calculate the modulus of $z_1$:</p>
+                            <div class="math-display">
+                                $$|z_1| = |2 - i| = \sqrt{2^2 + (-1)^2} = \sqrt{4 + 1} = \sqrt{5}$$
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">Part (c):</div>
+                            <p class="lesson-text">Calculate the argument of $z_1$:</p>
+                            <div class="math-display">
+                                $$\arg(z_1) = \arctan\left(\frac{-1}{2}\right) \approx -0.46 \text{ radians}$$
+                                Since $z_1$ is in Quadrant IV, no adjustment needed.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </details>
+        </div>
+
+    <!-- Summary Section -->
+    <section id="summary" class="lesson-section">
+      <h2 class="section-heading">📋 Summary</h2>
+      
+      <div class="definition-box">
+        <h4 class="box-title">🎯 Key Takeaways</h4>
+        <ul class="lesson-text">
+          <li>The modulus of a complex number $z = a + bi$ is $|z| = \sqrt{a^2 + b^2}$, representing its distance from the origin.</li>
+          <li>The argument of a complex number is the angle it makes with the positive real axis, found using $\arg(z) = \arctan\left(\frac{b}{a}\right)$ and adjusted for the correct quadrant.</li>
+          <li>Modulus and argument rules: $|z_1 z_2| = |z_1||z_2|$, $\arg(z_1 z_2) = \arg(z_1) + \arg(z_2)$, and similar for division.</li>
+        </ul>
+      </div>
+
+      <div class="tip-box">
+        <h4 class="box-title">📚 What's Next?</h4>
+        <p class="lesson-text">
+          Lets continue to perfect Complex Numbers. I suggest learning Division of Complex numbers next. Click <a href="{{ url_for('div_mult_complex') }}">here</a> to go to that lesson.
+        </p>
+      </div>
+    </section>
+
+    <!-- Lesson Navigation -->
+    <div class="lesson-nav">
+      <a href="#" class="nav-button">← Previous Lesson</a>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 100%;"></div>
+      </div>
+      <a href="#" class="nav-button">Next Lesson →</a>
+    </div>
+
+  </div>
+
+  <!-- Back to top button -->
+  <div style="text-align: center; margin: 30px 0;">
+    <a href="#top" class="nav-button">⬆️ Back to Top</a>
+  </div>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Smooth scrolling for table of contents
+    const tocLinks = document.querySelectorAll('.toc-link');
+    tocLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Progress bar animation based on scroll
+    const progressBar = document.querySelector('.progress-fill');
+    if (progressBar) {
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.body.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            progressBar.style.width = Math.min(scrollPercent, 100) + '%';
+        });
+    }
+
+    // Highlight current section in table of contents
+    const sections = document.querySelectorAll('.lesson-section');
+    const tocNavLinks = document.querySelectorAll('.toc-link');
+    
+    function highlightTOC() {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (window.pageYOffset >= (sectionTop - 200)) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        tocNavLinks.forEach(link => {
+            link.style.background = '';
+            link.style.borderLeftColor = 'transparent';
+            if (link.getAttribute('href') === '#' + current) {
+                link.style.background = 'rgba(74, 158, 255, 0.1)';
+                link.style.borderLeftColor = 'var(--accent-blue)';
+            }
+        });
+    }
+    
+    window.addEventListener('scroll', highlightTOC);
+    
+    // Initialize MathJax rendering
+    if (window.MathJax) {
+        MathJax.typesetPromise().then(() => {
+            console.log('MathJax rendering complete');
+        });
+    }
+});
+</script>
+{% endblock %}
