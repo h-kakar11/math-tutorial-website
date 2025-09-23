@@ -45,6 +45,13 @@ def contact_me():
 @app.route("/TopicsList")
 def topics_list():
     return render_template("pages/TopicsList.html")
+# ============================================
+# SERIES (components/ folder)
+# ============================================
+
+@app.route("/SeriesBasics")
+def series_basics():
+    return render_template("SeriesCP1/SeriesBasics.html")
 
 # ============================================
 # TOPIC OVERVIEW PAGES (components/ folder)

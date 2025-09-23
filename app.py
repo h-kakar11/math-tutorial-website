@@ -143,6 +143,15 @@ def index_laws():
 def rational_deno():
     return render_template("AlgebraicExpressionsMath/RationalDeno.html")
 
+# ============================================
+# SERIES (components/ folder)
+# ============================================
+
+@app.route("/SeriesBasics")
+def series_basics():
+    return render_template("SeriesCP1/SeriesBasics.html")
+
+
 # ========================================================================================
 
 # ============================================

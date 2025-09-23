@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}LESSON_TITLE_HERE - K4Maths{% endblock %}
+{% block title %}Series Basics - K4Maths{% endblock %}
 
 {% block head %}
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,8 +12,8 @@
   <script>
     window.MathJax = {
       tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']],
-        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        inlineMath: [['$', '$']],
+        displayMath: [['$$', '$$']],
         processEscapes: true,
         processEnvironments: true
       },
@@ -32,20 +32,20 @@
 
 {% block content %}
   <!-- Back navigation -->
-  <a href="{{ url_for('PARENT_ROUTE_HERE') }}" class="back-to-home">🔙 Back to PARENT_PAGE_NAME_HERE</a>
+  <a href="/FurtherMaths" class="back-to-home">🔙 Back to Further Maths</a>
 
   <div class="lesson-container">
     
     <!-- Lesson Header -->
     <header class="lesson-header">
-      <h1 class="lesson-title">LESSON_TITLE_HERE</h1>
-      <p class="lesson-subtitle">LESSON_SUBTITLE_HERE</p>
-      
+      <h1 class="lesson-title">Series Basics</h1>
+      <p class="lesson-subtitle">Understanding the Fundamentals of Series</p>
+
       <div class="lesson-meta">
-        <span class="meta-item">📚 SUBJECT_AREA_HERE</span>
-        <span class="meta-item">🎯 Difficulty: DIFFICULTY_LEVEL_HERE</span>
-        <span class="meta-item">⏱️ Reading time: ESTIMATED_TIME_HERE</span>
-        <span class="meta-item">📋 EXAM_BOARD_HERE</span>
+        <span class="meta-item">📚 Further Mathematics</span>
+        <span class="meta-item">🎯 Difficulty: ⭐⭐</span>
+        <span class="meta-item">⏱️ Reading time: 10 minutes</span>
+        <span class="meta-item">📋 Edexcel</span>
       </div>
     </header>
 
@@ -75,8 +75,8 @@
       <h2 class="section-heading">📚 Introduction</h2>
       
       <p class="lesson-text">
-        INTRODUCTION_CONTENT_HERE - This should be an engaging introduction that explains what students will learn and why it's important.
-      </p>
+        Series are a very important topic in further maths, and they are very interesting. I'll be covering the basics of series in this lesson. This includes the notations, and how to read them. We'll also cover some basic types of series, and how to find the sum of a series.
+    </p>
 
       <div class="definition-box">
         <h4 class="box-title">🎯 Learning Objectives</h4>
@@ -84,9 +84,9 @@
           By the end of this lesson, you will be able to:
         </p>
         <ul class="lesson-text">
-          <li>OBJECTIVE_1_HERE</li>
-          <li>OBJECTIVE_2_HERE</li>
-          <li>OBJECTIVE_3_HERE</li>
+          <li>Understand the basic notation used in series</li>
+          <li>Identify different types of series</li>
+          <li>Calculate the sum of a simple series</li>
         </ul>
       </div>
     </section>
@@ -95,10 +95,12 @@
     <section id="key-concepts" class="lesson-section">
       <h2 class="section-heading">🔑 Key Concepts</h2>
       
-      <h3 class="subsection-heading">CONCEPT_1_TITLE_HERE</h3>
+      <h3 class="subsection-heading">What is a series?</h3>
       <p class="lesson-text">
-        CONCEPT_1_EXPLANATION_HERE
-      </p>
+        A series (or summation) is just the sum of a sequence of numbers. For example, the series 1 + 2 + 3 + 4 + 5 is the sum of the first five natural numbers.<br> 
+        The way we would write this series is like this: $$\sum_{k=1}^{5} n = 1 + 2 + 3 + 4 + 5$$
+        This just means: "Add all numbers from the bottom number (1) to the top number (5)".
+    </p>
 
       <div class="definition-box">
         <h4 class="box-title">📖 Definition</h4>
