@@ -106,7 +106,7 @@
         <h4 class="box-title">📖 Definition</h4>
         <p class="lesson-text">
           <strong>Sigma:</strong> The symbol $\sum$ is used to represent the sum of a series. It is followed by an expression that defines the terms to be added.
-          <br> Like an integral sign $\int$, its a sum of the things that follow it. Similarly, it has two limits, one limit at the top "$n$" and one limit at the bottom "$k=1$". 
+          <br> Like the integral symbol $\int$, the sigma symbol $\sum$ accumulates values, but instead of areas under curves, it adds up discrete terms of a sequence. Similarly, it has two limits, one limit at the top "$n$" and one limit at the bottom "$k=1$". 
           <br> This is the notation for a series:
         </p>
       </div>
@@ -117,9 +117,10 @@
 
       <h3 class="subsection-heading">Sums of constant terms:</h3>
       <p class="lesson-text">
-        The sum of a constant term (in the below instance is five) is just the constant + the number of terms.
+        The sum of a constant term (in the below instance is five) is just the constant $\times$ the number of terms.
         <br> For example, the sum of: $$\sum^{10}_{k=1} 5$$ is simply $$5 + 5 + 5 + 5 + 5 + 5 ... \text{ten times} = 50.$$
         <br> The formula for this is: $$\sum^{n}_{k=1} \gamma = \gamma \times n$$ where $\gamma$ (gamma) is the constant, and $n$ is the number of terms.
+        <br> Note: $\sum_{k=1}^{n} 1 = n$ because we're adding 1 repeated $n$ times.
     </p>
 
       <div class="tip-box">
@@ -138,6 +139,7 @@
              <br> So: $$1500 + 100 = 1600$$
             </p>
           </div>
+        </details>
       </div>
 
       
@@ -180,7 +182,7 @@
         <br> Since this series is small, (limit is 4) we can just write it out fully. for longer series, theres a better method:
         <br> We can split the summation into two separate summations, similarly to the previous example:
         $$\sum^{4}_{k=1} (2k - 1) = \sum^{4}_{k=1} 2k - \sum^{4}_{k=1} 1$$
-        <br> To take it further, we can factor 2 out of the first summation:
+        <br> To take it further, since 2 is a constant, we can pull it outside the summation using linearity:
         $$\sum^{4}_{k=1} (2k - 1) = 2\sum^{4}_{k=1} k - \sum^{4}_{k=1} 1$$
         <br> Now, we can substitute the formulas we know:
         $$2\sum^{4}_{k=1} k - \sum^{4}_{k=1} 1 \quad = \quad 2\left(\frac{4(4+1)}{2}\right) - (1 \times 4)$$
@@ -204,7 +206,8 @@
           
           <div class="step">
             <div class="step-number">Step 1:</div>
-            <p class="lesson-text">Notice it doesn't start at 1? Lets first split it into more two and subtract the part we dont want.</p>
+            <p class="lesson-text">Notice it doesn't start at 1? Let's first split it into two and subtract the part we don't want.</p>
+            <p class="lesson-text">Since we want $r = 5$ to $r = 2N-1$, we can find $r = 1$ to $r = 2N-1$ and subtract $r = 1$ to $r = 4$ (which gives us $r = 5$ onwards).</p>
             <div class="math-display">
               $$\sum^{2N -1}_{r = 5} r \quad \text{ Can be written as} \rightarrow \quad \sum^{2N -1}_{r = 1} r - \sum^{4}_{r = 1} r$$
             </div>
@@ -230,17 +233,17 @@
             <div class="math-display">
             $$\text{So, we have:}$$
             $$\text{First part - Second part} = \boxed{(2N^2 - N) - 10} \rightarrow \text{proved.}$$         
+            </div>
           </div>
         </div>
       </div>
- </div>
     </section>
 
     <!-- Common Mistakes Section -->
     <section class="lesson-section">
       <h2 class="section-heading">⚠️ Common Mistakes</h2>
       <div class="warning-box">
-        <h4 class="box-title">🚫 Mistake 1: Mistake 2: Forgetting to split Summations into two or more</h4>
+        <h4 class="box-title">🚫 Mistake 1: Forgetting to split Summations into two or more</h4>
         <p class="lesson-text">
         Splitting the summation is really handy and makes it much easier. If you have a complex summation, try breaking it down into smaller parts.
         </p>
@@ -267,7 +270,7 @@
         <h4 class="box-title">🎯 Practice Questions</h4>
         <p class="lesson-text">
             (A) Evaluate: $$\sum^{4}_{k = 1} (3k + 2)$$
-            <br>(B) Evaluate $$\sum^{40}_{21} r$$
+            <br>(B) Evaluate $$\sum_{r=21}^{40} r$$
             <br>(C) Find n given that $$\sum^{n}_{k=1} k = 528$$
             <br>(D) Show that $$\sum^{n}_{r=1} (7r - 4) = \frac{1}{2}n(7n-1)$$
         </p>
@@ -279,12 +282,12 @@
           <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(74, 158, 255, 0.2);">
             <p class="lesson-text">
                 (A) $$\sum^{4}_{k = 1} (3k + 2) = \sum^{4}_{k = 1} 3k + \sum^{4}_{k = 1} 2 = 3\sum^{4}_{k = 1} k + 2 \times 4 = 3(10) + 8 = \boxed{38}$$
-                <br>(B) $$\sum^{40}_{21} r = \sum^{40}_{1} r - \sum^{20}_{1} r = \frac{40(40+1)}{2} - \frac{20(20+1)}{2} = 820 - 210 = \boxed{610}$$
+                <br>(B) $$\sum_{r=21}^{40} r = \sum_{r=1}^{40} r - \sum_{r=1}^{20} r = \frac{40(40+1)}{2} - \frac{20(20+1)}{2} = 820 - 210 = \boxed{610}$$
                 <br>(C) $$\sum^{n}_{k=1} k = \frac{n(n+1)}{2} = 528 \Rightarrow n(n+1) = 1056 \Rightarrow n^2 + n - 1056 = 0$$
                 $$\text{Using the quadratic formula: } n = \frac{-1 \pm \sqrt{1 + 4 \times 1056}}{2} = \frac{-1 \pm \sqrt{4225}}{2} = \frac{-1 \pm 65}{2}$$
                 $$\text{So, } n = \frac{64}{2} = \boxed{32} \text{ (since n must be positive)}$$
-                <br>(D) $$\sum^{n}_{r=1} (7r - 4) = 7\sum^{n}_{r=1} r - 4\sum^{n}_{r=1} 1 = 7\left(\frac{n(n+1)}{2}\right) - 4n = \frac{7n(n+1)}{2} - 4n$$
-                $$= \frac{7n^2 + 7n - 8n}{2} = \frac{7n^2 - n}{2} = \boxed{\frac{1}{2}n(7n-1)}$$
+                <br>(D) $$\sum^{n}_{r=1} (7r - 4) = 7\sum^{n}_{r=1} r - 4\sum^{n}_{r=1} 1 = 7\left(\frac{n(n+1)}{2}\right) - 4n$$
+                $$= \frac{7n(n+1)}{2} - \frac{8n}{2} = \frac{7n^2 + 7n - 8n}{2} = \frac{7n^2 - n}{2} = \boxed{\frac{1}{2}n(7n-1)}$$
                 $$\text{Thus, proved.}$$
             </p>
           </div>
@@ -398,7 +401,7 @@
           </div>
         </details>
       </div>
-    </section>
+
 
     <!-- Summary Section -->
     <section id="summary" class="lesson-section">
@@ -407,7 +410,7 @@
       <div class="definition-box">
         <h4 class="box-title">🎯 Key Takeaways</h4>
         <ul class="lesson-text">
-          <li>Summationsn are written with sigma: $\sum$</li>
+          <li>Summations are written with sigma: $\sum$</li>
           <li>We can break them down simpler </li>
           <li>We can factor out constants from the summation and find special terms.</li>
         </ul>
@@ -419,7 +422,7 @@
             I suggest now learning square series - where we have $\sum^{n}_{k=1} k^2$. This is a very useful series to know, and it will come in exams.
         </p>
       </div>
-    </section>
+
 
     <!-- Lesson Navigation -->
     <div class="lesson-nav">
@@ -430,13 +433,14 @@
       <a href="#" class="nav-button">Next Lesson →</a>
     </div>
 
+    <!-- Back to top button -->
+    <div style="text-align: center; margin: 30px 0;">
+      <a href="#top" class="nav-button">⬆️ Back to Top</a>
+    </div>
+</section>
   </div>
-
-  <!-- Back to top button -->
-  <div style="text-align: center; margin: 30px 0;">
-    <a href="#top" class="nav-button">⬆️ Back to Top</a>
-  </div>
-
+     </section>   
+    </section>
 {% endblock %}
 
 {% block scripts %}
