@@ -151,6 +151,9 @@ def rational_deno():
 def series_basics():
     return render_template("SeriesCP1/SeriesBasics.html")
 
+@app.route("/SeriesFrontPage")
+def series_front_page():
+    return render_template("SeriesCP1/SeriesFrontPage.html")
 
 # ========================================================================================
 
