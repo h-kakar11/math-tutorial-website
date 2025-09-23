@@ -98,100 +98,161 @@
       <h3 class="subsection-heading">What is a series?</h3>
       <p class="lesson-text">
         A series (or summation) is just the sum of a sequence of numbers. For example, the series 1 + 2 + 3 + 4 + 5 is the sum of the first five natural numbers.<br> 
-        The way we would write this series is like this: $$\sum_{k=1}^{5} n = 1 + 2 + 3 + 4 + 5$$
-        This just means: "Add all numbers from the bottom number (1) to the top number (5)".
+        The way we would write this series is like this: $$\sum_{k=1}^{5} k = 1 + 2 + 3 + 4 + 5$$
+        This just means: "Add all numbers from $k$, the bottom number (1) to the top number (5)".
     </p>
 
       <div class="definition-box">
         <h4 class="box-title">📖 Definition</h4>
         <p class="lesson-text">
-          <strong>Sigma:</strong> The symbol $$\sum$$ is used to represent the sum of a series. It is followed by an expression that defines the terms to be added.
+          <strong>Sigma:</strong> The symbol $\sum$ is used to represent the sum of a series. It is followed by an expression that defines the terms to be added.
+          <br> Like an integral sign $\int$, its a sum of the things that follow it. Similarly, it has two limits, one limit at the top "$n$" and one limit at the bottom "$k=1$". 
+          <br> This is the notation for a series:
         </p>
       </div>
 
-      <!-- LaTeX Math Example -->
       <div class="math-display">
-        $$\text{LATEX_FORMULA_HERE}$$
+        $$\sum_{k=1}^{n} \text{(term that follows)}$$
       </div>
 
-      <h3 class="subsection-heading">CONCEPT_2_TITLE_HERE</h3>
+      <h3 class="subsection-heading">Sums of constant terms:</h3>
       <p class="lesson-text">
-        CONCEPT_2_EXPLANATION_HERE
-      </p>
+        The sum of a constant term (in the below instance is five) is just the constant + the number of terms.
+        <br> For example, the sum of: $$\sum^{10}_{k=1} 5$$ is simply $$5 + 5 + 5 + 5 + 5 + 5 ... \text{ten times} = 50.$$
+        <br> The formula for this is: $$\sum^{n}_{k=1} \gamma = \gamma \times n$$ where $\gamma$ (gamma) is the constant, and $n$ is the number of terms.
+    </p>
 
       <div class="tip-box">
-        <h4 class="box-title">💡 Pro Tip</h4>
+        <h4 class="box-title">💡 Flash question</h4>
         <p class="lesson-text">
-          TIP_CONTENT_HERE
+        Solve for the following summations $$\sum_{k=1}^{100} 15 \quad + \quad \sum^{50}_{k=1} 2$$
         </p>
+        <details style="margin-top: 15px;">
+          <summary style="cursor: pointer; color: var(--accent-blue); font-weight: 600;">
+            🔍 Show Solution
+          </summary>
+          <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(74, 158, 255, 0.2);">
+            <p class="lesson-text">
+             Then first summation: $$\sum_{k=1}^{100} 15 = 15 \times 100 = 1500$$
+             <br> The second summation: $$\sum^{50}_{k=1} 2 = 2 \times 50 = 100$$
+             <br> So: $$1500 + 100 = 1600$$
+            </p>
+          </div>
       </div>
+
+      
+      <h3 class="subsection-heading">The sum of the first $n$ natural numbers</h3>
+      <p class="lesson-text">
+        The sum of the first $n$ natural numbers is written as: $$\sum^{n}_{k=1} k = 1 + 2 + 3 + ... + n$$
+        <br> Looks familiar? Let me explain it clearly. We start at $k=1$ (the bottom number) and we add every natural number from $k$ to $n$ (the top number).
+        <br> So, for example, if we had: $$\sum^{5}_{k=1} k = 1 + 2 + 3 + 4 + 5 = 15$$
+        <br> The formula for this is: $$\sum^{n}_{k=1} k = \frac{n(n+1)}{2}$$
+        Remember, natural numbers are just positive integers ($1, 2, 3, 4, 5 ...$ etc), and denoted as $\mathbb{N}$.
+    </p>
+
+          <div class="definition-box">
+        <h4 class="box-title">📖 Adding and Subtracting when k doesnt start at 1</h4>
+        <p class="lesson-text">
+          <strong>Example. Solve: $\sum^{50}_{k=15} k$</strong> 
+          <div class="math-display">
+            $$\text{Notice } k = 15 \text{ instead of 1}$$
+            $$\text{So lets split it into two and subtract one from the other}$$
+            $$\text{lets find from } 1 \rightarrow 50$$
+            $$\sum^{50}_{k=1} k= \frac{50(50+1)}{2} = 1275$$
+            $$\text{Now, since we were supposed to start at }15,$$
+            $$\text{ we can subtract the sum from } 1 \rightarrow 14$$
+            $$\sum^{14}_{k=1} k= \frac{14(14+1)}{2} = 105$$
+            $$\text{So, we can do } 1275 - 105 = 1170$$
+            $$\therefore \sum^{50}_{k=15} k = \boxed{1170}$$
+          </div>        </p>
+          <p style = "text-align: center;">Let me help you understand this better:<br></p>
+          <img src="/static/Series-subtraction-visualisation.png" style="max-width: 100%; height: auto; position: middle;">
+                    <p style = "text-align: center;">So we found from $\quad 1 \rightarrow 50\quad $ and subtracted $\quad 1 \rightarrow 14\quad $ to get $\quad 15 \rightarrow 50\quad $<br></p>
+      </div>
+
+      <h3 class="subsection-heading">We can also have an algebraic series.</h3>
+      <p class="lesson-text">
+        For example, $\sum^{4}_{k=1} (2k - 1)$ is an algebraic series.
+        <br> This means we substitute $k$ with the values from $1$ to $4$ and then add them up.
+        <br> So, we have:
+        $$\sum^{4}_{k=1} (2k - 1) = (2 \times 1 - 1) + (2 \times 2 - 1) + (2 \times 3 - 1) + (2 \times 4 - 1)$$
+        $$= 1 + 3 + 5 + 7 = \boxed{16}. \text{ This is the sum of the first 4 odd numbers}$$
+        <br> Since this series is small, (limit is 4) we can just write it out fully. for longer series, theres a better method:
+        <br> We can split the summation into two separate summations, similarly to the previous example:
+        $$\sum^{4}_{k=1} (2k - 1) = \sum^{4}_{k=1} 2k - \sum^{4}_{k=1} 1$$
+        <br> To take it further, we can factor 2 out of the first summation:
+        $$\sum^{4}_{k=1} (2k - 1) = 2\sum^{4}_{k=1} k - \sum^{4}_{k=1} 1$$
+        <br> Now, we can substitute the formulas we know:
+        $$2\sum^{4}_{k=1} k - \sum^{4}_{k=1} 1 \quad = \quad 2\left(\frac{4(4+1)}{2}\right) - (1 \times 4)$$
+        $$ 2\left(\frac{4(4+1)}{2}\right) - (1 \times 4) \quad =\quad 2(10) - 4 = 20 - 4 = \boxed{16}$$
+        <br> And we get the same answer, as anticipated.
+    </p>
+
     </section>
 
     <!-- Worked Examples Section -->
     <section id="examples" class="lesson-section">
-      <h2 class="section-heading">📝 Worked Examples</h2>
+      <h2 class="section-heading">📝 More Worked Examples:</h2>
       
       <div class="example-box">
-        <h4 class="box-title">📋 Example 1: EXAMPLE_TITLE_HERE</h4>
-        
-        <p class="lesson-text"><strong>Question:</strong> QUESTION_TEXT_HERE</p>
-        
+        <h4 class="box-title">📋 Example 1: Sum of a constant</h4>
+
+        <p class="lesson-text"><strong>Question:</strong> Show: $$\sum^{2N -1}_{r = 5} r = 2N^2 - N - 10, \quad N \geq 3$$</p>
+
         <div class="solution-steps">
           <h5 class="subsection-heading">Solution:</h5>
           
           <div class="step">
             <div class="step-number">Step 1:</div>
-            <p class="lesson-text">STEP_1_EXPLANATION_HERE</p>
+            <p class="lesson-text">Notice it doesn't start at 1? Lets first split it into more two and subtract the part we dont want.</p>
             <div class="math-display">
-              $$\text{STEP_1_MATH_HERE}$$
+              $$\sum^{2N -1}_{r = 5} r \quad \text{ Can be written as} \rightarrow \quad \sum^{2N -1}_{r = 1} r - \sum^{4}_{r = 1} r$$
             </div>
           </div>
 
           <div class="step">
             <div class="step-number">Step 2:</div>
-            <p class="lesson-text">STEP_2_EXPLANATION_HERE</p>
+            <p class="lesson-text">Now, lets use our formulas we know.</p>
             <div class="math-display">
-              $$\text{STEP_2_MATH_HERE}$$
+            $$\frac{n(n+1)}{2}\quad \text{ Can be written as} \rightarrow \quad \frac{1}{2}n(n+1)$$
+            $$\text{So} \rightarrow  \sum^{2N -1}_{r = 1} r - \sum^{4}_{r = 1} r= \frac{1}{2}(2N - 1)(2N) - \frac{1}{2} \times4\times(4+1)$$
+            $$\text{Now, lets simplify the first part and expand brackets:} $$ 
+            $$ \frac{1}{2}(2N - 1)(2N) = \frac{1}{2}(4N^2 - 2N) = \boxed{2N^2 - N} $$
+            $$\text{Now, the second part:}$$
+            $$\frac{1}{2} \times4\times(4+1) = \frac{1}{2} \times4\times5 = \boxed{10}$$
+
             </div>
           </div>
-
+  
           <div class="step">
             <div class="step-number">Final Answer:</div>
-            <p class="lesson-text">FINAL_ANSWER_EXPLANATION_HERE</p>
+            <p class="lesson-text">Combine first and second parts:</p>
             <div class="math-display">
-              $$\boxed{\text{FINAL_ANSWER_HERE}}$$
-            </div>
+            $$\text{So, we have:}$$
+            $$\text{First part - Second part} = \boxed{(2N^2 - N) - 10} \rightarrow \text{proved.}$$         
           </div>
         </div>
       </div>
-
-      <div class="example-box">
-        <h4 class="box-title">📋 Example 2: EXAMPLE_2_TITLE_HERE</h4>
-        <p class="lesson-text">EXAMPLE_2_CONTENT_HERE</p>
-      </div>
+ </div>
     </section>
 
     <!-- Common Mistakes Section -->
     <section class="lesson-section">
       <h2 class="section-heading">⚠️ Common Mistakes</h2>
-      
       <div class="warning-box">
-        <h4 class="box-title">🚫 Mistake 1: MISTAKE_TITLE_HERE</h4>
+        <h4 class="box-title">🚫 Mistake 1: Mistake 2: Forgetting to split Summations into two or more</h4>
         <p class="lesson-text">
-          <strong>What students often do wrong:</strong> MISTAKE_DESCRIPTION_HERE
+        Splitting the summation is really handy and makes it much easier. If you have a complex summation, try breaking it down into smaller parts.
         </p>
         <p class="lesson-text">
-          <strong>Why it's wrong:</strong> EXPLANATION_HERE
+          <strong>Why it's wrong:</strong> Not splitting the summation can lead to mistakes in calculation and understanding. It’s important to simplify complex problems. Even the best do it.
         </p>
         <p class="lesson-text">
-          <strong>How to avoid it:</strong> SOLUTION_HERE
+          <strong>How to avoid it:</strong> Always look for ways to break down summations into simpler parts. Practice this technique with various problems to become more comfortable with it. And ensure you're algebraically correct.
         </p>
       </div>
 
-      <div class="warning-box">
-        <h4 class="box-title">🚫 Mistake 2: MISTAKE_2_TITLE_HERE</h4>
-        <p class="lesson-text">MISTAKE_2_CONTENT_HERE</p>
-      </div>
+
     </section>
 
     <!-- Practice Problems Section -->
@@ -203,29 +264,137 @@
       </p>
 
       <div class="example-box">
-        <h4 class="box-title">🎯 Practice Question 1</h4>
-        <p class="lesson-text">PRACTICE_QUESTION_1_HERE</p>
+        <h4 class="box-title">🎯 Practice Questions</h4>
+        <p class="lesson-text">
+            (A) Evaluate: $$\sum^{4}_{k = 1} (3k + 2)$$
+            <br>(B) Evaluate $$\sum^{40}_{21} r$$
+            <br>(C) Find n given that $$\sum^{n}_{k=1} k = 528$$
+            <br>(D) Show that $$\sum^{n}_{r=1} (7r - 4) = \frac{1}{2}n(7n-1)$$
+        </p>
         
         <details style="margin-top: 15px;">
           <summary style="cursor: pointer; color: var(--accent-blue); font-weight: 600;">
             🔍 Show Solution
           </summary>
           <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(74, 158, 255, 0.2);">
-            <p class="lesson-text">SOLUTION_1_HERE</p>
+            <p class="lesson-text">
+                (A) $$\sum^{4}_{k = 1} (3k + 2) = \sum^{4}_{k = 1} 3k + \sum^{4}_{k = 1} 2 = 3\sum^{4}_{k = 1} k + 2 \times 4 = 3(10) + 8 = \boxed{38}$$
+                <br>(B) $$\sum^{40}_{21} r = \sum^{40}_{1} r - \sum^{20}_{1} r = \frac{40(40+1)}{2} - \frac{20(20+1)}{2} = 820 - 210 = \boxed{610}$$
+                <br>(C) $$\sum^{n}_{k=1} k = \frac{n(n+1)}{2} = 528 \Rightarrow n(n+1) = 1056 \Rightarrow n^2 + n - 1056 = 0$$
+                $$\text{Using the quadratic formula: } n = \frac{-1 \pm \sqrt{1 + 4 \times 1056}}{2} = \frac{-1 \pm \sqrt{4225}}{2} = \frac{-1 \pm 65}{2}$$
+                $$\text{So, } n = \frac{64}{2} = \boxed{32} \text{ (since n must be positive)}$$
+                <br>(D) $$\sum^{n}_{r=1} (7r - 4) = 7\sum^{n}_{r=1} r - 4\sum^{n}_{r=1} 1 = 7\left(\frac{n(n+1)}{2}\right) - 4n = \frac{7n(n+1)}{2} - 4n$$
+                $$= \frac{7n^2 + 7n - 8n}{2} = \frac{7n^2 - n}{2} = \boxed{\frac{1}{2}n(7n-1)}$$
+                $$\text{Thus, proved.}$$
+            </p>
           </div>
         </details>
       </div>
 
       <div class="example-box">
-        <h4 class="box-title">🎯 Practice Question 2</h4>
-        <p class="lesson-text">PRACTICE_QUESTION_2_HERE</p>
+        <h4 class="box-title">🎯 Practice Questions (harder)</h4>
+        <p class="lesson-text">
+            (1) 
+            <strong>(A)</strong> Find an expression for 
+            $$\sum_{r=1}^{2n-1}r.$$
+            <strong>(B)</strong> Hence show that 
+            $$\sum_{r=1}^{n}\bigl(2r-1\bigr)=n^{2},\quad n\ge2.$$
+            <br>
+            <strong>Hint:</strong> For part (b), split the sum $\sum_{r=1}^{2n-1}r$ into the sum of the even terms plus the sum of the odd terms.
+            <br><br><br><br>
+            (2) Calculate the sum: $$\sum_{r=1}^{55} (3r - 1)$$
+            <br><br>
+            (3) Calculate the sum: $$\sum_{r=1}^{90} (2 - 7r)$$
+            <br><br>
+            (4) Calculate the sum: $$\sum_{r=1}^{46} (9 + 2r)$$
+            
+        </p>
         
         <details style="margin-top: 15px;">
           <summary style="cursor: pointer; color: var(--accent-blue); font-weight: 600;">
             🔍 Show Solution
           </summary>
           <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(74, 158, 255, 0.2);">
-            <p class="lesson-text">SOLUTION_2_HERE</p>
+        <p class="lesson-text">
+            <strong>(1)(a)</strong> We know the formula for the sum of the first $m$ positive integers:
+            $$\sum_{r=1}^{m}r = \frac{m(m+1)}{2}$$
+            
+            Here $m=2n-1$. Therefore:
+            $$\sum_{r=1}^{2n-1}r = \frac{(2n-1)((2n-1)+1)}{2} = \frac{(2n-1) \cdot 2n}{2} = \boxed{n(2n-1)}$$
+            
+            <strong>(1)(b)</strong> Split the sum $\sum_{r=1}^{2n-1}r$ into the sum of the even terms plus the sum of the odd terms:
+            $$\sum_{r=1}^{2n-1}r = \underbrace{\sum_{r=1}^{n-1}2r}_{\text{even terms}} + \underbrace{\sum_{r=1}^{n}(2r-1)}_{\text{odd terms}}$$
+            
+            We have already $\sum_{r=1}^{2n-1}r=n(2n-1)$. Also:
+            $$\sum_{r=1}^{n-1}2r = 2\sum_{r=1}^{n-1}r = 2 \cdot \frac{(n-1)n}{2} = n(n-1)$$
+            
+            Hence:
+            $$n(2n-1) = \sum_{r=1}^{n-1}2r + \sum_{r=1}^{n}(2r-1) = n(n-1) + \sum_{r=1}^{n}(2r-1)$$
+            
+            Rearranging to isolate the odd-number sum:
+            $$\sum_{r=1}^{n}(2r-1) = n(2n-1) - n(n-1) = 2n^{2} - n - n^{2} + n = \boxed{n^{2}}$$
+            
+            This completes the proof that $\sum_{r=1}^{n}(2r-1) = n^{2}$.
+        </p>
+
+        <div style="margin: 20px 0;"></div>
+            <h5 class="subsection-heading">Question (2): Calculate $\sum_{r=1}^{55} (3r - 1)$</h5>
+            <p class="lesson-text">
+                <strong>Step 1:</strong> Split the sum into two separate sums:
+                $$\sum_{r=1}^{55} (3r - 1) = 3 \sum_{r=1}^{55} r - \sum_{r=1}^{55} 1$$
+                
+                <strong>Step 2:</strong> Apply the formulas:
+                $$3 \sum_{r=1}^{55} r = 3 \times \frac{55 \times 56}{2} = 3 \times 1540 = 4620$$
+                $$\sum_{r=1}^{55} 1 = 55$$
+                
+                <strong>Step 3:</strong> Calculate the final answer:
+                $$4620 - 55 = \boxed{4565}$$
+            </p>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h5 class="subsection-heading">Question (3): Calculate $\sum_{r=1}^{90} (2 - 7r)$</h5>
+            <p class="lesson-text">
+                <strong>Step 1:</strong> Split the sum:
+                $$\sum_{r=1}^{90} (2 - 7r) = \sum_{r=1}^{90} 2 - 7 \sum_{r=1}^{90} r$$
+                
+                <strong>Step 2:</strong> Calculate each part:
+                $$\sum_{r=1}^{90} 2 = 2 \times 90 = 180$$
+                $$\sum_{r=1}^{90} r = \frac{90 \times 91}{2} = 4095$$
+                
+                <strong>Step 3:</strong> Combine:
+                $$180 - 7 \times 4095 = 180 - 28665 = \boxed{-28485}$$
+            </p>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h5 class="subsection-heading">Question (4): Calculate $\sum_{r=1}^{46} (9 + 2r)$</h5>
+            <p class="lesson-text">
+                <strong>Step 1:</strong> Split the sum:
+                $$\sum_{r=1}^{46} (9 + 2r) = \sum_{r=1}^{46} 9 + 2 \sum_{r=1}^{46} r$$
+                
+                <strong>Step 2:</strong> Calculate each part:
+                $$\sum_{r=1}^{46} 9 = 9 \times 46 = 414$$
+                $$\sum_{r=1}^{46} r = \frac{46 \times 47}{2} = 1081$$
+                
+                <strong>Step 3:</strong> Combine:
+                $$414 + 2 \times 1081 = 414 + 2162 = \boxed{2576}$$
+            </p>
+        </div>
+
+        <div class="tip-box" style="margin-top: 20px;">
+            <h4 class="box-title">💡 Problem-Solving Strategy</h4>
+            <p class="lesson-text">
+                <strong>General approach for algebraic series:</strong>
+            </p>
+            <ol class="lesson-text">
+                <li>Split complex expressions into simpler summations</li>
+                <li>Factor out constants from the summation</li>
+                <li>Apply the standard formulas (sum of constants, sum of natural numbers)</li>
+                <li>Calculate step by step and combine results</li>
+            </ol>
+        </div>
+        </p>
           </div>
         </details>
       </div>
@@ -238,16 +407,16 @@
       <div class="definition-box">
         <h4 class="box-title">🎯 Key Takeaways</h4>
         <ul class="lesson-text">
-          <li>KEY_POINT_1_HERE</li>
-          <li>KEY_POINT_2_HERE</li>
-          <li>KEY_POINT_3_HERE</li>
+          <li>Summationsn are written with sigma: $\sum$</li>
+          <li>We can break them down simpler </li>
+          <li>We can factor out constants from the summation and find special terms.</li>
         </ul>
       </div>
 
       <div class="tip-box">
         <h4 class="box-title">📚 What's Next?</h4>
         <p class="lesson-text">
-          NEXT_STEPS_HERE - What should students learn next or how to apply this knowledge.
+            I suggest now learning square series - where we have $\sum^{n}_{k=1} k^2$. This is a very useful series to know, and it will come in exams.
         </p>
       </div>
     </section>
