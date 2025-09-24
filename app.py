@@ -102,6 +102,66 @@ def linear_transformations():
 def proof_by_induction():
     return render_template("components/ProofByInduction.html")
 
+@app.route("/BinomialExpansion")
+def binomial_expansion():
+    return render_template("components/BinomialExpansionMath.html")
+
+@app.route("/Circles")
+def circles():
+    return render_template("components/CircleMath.html")
+
+@app.route("/Differentiation")
+def differentiation():
+    return render_template("components/DifferentiationMath.html")
+
+@app.route("/EquationsAndInequalities")
+def equations_and_inequalities():
+    return render_template("components/EquationsAndInequalitiesMath.html")
+
+@app.route("/ExponentialsAndLogarithms")
+def exponentials_and_logarithms():
+    return render_template("components/LogsAndExponentMath.html")
+
+@app.route("/GraphsAndTransformations")
+def graphs_and_transformations():
+    return render_template("components/GraphsAndTransformationsMath.html")
+
+@app.route("/Integration")
+def integration():
+    return render_template("components/IntegrationMath.html")
+
+@app.route("/Matrices")
+def matrices():
+    return render_template("components/Matrices.html")
+
+@app.route("/Quadratics")
+def quadratics():
+    return render_template("components/QuadraticsMath.html")
+
+@app.route("/Radians")
+def radians():
+    return render_template("components/RadiansMath.html")
+
+@app.route("/RationalisingDenominators")
+def rationalising_denominators():
+    return render_template("components/RationalisingDenominatorsMath.html")
+
+@app.route("/StraightLineGraphs")
+def straight_line_graphs():
+    return render_template("components/StraightLineGraphsMath.html")
+
+@app.route("/TrigonometricIdentitiesAndEquations")
+def trigonometric_identities_and_equations():
+    return render_template("components/TrigonometricIdentitiesAndEquationsMath.html")
+
+@app.route("/TrigonometricRatios")
+def trigonometric_ratios():
+    return render_template("components/TrigonometricRatiosMath.html")
+
+@app.route("/Vectors")
+def vectors():
+    return render_template("components/VectorsMath.html")
+
 # ============================================
 # Complex Numbers PAGES (lessons / folder)
 # ============================================
@@ -230,4 +290,4 @@ def proving_divisibility_results():
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
-    
+
