@@ -78,8 +78,28 @@ def further_vectors():
 def template_for_a_level_page():
     return render_template("components/templateForALevelPage.html")
 
+@app.route("/ArgandDiagrams")
+def argand_diagrams():
+    return render_template("components/ArgandDiagrams.html")
+
+@app.route("/RootsOfPolynomials")
+def roots_of_polynomials():
+    return render_template("components/RootsOfPolynomials.html")
+
+@app.route("/VolumesOfRevolution")
+def volumes_of_revolution():
+    return render_template("components/VolumesOfRevolution.html")
+
+@app.route("/LinearTransformations")
+def linear_transformations():
+    return render_template("components/LinearTransformations.html")
+
+@app.route("/ProofByInduction")
+def proof_by_induction():
+    return render_template("components/ProofByInduction.html")
+
 # ============================================
-# LESSON PAGES (lessons/ folder)
+# Complex Numbers PAGES (lessons / folder)
 # ============================================
 
 @app.route("/SimplifyingSurds")
@@ -156,14 +176,53 @@ def series_front_page():
     return render_template("SeriesCP1/SeriesFrontPage.html")
 
 # ========================================================================================
-
+# MATRICES (components/ folder)
 # ============================================
+
+@app.route("/IntroductionToMatrices")
+def introduction_to_matrices():
+    return render_template("MatrixCP1/IntroductionToMatrices.html")
+
+@app.route("/MatrixMultiplication")
+def matrix_multiplication():
+    return render_template("MatrixCP1/MatrixMultiplication.html")
+
+@app.route("/Determinants")
+def determinants():
+    return render_template("MatrixCP1/Determinants.html")
+
+@app.route("/Inverting2x2Matrix")
+def inverting_2x2_matrix():
+    return render_template("MatrixCP1/Inverting2x2Matrix.html")
+
+@app.route("/Inverting3x3Matrix")
+def inverting_3x3_matrix():
+    return render_template("MatrixCP1/Inverting3x3Matrix.html")
+
+@app.route("/SolvingSystemsWithMatrices")
+def solving_systems_with_matrices():
+    return render_template("MatrixCP1/SolvingSystemsWithMatrices.html")
+
+#========================================================================================
+# PROOF BY INDUCTION (components/ folder)
+# ========================================================================================.
+
+@app.route("/ProofByInductionIntro")
+def proof_by_induction_intro():
+    return render_template("ProofByInductionCP1/ProofByInductionIntro.html")
+
+@app.route("/ProofByMathematicalInduction")
+def proof_by_mathematical_induction():
+    return render_template("ProofByInductionCP1/ProofByMathematicalInduction.html")
+
+@app.route("/ProvingDivisibilityResults")
+def proving_divisibility_results():
+    return render_template("ProofByInductionCP1/ProvingDivisibilityResults.html")
+
+
+#========================================================================================
 # LEGACY ROUTES (for backwards compatibility)
 # ============================================
-
-@app.route("/FurtherMathsVectors")
-def further_maths_vectors():
-    return render_template("components/FurtherVectors.html")     
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
