@@ -254,26 +254,54 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Initialize dark mode
     new DarkMode();
+    
+    // Initialize topic filter
+    initializeTopicFilter();
 });
+
+// Topic Filter Functionality
+function initializeTopicFilter() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const topicItems = document.querySelectorAll('#maths-topics-list li[data-category]');
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const filter = button.getAttribute('data-filter');
+            
+            // Update active button
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            
+            // Filter topics with animation
+            filterTopics(filter, topicItems);
+        });
+    });
+}
+
+function filterTopics(filter, items) {
+    // Clear any existing timeouts to prevent memory leaks
+    window.filterTimeouts?.forEach(timeout => clearTimeout(timeout));
+    window.filterTimeouts = [];
+    
+    items.forEach((item, index) => {
+        const category = item.getAttribute('data-category');
+        const shouldShow = filter === 'all' || category === filter;
+        
+        if (shouldShow) {
+            // Show item immediately instead of staggered animation to reduce memory usage
+            item.classList.remove('hidden', 'fadeOut');
+            item.style.display = '';
+        } else {
+            // Hide item immediately
+            item.classList.add('hidden');
+            item.style.display = 'none';
+        }
+    });
+}
 
 
 //
 //------------------------------------------------------------------------------------
 //
 
-// Increments the delay on each item.
-$('.rolldown-list li').each(function () {
-  var delay = ($(this).index() / 4) + 's';
-  $(this).css({
-    webkitAnimationDelay: delay,
-    mozAnimationDelay: delay,
-    animationDelay: delay
-  });
-});
-
-$('#btnReload').click(function () {
-  $('#myList').removeClass('rolldown-list');
-  setTimeout(function () {
-    $('#myList').addClass('rolldown-list');
-  }, 1);
-});
+// Removed jQuery rolldown animations that were causing memory leaks

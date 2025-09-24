@@ -5,19 +5,23 @@
 {% block head %}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
   <meta name="description" content="Learn Factorising - Step-by-step guide with examples and practice">
   
-    <script>
-    window.MathJax = {
-      tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']]
-      },
-      svg: {
-        fontCache: 'global'
-      }
+  <!-- Preload MathJax for faster loading -->
+  <link rel="preload" href="https://polyfill.io/v3/polyfill.min.js?features=es6" as="script">
+  
+  <script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
     }
-    </script>
+  }
+  </script>
 {% endblock %}
 
 {% block content %}
@@ -41,29 +45,39 @@
   <div class="list">
     <h1>ALL topics</h1>
     <h2>Mathematics Topics</h2>
+    
+    <!-- Filter Controls -->
+    <div class="filter-container">
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">All Topics</button>
+        <button class="filter-btn" data-filter="year1">Maths Year 1</button>
+        <button class="filter-btn" data-filter="cp1">Core Pure 1</button>
+      </div>
+    </div>
+    
     <ul id="maths-topics-list">
-      <li><a href="/AlgebraicExpressions"><span>Algebraic Expressions</span></a></li>
-      <li><a href="/ArgandDiagrams"><span>Argand Diagrams CP1</span></a></li>
-      <li><a href="/BinomialExpansion"><span>Binomial Expansion</span></a></li>
-      <li><a href="/Circles"><span>Circles</span></a></li>
-      <li><a href="/ComplexNumbers"><span>Complex Numbers CP1</span></a></li>
-      <li><a href="/Differentiation"><span>Differentiation</span></a></li>
-      <li><a href="/EquationsAndInequalities"><span>Equations and Inequalities</span></a></li>
-      <li><a href="/ExponentialsAndLogarithms"><span>Exponentials and Logarithms</span></a></li>
-      <li><a href="/FurtherVectors"><span>Further Vectors CP1</span></a></li>
-      <li><a href="/GraphsAndTransformations"><span>Graphs and Transformations</span></a></li>
-      <li><a href="/Integration"><span>Integration</span></a></li>
-      <li><a href="/LinearTransformations"><span>Linear Transformations CP1</span></a></li>
-      <li><a href="/Matrices"><span>Matrices CP1</span></a></li>
-      <li><a href="/ProofByInduction"><span>Proof by Induction</span></a></li>
-      <li><a href="/Quadratics"><span>Quadratics</span></a></li>
-      <li><a href="/RootsOfPolynomials"><span>Roots of Polynomials CP1</span></a></li>
-      <li><a href="/Series"><span>Series CP1</span></a></li>
-      <li><a href="/StraightLineGraphs"><span>Straight Line Graphs</span></a></li>
-      <li><a href="/TrigonometricIdentitiesAndEquations"><span>Trigonometric Identities and Equations</span></a></li>
-      <li><a href="/TrigonometricRatios"><span>Trigonometric Ratios</span></a></li>
-      <li><a href="/Vectors"><span>Vectors</span></a></li>
-      <li><a href="/VolumesOfRevolution"><span>Volumes of Revolution CP1</span></a></li>
+      <li data-category="year1"><a href="/AlgebraicExpressions"><span>Algebraic Expressions</span></a></li>
+      <li data-category="cp1"><a href="/ArgandDiagrams"><span>Argand Diagrams CP1</span></a></li>
+      <li data-category="year2"><a href="/BinomialExpansion"><span>Binomial Expansion</span></a></li>
+      <li data-category="year1"><a href="/Circles"><span>Circles</span></a></li>
+      <li data-category="cp1"><a href="/ComplexNumbers"><span>Complex Numbers CP1</span></a></li>
+      <li data-category="year2"><a href="/Differentiation"><span>Differentiation</span></a></li>
+      <li data-category="year1"><a href="/EquationsAndInequalities"><span>Equations and Inequalities</span></a></li>
+      <li data-category="year2"><a href="/ExponentialsAndLogarithms"><span>Exponentials and Logarithms</span></a></li>
+      <li data-category="cp1"><a href="/FurtherVectors"><span>Further Vectors CP1</span></a></li>
+      <li data-category="year1"><a href="/GraphsAndTransformations"><span>Graphs and Transformations</span></a></li>
+      <li data-category="year2"><a href="/Integration"><span>Integration</span></a></li>
+      <li data-category="cp1"><a href="/LinearTransformations"><span>Linear Transformations CP1</span></a></li>
+      <li data-category="cp1"><a href="/Matrices"><span>Matrices CP1</span></a></li>
+      <li data-category="cp1"><a href="/ProofByInduction"><span>Proof by Induction</span></a></li>
+      <li data-category="year1"><a href="/Quadratics"><span>Quadratics</span></a></li>
+      <li data-category="cp1"><a href="/RootsOfPolynomials"><span>Roots of Polynomials CP1</span></a></li>
+      <li data-category="cp1"><a href="/Series"><span>Series CP1</span></a></li>
+      <li data-category="year1"><a href="/StraightLineGraphs"><span>Straight Line Graphs</span></a></li>
+      <li data-category="year2"><a href="/TrigonometricIdentitiesAndEquations"><span>Trigonometric Identities and Equations</span></a></li>
+      <li data-category="year1"><a href="/TrigonometricRatios"><span>Trigonometric Ratios</span></a></li>
+      <li data-category="year1"><a href="/Vectors"><span>Vectors</span></a></li>
+      <li data-category="cp1"><a href="/VolumesOfRevolution"><span>Volumes of Revolution CP1</span></a></li>
 </ul>
     <h2>OCR-A Physics Topics</h2>
     <ul id="physics-topics-list">

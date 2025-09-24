@@ -3,6 +3,10 @@ import os
 
 app = Flask(__name__)
 
+# Optimize Flask for development
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0  # Disable caching in development
+app.config['TEMPLATES_AUTO_RELOAD'] = True
+
 # ============================================
 # HOME PAGE
 # ============================================

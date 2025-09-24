@@ -695,7 +695,7 @@ img.footer-logo {
   background-size: 200% 200%;
   position: relative;
   overflow: hidden;
-  animation: goldShimmer 2s ease-in-out infinite;
+  animation: goldShimmer 6s ease-in-out infinite; /* Reduced frequency from 2s to 6s */
   border-radius: 8px;
 }
 
@@ -859,7 +859,7 @@ img.footer-logo {
 .survey-popup::after {
   content: '📋';
   font-size: 16px;
-  animation: surveyBounce 2s ease-in-out infinite;
+  animation: surveyBounce 4s ease-in-out infinite; /* Reduced frequency from 2s to 4s */
   position: relative;
   z-index: 1;
 }
@@ -876,7 +876,7 @@ img.footer-logo {
 .survey-popup::before {
   content: '📋';
   font-size: 16px;
-  animation: surveyBounce 2s ease-in-out infinite;
+  animation: surveyBounce 4s ease-in-out infinite; /* Reduced frequency */
 }
 
 @keyframes surveyPulse {
@@ -942,7 +942,7 @@ img.footer-logo {
   visibility: visible;
 }
 
-/* Calculator Styles - Adapted from your original */
+/* calculator Styles - adapted from og calc */
 #calculator {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
@@ -1104,7 +1104,7 @@ img.footer-logo {
 
 #maths-topics-list li,
 #physics-topics-list li {
-  background: rgba(0, 0, 0, 0.3) !important;
+  background: none !important; /* Removed grey background */
 }
 
 #maths-topics-list li span,
@@ -1174,9 +1174,25 @@ nav a:hover {
   color: #ffffff !important;
 }
 
-/* Global transitions */
+/* Global transitions - Optimized for performance */
 * {
-  transition: color 0.3s ease, background-color 0.3s ease;
+  transition: color 0.2s ease, background-color 0.2s ease; /* Reduced from 0.3s */
+}
+
+/* Performance optimizations */
+* {
+  will-change: auto; /* Reset will-change to prevent memory issues */
+}
+
+/* Reduce motion for performance */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* Override inline styles for better dark mode compatibility */
@@ -1357,11 +1373,11 @@ body {
   border-left: 3px solid;
   border: 1px solid;
   border-radius: 8px;
-  transition: 0.5s ease;
+  transition: 0.3s ease; /* Reduced from 0.5s */
   cursor: pointer;
-  opacity: 0;
-  transform: translateX(-20px);
-  animation: slideIn 0.6s ease forwards;
+  opacity: 1; /* Show immediately instead of animating */
+  transform: translateX(0); /* No initial transform */
+  /* Removed slideIn animation to reduce memory usage */
   background: rgba(255, 255, 255, 0.05) !important;
   text-align: left !important;
   padding: 0 !important;
@@ -1370,37 +1386,32 @@ body {
 }
 
 /* Different colors for Mathematics topics */
-#maths-topics-list li:nth-child(1) { border-color: #ff6b6b; }
-#maths-topics-list li:nth-child(2) { border-color: #4ecdc4; }
-#maths-topics-list li:nth-child(3) { border-color: #45b7d1; }
-#maths-topics-list li:nth-child(4) { border-color: #96ceb4; }
-#maths-topics-list li:nth-child(5) { border-color: #ffeaa7; }
-#maths-topics-list li:nth-child(6) { border-color: #dda0dd; }
-#maths-topics-list li:nth-child(7) { border-color: #98d8c8; }
-#maths-topics-list li:nth-child(8) { border-color: #f7dc6f; }
-#maths-topics-list li:nth-child(9) { border-color: #bb8fce; }
-#maths-topics-list li:nth-child(10) { border-color: #85c1e9; }
-#maths-topics-list li:nth-child(11) { border-color: #f8c471; }
-#maths-topics-list li:nth-child(12) { border-color: #82e0aa; }
-#maths-topics-list li:nth-child(13) { border-color: #f1948a; }
-#maths-topics-list li:nth-child(14) { border-color: #85c1e9; }
-#maths-topics-list li:nth-child(15) { border-color: #d7bde2; }
-#maths-topics-list li:nth-child(16) { border-color: #a9dfbf; }
-#maths-topics-list li:nth-child(17) { border-color: #f9e79f; }
-#maths-topics-list li:nth-child(18) { border-color: #aed6f1; }
-#maths-topics-list li:nth-child(19) { border-color: #fadbd8; }
-#maths-topics-list li:nth-child(20) { border-color: #ff9ff3; }
-#maths-topics-list li:nth-child(21) { border-color: #54a0ff; }
-#maths-topics-list li:nth-child(22) { border-color: #5f27cd; }
-#maths-topics-list li:nth-child(23) { border-color: #00d2d3; }
-#maths-topics-list li:nth-child(24) { border-color: #ff9f43; }
-#maths-topics-list li:nth-child(25) { border-color: #ff3838; }
-#maths-topics-list li:nth-child(26) { border-color: #2ed573; }
-#maths-topics-list li:nth-child(27) { border-color: #3742fa; }
-#maths-topics-list li:nth-child(28) { border-color: #f368e0; }
-#maths-topics-list li:nth-child(29) { border-color: #ff9500; }
-#maths-topics-list li:nth-child(30) { border-color: #26de81; }
-#maths-topics-list li:nth-child(31) { border-color: #fc5c65; }
+#maths-topics-list li:nth-child(1) { border-color: #ff1744; }
+#maths-topics-list li:nth-child(2) { border-color: #00e676; }
+#maths-topics-list li:nth-child(3) { border-color: #2196f3; }
+#maths-topics-list li:nth-child(4) { border-color: #00c853; }
+#maths-topics-list li:nth-child(5) { border-color: #ffc107; }
+#maths-topics-list li:nth-child(6) { border-color: #9c27b0; }
+#maths-topics-list li:nth-child(7) { border-color: #00bcd4; }
+#maths-topics-list li:nth-child(8) { border-color: #ff9800; }
+#maths-topics-list li:nth-child(9) { border-color: #673ab7; }
+#maths-topics-list li:nth-child(10) { border-color: #03a9f4; }
+#maths-topics-list li:nth-child(11) { border-color: #ff5722; }
+#maths-topics-list li:nth-child(12) { border-color: #4caf50; }
+#maths-topics-list li:nth-child(13) { border-color: #e91e63; }
+#maths-topics-list li:nth-child(14) { border-color: #2196f3; }
+#maths-topics-list li:nth-child(15) { border-color: #9c27b0; }
+#maths-topics-list li:nth-child(16) { border-color: #009688; }
+#maths-topics-list li:nth-child(17) { border-color: #ffeb3b; }
+#maths-topics-list li:nth-child(18) { border-color: #2196f3; }
+#maths-topics-list li:nth-child(19) { border-color: #ff5722; }
+#maths-topics-list li:nth-child(20) { border-color: #e91e63; }
+#maths-topics-list li:nth-child(21) { border-color: #2962ff; }
+#maths-topics-list li:nth-child(22) { border-color: #6200ea; }
+#maths-topics-list li:nth-child(29):before { border: #ff6f00; }
+#maths-topics-list li:nth-child(30):before { border: #00e676; }
+#maths-topics-list li:nth-child(31):before { border: #ff1744; }
+
 
 #maths-topics-list li:hover,
 #physics-topics-list li:hover {
@@ -1455,37 +1466,37 @@ body {
 }
 
 /* Mathematics topics hover backgrounds */
-#maths-topics-list li:nth-child(1):before { background: #ff0000; }
-#maths-topics-list li:nth-child(2):before { background: #4ecdc4; }
-#maths-topics-list li:nth-child(3):before { background: #45b7d1; }
-#maths-topics-list li:nth-child(4):before { background: #96ceb4; }
-#maths-topics-list li:nth-child(5):before { background: #ffeaa7; }
-#maths-topics-list li:nth-child(6):before { background: #dda0dd; }
-#maths-topics-list li:nth-child(7):before { background: #98d8c8; }
-#maths-topics-list li:nth-child(8):before { background: #f7dc6f; }
-#maths-topics-list li:nth-child(9):before { background: #bb8fce; }
-#maths-topics-list li:nth-child(10):before { background: #85c1e9; }
-#maths-topics-list li:nth-child(11):before { background: #f8c471; }
-#maths-topics-list li:nth-child(12):before { background: #82e0aa; }
-#maths-topics-list li:nth-child(13):before { background: #f1948a; }
-#maths-topics-list li:nth-child(14):before { background: #85c1e9; }
-#maths-topics-list li:nth-child(15):before { background: #d7bde2; }
-#maths-topics-list li:nth-child(16):before { background: #a9dfbf; }
-#maths-topics-list li:nth-child(17):before { background: #f9e79f; }
-#maths-topics-list li:nth-child(18):before { background: #aed6f1; }
-#maths-topics-list li:nth-child(19):before { background: #fadbd8; }
-#maths-topics-list li:nth-child(20):before { background: #ff9ff3; }
-#maths-topics-list li:nth-child(21):before { background: #54a0ff; }
-#maths-topics-list li:nth-child(22):before { background: #5f27cd; }
-#maths-topics-list li:nth-child(23):before { background: #00d2d3; }
-#maths-topics-list li:nth-child(24):before { background: #ff9f43; }
-#maths-topics-list li:nth-child(25):before { background: #ff3838; }
-#maths-topics-list li:nth-child(26):before { background: #2ed573; }
-#maths-topics-list li:nth-child(27):before { background: #3742fa; }
-#maths-topics-list li:nth-child(28):before { background: #f368e0; }
-#maths-topics-list li:nth-child(29):before { background: #ff9500; }
-#maths-topics-list li:nth-child(30):before { background: #26de81; }
-#maths-topics-list li:nth-child(31):before { background: #fc5c65; }
+#maths-topics-list li:nth-child(1):before { background: #ff1744; }
+#maths-topics-list li:nth-child(2):before { background: #00e676; }
+#maths-topics-list li:nth-child(3):before { background: #2196f3; }
+#maths-topics-list li:nth-child(4):before { background: #00c853; }
+#maths-topics-list li:nth-child(5):before { background: #ffc107; }
+#maths-topics-list li:nth-child(6):before { background: #9c27b0; }
+#maths-topics-list li:nth-child(7):before { background: #00bcd4; }
+#maths-topics-list li:nth-child(8):before { background: #ff9800; }
+#maths-topics-list li:nth-child(9):before { background: #673ab7; }
+#maths-topics-list li:nth-child(10):before { background: #03a9f4; }
+#maths-topics-list li:nth-child(11):before { background: #ff5722; }
+#maths-topics-list li:nth-child(12):before { background: #4caf50; }
+#maths-topics-list li:nth-child(13):before { background: #e91e63; }
+#maths-topics-list li:nth-child(14):before { background: #2196f3; }
+#maths-topics-list li:nth-child(15):before { background: #9c27b0; }
+#maths-topics-list li:nth-child(16):before { background: #009688; }
+#maths-topics-list li:nth-child(17):before { background: #ffeb3b; }
+#maths-topics-list li:nth-child(18):before { background: #2196f3; }
+#maths-topics-list li:nth-child(19):before { background: #ff5722; }
+#maths-topics-list li:nth-child(20):before { background: #e91e63; }
+#maths-topics-list li:nth-child(21):before { background: #2962ff; }
+#maths-topics-list li:nth-child(22):before { background: #6200ea; }
+#maths-topics-list li:nth-child(23):before { background: #00e5ff; }
+#maths-topics-list li:nth-child(24):before { background: #ff6d00; }
+#maths-topics-list li:nth-child(25):before { background: #d50000; }
+#maths-topics-list li:nth-child(26):before { background: #00c851; }
+#maths-topics-list li:nth-child(27):before { background: #304ffe; }
+#maths-topics-list li:nth-child(28):before { background: #c51162; }
+#maths-topics-list li:nth-child(29):before { background: #ff6f00; }
+#maths-topics-list li:nth-child(30):before { background: #00e676; }
+#maths-topics-list li:nth-child(31):before { background: #ff1744; }
 
 #maths-topics-list li:hover:before,
 #physics-topics-list li:hover:before {
@@ -1828,6 +1839,57 @@ body {
     order: -1;
     margin: 0 0 20px 0;
   }
+}
+
+/* Filter functionality styles */
+.filter-container {
+  margin: 20px 0;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.filter-btn {
+  padding: 8px 16px;
+  border: 2px solid var(--accent-blue);
+  background: transparent;
+  color: var(--accent-blue);
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.filter-btn:hover {
+  background: var(--accent-blue);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.filter-btn.active {
+  background: var(--accent-blue);
+  color: #ffffff;
+}
+
+/* Hide filtered items */
+#maths-topics-list li.hidden {
+  display: none;
+}
+
+/* Animation for showing/hiding items */
+#maths-topics-list li {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#maths-topics-list li.fadeOut {
+  opacity: 0;
+  transform: translateX(-20px);
 }
 
 /* Print styles for lessons */
