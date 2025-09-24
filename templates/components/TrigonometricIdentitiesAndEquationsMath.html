@@ -1,4 +1,112 @@
-<!-- Trigonometric Identities And Equations Math Component -->
-<div class="component trigonometric-identities-equations-math">
-  <!-- Content goes here -->
-</div>
+{% extends "base.html" %}
+
+{% block title %}Topic Name Here - YourSiteName{% endblock %}
+
+{% block head %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+  <meta name="description" content="Learn about Topic Name Here - Exam Board / Specification (optional)">
+{% endblock %}
+
+{% block content %}
+  <a href="#" class="back-to-home">🔙 Back to Parent Section</a>
+  
+  <section class="topic-header">
+    <h1>Topic Name Here - (Exam Boards, Levels)</h1>
+    <h2>Master Topic Name Here with comprehensive guides, examples, and exam practice</h2>
+  </section>
+
+  <section class="topic-intro">
+    <p style="text-align: center; padding: 5px 0px;">
+      <strong>Topic Name Here</strong> is a key topic in the Specification Name(s). It is also covered in various courses, and is important to understand.
+      <br><br>
+      Choose a section below to start your learning journey with this topic.
+      <br><br>
+      (minor disclaimer: The difficulty rating is subjective and may not reflect your own experience. It is based on personal perspective.)
+      <br><br>
+      Difficulty rating: ⭐⭐⭐ out of 5 stars
+    </p>
+  </section>
+  
+  <div style="margin-top: 20px;">
+    <a href="{{ url_for('index') }}" style="margin-right: 20px; margin-left: 20px;">🏠︎ - Back to Home<br></a>
+  </div>
+
+  <main class="topics-grid">
+
+    <a href="#trigonometric-ratios" aria-label="Trigonometric Ratios">
+      <article class="topic-card topic-card-color1">
+        <h3>📐 Trigonometric Ratios</h3>
+        <p class="TopicsList">Learn SOHCAHTOA and basic trig ratios</p>
+        <p class="TopicsList">Calculate sine, cosine, and tangent values</p>
+        <p class="TopicsList">Difficulty rating: ⭐⭐</p>
+      </article>
+    </a>  
+
+    <a href="#cosine-rule" aria-label="The Cosine Rule">
+      <article class="topic-card topic-card-color2">
+        <h3>📏 The Cosine Rule</h3>
+        <p class="TopicsList">Apply a² = b² + c² - 2bc cos A</p>
+        <p class="TopicsList">Find sides and angles in any triangle</p>
+        <p class="TopicsList">Difficulty rating: ⭐⭐⭐</p>
+      </article>
+    </a>
+
+    <a href="#sine-rule" aria-label="The Sine Rule">
+      <article class="topic-card topic-card-color3">
+        <h3>📊 The Sine Rule</h3>
+        <p class="TopicsList">Use a/sin A = b/sin B = c/sin C</p>
+        <p class="TopicsList">Solve triangles with given angles and sides</p>
+        <p class="TopicsList">Difficulty rating: ⭐⭐⭐</p>
+      </article>
+    </a>
+
+    <a href="#areas-triangles" aria-label="Areas of Triangles">
+      <article class="topic-card topic-card-color1">
+        <h3>🔺 Areas of Triangles</h3>
+        <p class="TopicsList">Calculate areas using ½ab sin C</p>
+        <p class="TopicsList">Apply trigonometry to find triangle areas</p>
+        <p class="TopicsList">Difficulty rating: ⭐⭐</p>
+      </article>
+    </a>
+
+    <a href="#solving-triangles" aria-label="Solving Triangle Problems">
+      <article class="topic-card topic-card-color2">
+        <h3>🧩 Solving Triangle Problems</h3>
+        <p class="TopicsList">Combine sine and cosine rules</p>
+        <p class="TopicsList">Real-world applications and word problems</p>
+        <p class="TopicsList">Difficulty rating: ⭐⭐⭐⭐</p>
+      </article>
+    </a>
+
+    <a href="#trig-graphs" aria-label="Graphs of Sine, Cosine and Tangent">
+      <article class="topic-card topic-card-color3">
+        <h3>📈 Graphs of Sine, Cosine and Tangent</h3>
+        <p class="TopicsList">Understand periodic functions and their shapes</p>
+        <p class="TopicsList">Key properties: amplitude, period, asymptotes</p>
+        <p class="TopicsList">Difficulty rating: ⭐⭐⭐</p>
+      </article>
+    </a>
+
+    <a href="#transforming-graphs" aria-label="Transforming Trigonometric Graphs">
+      <article class="topic-card topic-card-color1">
+        <h3>⚡ Transforming Trigonometric Graphs</h3>
+        <p class="TopicsList">Apply translations, reflections and stretches</p>
+        <p class="TopicsList">Modify amplitude, period and phase shifts</p>
+        <p class="TopicsList">Difficulty rating: ⭐⭐⭐⭐</p>
+      </article>
+    </a>
+
+    <a href="#revision" aria-label="Revision Summary">
+      <article class="topic-card topic-card-summary">
+          <h3>📖 Revision / Exam Questions - COMING SOON</h3>
+          <p class="TopicsList">Practice with questions and key points</p>
+          <p class="TopicsList">Key formulas, important points, last-minute revision</p>
+          <p class="TopicsList">Difficulty rating: ⭐⭐⭐⭐</p>
+      </article>
+    </a>
+
+  </main>
+
+{% endblock %}

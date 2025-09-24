@@ -1,4 +1,121 @@
-<!-- Integration Math Component -->
-<div class="component integration-math">
-  <!-- Content goes here -->
-</div>
+{% extends "base.html" %}
+
+{% block title %}Topic Name Here - YourSiteName{% endblock %}
+
+{% block head %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+  <meta name="description" content="Learn about Topic Name Here - Exam Board / Specification (optional)">
+{% endblock %}
+
+{% block content %}
+  <a href="#" class="back-to-home">🔙 Back to Parent Section</a>
+  
+  <section class="topic-header">
+    <h1>Topic Name Here - (Exam Boards, Levels)</h1>
+    <h2>Master Topic Name Here with comprehensive guides, examples, and exam practice</h2>
+  </section>
+
+  <section class="topic-intro">
+    <p style="text-align: center; padding: 5px 0px;">
+      <strong>Topic Name Here</strong> is a key topic in the Specification Name(s). It is also covered in various courses, and is important to understand.
+      <br><br>
+      Choose a section below to start your learning journey with this topic.
+      <br><br>
+      (minor disclaimer: The difficulty rating is subjective and may not reflect your own experience. It is based on personal perspective.)
+      <br><br>
+      Difficulty rating: ⭐⭐⭐ out of 5 stars
+    </p>
+  </section>
+  
+  <div style="margin-top: 20px;">
+    <a href="{{ url_for('index') }}" style="margin-right: 20px; margin-left: 20px;">🏠︎ - Back to Home<br></a>
+  </div>
+
+  <main class="topics-grid">
+
+    <a href="#integration-basics" aria-label="Integration Basics">
+      <article class="topic-card topic-card-color1">
+        <h3>🧮 Integration</h3>
+        <p class="TopicsList">Understanding the concept of integration</p>
+        <p class="TopicsList">Reverse process of differentiation</p>
+        <p class="TopicsList">Difficulty rating: ⭐⭐</p>
+      </article>
+    </a>  
+
+    <a href="#integrating-xn" aria-label="Integrating x to the power n">
+      <article class="topic-card topic-card-color2">
+        <h3>📈 Integrating x^n</h3>
+        <p class="TopicsList">Power rule for integration</p>
+        <p class="TopicsList">Adding 1 to power, dividing by new power</p>
+        <p class="TopicsList">Difficulty rating: ⭐⭐</p>
+      </article>
+    </a>
+
+    <a href="#indefinite-integrals" aria-label="Indefinite Integrals">
+      <article class="topic-card topic-card-color3">
+        <h3>∫ Indefinite integrals</h3>
+        <p class="TopicsList">Integration without limits</p>
+        <p class="TopicsList">Adding constant of integration (+C)</p>
+        <p class="TopicsList">Difficulty rating: ⭐⭐</p>
+      </article>
+    </a>
+
+    <a href="#finding-functions" aria-label="Finding Functions">
+      <article class="topic-card topic-card-color1">
+        <h3>🔍 Finding functions</h3>
+        <p class="TopicsList">Using integration to find original functions</p>
+        <p class="TopicsList">Working backwards from derivatives</p>
+        <p class="TopicsList">Difficulty rating: ⭐⭐⭐</p>
+      </article>
+    </a>
+
+    <a href="#definite-integrals" aria-label="Definite Integrals">
+      <article class="topic-card topic-card-color2">
+        <h3>🎯 Definite integrals</h3>
+        <p class="TopicsList">Integration with upper and lower limits</p>
+        <p class="TopicsList">Fundamental theorem of calculus</p>
+        <p class="TopicsList">Difficulty rating: ⭐⭐⭐</p>
+      </article>
+    </a>
+
+    <a href="#areas-under-curves" aria-label="Areas Under Curves">
+      <article class="topic-card topic-card-color3">
+        <h3>📊 Areas under curves</h3>
+        <p class="TopicsList">Using definite integrals to find areas</p>
+        <p class="TopicsList">Geometric interpretation of integration</p>
+        <p class="TopicsList">Difficulty rating: ⭐⭐⭐</p>
+      </article>
+    </a>
+
+    <a href="#areas-under-x-axis" aria-label="Areas Under the X-axis">
+      <article class="topic-card topic-card-color1">
+        <h3>📉 Areas under the x-axis</h3>
+        <p class="TopicsList">Handling negative areas in integration</p>
+        <p class="TopicsList">Taking absolute values for true area</p>
+        <p class="TopicsList">Difficulty rating: ⭐⭐⭐⭐</p>
+      </article>
+    </a>
+
+    <a href="#areas-between-curves" aria-label="Areas Between Curves and Lines">
+      <article class="topic-card topic-card-color2">
+        <h3>📐 Areas between curves and lines</h3>
+        <p class="TopicsList">Finding intersection points</p>
+        <p class="TopicsList">Integrating difference of functions</p>
+        <p class="TopicsList">Difficulty rating: ⭐⭐⭐⭐</p>
+      </article>
+    </a>
+
+    <a href="#revision" aria-label="Revision Summary">
+      <article class="topic-card topic-card-summary">
+          <h3>📖 Revision / Exam Questions - COMING SOON</h3>
+          <p class="TopicsList">Practice with questions and key points</p>
+          <p class="TopicsList">Key formulas, important points, last-minute revision</p>
+          <p class="TopicsList">Difficulty rating: ⭐⭐⭐⭐</p>
+      </article>
+    </a>
+
+  </main>
+
+{% endblock %}

@@ -1,4 +1,88 @@
-<!-- Differentiation Math Component -->
-<div class="component differentiation-math">
-  <!-- Content goes here -->
-</div>
+{% extends "base.html" %}
+
+{% block title %}Topic Name Here - YourSiteName{% endblock %}
+
+{% block head %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+  <meta name="description" content="Learn about Topic Name Here - Exam Board / Specification (optional)">
+{% endblock %}
+
+{% block content %}
+  <a href="#" class="back-to-home">🔙 Back to Parent Section</a>
+  
+  <section class="topic-header">
+    <h1>Topic Name Here - (Exam Boards, Levels)</h1>
+    <h2>Master Topic Name Here with comprehensive guides, examples, and exam practice</h2>
+  </section>
+
+  <section class="topic-intro">
+    <p style="text-align: center; padding: 5px 0px;">
+      <strong>Topic Name Here</strong> is a key topic in the Specification Name(s). It is also covered in various courses, and is important to understand.
+      <br><br>
+      Choose a section below to start your learning journey with this topic.
+      <br><br>
+      (minor disclaimer: The difficulty rating is subjective and may not reflect your own experience. It is based on personal perspective.)
+      <br><br>
+      Difficulty rating: ⭐⭐⭐ out of 5 stars
+    </p>
+  </section>
+  
+  <div style="margin-top: 20px;">
+    <a href="{{ url_for('index') }}" style="margin-right: 20px; margin-left: 20px;">🏠︎ - Back to Home<br></a>
+  </div>
+
+  <main class="topics-grid">
+
+    <!-- Differentiation Fundamentals -->
+    <a href="#differentiation-basics" aria-label="Differentiation Basics">
+      <article class="topic-card topic-card-color1">
+        <h3>📚 Differentiation Basics</h3>
+        <p class="TopicsList">Introduction to the concept of differentiation</p>
+        <p class="TopicsList">Understanding rates of change and limits</p>
+        <p class="TopicsList">Difficulty rating: ⭐</p>
+      </article>
+    </a>  
+
+    <a href="#gradients-of-curves" aria-label="Gradients of Curves">
+      <article class="topic-card topic-card-color2">
+        <h3>📈 Gradients of Curves</h3>
+        <p class="TopicsList">Understanding how gradients change along curves</p>
+        <p class="TopicsList">From secants to tangents</p>
+        <p class="TopicsList">Difficulty rating: ⭐⭐</p>
+      </article>
+    </a>
+
+    <a href="#finding-derivative" aria-label="Finding the Derivative">
+      <article class="topic-card topic-card-color3">
+        <h3>🔍 Finding the Derivative</h3>
+        <p class="TopicsList">First principles and derivative notation</p>
+        <p class="TopicsList">The fundamental definition of differentiation</p>
+        <p class="TopicsList">Difficulty rating: ⭐⭐</p>
+      </article>
+    </a>
+
+    <a href="#differentiating-xn" aria-label="Differentiating x^n"></a>
+      <article class="topic-card topic-card-color4"></article>
+        <h3>⚡ Differentiating x^n</h3>
+        <p class="TopicsList">The power rule for differentiation</p>
+        <p class="TopicsList">Working with positive and negative indices</p>
+        <p class="TopicsList">Difficulty rating: ⭐⭐</p>
+      </article>
+    </a>
+
+    -->
+
+    <a href="#revision" aria-label="Revision Summary">
+      <article class="topic-card topic-card-summary">
+          <h3>📖 Revision / Exam Questions - COMING SOON</h3>
+          <p class="TopicsList">Practice with questions and key points</p>
+          <p class="TopicsList">Key formulas, important points, last-minute revision</p>
+          <p class="TopicsList">Difficulty rating: ⭐⭐⭐⭐</p>
+      </article>
+    </a>
+
+  </main>
+
+{% endblock %}

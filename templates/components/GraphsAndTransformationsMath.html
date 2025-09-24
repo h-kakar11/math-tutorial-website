@@ -1,4 +1,112 @@
-<!-- Graphs and Transformations Math Component -->
-<div class="component graphs-transformations-math">
-  <!-- Content goes here -->
-</div>
+{% extends "base.html" %}
+
+{% block title %}Topic Name Here - YourSiteName{% endblock %}
+
+{% block head %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+  <meta name="description" content="Learn about Topic Name Here - Exam Board / Specification (optional)">
+{% endblock %}
+
+{% block content %}
+  <a href="#" class="back-to-home">🔙 Back to Parent Section</a>
+  
+  <section class="topic-header">
+    <h1>Topic Name Here - (Exam Boards, Levels)</h1>
+    <h2>Master Topic Name Here with comprehensive guides, examples, and exam practice</h2>
+  </section>
+
+  <section class="topic-intro">
+    <p style="text-align: center; padding: 5px 0px;">
+      <strong>Topic Name Here</strong> is a key topic in the Specification Name(s). It is also covered in various courses, and is important to understand.
+      <br><br>
+      Choose a section below to start your learning journey with this topic.
+      <br><br>
+      (minor disclaimer: The difficulty rating is subjective and may not reflect your own experience. It is based on personal perspective.)
+      <br><br>
+      Difficulty rating: ⭐⭐⭐ out of 5 stars
+    </p>
+  </section>
+  
+  <div style="margin-top: 20px;">
+    <a href="{{ url_for('index') }}" style="margin-right: 20px; margin-left: 20px;">🏠︎ - Back to Home<br></a>
+  </div>
+
+  <main class="topics-grid">
+
+    <a href="#cubic-graphs" aria-label="Cubic Graphs">
+      <article class="topic-card topic-card-color1">
+        <h3>📈 Cubic Graphs</h3>
+        <p class="TopicsList">Understanding x³ functions and their characteristics</p>
+        <p class="TopicsList">Sketching cubic curves and identifying key features</p>
+        <p class="TopicsList">Difficulty rating: ⭐⭐</p>
+      </article>
+    </a>
+
+    <a href="#quartic-graphs" aria-label="Quartic Graphs">
+      <article class="topic-card topic-card-color2">
+        <h3>📊 Quartic Graphs</h3>
+        <p class="TopicsList">Exploring x⁴ functions and their unique properties</p>
+        <p class="TopicsList">Analyzing turning points and end behavior</p>
+        <p class="TopicsList">Difficulty rating: ⭐⭐⭐</p>
+      </article>
+    </a>
+
+    <a href="#reciprocal-graphs" aria-label="Reciprocal Graphs">
+      <article class="topic-card topic-card-color3">
+        <h3>🔄 Reciprocal Graphs</h3>
+        <p class="TopicsList">Understanding 1/x functions and asymptotes</p>
+        <p class="TopicsList">Sketching hyperbolas and identifying discontinuities</p>
+        <p class="TopicsList">Difficulty rating: ⭐⭐⭐</p>
+      </article>
+    </a>
+
+    <a href="#points-intersection" aria-label="Points of Intersection">
+      <article class="topic-card topic-card-color1">
+        <h3>🎯 Points of Intersection</h3>
+        <p class="TopicsList">Finding where graphs meet using algebraic methods</p>
+        <p class="TopicsList">Solving simultaneous equations graphically and algebraically</p>
+        <p class="TopicsList">Difficulty rating: ⭐⭐</p>
+      </article>
+    </a>
+
+    <a href="#translating-graphs" aria-label="Translating Graphs">
+      <article class="topic-card topic-card-color2">
+        <h3>➡️ Translating Graphs</h3>
+        <p class="TopicsList">Moving graphs horizontally and vertically</p>
+        <p class="TopicsList">Understanding f(x+a) and f(x)+a transformations</p>
+        <p class="TopicsList">Difficulty rating: ⭐⭐</p>
+      </article>
+    </a>
+
+    <a href="#stretching-graphs" aria-label="Stretching Graphs">
+      <article class="topic-card topic-card-color3">
+        <h3>🔀 Stretching Graphs</h3>
+        <p class="TopicsList">Scaling graphs in x and y directions</p>
+        <p class="TopicsList">Understanding af(x) and f(bx) transformations</p>
+        <p class="TopicsList">Difficulty rating: ⭐⭐⭐</p>
+      </article>
+    </a>
+
+    <a href="#transforming-functions" aria-label="Transforming Functions">
+      <article class="topic-card topic-card-color1">
+        <h3>⚡ Transforming Functions</h3>
+        <p class="TopicsList">Combining multiple transformations effectively</p>
+        <p class="TopicsList">Order of operations for complex transformations</p>
+        <p class="TopicsList">Difficulty rating: ⭐⭐⭐⭐</p>
+      </article>
+    </a>
+
+    <a href="#revision" aria-label="Revision Summary">
+      <article class="topic-card topic-card-summary">
+          <h3>📖 Revision / Exam Questions - COMING SOON</h3>
+          <p class="TopicsList">Practice with questions and key points</p>
+          <p class="TopicsList">Key formulas, important points, last-minute revision</p>
+          <p class="TopicsList">Difficulty rating: ⭐⭐⭐⭐</p>
+      </article>
+    </a>
+
+  </main>
+
+{% endblock %}

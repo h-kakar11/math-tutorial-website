@@ -10,7 +10,7 @@
 {% endblock %}
 
 {% block content %}
-  <a href="/FurtherMaths" class="back-to-home">🔙 Back to Parent Section</a>
+  <a href="#" class="back-to-home">🔙 Back to Parent Section</a>
   
   <section class="topic-header">
     <h1>Topic Name Here - (Exam Boards, Levels)</h1>
@@ -35,44 +35,51 @@
 
   <main class="topics-grid">
 
-    <!-- Section Template Example -->
-    <a href="{{ url_for('subtopic1_here') }}" aria-label="Subtopic 1">
+    <a href="#volumes-intro" aria-label="Introduction to Volumes of Revolution">
       <article class="topic-card topic-card-color1">
-        <h3>📚 Subtopic 1 Name Here</h3>
-        <p class="TopicsList">Brief description point 1</p>
-        <p class="TopicsList">Brief description point 2</p>
-        <p class="TopicsList">Difficulty rating: ⭐</p>
+        <h3>📚 Introduction to Volumes of Revolution</h3>
+        <p class="TopicsList">Understanding the concept of rotating curves</p>
+        <p class="TopicsList">Basic principles and visualization</p>
+        <p class="TopicsList">Difficulty rating: ⭐⭐</p>
       </article>
     </a>  
 
-    <a href="{{ url_for('subtopic2_here') }}" aria-label="Subtopic 2">
+    <a href="#volumes-x-axis" aria-label="Volumes of Revolution around the x-axis">
       <article class="topic-card topic-card-color2">
-        <h3>🔤 Subtopic 2 Name Here</h3>
-        <p class="TopicsList">Brief description point 1</p>
-        <p class="TopicsList">Brief description point 2</p>
-        <p class="TopicsList">Difficulty rating: ⭐⭐</p>
-      </article>
-    </a>
-
-    <a href="{{ url_for('subtopic3_here') }}" aria-label="Subtopic 3">
-      <article class="topic-card topic-card-color3">
-        <h3>⚡ Subtopic 3 Name Here</h3>
-        <p class="TopicsList">Brief description point 1</p>
-        <p class="TopicsList">Brief description point 2</p>
+        <h3>🔄 Volumes of Revolution around the x-axis</h3>
+        <p class="TopicsList">Disk method and washer method</p>
+        <p class="TopicsList">Setting up and evaluating integrals</p>
         <p class="TopicsList">Difficulty rating: ⭐⭐⭐</p>
       </article>
     </a>
 
-    <!-- Add more subtopic cards as needed -->
-    <!-- 
-    <a href="{{ url_for('subtopicX_here') }}" aria-label="Subtopic X">
-      <article class="topic-card topic-card-colorX">
-        <h3>Icon Subtopic X Name Here</h3>
-        <p class="TopicsList">Description point</p>
-        <p class="TopicsList">Difficulty rating: ⭐⭐</p>
+    <a href="#volumes-y-axis" aria-label="Volumes of Revolution around the y-axis">
+      <article class="topic-card topic-card-color3">
+        <h3>🔃 Volumes of Revolution around the y-axis</h3>
+        <p class="TopicsList">Shell method and disk method variations</p>
+        <p class="TopicsList">Changing variables and limits</p>
+        <p class="TopicsList">Difficulty rating: ⭐⭐⭐</p>
       </article>
     </a>
-    -->
+
+    <a href="#adding-subtracting" aria-label="Adding and Subtracting Volumes">
+      <article class="topic-card topic-card-color1">
+        <h3>➕➖ Adding and Subtracting Volumes</h3>
+        <p class="TopicsList">Complex shapes with multiple regions</p>
+        <p class="TopicsList">Washer method and composite solids</p>
+        <p class="TopicsList">Difficulty rating: ⭐⭐⭐⭐</p>
+      </article>
+    </a>
+
+    <a href="#modeling" aria-label="Modelling with Volumes of Revolution">
+      <article class="topic-card topic-card-color2">
+        <h3>🏗️ Modelling with Volumes of Revolution</h3>
+        <p class="TopicsList">Real-world applications and problems</p>
+        <p class="TopicsList">Engineering and physics contexts</p>
+        <p class="TopicsList">Difficulty rating: ⭐⭐⭐⭐</p>
+      </article>
+    </a>
+
 
     <a href="#revision" aria-label="Revision Summary">
       <article class="topic-card topic-card-summary">
