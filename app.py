@@ -235,9 +235,17 @@ def rational_deno():
 def series_basics():
     return render_template("SeriesCP1/SeriesBasics.html")
 
-@app.route("/SeriesFrontPage")
-def series_front_page():
-    return render_template("SeriesCP1/SeriesFrontPage.html")
+@app.route("/Series")
+def series():
+    return render_template("components/Series.html")
+
+@app.route("/SquareSeries")
+def square_series():
+    return render_template("SeriesCP1/SquareSeries.html")
+
+@app.route("/CubicSeries")
+def cubic_series():
+    return render_template("SeriesCP1/CubicSeries.html")
 
 # ========================================================================================
 # MATRICES (components/ folder)

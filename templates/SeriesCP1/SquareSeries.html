@@ -1,0 +1,505 @@
+{% extends "base.html" %}
+
+{% block title %}Square Series - K4Maths{% endblock %}
+
+{% block head %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Learn LESSON_TITLE_HERE - Step-by-step guide with examples and practice">
+  
+  <!-- MathJax for LaTeX rendering -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
+{% endblock %}
+
+{% block content %}
+  <!-- Back navigation -->
+  <a href="/Series" class="back-to-home">🔙 Back to Series CP1</a>
+
+  <div class="lesson-container">
+    
+    <!-- Lesson Header -->
+    <header class="lesson-header">
+      <h1 class="lesson-title">Square Series</h1>
+      <p class="lesson-subtitle">Understanding the sum of a square series.</p>
+
+      <div class="lesson-meta">
+        <span class="meta-item">📚 Further Maths</span>
+        <span class="meta-item">🎯 Difficulty: ⭐⭐</span>
+        <span class="meta-item">⏱️ Reading time: 30 minutes</span>
+        <span class="meta-item">📋 Edexcel & AQA</span>
+      </div>
+    </header>
+
+    <!-- Table of Contents -->
+    <nav class="table-of-contents">
+      <h3 class="toc-title">📖 Contents</h3>
+      <ul class="toc-list">
+        <li class="toc-item"><a href="#introduction" class="toc-link">Introduction</a></li>
+        <li class="toc-item"><a href="#key-concepts" class="toc-link">Key Concepts</a></li>
+        <li class="toc-item"><a href="#examples" class="toc-link">Worked Examples</a></li>
+        <li class="toc-item"><a href="#practice" class="toc-link">Practice Problems</a></li>
+        <li class="toc-item"><a href="#summary" class="toc-link">Summary</a></li>
+      </ul>
+    </nav>
+
+
+    <!-- Introduction Section -->
+    <section id="introduction" class="lesson-section">
+      <h2 class="section-heading">📚 Introduction</h2>
+      
+      <p class="lesson-text">
+            In this lesson, we will be looking at Square series, which look like this: $\sum^n_{r=1} r^2$. We'll also understand it and know how to solve problems for it. You must understand the previous lesson (series basics) before this one.
+    </p>
+
+      <div class="definition-box">
+        <h4 class="box-title">🎯 Learning Objectives</h4>
+        <p class="lesson-text">
+          By the end of this lesson, you will be able to:
+        </p>
+        <ul class="lesson-text">
+          <li>Understand the concept of square series</li>
+          <li>Apply the formula to solve problems involving square series</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Key Concepts Section -->
+    <section id="key-concepts" class="lesson-section">
+      <h2 class="section-heading">🔑 Key Concepts</h2>
+      
+      <h3 class="subsection-heading">What is the Square series?</h3>
+      <p class="lesson-text">
+        A square series is a natural number series that involves the squares of the first n natural numbers. It is represented as:$$\sum^n_{r=1} r^2$$.<br>
+        This means we take every natural number from $r$ (which is $1$) to $n$ and square each of them, then add them all together. For example:
+        $$\sum^{4}_{r=1} r^2 \quad \text{means: } \quad 1^2 + 2^2 + 3^2 + 4^2$$
+        $$\text{Which equals: } 1 + 4 + 9 + 16 = 30$$
+      </p>
+
+      <div class="definition-box">
+        <h4 class="box-title">📖 The Golden Formula:</h4>
+        <p class="lesson-text">
+          <strong>Sum of Squares Formula:</strong> $$\sum^n_{r=1} r^2 = \frac{n(n + 1)(2n + 1)}{6} \quad\quad \text{Or} \quad\quad \frac{1}{6}\times n(n + 1)(2n + 1)$$
+          <br>Heres a mini example below, solving the following: $$\sum^{25}_{r=1} r^2$$
+        </p>
+      </div>
+
+      <!-- LaTeX Math Example -->
+      <div class="math-display">
+        $$\sum^n_{r=1} r^2 = \frac{n(n + 1)(2n + 1)}{6}$$
+        $$\sum^{25}_{r=1} r^2 = \frac{25(25 + 1)(2\times25 + 1)}{6}$$
+        $$\frac{25(25 + 1)(2\times25 + 1)}{6} = \frac{25\times26\times51}{6} = 5525$$
+        $$\text{So, } 1^2 + 2^2 + 3^2 + ... + 25^2 = 5525$$
+      </div>
+
+      <h3 class="subsection-heading">Another Concept:</h3>
+      <p class="lesson-text">
+        Like the previous lesson, you can also add and subtract mutiple series'. This is especially helpful for complex questions. Heres a simple example:
+        $$\sum^{10}_{r=1} (r^2 + r) = \sum^{10}_{r=1} r^2 + \sum^{10}_{r=1} r$$
+        $$\text{Notice how the }r^2 \text{ & }  r \text{ get its own series? We can solve them both using the known formulas.}$$
+      </p>
+
+      <div class="tip-box">
+        <h4 class="box-title">💡 Pro Tip</h4>
+        <p class="lesson-text">
+          Dont forget to break up your series. Its goated. Trust me. It makes life easier.
+        </p>
+    </div>
+      <h3 class="subsection-heading">Algrbraic Square Series</h3>
+      <p class="lesson-text">
+        You will encounter questions with algebraic expressions in the series. For example:
+        $$\sum^{n}_{r=1} (2r^2 + 3)$$
+        $$\text{We can break this up into:}$$
+        $$2\sum^{n}_{r=1} r^2 + \sum^{n}_{r=1} 3$$
+        $$\text{We just took the 2 and put it in front, then we broke up the square series}$$
+        $$\text{ and added the series with the constant, 3.}$$
+    </p>
+    <div class="tip-box">
+        <h4 class="box-title">💡Reccommendation</h4>
+        <p class="lesson-text">
+         I highly reccomend taking my previous lesson on this. If this is your first lesson, its likely you're confused.<a href="/SeriesBasics" style="text-decoration: underline; font-weight: bold"> Click on this sentence to go to that lesson.</a></p>
+
+    </div>
+
+    <!-- Worked Examples Section -->
+    <section id="examples" class="lesson-section">
+      <h2 class="section-heading">📝 Worked Examples</h2>
+      
+      <div class="example-box">
+        <h4 class="box-title">📋 Example 1: Solving Simple Square Series</h4>
+        
+        <p class="lesson-text"><strong>Question:</strong> Solve $$\sum^{52}_{15} [5r^2 + r + 5]$$ </p>
+        
+        <div class="solution-steps">
+          <h5 class="subsection-heading">Solution: </h5>
+          
+          <div class="step">
+            <div class="step-number">Step 1:</div>
+            <p class="lesson-text">Break it into different series', noting that it starts at 15.</p>
+            <div class="math-display">
+              $$\sum^{52}_{r=15} [r^2 + r + 5] =5 \sum^{52}_{r=15} r^2 + \sum^{52}_{r=15} r + \sum^{52}_{r=15} 5$$
+            </div>
+            <p class = "lesson-text"> Above, we split each term into their own series and took 5 outside for a walk.</p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">Step 2:</div>
+            <p class="lesson-text">Now we can solve each series using known formulas, and take them away from r=1 to 14, as the lower limit starts at 15. Remember the formula for squares: $$\sum^{n}_{r=1} r^2 = \frac{n(n + 1)(2n + 1)}{6}$$</p>
+            <div class="math-display">
+                $$\text{First series:}$$
+              $$5 \sum^{52}_{r=15} r^2 = 5 \sum^{52}_{r=1} r^2 - 5\sum^{14}_{r=1} r^2 $$
+              $$ \text{Which: }$$
+              $$ 5 \left(\frac{52(52 + 1)(2\times52 + 1)}{6}\right) - 5\left(\frac{14(14 + 1)(2\times14 + 1)}{6}\right)$$
+              $$ = \underline{23470}$$
+
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">Step 3:</div>
+            <p class="lesson-text">Now we can solve the second series. Remember the formula for sums: $$\sum^{n}_{r=1} r = \frac{n(n + 1)}{2}$$</p>
+            <div class="math-display">
+              $$\sum^{52}_{r=15} r = \sum^{52}_{r=1} r - \sum^{14}_{r=1} r$$
+                $$ \text{Which: }$$
+                $$ \sum^{52}_{r=1} r - \sum^{14}_{r=1} r =  \left(\frac{52(52 + 1)}{2}\right) - \left(\frac{14(14 + 1)}{2}\right)$$
+                $$ = \underline{1245}$$
+            </div>
+          </div>
+          <div class ="step">
+            <div class="step-number">Step 4:</div>
+            <p class="lesson-text">Now we can solve the third series. Remember the formula for constants: $$\sum^{n}_{r=1} a = an$$</p>
+            <div class="math-display">
+              $$\sum^{52}_{r=15} 5 = \sum^{52}_{r=1} 5 - \sum^{14}_{r=1} 5$$
+                $$ \text{Which: }$$
+                $$ 5(52) - 5(14) = \underline{190}$$
+            </div>
+            </div>
+            <div class="step">
+                <div class="step-number">Final Step & Answer:</div>
+                <p class="lesson-text">Now we can add all the answers together to get the final answer.</p>
+                <div class="math-display">
+                  $$\boxed{ \underbrace{23470}_{\text{First series}} + \underbrace{ 1245}_{\text{Second series}} + \underbrace{  190}_{\text{Third series}} \;= \underbrace{24905}_{\text{Final answer}}}$$
+                </div>
+              </div>
+        </div>
+      </div>
+
+      <div class="example-box">
+        <h4 class="box-title">📋 Example 2: Algebraic Series:</h4>
+        <p class="lesson-text">$$\underline{ \text{(A) Show } \sum^n_{r=1} [r^2+r-1] = \frac{n(n^2+3n-1)}{3} \quad n, r \in \mathbb{N} }$$
+            $$\text{(B) Hence, verify this result with: } n = 3$$</p>
+      <div class="solution-steps">
+        <h5 class="subsection-heading">Solution: </h5>  
+        <div class="step">
+            <div class="step-number">Part A - Step 1:</div>
+            <p class="lesson-text">For part A, lets break it up into different series' using our known formulas: 
+            </p>
+            <div class="math-display">
+                $$ \sum^{n}_{r=1} [r^2 + r - 1] = \sum^{n}_{r=1} r^2 + \sum^{n}_{r=1} r - \sum^{n}_{r=1} 1$$
+            </div>
+            <p class = "lesson-text"> Above, we split each term into their own series.</p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">Part A - Step 2:</div>
+            <p class="lesson-text">Now we can solve each series using known formulas. Remember the formula for squares:</p>
+            <div class="math-display">
+                $$\text{First series:}$$
+              $$\sum^{n}_{r=1} r^2 = \frac{n(n + 1)(2n + 1)}{6}$$
+              $$\text{Second Series:}$$
+                $$\sum^{n}_{r=1} r = \frac{n(n + 1)}{2}$$3
+                $$\text{Third Series:}$$
+                $$\sum^{n}_{r=1} 1 = n$$
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">Part A - Step 3:</div>
+            <p class="lesson-text">Now lets pop it into the equation $[r^2 + r - 1]$</p>
+            <div class="math-display">
+                $$r^2 = \frac{n(n + 1)(2n + 1)}{6}$$
+                $$r = \frac{n(n + 1)}{2}$$
+                $$-1 = (-1)n$$
+                $$\text{Adding them together: }$$
+                $$\frac{n(n + 1)(2n + 1)}{6} + \frac{n(n + 1)}{2} + (-1) n$$
+                $$\text{Simpler, and making common denominators:}$$
+                $$\frac{1}{6}n(n + 1)(2n + 1) + \frac{1}{6}\times3\times n(n + 1) - n$$
+                $$\text{(The second fraction is multiplied by 3 to}$$
+                $$\text{make the denominator 6, like the first one, and}$$
+                $$\text{is turned from } \frac{3}{6} \rightarrow \frac{1}{6} \times 3)$$
+            </div>
+          </div>
+          <div class ="step">
+            <div class="step-number">Part A - Step 4:</div>
+            <p class="lesson-text">Now we can simplify fully by expanding brackets and algebraically manipulating:</p>
+            <div class="math-display">
+                $$\text{We have: }\frac{1}{6}n(n + 1)(2n + 1) + \frac{3}{6}n(n + 1) - n$$
+                $$\text{Factor out } \frac{1}{6}n:$$
+                $$\frac{1}{6}\,n\bigl[(n+1)(2n+1)+3(n+1)\bigr]\;-\;n.$$
+                $$\text{Factor  } (n+1) \text{ out the square brackets:}$$
+                $$\frac{1}{6}\,n(n+1)[(2n+1)+3]\;-\;n.$$
+                $$\text{Simplify } (2n+1+3) \text{ to } (2n+4):$$
+                $$\frac{1}{6}\,n(n+1)(2n+4)\;-\;n.$$
+                $$\text{Write } -n \text{ as } -\frac{6}{6}n$$
+                $$\text{So we have: } \frac{1}{6}\,n(n+1)(2n+4)-\frac{6}{6}n$$
+      </div>
+      <div class ="step">
+            <div class="step-number">Part A - Step 5:</div>
+            <p class="lesson-text">Further Simplification:</p>
+            <div class="math-display">
+                $$\text{We have: } \frac{1}{6}\,n(n+1)(2n+4)-\frac{6}{6}n$$
+                $$\text{Expand } (n+1)(2n+4) \text{ to } 2n^2 + 6n + 4$$
+                $$\text{So we have: } \frac{1}{6}\,n(2n^2 + 6n + 4)-\frac{6}{6}n$$
+                $$\text{Write as fractions: } \frac{n(2n^2 + 6n + 4)}{6} - \frac{6n}{6}$$
+                $$\text{Combine the fractions: } \frac{n(2n^2 + 6n + 4) - 6n}{6}$$
+                $$\text{Distribute: } n(2n^2 + 6n + 4) \text{ to } 2n^3 + 6n^2 + 4n$$
+                $$\text{So we have: } \frac{2n^3 + 6n^2 + 4n - 6n}{6}$$
+                $$\text{Simplify } 4n - 6n \text{ to } -2n$$
+                $$\text{So now we have: } \frac{2n^3 + 6n^2 - 2n}{6}$$
+                $$\text{Factor out: }2n \rightarrow \frac{2n(n^2 + 3n - 1)}{6}$$
+                $$\text{Simplify fractions: }$$
+                $$\frac{2n(n^2 + 3n - 1)}{6} \longrightarrow \frac{n(n^2 + 3n - 1)}{3}$$
+                $$\text{Final form is proved: }\boxed{ \sum^n_{r=1} [r^2+r-1] = \frac{n(n^2+3n-1)}{3}}$$
+      </div>
+        </div>
+        <div class="step">
+            <div class="step-number">Part B - Step 1:</div>
+            <p class="lesson-text">Now for part B, we can verify the result with n=3 and n=4. Lets start with n=3:</p>
+            <div class="math-display">
+                $$\text{We have: } \sum^n_{r=1} [r^2+r-1] = \frac{n(n^2+3n-1)}{3}$$
+                $$\text{Putting in } n=3:$$
+                $$\sum^3_{r=1} [r^2+r-1] = \frac{3(3^2+3\times3-1)}{3}$$
+                $$= \frac{3(9+9-1)}{3} = \frac{51}{3} = \boxed{17}$$
+            </div>
+          </div>
+         <p class ="lesson-text">That was very long - no one else wouldve walked you though the algebra so clearly like that... I think it deserves a share 😉</p>
+          </div>
+          </div>
+        </section>
+
+    <!-- Common Mistakes Section -->
+    <section class="lesson-section">
+      <h2 class="section-heading">⚠️ Common Mistakes</h2>
+      
+      <div class="warning-box">
+        <h4 class="box-title">🚫 Mistake 1: Not splitting up their series'</h4>
+        <p class="lesson-text">
+          <strong>What students often do wrong:</strong> Students may try to evaluate the entire series at once without breaking it down into manageable parts.
+        </p>
+        <p class="lesson-text">
+          <strong>Why it's wrong:</strong> This approach can lead to mistakes in calculations and a lack of understanding of the underlying patterns in the series.
+        </p>
+        <p class="lesson-text">
+          <strong>How to avoid it:</strong> Break the series down into smaller parts and evaluate each part separately. This will help you keep track of your calculations and understand the structure of the series better.
+        </p>
+      </div>
+
+
+
+    <!-- Practice Problems Section -->
+    <section id="practice" class="lesson-section">
+      <h2 class="section-heading">💪 Practice Problems</h2>
+      
+      <p class="lesson-text lesson-text-center">
+        Try these problems to test your understanding:
+      </p>
+
+      <div class="example-box">
+        <h4 class="box-title">🎯 Practice Question 1</h4>
+        <p class="lesson-text">
+            (A) Solve: $$ \sum_{r=1}^{99} r^2$$
+            (B) solve: $$\sum_{r=1}^{100} r^2$$
+            (C) Solve: $$\sum_{r=100}^{200} r^2$$
+            (D) Solve: $$\sum_{r=1}^{k} r^2 + \sum_{r=k+1}^{80} r^2,\quad 0 < k < 80$$
+
+        </p>
+        
+        <details style="margin-top: 15px;">
+          <summary style="cursor: pointer; color: var(--accent-blue); font-weight: 600;">
+            🔍 Show Solution
+          </summary>
+          <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(74, 158, 255, 0.2);">
+            <p class="lesson-text">
+                (A) <br>
+                $$ \sum_{r=1}^{99} r^2 = \frac{99(99 + 1)(2\times99 + 1)}{6} = \frac{99\times100\times199}{6} = 328350$$
+                (B) <br>
+                $$ \sum_{r=1}^{100} r^2 = \frac{100(100 + 1)(2\times100 + 1)}{6} = \frac{100\times101\times201}{6} = 338350$$
+                (C) <br>
+                $$ \sum_{r=100}^{200} r^2 = \sum_{r=1}^{200} r^2 - \sum_{r=1}^{99} r^2$$
+                $$ = \frac{200(200 + 1)(2\times200 + 1)}{6} - 328350 = \frac{200\times201\times401}{6} - 328350 = 2378350$$
+                (D) <br>
+                $$\text{This is really just: } \sum_{r=1}^{80} r^2\ \text{split into two parts.} $$
+                $$\text{This is because the first series has limit k, and the second has lower limit 1}$$
+                $$\text{more than k.}$$
+                $$\text{So, they add up to the same as } \sum_{r=1}^{80} r^2.$$
+                $$\quad \sum_{r=1}^{k} r^2 + \sum_{r=k+1}^{80} r^2 = \sum_{r=1}^{80} r^2 $$
+                $$\quad \text{Where} \quad \sum_{r=1}^{n} r^2 = \frac{n(n+1)(2n+1)}{6} $$
+                $$\quad \sum_{r=1}^{80} r^2 = \frac{80 \times 81 \times 161}{6} = \frac{1,\!044,\!960}{6} = 174,\!160$$
+            </p>
+          </div>
+        </details>
+      </div>
+
+      <div class="example-box">
+        <h4 class="box-title">🎯 Practice Question 2</h4>
+        <p class="lesson-text">
+            Let $$S(n) = \sum^n_{r=1} r^2, \quad H(n) = \sum^n_{r=1} r, \quad A(n) = \sum^n_{r=1} a \quad a \in \mathbb{Z} \quad r, n \in \mathbb{N}$$
+            (A) Given: $$T = \sum^n_{r=1}[3r^2 - 2r + 5], \text{ express } T \text{ in terms of } S(n), H(n) \text{ & } A(n)$$
+            (B) Hence, or otherwise, Find the exact value of $$\sum^{40}_{r=15} [3r^2 - 2r + 5]$$
+            (C) Find the value of: $$ n \text{ such that } S(n) = 1240$$
+            (D) Prove: $$\text{for any integer } m \geq 1: \sum^m_{r=1} [r^2 + (m - r)^2] = \frac{m(m + 1)(2m + 1)}{3}$$
+        </p>
+        
+        <details style="margin-top: 15px;">
+          <summary style="cursor: pointer; color: var(--accent-blue); font-weight: 600;">
+            🔍 Show Solution
+          </summary>
+          <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(74, 158, 255, 0.2);">
+            <p class="lesson-text">
+                ```markdown
+(A) <br>
+$$T = \sum_{r=1}^{n} [3r^2 - 2r + 5]$$
+$$3\sum_{r=1}^{n} r^2 - 2\sum_{r=1}^{n} r + \sum_{r=1}^{n} 5$$
+$$3S(n) - 2H(n) + 5n$$
+
+(B) <br>
+$$\sum_{r=15}^{40} [3r^2 - 2r + 5]$$
+$$\sum_{r=1}^{40} [3r^2 - 2r + 5] - \sum_{r=1}^{14} [3r^2 - 2r + 5]$$
+$$T_{40} - T_{14}$$
+$$T_{40} = 3S(40) - 2H(40) + 5 \times 40$$
+$$S(40) = \frac{40 \times 41 \times 81}{6} = 22140$$
+$$H(40) = \frac{40 \times 41}{2} = 820$$
+$$T_{40} = 3 \times 22140 - 2 \times 820 + 200 = 65220$$
+$$T_{14} = 3S(14) - 2H(14) + 5 \times 14$$
+$$S(14) = \frac{14 \times 15 \times 29}{6} = 1015$$
+$$H(14) = \frac{14 \times 15}{2} = 105$$
+$$T_{14} = 3 \times 1015 - 2 \times 105 + 70 = 2905$$
+$$\sum_{r=15}^{40} [3r^2 - 2r + 5] = 65220 - 2905 = \boxed{62315}$$
+
+(C) <br>
+$$S(n) = \frac{n(n+1)(2n+1)}{6}$$
+$$\frac{n(n+1)(2n+1)}{6} = 1240$$
+$$n(n+1)(2n+1) = 7440$$
+$$n = 15 \quad \text{since } 15 \times 16 \times 31 = 7440$$
+$$S(15) = \frac{15 \times 16 \times 31}{6} = 1240$$
+$$\boxed{n = 15}$$
+
+(D) <br>
+$$\sum_{r=1}^{m} [r^2 + (m - r)^2]$$
+$$\sum_{r=1}^{m} r^2 + \sum_{r=1}^{m} (m - r)^2$$
+$$\sum_{r=1}^{m} r^2 + \sum_{r=1}^{m} (m^2 - 2mr + r^2)$$
+$$\sum_{r=1}^{m} r^2 + m^2 \cdot m - 2m \sum_{r=1}^{m} r + \sum_{r=1}^{m} r^2$$
+$$2\sum_{r=1}^{m} r^2 - 2m \sum_{r=1}^{m} r + m^3$$
+$$2S(m) - 2m H(m) + m^3$$
+$$S(m) = \frac{m(m+1)(2m+1)}{6}, \quad H(m) = \frac{m(m+1)}{2}$$
+$$2 \cdot \frac{m(m+1)(2m+1)}{6} - 2m \cdot \frac{m(m+1)}{2} + m^3$$
+$$\frac{m(m+1)(2m+1)}{3} - m^2(m+1) + m^3$$
+$$\frac{m(m+1)(2m+1)}{3} - m^2$$
+$$\boxed{\sum_{r=1}^{m} [r^2 + (m - r)^2] = \frac{m(m+1)(2m+1)}{3} - m^2}$$
+            </p>
+          </div>
+        </details>
+      </div>
+    <!-- Summary Section -->
+    <section id="summary" class="lesson-section">
+      <h2 class="section-heading">📋 Summary</h2>
+      
+      <div class="definition-box">
+        <h4 class="box-title">🎯 Key Takeaways</h4>
+        <ul class="lesson-text">
+          <li>Understanding the properties of square numbers and their sums.</li>
+          <li>Application of summation formulas to solve complex series problems.</li>
+          <li>Proving identities involving sums of squares and linear terms.</li>
+        </ul>
+      </div>
+
+      <div class="tip-box">
+        <h4 class="box-title">📚 What's Next?</h4>
+        <p class="lesson-text">
+          Further your understanding and knowledge by doing practice questions, and I suggest doing my next lesson on Cubic Series, which builds on this lesson. <br><a href="/CubicSeries" style="text-decoration: underline; font-weight: bold"></a>You can find that lesson here</a>.
+        </p>
+      </div>
+    </section>
+
+
+  </div>
+
+  <!-- Back to top button -->
+  <div style="text-align: center; margin: 30px 0;">
+    <a href="#top" class="nav-button">⬆️ Back to Top</a>
+  </div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Smooth scrolling for table of contents
+    const tocLinks = document.querySelectorAll('.toc-link');
+    tocLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Highlight current section in table of contents
+    const sections = document.querySelectorAll('.lesson-section');
+    const tocNavLinks = document.querySelectorAll('.toc-link');
+    
+    function highlightTOC() {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (window.pageYOffset >= (sectionTop - 200)) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        tocNavLinks.forEach(link => {
+            link.style.background = '';
+            link.style.borderLeftColor = 'transparent';
+            if (link.getAttribute('href') === '#' + current) {
+                link.style.background = 'rgba(74, 158, 255, 0.1)';
+                link.style.borderLeftColor = 'var(--accent-blue)';
+            }
+        });
+    }
+    
+    window.addEventListener('scroll', highlightTOC);
+    
+    // Initialize MathJax rendering
+    if (window.MathJax) {
+        MathJax.typesetPromise().then(() => {
+            console.log('MathJax rendering complete');
+        });
+    }
+});
+</script>
+{% endblock %}

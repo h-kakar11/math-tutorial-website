@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block title %}Series CP1 - K4Maths{% endblock %}
+
+{% block head %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <meta name="description" content="Learn about Series - Edexcel specification">
+{% endblock %}
+
+{% block content %}
+    <a href="{{ url_for('further_maths') }}" class="back-to-home">🔙 Back to Further Mathematics</a>
+    
+  <section class="topic-header">
+    <h1>Series - (Edexcel, AQA) - CORE PURE</h1>
+    <h2>Dominate Series with easy guides, examples, and exam practice</h2>
+  </section>
+
+  <section class="topic-intro">
+    <p style="text-align: center; padding: 5px 0px;">
+      <strong>Series</strong> is a topic in the Edexcel CORE PURE 1 and 2. 
+      <br><br>
+      Choose a section below to start your learning journey with this topic.
+      <br><br>
+      (minor disclaimer: The difficulty rating is subjective and may not reflect your own experience. It is based on my personal experiences.)
+      <br><br>
+      Difficulty rating: ⭐⭐⭐ out of 5 stars
+    </p>
+  </section>
+    
+    <div style="margin-top: 20px;">
+        <a href="{{ url_for('index') }}" style="margin-right: 20px; margin-left: 20px;">🏠︎ - Back to Home<br></a>
+    </div>
+
+    <main class="topics-grid">
+
+        <!-- intro Section -->
+            <a href="/SeriesBasics" aria-label="Introduction to Series">
+                <article class="topic-card topic-card-blue">
+                    <h3>📚 Series Basics</h3>
+                    <p class="TopicsList">Get started with the basics of sequences and series</p>
+                    <p class="TopicsList">Understand arithmetic and geometric progressions</p>
+                    <p class="TopicsList">Difficulty rating: ⭐</p>
+                </article>
+            </a>  
+
+        <!-- Square Series -->
+        <a href="/SquareSeries" aria-label="Square Series">
+            <article class="topic-card topic-card-orangutan">
+                <h3>🟦 Square Series</h3>
+                <p class="TopicsList">Learn about square sequences and series</p>
+                <p class="TopicsList">Solve problems with harder notation</p>
+                <p class="TopicsList">Difficulty rating: ⭐⭐</p>
+            </article>
+        </a>
+
+        <!-- Geometric Series -->
+        <a href="#" aria-label="Geometric Series">
+            <article class="topic-card topic-card-teal">
+                <h3>✖️ Geometric Series</h3>
+                <p class="TopicsList">Master geometric sequences and series</p>
+                <p class="TopicsList">Common ratios and convergence</p>
+                <p class="TopicsList">Difficulty rating: ⭐⭐</p>
+            </article>
+        </a>
+
+    </main>
+
+{% endblock %}

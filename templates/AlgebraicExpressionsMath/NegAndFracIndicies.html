@@ -49,18 +49,6 @@
       </div>
     </header>
 
-    <!-- Table of Contents -->
-    <nav class="table-of-contents">
-      <h3 class="toc-title">📖 Contents</h3>
-      <ul class="toc-list">
-        <li class="toc-item"><a href="#introduction" class="toc-link">Introduction</a></li>
-        <li class="toc-item"><a href="#key-concepts" class="toc-link">Key Concepts</a></li>
-        <li class="toc-item"><a href="#examples" class="toc-link">Worked Examples</a></li>
-        <li class="toc-item"><a href="#practice" class="toc-link">Practice Problems</a></li>
-        <li class="toc-item"><a href="#summary" class="toc-link">Summary</a></li>
-      </ul>
-    </nav>
-
     <!-- Lesson Navigation -->
     <div class="lesson-nav">
       <a href="{{ url_for('factoring') }}" class="nav-button">← Previous Lesson</a>
@@ -396,14 +384,7 @@
       </div>
     </section>
 
-    <!-- Lesson Navigation -->
-    <div class="lesson-nav">
-      <a href="{{ url_for('factoring') }}" class="nav-button">← Previous Lesson</a>
-      <div class="progress-bar">
-        <div class="progress-fill" style="width: 100%;"></div>
-      </div>
-      <a href="{{ url_for('surds') }}" class="nav-button">Next Lesson →</a>
-    </div>
+
 
   </div>
 
@@ -432,17 +413,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-
-    // Progress bar animation based on scroll
-    const progressBar = document.querySelector('.progress-fill');
-    if (progressBar) {
-        window.addEventListener('scroll', function() {
-            const scrollTop = window.pageYOffset;
-            const docHeight = document.body.scrollHeight - window.innerHeight;
-            const scrollPercent = (scrollTop / docHeight) * 100;
-            progressBar.style.width = Math.min(scrollPercent, 100) + '%';
-        });
-    }
 
     // Highlight current section in table of contents
     const sections = document.querySelectorAll('.lesson-section');

@@ -61,14 +61,6 @@
       </ul>
     </nav>
 
-    <!-- Lesson Navigation -->
-    <div class="lesson-nav">
-      <a href="#" class="nav-button">← Previous Lesson</a>
-      <div class="progress-bar">
-        <div class="progress-fill" style="width: 0%;"></div>
-      </div>
-      <a href="#" class="nav-button">Next Lesson →</a>
-    </div>
 
     <!-- Introduction Section -->
     <section id="introduction" class="lesson-section">
@@ -398,11 +390,8 @@
             </ol>
         </div>
         </p>
-          </div>
         </details>
       </div>
-
-
     <!-- Summary Section -->
     <section id="summary" class="lesson-section">
       <h2 class="section-heading">📋 Summary</h2>
@@ -423,24 +412,13 @@
         </p>
       </div>
 
-
-    <!-- Lesson Navigation -->
-    <div class="lesson-nav">
-      <a href="#" class="nav-button">← Previous Lesson</a>
-      <div class="progress-bar">
-        <div class="progress-fill" style="width: 100%;"></div>
-      </div>
-      <a href="#" class="nav-button">Next Lesson →</a>
-    </div>
-
     <!-- Back to top button -->
     <div style="text-align: center; margin: 30px 0;">
       <a href="#top" class="nav-button">⬆️ Back to Top</a>
     </div>
+</section>   
 </section>
-  </div>
-     </section>   
-    </section>
+
 {% endblock %}
 
 {% block scripts %}
@@ -461,17 +439,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-
-    // Progress bar animation based on scroll
-    const progressBar = document.querySelector('.progress-fill');
-    if (progressBar) {
-        window.addEventListener('scroll', function() {
-            const scrollTop = window.pageYOffset;
-            const docHeight = document.body.scrollHeight - window.innerHeight;
-            const scrollPercent = (scrollTop / docHeight) * 100;
-            progressBar.style.width = Math.min(scrollPercent, 100) + '%';
-        });
-    }
 
     // Highlight current section in table of contents
     const sections = document.querySelectorAll('.lesson-section');
