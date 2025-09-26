@@ -1,0 +1,493 @@
+{% extends "base.html" %}
+
+{% block title %}Cubed Series - K4Maths{% endblock %}
+
+{% block head %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Learn Cubed Series - Step-by-step guide with examples and practice">
+  
+  <!-- MathJax for LaTeX rendering -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
+{% endblock %}
+
+{% block content %}
+  <!-- Back navigation -->
+  <a href="/Series" class="back-to-home">🔙 Back to Series CP1</a>
+
+  <div class="lesson-container">
+
+    <!-- Lesson Header -->
+    <header class="lesson-header">
+      <h1 class="lesson-title">Cubed Series</h1>
+      <p class="lesson-subtitle">Mastering the sum of cubic series, with advanced worked examples.</p>
+      <div class="lesson-meta">
+        <span class="meta-item">📚 Further Maths</span>
+        <span class="meta-item">🎯 Difficulty: ⭐⭐⭐</span>
+        <span class="meta-item">⏱️ Reading time: 35 minutes</span>
+        <span class="meta-item">📋 Edexcel & AQA</span>
+      </div>
+    </header>
+
+    <!-- Table of Contents -->
+    <nav class="table-of-contents">
+      <h3 class="toc-title">📖 Contents</h3>
+      <ul class="toc-list">
+        <li class="toc-item"><a href="#introduction" class="toc-link">Introduction</a></li>
+        <li class="toc-item"><a href="#key-concepts" class="toc-link">Key Concepts</a></li>
+        <li class="toc-item"><a href="#examples" class="toc-link">Worked Examples</a></li>
+        <li class="toc-item"><a href="#practice" class="toc-link">Practice Problems</a></li>
+        <li class="toc-item"><a href="#summary" class="toc-link">Summary</a></li>
+      </ul>
+    </nav>
+
+    <!-- Introduction Section -->
+    <section id="introduction" class="lesson-section">
+      <h2 class="section-heading">📚 Introduction</h2>
+      <p class="lesson-text">
+        Building on your knowledge of series and sums involving squares, we now turn to <strong>cubed series</strong>. These series arise naturally in advanced mathematics, physics, and engineering, and feature prominently in exam questions.
+        <br><br>
+        The cubed series involves sums of the form $\sum_{r=1}^n r^3$, as well as more complicated expressions involving cubic terms. Understanding how to break apart and evaluate these sums is a key skill for tackling higher-level problems.
+      </p>
+
+      <div class="definition-box">
+        <h4 class="box-title">🎯 Learning Objectives</h4>
+        <p class="lesson-text">
+          By the end of this lesson, you will be able to:
+        </p>
+        <ul class="lesson-text">
+          <li>Understand and use the formula for the sum of cubes of natural numbers</li>
+          <li>Manipulate and simplify complex cubed series using standard summation techniques</li>
+          <li>Solve advanced problems involving cubic series with changing limits and algebraic expressions</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Key Concepts Section -->
+    <section id="key-concepts" class="lesson-section">
+      <h2 class="section-heading">🔑 Key Concepts</h2>
+      
+      <h3 class="subsection-heading">What is a Cubed Series?</h3>
+      <p class="lesson-text">
+        A <strong>cubed series</strong> is a series where each term is raised to the power of three, i.e., it sums $r^3$ for $r$ from $1$ to $n$:
+      </p>
+      <div class="math-display">
+        $$\sum_{r=1}^{n} r^3 = 1^3 + 2^3 + 3^3 + \cdots + n^3$$
+      </div>
+      <p class="lesson-text">
+        Unlike sums of natural numbers or squares, cubed series grow rapidly, and their closed-form formula is especially elegant.
+      </p>
+
+      <div class="definition-box">
+        <h4 class="box-title">📖 The Golden Formula</h4>
+        <p class="lesson-text">
+          <strong>Sum of Cubes Formula:</strong>
+          $$\sum_{r=1}^{n} r^3 = \left[\frac{n(n+1)}{2}\right]^2$$
+          <br>
+          This means the sum of the cubes of the first $n$ natural numbers equals the square of the sum of the first $n$ natural numbers.
+        </p>
+      </div>
+
+      <div class="math-display">
+        $$\sum_{r=1}^n r^3 = \left(\frac{n(n+1)}{2}\right)^2$$
+        $$\text{For example: } \sum_{r=1}^4 r^3 = (1^3 + 2^3 + 3^3 + 4^3) = 1 + 8 + 27 + 64 = 100$$
+        $$\left(\frac{4 \cdot 5}{2}\right)^2 = (10)^2 = 100$$
+      </div>
+
+      <h3 class="subsection-heading">Cubed Series with Variable Limits</h3>
+      <p class="lesson-text">
+        When the lower limit is not $1$, we use subtraction to find the sum:
+        $$\sum_{r=a}^{b} r^3 = \sum_{r=1}^{b} r^3 - \sum_{r=1}^{a-1} r^3$$
+        This technique is essential for problems where the series does not start at $1$.
+      </p>
+
+      <div class="tip-box">
+        <h4 class="box-title">💡 Pro Tip</h4>
+        <p class="lesson-text">
+          For any series of the form $\sum_{r=1}^{n} (\text{expression})$, always look to break it into standard sums using linearity: split into sums of $r^3$, $r^2$, $r$, and constants.
+        </p>
+      </div>
+
+      <h3 class="subsection-heading">Standard Summation Formulas</h3>
+      <p class="lesson-text">
+        Here are the key formulas you should know:
+      </p>
+      <div class="math-display">
+        $$\sum_{r=1}^n r = \frac{n(n+1)}{2}$$
+        $$\sum_{r=1}^n r^2 = \frac{n(n+1)(2n+1)}{6}$$
+        $$\sum_{r=1}^n r^3 = \left[\frac{n(n+1)}{2}\right]^2$$
+        $$\sum_{r=1}^n c = cn$$
+      </div>
+      <p class="lesson-text">
+        With these, you can tackle almost any algebraic series.
+      </p>
+    </section>
+
+    <!-- Worked Examples Section -->
+    <section id="examples" class="lesson-section">
+      <h2 class="section-heading">📝 Worked Examples</h2>
+      
+      <div class="example-box">
+        <h4 class="box-title">📋 Example 1: Simple Cubed Series</h4>
+        <p class="lesson-text"><strong>Question:</strong> Find the value of $\sum_{r=1}^{8} r^3$</p>
+        <div class="solution-steps">
+          <h5 class="subsection-heading">Solution:</h5>
+          <div class="step">
+            <div class="step-number">Step 1:</div>
+            <p class="lesson-text">Apply the sum of cubes formula:</p>
+            <div class="math-display">
+              $$\sum_{r=1}^{8} r^3 = \left(\frac{8 \cdot 9}{2}\right)^2 = (36)^2 = 1296$$
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">Final Answer:</div>
+            <p class="lesson-text">So the sum is:</p>
+            <div class="math-display">
+              $$\boxed{1296}$$
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="example-box">
+        <h4 class="box-title">📋 Example 2: Cubed Series with Non-Unit Lower Limit</h4>
+        <p class="lesson-text"><strong>Question:</strong> Calculate $\sum_{r=5}^{10} r^3$</p>
+        <div class="solution-steps">
+          <h5 class="subsection-heading">Solution:</h5>
+          <div class="step">
+            <div class="step-number">Step 1:</div>
+            <p class="lesson-text">Express as difference of two sums:</p>
+            <div class="math-display">
+              $$\sum_{r=5}^{10} r^3 = \sum_{r=1}^{10} r^3 - \sum_{r=1}^{4} r^3$$
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">Step 2:</div>
+            <p class="lesson-text">Evaluate each sum using the formula:</p>
+            <div class="math-display">
+              $$\sum_{r=1}^{10} r^3 = \left(\frac{10 \cdot 11}{2}\right)^2 = (55)^2 = 3025$$
+              $$\sum_{r=1}^{4} r^3 = (10)^2 = 100$$
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">Final Answer:</div>
+            <p class="lesson-text">Subtract to get:</p>
+            <div class="math-display">
+              $$3025 - 100 = \boxed{2925}$$
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="example-box">
+        <h4 class="box-title">📋 Example 3: Complex Algebraic Cubed Series</h4>
+        <p class="lesson-text">
+          <strong>Question:</strong> Let $S(n) = \sum_{r=1}^n r(r+3)(2r-1)$. Show that $S(n) = \frac{1}{6} n(n+1)(3n^2 + an + b)$ for some integers $a, b$, and find $a$ and $b$.
+        </p>
+        <div class="solution-steps">
+          <h5 class="subsection-heading">Solution:</h5>
+          <div class="step">
+            <div class="step-number">Step 1:</div>
+            <p class="lesson-text">Expand the cubic inside the summation:</p>
+            <div class="math-display">
+              $$r(r+3)(2r-1) = r(2r^2 + 6r - r - 3) = r(2r^2 + 5r - 3)$$
+              $$= 2r^3 + 5r^2 - 3r$$
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">Step 2:</div>
+            <p class="lesson-text">Split into standard sums:</p>
+            <div class="math-display">
+              $$S(n) = \sum_{r=1}^n [2r^3 + 5r^2 - 3r] = 2\sum_{r=1}^n r^3 + 5\sum_{r=1}^n r^2 - 3\sum_{r=1}^n r$$
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">Step 3:</div>
+            <p class="lesson-text">Apply the formulas:</p>
+            <div class="math-display">
+              $$\sum_{r=1}^n r^3 = \left(\frac{n(n+1)}{2}\right)^2$$
+              $$\sum_{r=1}^n r^2 = \frac{n(n+1)(2n+1)}{6}$$
+              $$\sum_{r=1}^n r = \frac{n(n+1)}{2}$$
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">Step 4:</div>
+            <p class="lesson-text">Substitute and simplify:</p>
+            <div class="math-display">
+              $$S(n) = 2\left(\frac{n(n+1)}{2}\right)^2 + 5\left[\frac{n(n+1)(2n+1)}{6}\right] - 3\left[\frac{n(n+1)}{2}\right]$$
+              $$= \frac{n^2(n+1)^2}{2} + \frac{5n(n+1)(2n+1)}{6} - \frac{3n(n+1)}{2}$$
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">Step 5:</div>
+            <p class="lesson-text">Bring all terms to a common denominator ($6$):</p>
+            <div class="math-display">
+              $$= \frac{3n^2(n+1)^2 + 5n(n+1)(2n+1) - 9n(n+1)}{6}$$
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">Step 6:</div>
+            <p class="lesson-text">Factor $n(n+1)$ and expand:</p>
+            <div class="math-display">
+              $$n(n+1)[3n(n+1) + 5(2n+1) - 9]$$
+              $$= n(n+1)[3n^2 + 3n + 10n + 5 - 9]$$
+              $$= n(n+1)[3n^2 + 13n - 4]$$
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">Final Answer:</div>
+            <p class="lesson-text">So, we have:</p>
+            <div class="math-display">
+              $$\boxed{S(n) = \frac{1}{6} n(n+1)(3n^2 + 13n - 4)}$$
+              <br>
+              Thus, $a = 13$, $b = -4$.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="example-box">
+        <h4 class="box-title">📋 Example 4: Applying Limits to Advanced Cubic Series</h4>
+        <p class="lesson-text">
+          <strong>Question:</strong> Hence compute $\sum_{r=11}^{40} r(r+3)(2r-1)$.
+        </p>
+        <div class="solution-steps">
+          <h5 class="subsection-heading">Solution:</h5>  
+          <div class="step">
+            <div class="step-number">Step 1:</div>
+            <p class="lesson-text">Use the closed-form from above:</p>
+            <div class="math-display">
+              $$\sum_{r=11}^{40} r(r+3)(2r-1) = S(40) - S(10)$$
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">Step 2:</div>
+            <p class="lesson-text">Calculate $S(40)$:</p>
+            <div class="math-display">
+              $$S(40) = \frac{1}{6} \cdot 40 \cdot 41 \cdot (3 \cdot 40^2 + 13 \cdot 40 - 4)$$
+              $$= \frac{1}{6} \cdot 40 \cdot 41 \cdot (4800 + 520 - 4)$$
+              $$= \frac{1}{6} \cdot 40 \cdot 41 \cdot 5316$$
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">Step 3:</div>
+            <p class="lesson-text">Calculate $S(10)$:</p>
+            <div class="math-display">
+              $$S(10) = \frac{1}{6} \cdot 10 \cdot 11 \cdot (3 \cdot 100 + 13 \cdot 10 - 4)$$
+              $$= \frac{1}{6} \cdot 10 \cdot 11 \cdot (300 + 130 - 4)$$
+              $$= \frac{1}{6} \cdot 10 \cdot 11 \cdot 426$$
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">Step 4:</div>
+            <p class="lesson-text">Subtract to get the answer:</p>
+            <div class="math-display">
+              $$\frac{1}{6} \cdot 40 \cdot 41 \cdot 5316 - \frac{1}{6} \cdot 10 \cdot 11 \cdot 426$$
+              <br>
+              <strong>Final Answer:</strong> Compute both terms and subtract to obtain the result.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Common Mistakes Section -->
+    <section class="lesson-section">
+      <h2 class="section-heading">⚠️ Common Mistakes</h2>
+      <div class="warning-box">
+        <h4 class="box-title">🚫 Mistake 1: Not splitting algebraic expressions into standard summations</h4>
+        <p class="lesson-text">
+          <strong>What students often do wrong:</strong> Students may attempt to sum a complicated cubic directly rather than expand and break it into sums of $r^3$, $r^2$, and $r$.
+        </p>
+        <p class="lesson-text">
+          <strong>Why it's wrong:</strong> This prevents you from using powerful formulas and leads to errors.
+        </p>
+        <p class="lesson-text">
+          <strong>How to avoid it:</strong> Always expand the cubic, split into standard sums, and apply the formulas.
+        </p>
+      </div>
+      <div class="warning-box">
+        <h4 class="box-title">🚫 Mistake 2: Forgetting to adjust the lower limit</h4>
+        <p class="lesson-text">
+          When the series starts at a number other than 1, use subtraction to find the correct sum.
+        </p>
+      </div>
+    </section>
+
+    <!-- Practice Problems Section -->
+    <section id="practice" class="lesson-section">
+      <h2 class="section-heading">💪 Practice Problems</h2>
+      <p class="lesson-text lesson-text-center">
+        Try these problems to test your understanding:
+      </p>
+
+      <div class="example-box">
+        <h4 class="box-title">🎯 Practice Question 1</h4>
+        <p class="lesson-text">
+          (A) Calculate $\sum_{r=1}^{12} r^3$<br>
+          (B) Calculate $\sum_{r=7}^{15} r^3$
+        </p>
+        <details style="margin-top: 15px;">
+          <summary style="cursor: pointer; color: var(--accent-blue); font-weight: 600;">🔍 Show Solution</summary>
+          <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(74, 158, 255, 0.2);">
+            <p class="lesson-text">
+              (A) $\sum_{r=1}^{12} r^3 = \left(\frac{12 \cdot 13}{2}\right)^2 = (78)^2 = \boxed{6084}$<br>
+              (B) $\sum_{r=7}^{15} r^3 = \sum_{r=1}^{15} r^3 - \sum_{r=1}^{6} r^3 = (120)^2 - (21)^2 = 14400 - 441 = \boxed{13959}$
+            </p>
+          </div>
+        </details>
+      </div>
+
+      <div class="example-box">
+        <h4 class="box-title">🎯 Practice Question 2</h4>
+        <p class="lesson-text">
+          Let $T(n) = \sum_{r=1}^n (4r^3 - 2r^2 + 7)$.<br>
+          (A) Express $T(n)$ in terms of standard summations.<br>
+          (B) Find $T(20)$.
+        </p>
+        <details style="margin-top: 15px;">
+          <summary style="cursor: pointer; color: var(--accent-blue); font-weight: 600;">🔍 Show Solution</summary>
+          <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(74, 158, 255, 0.2);">
+            <p class="lesson-text">
+              (A) $T(n) = 4\sum_{r=1}^n r^3 - 2\sum_{r=1}^n r^2 + 7n$<br>
+              (B) For $n=20$:
+              <br>
+              $\sum_{r=1}^{20} r^3 = (210)^2 = 44100$<br>
+              $\sum_{r=1}^{20} r^2 = \frac{20 \cdot 21 \cdot 41}{6} = 2870$<br>
+              So,
+              <br>
+              $T(20) = 4 \cdot 44100 - 2 \cdot 2870 + 7 \cdot 20 = 176400 - 5740 + 140 = \boxed{170800}$
+            </p>
+          </div>
+        </details>
+      </div>
+
+      <div class="example-box">
+        <h4 class="box-title">🎯 Practice Question 3 (Advanced)</h4>
+        <p class="lesson-text">
+          Let $Q(n) = \sum_{r=1}^n r(r-2)(r+4)$.<br>
+          (A) Express $Q(n)$ as a sum of cubes, squares, and $r$.<br>
+          (B) Find a closed-form for $Q(n)$.
+        </p>
+        <details style="margin-top: 15px;">
+          <summary style="cursor: pointer; color: var(--accent-blue); font-weight: 600;">🔍 Show Solution</summary>
+          <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(74, 158, 255, 0.2);">
+            <p class="lesson-text">
+              (A) Expand:
+              <br>
+              $r(r-2)(r+4) = r(r^2 + 4r - 2r - 8) = r(r^2 + 2r - 8) = r^3 + 2r^2 - 8r$
+              <br>
+              $Q(n) = \sum_{r=1}^n (r^3 + 2r^2 - 8r) = \sum_{r=1}^n r^3 + 2\sum_{r=1}^n r^2 - 8\sum_{r=1}^n r$
+              <br>
+              (B) Substitute formulas:
+              <br>
+              $Q(n) = \left(\frac{n(n+1)}{2}\right)^2 + 2\left[\frac{n(n+1)(2n+1)}{6}\right] - 8\left[\frac{n(n+1)}{2}\right]$
+              <br>
+              $= \frac{n^2(n+1)^2}{4} + \frac{n(n+1)(2n+1)}{3} - 4n(n+1)$
+            </p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- Summary Section -->
+    <section id="summary" class="lesson-section">
+      <h2 class="section-heading">📋 Summary</h2>
+      <div class="definition-box">
+        <h4 class="box-title">🎯 Key Takeaways</h4>
+        <ul class="lesson-text">
+          <li>The sum of cubes is given by $\sum_{r=1}^{n} r^3 = \left[\frac{n(n+1)}{2}\right]^2$</li>
+          <li>Complex cubic series can be broken down into sums of cubes, squares, and linear terms</li>
+          <li>Mastery of series techniques lets you solve advanced algebraic summations</li>
+        </ul>
+      </div>
+      <div class="tip-box">
+        <h4 class="box-title">📚 What's Next?</h4>
+        <p class="lesson-text">
+          Practice more cubic and higher power series, and explore applications in combinatorics and calculus. Next, consider learning about quartic series and their uses in mathematical proofs and problems.
+        </p>
+      </div>
+    </section>
+
+    <!-- Back to top button -->
+    <div style="text-align: center; margin: 30px 0;">
+      <a href="#top" class="nav-button">⬆️ Back to Top</a>
+    </div>
+
+  </div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Smooth scrolling for table of contents
+    const tocLinks = document.querySelectorAll('.toc-link');
+    tocLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Highlight current section in table of contents
+    const sections = document.querySelectorAll('.lesson-section');
+    const tocNavLinks = document.querySelectorAll('.toc-link');
+    
+    function highlightTOC() {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (window.pageYOffset >= (sectionTop - 200)) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        tocNavLinks.forEach(link => {
+            link.style.background = '';
+            link.style.borderLeftColor = 'transparent';
+            if (link.getAttribute('href') === '#' + current) {
+                link.style.background = 'rgba(74, 158, 255, 0.1)';
+                link.style.borderLeftColor = 'var(--accent-blue)';
+            }
+        });
+    }
+    
+    window.addEventListener('scroll', highlightTOC);
+    
+    // Initialize MathJax rendering
+    if (window.MathJax) {
+        MathJax.typesetPromise().then(() => {
+            console.log('MathJax rendering complete');
+        });
+    }
+});
+</script>
+{% endblock %}
