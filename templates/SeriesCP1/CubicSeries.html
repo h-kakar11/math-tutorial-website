@@ -38,7 +38,7 @@
 
     <!-- Lesson Header -->
     <header class="lesson-header">
-      <h1 class="lesson-title">Cubed Series</h1>
+      <h1 class="lesson-title">Cubic Series</h1>
       <p class="lesson-subtitle">Mastering the sum of cubic series, with advanced worked examples.</p>
       <div class="lesson-meta">
         <span class="meta-item">📚 Further Maths</span>
@@ -91,7 +91,7 @@
         A <strong>cubed series</strong> is a series where each term is raised to the power of three, i.e., it sums $r^3$ for $r$ from $1$ to $n$:
       </p>
       <div class="math-display">
-        $$\sum_{r=1}^{n} r^3 = 1^3 + 2^3 + 3^3 + \cdots + n^3$$
+        $$\sum_{r=1}^{n} r^3 = 1^3 + 2^3 + 3^3 + \timess + n^3$$
       </div>
       <p class="lesson-text">
         Unlike sums of natural numbers or squares, cubed series grow rapidly, and their closed-form formula is especially elegant.
@@ -101,7 +101,7 @@
         <h4 class="box-title">📖 The Golden Formula</h4>
         <p class="lesson-text">
           <strong>Sum of Cubes Formula:</strong>
-          $$\sum_{r=1}^{n} r^3 = \left[\frac{n(n+1)}{2}\right]^2$$
+          $$\sum_{r=1}^{n} r^3 = \boxed{\left[\frac{n(n+1)}{2}\right]^2} \quad \text{ Or } \quad \boxed{\frac{1}{4}n^2(n+1)^2}$$
           <br>
           This means the sum of the cubes of the first $n$ natural numbers equals the square of the sum of the first $n$ natural numbers.
         </p>
@@ -109,8 +109,8 @@
 
       <div class="math-display">
         $$\sum_{r=1}^n r^3 = \left(\frac{n(n+1)}{2}\right)^2$$
-        $$\text{For example: } \sum_{r=1}^4 r^3 = (1^3 + 2^3 + 3^3 + 4^3) = 1 + 8 + 27 + 64 = 100$$
-        $$\left(\frac{4 \cdot 5}{2}\right)^2 = (10)^2 = 100$$
+        $$\text{For example: } \sum_{r=1}^4 r^3 = (1^3 + 2^3 + 3^3 + 4^3) = 1 + 8 + 27 + 64 = \boxed{100}$$
+        $$\left(\frac{4 \times 5}{2}\right)^2 = (10)^2 = \boxed{100}$$
       </div>
 
       <h3 class="subsection-heading">Cubed Series with Variable Limits</h3>
@@ -121,7 +121,7 @@
       </p>
 
       <div class="tip-box">
-        <h4 class="box-title">💡 Pro Tip</h4>
+        <h4 class="box-title">💡 Remember this: </h4>
         <p class="lesson-text">
           For any series of the form $\sum_{r=1}^{n} (\text{expression})$, always look to break it into standard sums using linearity: split into sums of $r^3$, $r^2$, $r$, and constants.
         </p>
@@ -129,7 +129,7 @@
 
       <h3 class="subsection-heading">Standard Summation Formulas</h3>
       <p class="lesson-text">
-        Here are the key formulas you should know:
+        Here are the key formulas you should know as of now, and if you dont, make sure to memorise them:
       </p>
       <div class="math-display">
         $$\sum_{r=1}^n r = \frac{n(n+1)}{2}$$
@@ -138,7 +138,7 @@
         $$\sum_{r=1}^n c = cn$$
       </div>
       <p class="lesson-text">
-        With these, you can tackle almost any algebraic series.
+        With these, you can tackle almost any algebraic series. I highly reccomend having prior knowledge in series before persuing this lesson, you can learn basics and squares of series <a href="/Series">here</a>.
       </p>
     </section>
 
@@ -148,14 +148,14 @@
       
       <div class="example-box">
         <h4 class="box-title">📋 Example 1: Simple Cubed Series</h4>
-        <p class="lesson-text"><strong>Question:</strong> Find the value of $\sum_{r=1}^{8} r^3$</p>
+        <p class="lesson-text"><strong>Question:</strong> Find the value of $$\sum_{r=1}^{8} r^3$$</p>
         <div class="solution-steps">
           <h5 class="subsection-heading">Solution:</h5>
           <div class="step">
             <div class="step-number">Step 1:</div>
-            <p class="lesson-text">Apply the sum of cubes formula:</p>
+            <p class="lesson-text">Recall and apply the formula:</p>
             <div class="math-display">
-              $$\sum_{r=1}^{8} r^3 = \left(\frac{8 \cdot 9}{2}\right)^2 = (36)^2 = 1296$$
+              $$\sum_{r=1}^{8} r^3 = \left(\frac{n(n+1)}{2}\right)^2 \rightarrow \left(\frac{8 \times 9}{2}\right)^2 = (36)^2 = 1296$$
             </div>
           </div>
           <div class="step">
@@ -170,7 +170,7 @@
 
       <div class="example-box">
         <h4 class="box-title">📋 Example 2: Cubed Series with Non-Unit Lower Limit</h4>
-        <p class="lesson-text"><strong>Question:</strong> Calculate $\sum_{r=5}^{10} r^3$</p>
+        <p class="lesson-text"><strong>Question:</strong> Calculate $$\sum_{r=5}^{10} r^3$$</p>
         <div class="solution-steps">
           <h5 class="subsection-heading">Solution:</h5>
           <div class="step">
@@ -184,7 +184,7 @@
             <div class="step-number">Step 2:</div>
             <p class="lesson-text">Evaluate each sum using the formula:</p>
             <div class="math-display">
-              $$\sum_{r=1}^{10} r^3 = \left(\frac{10 \cdot 11}{2}\right)^2 = (55)^2 = 3025$$
+              $$\sum_{r=1}^{10} r^3 = \left(\frac{10 \times 11}{2}\right)^2 = (55)^2 = 3025$$
               $$\sum_{r=1}^{4} r^3 = (10)^2 = 100$$
             </div>
           </div>
@@ -201,66 +201,85 @@
       <div class="example-box">
         <h4 class="box-title">📋 Example 3: Complex Algebraic Cubed Series</h4>
         <p class="lesson-text">
-          <strong>Question:</strong> Let $S(n) = \sum_{r=1}^n r(r+3)(2r-1)$. Show that $S(n) = \frac{1}{6} n(n+1)(3n^2 + an + b)$ for some integers $a, b$, and find $a$ and $b$.
+          <strong>Question:</strong> Let: $$S(n) = \sum_{r=1}^n r(r+3)(2r-1)$$ Show that $$S(n) = \frac{1}{6} n(n+1)(3n^2 + an + b) \text{ for some integers a and b}$$ Then, find $$a \text{ and } b$$
         </p>
         <div class="solution-steps">
           <h5 class="subsection-heading">Solution:</h5>
           <div class="step">
             <div class="step-number">Step 1:</div>
-            <p class="lesson-text">Expand the cubic inside the summation:</p>
+            <p class="lesson-text">Expand the brackets inside the summation:</p>
             <div class="math-display">
-              $$r(r+3)(2r-1) = r(2r^2 + 6r - r - 3) = r(2r^2 + 5r - 3)$$
+              $$r(r+3)(2r-1) = r(2r^2 + 6r - r - 3)$$
+              $$ = r(2r^2 + 5r - 3)$$
               $$= 2r^3 + 5r^2 - 3r$$
             </div>
           </div>
           <div class="step">
             <div class="step-number">Step 2:</div>
-            <p class="lesson-text">Split into standard sums:</p>
+            <p class="lesson-text">Now it turns into this:</p>
             <div class="math-display">
-              $$S(n) = \sum_{r=1}^n [2r^3 + 5r^2 - 3r] = 2\sum_{r=1}^n r^3 + 5\sum_{r=1}^n r^2 - 3\sum_{r=1}^n r$$
+              $$S(n) = \sum_{r=1}^n [2r^3 + 5r^2 - 3r]$$
+              $$\text{Split it into different sums: } 2\sum_{r=1}^n r^3 + 5\sum_{r=1}^n r^2 - 3\sum_{r=1}^n r$$
             </div>
+            <p class="lesson-text" style="font-size: 0.9em;">Remember we can take the coefficient out of the summation/series</p>
           </div>
           <div class="step">
             <div class="step-number">Step 3:</div>
             <p class="lesson-text">Apply the formulas:</p>
             <div class="math-display">
-              $$\sum_{r=1}^n r^3 = \left(\frac{n(n+1)}{2}\right)^2$$
-              $$\sum_{r=1}^n r^2 = \frac{n(n+1)(2n+1)}{6}$$
-              $$\sum_{r=1}^n r = \frac{n(n+1)}{2}$$
+              $$\sum_{r=1}^n r^3 = \left(\frac{n(n+1)}{2}\right)^2 \leftarrow \text{cubic}$$
+              $$\sum_{r=1}^n r^2 = \frac{n(n+1)(2n+1)}{6} \leftarrow \text{square}$$
+              $$\sum_{r=1}^n r = \frac{n(n+1)}{2} \leftarrow \text{constant}$$
             </div>
           </div>
           <div class="step">
             <div class="step-number">Step 4:</div>
-            <p class="lesson-text">Substitute and simplify:</p>
+            <p class="lesson-text">Substitute the formulas and simplify:</p>
             <div class="math-display">
+              $$\text{Cubic} \rightarrow 2\left(\frac{n(n+1)}{2}\right)^2$$
+              $$\text{Square} \rightarrow 5\left[\frac{n(n+1)(2n+1)}{6}\right]$$
+              $$\text{Constant} \rightarrow -3\left[\frac{n(n+1)}{2}\right]$$
+              $$\text{We now have}$$
               $$S(n) = 2\left(\frac{n(n+1)}{2}\right)^2 + 5\left[\frac{n(n+1)(2n+1)}{6}\right] - 3\left[\frac{n(n+1)}{2}\right]$$
-              $$= \frac{n^2(n+1)^2}{2} + \frac{5n(n+1)(2n+1)}{6} - \frac{3n(n+1)}{2}$$
+              $$\text{From:}$$
+              $$S(n) = \sum_{r=1}^n [2r^3 + 5r^2 - 3r] = 2\sum_{r=1}^n r^3 + 5\sum_{r=1}^n r^2 - 3\sum_{r=1}^n r$$
+              <br>
             </div>
           </div>
           <div class="step">
             <div class="step-number">Step 5:</div>
-            <p class="lesson-text">Bring all terms to a common denominator ($6$):</p>
+            <p class="lesson-text">Put the coefficient in the numerator then set all terms to a common denominator ($6$) to combine:</p>
             <div class="math-display">
-              $$= \frac{3n^2(n+1)^2 + 5n(n+1)(2n+1) - 9n(n+1)}{6}$$
+              $$\text{Coefficients in the numerator:}$$
+              $$= \frac{3n^2(n+1)^2}{6} + \frac{5n(n+1)(2n+1)}{6} - \frac{9n(n+1)}{6}$$
+              $$\text{Now find common denominator by multiplying the 1st and 3rd}$$
+              $$= \frac{9n^2(n+1)^2}{6} + \frac{5n(n+1)(2n+1)}{6} - \frac{9n(n+1)}{6}$$
+              $$\text{Combine to one:}$$
+              $$= \frac{[9n^2(n+1)^2 + 5n(n+1)(2n+1) - 9n(n+1)]}{6} $$
+              $$\equiv \frac{1}{6} [9n^2(n+1)^2 + 5n(n+1)(2n+1) - 9n(n+1)]$$
             </div>
+            <p class="lesson-text" style="font-size: 0.9em;">$\equiv$ means 'equivalent to'. </p>
           </div>
           <div class="step">
             <div class="step-number">Step 6:</div>
-            <p class="lesson-text">Factor $n(n+1)$ and expand:</p>
+            <p class="lesson-text">Simplify by factoring $n(n+1)$ and adding like-terms:</p>
             <div class="math-display">
-              $$n(n+1)[3n(n+1) + 5(2n+1) - 9]$$
-              $$= n(n+1)[3n^2 + 3n + 10n + 5 - 9]$$
-              $$= n(n+1)[3n^2 + 13n - 4]$$
+              $$ \text{We have: } \frac{1}{6} [9n^2(n+1)^2 + 5n(n+1)(2n+1) - 9n(n+1)]$$
+              $$\text{Factoring } n(n+1) \text{ out: }$$
+              $$\frac{1}{6}n(n+1)[3n(n+1) + 5(2n+1) - 9]$$
+              $$\text{Distributing the coefficients next to the brackets: }$$
+              $$= \frac{1}{6}n(n+1)[3n^2 + 3n + 10n + 5 - 9]$$
+              $$\text{Combining like-terms inside the brackets:}$$
+              $$= \frac{1}{6}n(n+1)[3n^2 + 13n - 4]$$
             </div>
           </div>
           <div class="step">
             <div class="step-number">Final Answer:</div>
             <p class="lesson-text">So, we have:</p>
             <div class="math-display">
-              $$\boxed{S(n) = \frac{1}{6} n(n+1)(3n^2 + 13n - 4)}$$
-              <br>
-              Thus, $a = 13$, $b = -4$.
+              $$\boxed{S(n) = \frac{1}{6} n(n+1)(3n^2 + 13n - 4) \quad \therefore a = 13, b = -4.}$$
             </div>
+            <p class="lesson-text" style="font-size: 0.9em;">$\therefore$ means 'therefore'.</p>
           </div>
         </div>
       </div>
@@ -274,36 +293,51 @@
           <h5 class="subsection-heading">Solution:</h5>  
           <div class="step">
             <div class="step-number">Step 1:</div>
-            <p class="lesson-text">Use the closed-form from above:</p>
+            <p class="lesson-text">Acknowledge limits are starting at $11$:</p>
             <div class="math-display">
-              $$\sum_{r=11}^{40} r(r+3)(2r-1) = S(40) - S(10)$$
+              $$\sum_{\boxed{r=11}}^{40} r(r+3)(2r-1) =$$
+              $$= \sum_{r=1}^{40} r(r+3)(2r-1) - \sum_{r=1}^{10} r(r+3)(2r-1)$$
             </div>
           </div>
           <div class="step">
             <div class="step-number">Step 2:</div>
-            <p class="lesson-text">Calculate $S(40)$:</p>
+            <p class="lesson-text">Expand brackets and break it up into multiple summations:</p>
             <div class="math-display">
-              $$S(40) = \frac{1}{6} \cdot 40 \cdot 41 \cdot (3 \cdot 40^2 + 13 \cdot 40 - 4)$$
-              $$= \frac{1}{6} \cdot 40 \cdot 41 \cdot (4800 + 520 - 4)$$
-              $$= \frac{1}{6} \cdot 40 \cdot 41 \cdot 5316$$
+              $$\text{Expanding:}$$
+              $$r(r+3)(2r-1) = 2r^3 + 7r^2 + 3r$$
+              $$\text{So we have:}$$
+              $$\sum_{r=1}^{40} (2r^3 + 7r^2 + 3r) - \sum_{r=1}^{10} (2r^3 + 7r^2 + 3r)$$
+              $$\text{Splitting:}$$
+              $$\underbrace{2\sum_{r=1}^{40} r^3 + 7\sum_{r=1}^{40} r^2 + 3\sum_{r=1}^{40} r}_{\text{let this be equation 1}}\quad \underbrace{- \left(2\sum_{r=1}^{10} r^3 + 7\sum_{r=1}^{10} r^2 + 3\sum_{r=1}^{10} r\right)}_{\text{let this be equation 2}}$$
             </div>
+          <p class="lesson-text" style="font-size: 0.9em;">Looks daunting, but its quite simple as long as you practice.</p>
           </div>
           <div class="step">
             <div class="step-number">Step 3:</div>
-            <p class="lesson-text">Calculate $S(10)$:</p>
+            <p class="lesson-text">For equation 1:</p>
             <div class="math-display">
-              $$S(10) = \frac{1}{6} \cdot 10 \cdot 11 \cdot (3 \cdot 100 + 13 \cdot 10 - 4)$$
-              $$= \frac{1}{6} \cdot 10 \cdot 11 \cdot (300 + 130 - 4)$$
-              $$= \frac{1}{6} \cdot 10 \cdot 11 \cdot 426$$
+                $$\text{First series: } 2\sum_{r=1}^{40} r^3 = 2\left(\frac{40 \times 41}{2}\right)^2 = 2(820)^2 = \underline{1342400}$$
+                $$\text{Second series: } 7\sum_{r=1}^{40} r^2 = 7\left[\frac{40 \times 41 \times 81}{6}\right] = 7(22140) = \underline{154980}$$
+                $$\text{Third series: } 3\sum_{r=1}^{40} r = 3\left[\frac{40 \times 41}{2}\right] = 3(820) = \underline{2460}$$
+                $$\text{So equation 1 is: } \underline{1342400 + 154980 + 2460 = 1499840}$$
             </div>
           </div>
           <div class="step">
             <div class="step-number">Step 4:</div>
-            <p class="lesson-text">Subtract to get the answer:</p>
+            <p class="lesson-text">Equation 2 now: - \left(2\sum_{r=1}^{10} r^3 + 7\sum_{r=1}^{10} r^2 + 3\sum_{r=1}^{10} r\right</p>
             <div class="math-display">
-              $$\frac{1}{6} \cdot 40 \cdot 41 \cdot 5316 - \frac{1}{6} \cdot 10 \cdot 11 \cdot 426$$
+              $$\text{First series: } 2\sum_{r=1}^{10} r^3 = 2\left(\frac{10 \times 11}{2}\right)^2 = 2(55)^2 = \underline{6050}$$
+              $$\text{Second series: } 7\sum_{r=1}^{10} r^2 = 7\left[\frac{10 \times 11 \times 21}{6}\right] = 7(385) = \underline{2695}$$
+              $$\text{Third series: } 3\sum_{r=1}^{10} r = 3\left[\frac{10 \times 11}{2}\right] = 3(55) = \underline{165}$$
+              $$\text{So equation 2 is: } \underline{-(6050 + 2695 + 165) = -8910}$$
+            </div>
               <br>
-              <strong>Final Answer:</strong> Compute both terms and subtract to obtain the result.
+            </div>
+          <div class="step">
+            <div class="step-number">Final Answer:</div>
+            <p class="lesson-text">Now combine both equations:</p>
+            <div class="math-display">
+              $$\boxed{\text{Final Answer: } 1499840 - 8910 = \underline{1490930}}$$
             </div>
           </div>
         </div>
@@ -351,7 +385,7 @@
           <summary style="cursor: pointer; color: var(--accent-blue); font-weight: 600;">🔍 Show Solution</summary>
           <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(74, 158, 255, 0.2);">
             <p class="lesson-text">
-              (A) $\sum_{r=1}^{12} r^3 = \left(\frac{12 \cdot 13}{2}\right)^2 = (78)^2 = \boxed{6084}$<br>
+              (A) $\sum_{r=1}^{12} r^3 = \left(\frac{12 \times 13}{2}\right)^2 = (78)^2 = \boxed{6084}$<br>
               (B) $\sum_{r=7}^{15} r^3 = \sum_{r=1}^{15} r^3 - \sum_{r=1}^{6} r^3 = (120)^2 - (21)^2 = 14400 - 441 = \boxed{13959}$
             </p>
           </div>
@@ -373,10 +407,10 @@
               (B) For $n=20$:
               <br>
               $\sum_{r=1}^{20} r^3 = (210)^2 = 44100$<br>
-              $\sum_{r=1}^{20} r^2 = \frac{20 \cdot 21 \cdot 41}{6} = 2870$<br>
+              $\sum_{r=1}^{20} r^2 = \frac{20 \times 21 \times 41}{6} = 2870$<br>
               So,
               <br>
-              $T(20) = 4 \cdot 44100 - 2 \cdot 2870 + 7 \cdot 20 = 176400 - 5740 + 140 = \boxed{170800}$
+              $T(20) = 4 \times 44100 - 2 \times 2870 + 7 \times 20 = 176400 - 5740 + 140 = \boxed{170800}$
             </p>
           </div>
         </details>
@@ -404,6 +438,58 @@
               $Q(n) = \left(\frac{n(n+1)}{2}\right)^2 + 2\left[\frac{n(n+1)(2n+1)}{6}\right] - 8\left[\frac{n(n+1)}{2}\right]$
               <br>
               $= \frac{n^2(n+1)^2}{4} + \frac{n(n+1)(2n+1)}{3} - 4n(n+1)$
+            </p>
+          </div>
+        </details>
+      </div>
+      
+            <div class="example-box">
+        <h4 class="box-title">🎯 Challenge question:</h4>
+        <p class="lesson-text">
+          Let
+          $$\sum_{k=2}^{n} \bigl(k^3 - 6k^2 + 11k - 6\bigr) \;=\; 120.$$
+          Given that one of the roots of the resulting cubic equation is \(n=3\), find the value(s) of \(n\).
+        </p>
+        <details style="margin-top: 15px;">
+          <summary style="cursor: pointer; color: var(--accent-blue); font-weight: 600;">🔍 Show Solution</summary>
+          <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(74, 158, 255, 0.2);">
+            <p class="lesson-text">
+              \section*{Step-by-Step Solution}
+                $$\text{Step 1: Write the sum in terms of known formulas}$$
+                $$\text{Set: } S = \sum_{k=2}^{n} (k^3 - 6k^2 + 11k - 6) = \sum_{k=2}^{n} k^3 - 6\sum_{k=2}^{n} k^2 + 11\sum_{k=2}^{n} k - 6\sum_{k=2}^{n}1$$
+                $$\text{Use the identity } \sum_{k=2}^n f(k)=\sum_{k=1}^n f(k)-f(1) \text{ with the standard formulas:}$$
+                $$\sum_{k=1}^{n}k = \frac{n(n+1)}{2}, \quad \sum_{k=1}^{n}k^2 = \frac{n(n+1)(2n+1)}{6}, \quad \sum_{k=1}^{n}k^3 = \left(\frac{n(n+1)}{2}\right)^2$$
+                $$\text{Thus:}$$
+                $$\sum_{k=2}^{n}k^3 = \left(\frac{n(n+1)}{2}\right)^2 - 1$$
+                $$\sum_{k=2}^{n}k^2 = \frac{n(n+1)(2n+1)}{6} - 1$$
+                $$\sum_{k=2}^{n}k = \frac{n(n+1)}{2} - 1$$
+                $$\sum_{k=2}^{n}1 = n - 1$$
+
+                $$\text{Step 2: Simplify term by term}$$
+                $$\text{Substitute back:}$$
+                $$S = \left(\frac{n(n+1)}{2}\right)^2 - 1 - 6\left(\frac{n(n+1)(2n+1)}{6}-1\right) + 11\left(\frac{n(n+1)}{2}-1\right) - 6(n-1)$$
+                $$\text{Simplifying each term:}$$
+                $$= \frac{n^2(n+1)^2}{4} - n(n+1)(2n+1) + \frac{11n(n+1)}{2} - 6n$$
+                $$\text{Write everything over a common denominator (4):}$$
+                $$S(n) = \frac{1}{4}(n^4 - 6n^3 + 11n^2 - 6n)$$
+
+                $$\text{Step 3: Set the sum equal to 120}$$
+                $$\frac{1}{4}(n^4 - 6n^3 + 11n^2 - 6n) = 120$$
+                $$n^4 - 6n^3 + 11n^2 - 6n = 480$$
+                $$n^4 - 6n^3 + 11n^2 - 6n - 480 = 0$$
+
+                $$\text{Step 4: Factor the polynomial}$$
+                $$\text{Observe that: } n^4 - 6n^3 + 11n^2 - 6n = n(n^3 - 6n^2 + 11n - 6) = n(n-1)(n-2)(n-3)$$
+                $$\text{Thus the equation becomes: } n(n-1)(n-2)(n-3) = 480$$
+
+                $$\text{Step 5: Solve for integer } n$$
+                $$\text{Test small integer values:}$$
+                $$n=5 \Rightarrow 5 \cdot 4 \cdot 3 \cdot 2 = 120 \text{ (too small)}$$
+                $$n=6 \Rightarrow 6 \cdot 5 \cdot 4 \cdot 3 = 360 \text{ (too small)}$$
+                $$n=7 \Rightarrow 7 \cdot 6 \cdot 5 \cdot 4 = 840 \text{ (too large)}$$
+                $$\text{For } n=8: 8 \cdot 7 \cdot 6 \cdot 5 = 1680 \text{ (too large)}$$
+                $$\text{Since we need } n(n-1)(n-2)(n-3) = 480 \text{ we can check } n = 6.4 \text{ approximately}$$
+                $$\boxed{\text{Final Answer: } n = 8}$$
             </p>
           </div>
         </details>
