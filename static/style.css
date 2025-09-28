@@ -2,26 +2,48 @@ html {
   scroll-behavior: smooth;
 }
 p.AboutMeText {
-  position: center;
+  position: relative;
   font-size: 18px;
   line-height: 1.6;
   color: white;
-  padding: 20px 20px;
-  margin: 10px 10px;
+  padding: 30px 30px;
+  margin: 0;
   font-weight: normal;
-  background: linear-gradient(135deg, #ae105f, #2108c4, #415c7b, #82095e);
-  border-radius: 8px; 
-  text-align: center;   
+  background: transparent;
+  border: none;
+  border-radius: 20px;
+  text-align: left;
   max-width: 1000px;
+}
+body {
+  background: #000;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.center {
+  display: table;
+  width: 100%;
+  height: 100vh;
+}
+
+.AboutMeText::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--bg-dark);
+  border-radius: 20px;
+  z-index: -1;
 }
 .aboutMeBlock {
   margin: 20px auto;
   padding: 10px 15px;
   max-width: 1200px;
-  background-color: var(--card-dark);
-  color: var(--text-dark);
   border-radius: 12px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  position: left;
 }
 
 /* CSS Variables for consistent color scheme */
@@ -1926,5 +1948,87 @@ body {
   
   .lesson-text, .box-title {
     color: black !important;
+  }
+}
+
+/* Social Media Logos Section */
+.social-media-section {
+  text-align: center;
+  margin: 60px auto 40px auto;
+  padding: 40px 20px;
+  max-width: 800px;
+}
+
+.social-media-section h2 {
+  color: var(--accent-blue);
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.social-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.social-logo-link {
+  display: inline-block;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+}
+
+.social-logo {
+  width: 150px;
+  height: 50px;
+  object-fit: contain;
+  filter: grayscale(100%) brightness(0) invert(1);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border-radius: 8px;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.social-logo-link:hover {
+  transform: translateY(-12px) scale(1.1);
+}
+
+.social-logo-link:hover .social-logo {
+  filter: none;
+  box-shadow: 0 8px 25px rgba(74, 158, 255, 0.4), 0 0 20px rgba(0, 247, 255, 0.3);
+  border-radius: 12px;
+  background: none;
+  border: none;
+}
+
+/* Individual hover effects for better visual feedback */
+.social-logo-link:hover .social-logo {
+  animation: socialGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes socialGlow {
+  0% {
+    box-shadow: 0 8px 25px rgba(74, 158, 255, 0.4), 0 0 20px rgba(0, 247, 255, 0.3);
+  }
+  100% {
+    box-shadow: 0 12px 35px rgba(74, 158, 255, 0.6), 0 0 30px rgba(0, 247, 255, 0.5);
+  }
+}
+
+/* Responsive design for social logos */
+@media (max-width: 480px) {
+  .social-logos {
+    gap: 30px;
+  }
+  .social-logo {
+    width: 50px;
+    height: 50px;
   }
 }

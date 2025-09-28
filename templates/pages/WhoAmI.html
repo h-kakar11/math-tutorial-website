@@ -6,20 +6,47 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 {% endblock %}
 
 {% block content %}
 <a href="{{ url_for('index') }}" class="back-to-home">🏠 Back to Home</a>
 
-
-<div class="aboutMeBlock" style="max-width: 800px; margin: 0 auto; padding: 20px; text-align: center;"></div>
 <h1>About me & K4Maths.com</h1>
-<p class = "AboutMeText" style="text-align: left;">My name is Hamim, the creator of K4Maths.com. I'm simply just a student - like you - passionate about making Maths and Physics accessible to everyone at any skill level. I started this website to share my knowledge, and help others excel in these subjects, especially considering how difficult it can be sometimes.<br><br>
-All the content on the website took me a very long time to create; countless hours of refinement and dedication went into making these tutorials as clear and helpful as possible.<br><br>
-If you have any questions, suggestions, or just want to say hi, feel free to <a href="{{ url_for('contact_me') }}"><strong>get in touch</strong></a>. I'm always happy to hear from fellow learners and/or educators.</p>
-
+<br>
+<div class="about-me-container" style="max-width: 1200px; margin: 0 auto; padding: 20px; display: flex; align-items: center; gap: 40px; flex-wrap: wrap;">
+  
+  <div class="aboutMeBlock" style="flex: 1; min-width: 300px;">
+    <p class="AboutMeText">My name is Hamim, the creator of K4Maths.com. I'm a student - just like you - passionate about making Maths and Physics accessible to everyone at any skill level. I started this website to share my knowledge, and help others excel in these subjects, especially considering how difficult it can be sometimes.<br><br>
+    All the content on the website took me a very long time to create; countless hours of refinement and dedication went into making these tutorials as clear and helpful as possible.<br><br>
+    If you have any questions, suggestions, or just want to say hi, feel free to <a href="{{ url_for('contact_me') }}"><strong>get in touch</strong></a>. I'm always happy to hear from fellow learners and/or educators.</p>
+  </div>
+  
+  <div class="image-section" style="flex-shrink: 0; display: flex; align-items: center;">
+    <div class="image-container" style="position: relative; display: inline-block;">
+      <img src="{{ url_for('static', filename='desmos-graph.png') }}" style="width: 320px; height: auto; border-radius: 20px; box-shadow: 0 6px 20px rgba(74, 158, 255, 0.4); display: block;" alt="Hamim - Creator of K4Maths.com">
+      <div style="position: absolute; top: -10px; left: -10px; right: -10px; bottom: -10px; background: linear-gradient(135deg, #ae105f, #2108c4, #415c7b, #82095e); border-radius: 25px; z-index: -1;"></div>
+    </div>
+  </div>
 </div>
-<div style = "content: right; text-align: center; position: right; padding: 20px 20px ; margin: 10px 10px; max-width: 800px; margin: 0 auto;">
-<iframe src="https://www.geogebra.org/graphing/fr5hkn8d?embed" width="800" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+  <h1><strong></strong> <a href="https://www.instagram.com/k4maths/" target="_blank" rel="noopener"><strong>Click here for the K4Maths official instagram page:@k4maths</strong></a></h1>
+
+<div class="social-media-section">
+  <p>My personal socials:</p>
+  <div class="social-logos">
+    <a href="https://www.instagram.com/mistakakar/" target="_blank" rel="noopener" class="social-logo-link">
+      <img src="{{ url_for('static', filename='instagram.png') }}" alt="Instagram" class="social-logo">
+    </a>
+    <a href="https://www.linkedin.com/in/hamim-k-b75016313/" target="_blank" rel="noopener" class="social-logo-link">
+      <img src="{{ url_for('static', filename='linkedin.png') }}" alt="LinkedIn" class="social-logo">
+    </a>
+    <a href="https://github.com/h-kakar11" target="_blank" rel="noopener" class="social-logo-link">
+      <img src="{{ url_for('static', filename='github.png') }}" alt="GitHub" class="social-logo">
+    </a>
+    <a href="https://www.youtube.com/@K4Maths-com" target="_blank" rel="noopener" class="social-logo-link">
+      <img src="{{ url_for('static', filename='youtube.png') }}" alt="YouTube" class="social-logo">
+    </a>
+  </div>
+</div>
 
 {% endblock %}
