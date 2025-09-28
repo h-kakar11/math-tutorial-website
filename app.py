@@ -98,7 +98,7 @@ Message:
 
 ---
 This email was sent from the K4Maths website contact form.
-Visit: https://k4maths-website.herokuapp.com
+Visit: https://k4maths.com
 
 Best regards,
 K4Maths Enhanced Automated Systems
