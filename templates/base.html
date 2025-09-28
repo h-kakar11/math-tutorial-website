@@ -4,9 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}K4Maths{% endblock %}</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="{% block description %}Learn Maths and Physics with K4Maths.com - Free tutorials, step-by-step guides, and exam-focused resources for Edexcel, AQA, OCR and other UK exam boards.{% endblock %}">
+    <meta name="keywords" content="maths, mathematics, physics, tutorials, Edexcel, AQA, OCR, UK exams, free resources">
+    <meta name="author" content="K4Maths">
+    
+    <!-- Open Graph Meta Tags (Facebook, LinkedIn, Discord, etc.) -->
+    <meta property="og:site_name" content="K4Maths">
+    <meta property="og:title" content="{% block og_title %}K4Maths{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}Learn Maths and Physics with K4Maths.com - Free tutorials, step-by-step guides, and exam-focused resources for Edexcel, AQA, OCR and other UK exam boards.{% endblock %}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ request.url }}">
+    <meta property="og:image" content="{% block og_image %}{{ url_for('static', filename='maths-navbar.png', _external=True) }}{% endblock %}">
+    <meta property="og:image:alt" content="K4Maths - Learn Maths and Physics">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{% block twitter_title %}K4Maths{% endblock %}">
+    <meta name="twitter:description" content="{% block twitter_description %}Learn Maths and Physics with K4Maths.com - Free tutorials, step-by-step guides, and exam-focused resources for Edexcel, AQA, OCR and other UK exam boards.{% endblock %}">
+    <meta name="twitter:image" content="{% block twitter_image %}{{ url_for('static', filename='maths-navbar.png', _external=True) }}{% endblock %}">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='K4 by itself.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='K4 by itself.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='K4 by itself.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='K4 by itself.png') }}">
+    <link rel="manifest" href="{{ url_for('static', filename='site.webmanifest') }}">
+    <!-- Main favicon -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='K4 by itself.png') }}" type="image/png">
+    
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mtml-chtml.js"></script>
     {% block head %}{% endblock %}
 </head>
 <body>

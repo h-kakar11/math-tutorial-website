@@ -1,0 +1,16 @@
+{
+    "name": "K4Maths - Learn Maths and Physics",
+    "short_name": "K4Maths",
+    "description": "Free tutorials and exam-focused resources for Maths and Physics",
+    "icons": [
+        {
+            "src": "/static/K4 by itself.png",
+            "sizes": "any",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "start_url": "/"
+}
