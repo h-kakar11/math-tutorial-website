@@ -1,11 +1,34 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
+from flask_mail import Mail, Message
 import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 app = Flask(__name__)
 
-# Optimize Flask for development
-app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0  # Disable caching in development
-app.config['TEMPLATES_AUTO_RELOAD'] = True
+# Secret key for flash messages
+app.secret_key = os.environ.get('SECRET_KEY', 'dev-key-change-in-production')
+
+# Optimize Flask
+if os.environ.get('FLASK_ENV') == 'production':
+    app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 31536000  # 1 year cache for production
+    app.config['TEMPLATES_AUTO_RELOAD'] = False
+else:
+    app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0  # Disable caching in development
+    app.config['TEMPLATES_AUTO_RELOAD'] = True
+
+# Email configuration
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'  # Gmail SMTP server
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USERNAME'] = os.environ.get('EMAIL_USERNAME')  # Your email
+app.config['MAIL_PASSWORD'] = os.environ.get('EMAIL_PASSWORD')  # Your app password
+app.config['MAIL_DEFAULT_SENDER'] = ('K4Maths Contact Form', os.environ.get('EMAIL_USERNAME'))
+
+# Initialize Flask-Mail
+mail = Mail(app)
 
 # ============================================
 # HOME PAGE
@@ -53,14 +76,45 @@ def topics_list():
 
 @app.route("/submit_contact", methods=['POST'])
 def submit_contact():
-    # Basic contact form handler - you can expand this to send emails
-    name = request.form.get('name')
-    email = request.form.get('email')
-    message = request.form.get('message')
-    
-    # For now, just redirect back to contact page with a success message
-    # In a real application, you'd want to send an email or save to database
-    return redirect(url_for('contact_me'))
+    try:
+        # Get form data
+        name = request.form.get('name')
+        email = request.form.get('email')
+        message = request.form.get('message')
+        
+        # Create email message
+        msg = Message(
+            subject=f'SQWCKDS K4Maths Contact Form - Message from {name} at {email}',
+            recipients=[os.environ.get('EMAIL_USERNAME')],  # Send to yourself
+            body=f'''
+K4Maths Contact Form Submission
+================================
+
+Name: {name}
+Email: {email}
+
+Message:
+{message}
+
+---
+This email was sent from the K4Maths website contact form.
+Visit: https://k4maths-website.herokuapp.com
+
+Best regards,
+K4Maths Enhanced Automated Systems
+            '''.strip()
+        )
+        
+        # Send email
+        mail.send(msg)
+        
+        flash('Thank you! Your message has been sent successfully.', 'success')
+        return redirect(url_for('contact_me'))
+        
+    except Exception as e:
+        flash('Sorry, there was an error sending your message. Please try again.', 'error')
+        print(f"Email error: {e}")  # For debugging
+        return redirect(url_for('contact_me'))
 
 # ============================================
 # TOPIC COMPONENT PAGES (components/ folder)

@@ -1,9 +1,13 @@
 {% extends "base.html" %}
 
 {% block title %}K4Maths - Survey{% endblock %}
-
+{% block head %}
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+{% endblock %}
 {% block content %}
+
 <h1>Please take a moment to fill out our survey. Your feedback is important.</h1>
+<br><br><div style="text-align: center;"><a href="https://docs.google.com/forms/d/e/1FAIpQLSebqw5A94dSILlH6n9vjlA15of3t0iSuqfpTVIyRYGPLqfGog/viewform?embedded=true"><strong>Not working? Click on me instead</strong></a></div>
 
 <div class="survey-container">
     <iframe 
@@ -12,7 +16,8 @@
         height="4125" 
         frameborder="0" 
         marginheight="0" 
-        marginwidth="0">
+        marginwidth="0"
+        title="Survey Form">
         Loading…
     </iframe>
 </div>

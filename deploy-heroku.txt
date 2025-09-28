@@ -1,0 +1,21 @@
+# Heroku Deployment Commands
+# Run these in your terminal:
+
+# 1. Login to Heroku
+heroku login
+
+# 2. Create a new Heroku app
+heroku create k4maths-website
+
+# 3. Set environment variables
+heroku config:set EMAIL_USERNAME=your_email@gmail.com
+heroku config:set EMAIL_PASSWORD=your_app_password
+heroku config:set SECRET_KEY=your-long-random-secret-key
+heroku config:set FLASK_ENV=production
+
+# 4. Deploy your code
+git add .
+git commit -m "Deploy K4Maths website"
+git push heroku main
+
+# Your website will be live at: https://k4maths-website.herokuapp.com

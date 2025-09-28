@@ -1,0 +1,12 @@
+# Railway Deployment Guide
+
+# 1. Go to railway.app and sign up with GitHub
+# 2. Connect your GitHub repository
+# 3. Railway will auto-detect it's a Python app
+# 4. Set these environment variables in Railway dashboard:
+#    - EMAIL_USERNAME=your_email@gmail.com
+#    - EMAIL_PASSWORD=your_app_password  
+#    - SECRET_KEY=your-long-random-secret-key
+#    - FLASK_ENV=production
+# 5. Railway will automatically deploy your app
+# 6. You'll get a URL like: https://k4maths-production.up.railway.app
