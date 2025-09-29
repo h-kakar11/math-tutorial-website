@@ -13,7 +13,6 @@
 <a href="{{ url_for('index') }}" class="back-to-home">🏠 Back to Home</a>
 
 <h1>About me & K4Maths.com</h1>
-<br>
 <div class="about-me-container" style="max-width: 1200px; margin: 0 auto; padding: 20px; display: flex; align-items: center; gap: 40px; flex-wrap: wrap;">
   
   <div class="aboutMeBlock" style="flex: 1; min-width: 300px;">
@@ -30,7 +29,7 @@
   </div>
 </div>
   <h1><strong></strong> <a href="https://www.instagram.com/k4maths/" target="_blank" rel="noopener"><strong>Click here for the K4Maths official instagram page:@k4maths</strong></a></h1>
-
+<hr>
 <div class="social-media-section">
   <p>My personal socials:</p>
   <div class="social-logos">
@@ -47,6 +46,13 @@
       <img src="{{ url_for('static', filename='youtube.png') }}" alt="YouTube" class="social-logo">
     </a>
   </div>
+</div><hr>
+<!-- Support Section -->
+<div class="support-section">
+  <h3>Support K4Maths</h3>
+  <p>If you find my tutorials helpful and want to support the creation of more content, consider donating; though a thank you is more than enough. ❤️</p>
+  <a href="https://www.buymeacoffee.com/k4maths" target="_blank" rel="noopener" class="coffee-button">
+    <span class="coffee-text">Donate to K4Maths</span>
+  </a>
 </div>
-
 {% endblock %}

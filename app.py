@@ -330,21 +330,20 @@ def solving_systems_with_matrices():
     return render_template("MatrixCP1/SolvingSystemsWithMatrices.html")
 
 #========================================================================================
-# PROOF BY INDUCTION (components/ folder)
+# VOLUMES OF REVOLUTION (components/ folder)
 # ========================================================================================.
 
-@app.route("/ProofByInductionIntro")
-def proof_by_induction_intro():
-    return render_template("ProofByInductionCP1/ProofByInductionIntro.html")
+@app.route("/VolumesAroundXAndYAxis")
+def volumes_around_x_and_y_axis():
+    return render_template("VolumesOfRevolutionCP1/VolumesAroundXAndYAxis.html")
 
-@app.route("/ProofByMathematicalInduction")
-def proof_by_mathematical_induction():
-    return render_template("ProofByInductionCP1/ProofByMathematicalInduction.html")
+@app.route("/AddingAndSubtractingVolumes")
+def adding_and_subtracting_volumes():
+    return render_template("VolumesOfRevolutionCP1/AddingAndSubtractingVolumes.html")
 
-@app.route("/ProvingDivisibilityResults")
-def proving_divisibility_results():
-    return render_template("ProofByInductionCP1/ProvingDivisibilityResults.html")
-
+@app.route("/ModellingWithVolumes")
+def modelling_with_volumes():
+    return render_template("VolumesOfRevolutionCP1/ModellingWithVolumes.html")
 
 #========================================================================================
 # LEGACY ROUTES (for backwards compatibility)

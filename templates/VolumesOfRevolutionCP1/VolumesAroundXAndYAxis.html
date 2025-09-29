@@ -1,0 +1,396 @@
+{% extends "base.html" %}
+
+{% block title %}Volumes of Revolution XY - K4Maths{% endblock %}
+
+{% block head %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Learn Cubed Series - Step-by-step guide with examples and practice">
+  
+  <!-- MathJax for LaTeX rendering -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$']],
+        displayMath: [['$$', '$$']],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
+{% endblock %}
+
+{% block content %}
+  <!-- Back navigation -->
+  <a href="/VolumesOfRevolution" class="back-to-home">🔙 Back to Volumes Of Revolution</a>
+
+  <div class="lesson-container">
+
+    <!-- Lesson Header -->
+    <header class="lesson-header">
+      <h1 class="lesson-title">Volumes of Revolution around the x-axis and y-axis</h1>
+      <p class="lesson-subtitle">Master the concept of volumes of revolution with advanced worked examples.</p>
+      <div class="lesson-meta">
+        <span class="meta-item">📚 Further Maths</span>
+        <span class="meta-item">🎯 Difficulty: ⭐⭐</span>
+        <span class="meta-item">⏱️ Reading time: 15 minutes</span>
+        <span class="meta-item">📋 Edexcel</span>
+      </div>
+    </header>
+
+    <!-- Table of Contents -->
+    <nav class="table-of-contents">
+      <h3 class="toc-title">📖 Contents</h3>
+      <ul class="toc-list">
+        <li class="toc-item"><a href="#introduction" class="toc-link">Introduction</a></li>
+        <li class="toc-item"><a href="#key-concepts" class="toc-link">Key Concepts</a></li>
+        <li class="toc-item"><a href="#examples" class="toc-link">Worked Examples</a></li>
+        <li class="toc-item"><a href="#practice" class="toc-link">Practice Problems</a></li>
+        <li class="toc-item"><a href="#summary" class="toc-link">Summary</a></li>
+      </ul>
+    </nav>
+
+    <!-- Introduction Section -->
+    <section id="introduction" class="lesson-section">
+      <h2 class="section-heading">📚 Introduction</h2>
+      <p class="lesson-text">
+        The concept of volumes of revolution involves rotating a function around a specified axis to create a three-dimensional solid. Think of it like this: You have a fan with one blade. When you look at it from the side, it’s just a 2D shape. But when you turn it on, that blade spins around and creates a 3D shape. This is a volume of revolution, and we will see how we can revolve functions around the x and y axes.
+        <br><br> <strong>You must know basic integration and finding the area under curves before this lesson.</strong>
+      </p>
+      <div class="definition-box">
+        <h4 class="box-title">🎯 Learning Objectives</h4>
+        <p class="lesson-text">
+          Know the formula to calculate volumes of revolution around the x and y axes, and be able to apply it in questions.
+        </p>
+        <ul class="lesson-text">
+          <li>Find the volume and area of 2D objects revolving around an axis</li>
+          <li>Understand and use the formula for the volume of revolution</li>
+          <li>Solve advanced problems involving calculus problem-solving</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Key Concepts Section -->
+    <section id="key-concepts" class="lesson-section">
+      <h2 class="section-heading">🔑 Key Concepts</h2>
+      
+      <h3 class="subsection-heading">Formula for Volume of Revolution:</h3>
+      <p class="lesson-text">
+        The formula for the volume of revolution around the x-axis is given by:
+      </p>
+      <div class="math-display">
+        $$V = \pi \int_{x_1}^{x_2} f(x)^2 \, dx$$
+        $$\text{Where:}$$
+        $$V = \text{Volume of the solid}$$
+        $$f(x) = \text{The function being revolved}$$
+        $$x_1, x_2 = \text{The limits of integration (the x-values)}$$
+      </div>
+      <p class="lesson-text">
+        So all you do is square the function first, then integrate normally, then multiply by $\pi$. That is all. If you are revolving around the y-axis, just integrate with respect to y (so it’ll be $dy$ instead of $dx$).
+        <br>
+        This is the formula for the volume of revolution when it’s revolving around 360° (or $2\pi$ radians).
+      </p>
+
+    <!-- Worked Examples Section -->
+    <section id="examples" class="lesson-section">
+      <h2 class="section-heading">📝 Worked Examples</h2>
+      
+      <div class="example-box">
+        <h4 class="box-title">📋 Example 1: Simple Volume of Revolution:</h4>
+        <p class="lesson-text"><strong>Question:</strong> Below shows the curve $ f(x) = -x^2 + 8x + 2x-16$, which is being revolved around the x-axis. Find the exact volume of the solid formed.</p>
+        <div style="display: flex; justify-content: center; margin: 20px 0;">
+          <iframe src="https://www.desmos.com/calculator/saad0btak4?embed" width="700" height="400" style="border: 1px solid #ccc;" frameborder="0"></iframe>
+        </div>
+        <div class="solution-steps">
+          <h5 class="subsection-heading">Solution:</h5>
+          <div class="step">
+            <div class="step-number">Step 1:</div>
+            <p class="lesson-text">We’re given that $f(x) = -x^2 + 8x + 2x - 16$. Let’s simplify:</p>
+            <div class="math-display">
+              $$\underline{f(x) = -x^2 + 10x - 16} \text{ because } 8x + 2x = 10x$$
+            </div>
+          </div>
+          <div class="tip-box">
+            <h4 class="box-title">💡 Tip:</h4>
+            <p class="lesson-text">
+              This lesson assumes previous integration knowledge; therefore, only the volume of revolution steps will be explained.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-number">Step 2:</div>
+            <p class="lesson-text">Let’s find the limits $x_1$ and $x_2$:</p>
+            <div class="math-display">
+                $$\text{The formula: } V = \pi \int_{x_1}^{x_2} f(x)^2 \, dx$$
+                $$\text{We need to find the limits of integration } x_1 \text{ and } x_2$$
+                $$\text{Use the quadratic formula to find the roots of } f(x) = 0$$
+                $$\text{So we set } -x^2 + 10x - 16 = 0$$
+                $$\text{Using the quadratic formula:}$$
+                $$ x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} = \frac{-10 \pm \sqrt{10^2 - 4(-1)(-16)}}{2(-1)}$$
+                $$ = \frac{-10 \pm \sqrt{100 - 64}}{-2} = \frac{-10 \pm \sqrt{36}}{-2} = \frac{-10 \pm 6}{-2}$$
+                $$\text{So the two roots are: } \boxed{x_1 = 2 \text{ and } x_2 = 8}$$
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">Step 3:</div>
+            <p class="lesson-text">Now we have everything to apply the formula:</p>
+            <div class="math-display">
+              $$\text{The formula is: } V = \pi \int_{2}^{8} (-x^2 + 10x - 16)^2 \, dx$$
+              $$\text{We have: } x_1 = 2, x_2 = 8, f(x) = -x^2 + 10x - 16$$
+              $$\text{Plug it in: } V = \pi \int_{2}^{8} (-x^2 + 10x - 16)^2 \, dx$$
+              $$\text{Now let’s expand: } \left(-x^2 + 10x - 16\right)^2$$
+              $$\left(-x^2 + 10x - 16\right)^2 = \underline{x^4 - 20x^3 + 132x^2 - 320x + 256}$$
+              $$\text{So now we have: }$$
+              $$ V = \pi \int_{2}^{8} (x^4 - 20x^3 + 132x^2 - 320x + 256) dx$$
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">Step 4:</div>
+            <p class="lesson-text">Let’s now integrate:</p>
+            <div class="math-display">
+              $$\text{Remember the formula: } V = \pi \int_{x_1}^{x_2} f(x)^2 dx$$
+              $$\boxed{f(x) = x^4 - 20x^3 + 132x^2 - 320x + 256} \quad \boxed{x_1 = 2, x_2 = 8}$$
+              $$\text{Integrate first: }$$
+              $$ \int^8_2 (x^4 - 20x^3 + 132x^2 - 320x + 256) dx$$
+              $$\text{Which becomes: } \frac{x^5}{5} - 5x^4 + 44x^3 - 160x^2 + 256x$$
+              $$\text{Now we have: }$$
+              $$= \pi \left[ \frac{x^5}{5} - 5x^4 + 44x^3 - 160x^2 + 256x \right]_{2}^{8}$$
+              $$\text{Complete the integration normally:}$$
+              $$\text{Let } A = \left[ \frac{8^5}{5} - 5(8^4) + 44(8^3) - 160(8^2) + 256(8) \right] = \frac{16384}{5}$$
+              $$\text{Let } B = \left[ \frac{2^5}{5} - 5(2^4) + 44(2^3) - 160(2^2) + 256(2) \right] = \frac{96}{5}$$
+              $$\text{Do A - B: }$$
+              $$A - B  = \frac{16384}{5} - \frac{96}{5} = \frac{16288}{5}$$
+              $$\text{Now that the integration is done, we have:}$$
+              $$V = \pi \int_{2}^{8} f(x)^2 dx = \pi (\frac{16288}{5}) $$
+              $$\text{So the final answer is: } \boxed{V = \frac{16288\pi}{5}}$$
+              $$\underline{\text{Keep in terms of } \pi \text{ when asked for exact volume}}$$
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="example-box">
+        <h4 class="box-title">📋 Example 2: Advanced example with y axis and algebraic manipulation:</h4>
+        <p class="lesson-text">The graph below shows the function $f(x) = y^2 - 6y + 10$</p>
+        <div style="display: flex; justify-content: center; margin: 20px 0;">
+          <iframe src="https://www.desmos.com/calculator/ziqx8h40gi?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
+        </div>
+        <p class = "lesson-text"><strong>Question:</strong> The region R is bounded by the curve $f(x)$, Find the exact volume of the solid formed when R is revolved around the y-axis.</p>
+        <div class="solution-steps">
+          <h5 class="subsection-heading">Solution:</h5>
+          <div class="step">
+            <div class="step-number">Step 1:</div>
+            <p class="lesson-text"></p>
+            <div class="math-display">
+              $$\text{Remember the formula for the y axis:}$$
+              $$V = \pi \int_{y_1}^{y_2} f(y)^2 \quad dy$$
+              $$\text{We have } f(y) = y^2 - 6y + 10$$
+              $$\text{We can see the limits on the graph: } y_1 = 1, y_2 = 5$$
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">Step 2:</div>
+            <p class="lesson-text">Lets solve $f(y)^2$:</p>
+            <div class="math-display">
+              $$f(y)^2 = (y^2 - 6y + 10)^2 = y^4 - 12y^3 + 56y^2 - 120y + 100$$
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">Step 3:</div>
+            <p class="lesson-text">Lets integrate now</p>
+            <div class="math-display">
+              $$\text{We have: } \pi \int_{1}^{5} (y^4 - 12y^3 + 56y^2 - 120y + 100) \, dy$$
+              $$\text{Evaluating the integral:}$$
+              $$=\left[ \frac{y^5}{5} - 3y^4 + \frac{56y^3}{3} - 60y^2 + 100y \right]_{1}^{5}$$
+              $$ \left[ \frac{5^5}{5} - 3(5^4) + \frac{56(5^3)}{3} - 60(5^2) + 100(5) \right]$$
+              $$ - \left[ \frac{1^5}{5} - 3(1^4) + \frac{56(1^3)}{3} - 60(1^2) + 100(1) \right]$$
+              $$= \frac{18190}{15}$$
+              $$\text{So now we multiply by } \pi : \boxed{V = \frac{18190\pi}{15}}$$
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Common Mistakes Section -->
+    <section class="lesson-section">
+      <h2 class="section-heading">⚠️ Common Mistakes</h2>
+      <div class="warning-box">
+        <h4 class="box-title">🚫 Mistake 1: Forgetting to multiply by pi at the end</h4>
+        <p class="lesson-text">
+          <strong>What students often do wrong:</strong> Its easy to get hyperfixated on the integral at first, then forget to multiply by $\pi$. Ensure you write out the entire equation at the start to avoid this.
+        </p>
+        </div>
+    </section>
+
+    <!-- Practice Problems Section -->
+    <section id="practice" class="lesson-section">
+      <h2 class="section-heading">💪 Practice Problems</h2>
+      <p class="lesson-text lesson-text-center">
+        Try these problems to test your understanding:
+      </p>
+
+      <div class="example-box">
+        <h4 class="box-title">🎯 Practice Questions A</h4>
+        <p class="lesson-text">
+        Evaluate the following:<br>
+          (A) $x = \frac{1}{2}y + 1$ between $y = 2$ and $y = 5$<br>
+          (B) $y = 2\sqrt{x}$ between $x = 0$ and $x = 1$<br>
+          (C) $y = \frac{1}{x}$ between $x = 1$ and $x = 3$<br>
+          (D) $y = 2x^2 - 4$ between $x = 5$ and $x = 11$
+        </p>
+        <details style="margin-top: 15px;">
+          <summary style="cursor: pointer; color: var(--accent-blue); font-weight: 600;">🔍 Show Solution</summary>
+          <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(74, 158, 255, 0.2);">
+            <div class="math-display">
+              $$\text{(A) } V = \pi \int_{2}^{5} \left(\frac{1}{2}y + 1\right)^2 dy$$
+              $$= \pi \left[\frac{y^3}{12} + \frac{y^2}{2} + y\right]_{2}^{5}$$
+              $$= \pi \left(\frac{125}{12} + \frac{25}{2} + 5 - \frac{8}{12} - 2 - 2\right)$$
+              $$= \pi \left(\frac{117}{12} + \frac{21}{2} + 3\right) = \boxed{\frac{279\pi}{12}}$$
+            </div>
+            <div class="math-display">
+              $$\text{(B) } V = \pi \int_{0}^{1} (2\sqrt{x})^2 dx = \pi \int_{0}^{1} 4x dx$$
+              $$= 4\pi \left[\frac{x^2}{2}\right]_{0}^{1} = 4\pi \left(\frac{1}{2} - 0\right) = \boxed{2\pi}$$
+            </div>
+            <div class="math-display">
+              $$\text{(C) } V = \pi \int_{1}^{3} \left(\frac{1}{x}\right)^2 dx = \pi \int_{1}^{3} x^{-2} dx$$
+              $$= \pi [-x^{-1}]_{1}^{3} = \pi \left(-\frac{1}{3} + 1\right) = \boxed{\frac{2\pi}{3}}$$
+            </div>
+            <div class="math-display">
+              $$\text{(D) } V = \pi \int_{5}^{11} (2x^2 - 4)^2 dx$$
+              $$= \pi \int_{5}^{11} (4x^4 - 16x^2 + 16) dx$$
+              $$= \pi \left[\frac{4x^5}{5} - \frac{16x^3}{3} + 16x\right]_{5}^{11} = \boxed{\frac{2048\pi}{15}}$$
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <div class="example-box">
+        <h4 class="box-title">🎯 Practice Questions B</h4>
+        <p class="lesson-text">
+            (A) The curve C with equation $y = 2x^2 + 5$. The region bounded by the y-axis, the curve C, and the line $y = 10$ is rotated $360°$ about the y-axis. Find the exact volume of the solid generated. (6 marks)<br><br>
+            (B) The curve $C$ with equation $x = \frac{1}{2}y^2 + 1$. The region $R$ is bounded by the lines $y=1$, $y=4$, the $y$-axis and the curve $C$. The region is rotated through $2\pi$ radians about the $y$-axis. Find the volume of the solid generated. (6 marks)<br><br>
+            (C) The finite region $R$ is bounded by the curve $x = \sqrt{y} + \frac{1}{y^2}$, the lines $y=4$, $y=9$, and the $y$-axis.<br>
+            &nbsp;&nbsp;(i) Find the exact area of the region. (3 marks)<br>
+            &nbsp;&nbsp;(ii) The region $R$ is rotated through $2\pi$ radians about the $y$-axis. Use integration to find the volume of the solid generated. Round your answer to 2 decimal places. (5 marks)
+        </p>
+        <details style="margin-top: 15px;">
+          <summary style="cursor: pointer; color: var(--accent-blue); font-weight: 600;">🔍 Show Solution</summary>
+          <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(74, 158, 255, 0.2);">
+            <p class="lesson-text">
+              <div class="math-display">
+                $$(A) \text{ } V = \pi \int_{0}^{10} \left(\frac{y-5}{2}\right)^2 dy = \pi \int_{0}^{10} \frac{(y-5)^2}{4} dy$$
+                $$= \frac{\pi}{4} \left[\frac{y^3}{3} - 5y^2 + 25y\right]_{0}^{10} = \boxed{\frac{250\pi}{3}}$$
+              </div>
+              <div class="math-display">
+                $$(B) \text{ } V = \pi \int_{1}^{4} \left(\frac{1}{2}y^2 + 1\right)^2 dy$$
+                $$= \pi \int_{1}^{4} \left(\frac{1}{4}y^4 + y^2 + 1\right) dy$$
+                $$= \pi \left[\frac{y^5}{20} + \frac{y^3}{3} + y\right]_{1}^{4} = \boxed{\frac{293\pi}{15}}$$
+              </div>
+              <div class="math-display">
+                $$(C)(i) \text{ } A = \int_{4}^{9} \left(\sqrt{y} + \frac{1}{y^2}\right) dy$$
+                $$= \left[\frac{2}{3}y^{3/2} - y^{-1}\right]_{4}^{9} = \boxed{\frac{38}{3}}$$
+              </div>
+              <div class="math-display">
+                $$(C)(ii) \text{ } V = \pi \int_{4}^{9} \left(\sqrt{y} + \frac{1}{y^2}\right)^2 dy$$
+                $$= \pi \int_{4}^{9} \left(y + 2y^{-3/2} + y^{-4}\right) dy$$
+                $$= \pi \left[\frac{y^2}{2} - 4y^{-1/2} - \frac{y^{-3}}{3}\right]_{4}^{9}$$
+                $$= \boxed{37.70} \text{ (to 2 decimal places)}$$
+              </div>
+            </p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- Summary Section -->
+    <section id="summary" class="lesson-section">
+      <h2 class="section-heading">📋 Summary</h2>
+      <div class="definition-box">
+        <h4 class="box-title">🎯 Key Takeaways</h4>
+        <ul class="lesson-text">
+          <li>The volume of revolution around the x-axis is given by $V = \pi \int_{x_1}^{x_2} f(x)^2 \, dx$</li>
+          <li>The volume of revolution around the y-axis is given by $V = \pi \int_{y_1}^{y_2} f(y)^2 \, dy$</li>
+          <li>Always square the function first, then integrate, then multiply by $\pi$</li>
+          <li>Find the limits of integration by determining where the curve intersects the axis or given boundaries</li>
+          <li>Remember to expand squared expressions carefully and integrate term by term</li>
+        </ul>
+      </div>
+      <div class="tip-box">
+        <h4 class="box-title">📚 What's Next?</h4>
+        <p class="lesson-text">
+          Practice more volume problems with different types of functions. Next, explore more complex volumes involving parametric equations, and applications in engineering and physics contexts.
+        </p>
+      </div>
+    </section>
+
+    <!-- Back to top button -->
+    <div style="text-align: center; margin: 30px 0;">
+      <a href="#top" class="nav-button">⬆️ Back to Top</a>
+    </div>
+
+  </div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Smooth scrolling for table of contents
+    const tocLinks = document.querySelectorAll('.toc-link');
+    tocLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Highlight current section in table of contents
+    const sections = document.querySelectorAll('.lesson-section');
+    const tocNavLinks = document.querySelectorAll('.toc-link');
+    
+    function highlightTOC() {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (window.pageYOffset >= (sectionTop - 200)) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        tocNavLinks.forEach(link => {
+            link.style.background = '';
+            link.style.borderLeftColor = 'transparent';
+            if (link.getAttribute('href') === '#' + current) {
+                link.style.background = 'rgba(74, 158, 255, 0.1)';
+                link.style.borderLeftColor = 'var(--accent-blue)';
+            }
+        });
+    }
+    
+    window.addEventListener('scroll', highlightTOC);
+    
+    // Initialize MathJax rendering
+    if (window.MathJax) {
+        MathJax.typesetPromise().then(() => {
+            console.log('MathJax rendering complete');
+        });
+    }
+});
+</script>
+{% endblock %}
