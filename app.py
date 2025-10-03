@@ -328,7 +328,28 @@ def inverting_3x3_matrix():
 @app.route("/SolvingSystemsWithMatrices")
 def solving_systems_with_matrices():
     return render_template("MatrixCP1/SolvingSystemsWithMatrices.html")
+#========================================================================================
+# ROOTS OF POLYNOMIALS (components/ folder)
+# ========================================================================================.
+@app.route("/RootsOfQuarticEquation")
+def roots_of_quartic_equation():
+    return render_template("RootsOfPolynomialsCP1/RootsOfQuarticEquation.html") 
 
+@app.route("/ExpressionsRelatingToRoots")
+def expressions_relating_to_roots():    
+    return render_template("RootsOfPolynomialsCP1/ExpressionsRelatingToRoots.html")
+
+@app.route("/LinearTransformationsOfRoots")
+def linear_transformations_of_roots():
+    return render_template("RootsOfPolynomialsCP1/LinearTransformationsOfRoots.html")
+
+@app.route("/RootsOfCubicEquation")
+def roots_of_cubic_equation():
+    return render_template("RootsOfPolynomialsCP1/RootsOfCubicEquation.html")
+
+@app.route("/RootsOfQuadraticEquation")
+def roots_of_quadratic_equation():
+    return render_template("RootsOfPolynomialsCP1/RootsOfQuadraticEquation.html")
 #========================================================================================
 # VOLUMES OF REVOLUTION (components/ folder)
 # ========================================================================================.
