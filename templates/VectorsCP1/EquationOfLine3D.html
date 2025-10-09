@@ -32,17 +32,18 @@
 
 {% block content %}
   <!-- Back navigation -->
-  <a href="/RootsOfPolynomials" class="back-to-home">🔙 Back to Roots Of Polynomials</a>
+  <a href="/VectorsCP1" class="back-to-home">🔙 Back to Vectors CP1</a>
 
   <div class="lesson-container">
 
     <!-- Lesson Header -->
     <header class="lesson-header">
-      <h1 class="lesson-title">Roots of Quadratic Equations</h1>
-      <p class="lesson-subtitle">Master the concept of the roots of quadratic equations easily.</p>
+      <h1 class="lesson-title">3d Vectors: Equation of line
+      </h1>
+      <p class="lesson-subtitle">Understand and visualise the equation of a 3d vector line.</p>
       <div class="lesson-meta">
         <span class="meta-item">📚 Further Maths</span>
-        <span class="meta-item">🎯 Difficulty: ⭐</span>
+        <span class="meta-item">🎯 Difficulty: ⭐⭐⭐</span>
         <span class="meta-item">⏱️ Reading time: 15 minutes</span>
         <span class="meta-item">📋 Edexcel</span>
       </div>
@@ -63,29 +64,17 @@
     <!-- Introduction Section -->
     <section id="introduction" class="lesson-section">
       <h2 class="section-heading">📚 Introduction</h2>
-      <p class="lesson-text">
-        Roots of a quadratic equation are the values of $x$ that make the equation equal to zero. If a quadratic has roots $\alpha$ and $\beta$, then it can be written in factorized form as $a(x-\alpha)(x-\beta) = 0$ where $a$ is a constant.
-        <br>When we expand the brackets correctly:
-        $$a(x-\alpha)(x-\beta) = a\left(x^2 - (\alpha + \beta)x + \alpha\beta\right) = ax^2 - a(\alpha + \beta)x + a\alpha\beta$$
-        <br> In this topic, we take a look at the relationship between the roots $\alpha$ and $\beta$ and the coefficients of the standard form $ax^2 + bx + c = 0$.
-        <br><br>
-        $\alpha, \beta$ are just the greek letters 'alpha' and 'beta'. They are commonly used to represent roots of equations.
-      </p>
+      <p class="lesson-text"> (PRIOR KNOWLEDGE OF VECTORS IS HIGHLY RECCOMENDED) In this lesson, we will explore the equation of a line in 3D space, represented by a vector equation. We will learn how to derive the vector equation of a line from its parametric equations (functions of variables) and understand the geometric interpretation of the line in three-dimensional space.</p>
       <div class="definition-box">
         <h4 class="box-title">🎯 Learning Objectives</h4>
         <ul class="lesson-text">
-          <li>Find the roots of quadratic equations using various methods</li>
-          <li>Understand the relationship between the coefficients and roots</li>
-          <li>Remember the Vietas formulae</li>
+          <li>Understand the concept of a line in 3D space</li>
+          <li>Learn how to derive the vector equation of a line from its parametric equations</li>
+          <li>Visualize the geometric interpretation of a line in three-dimensional space</li>
         </ul>
         <p class = "lesson-text">
-          Remember this:<br>                The roots of a quadratic can either be:  </p>
-          <ul class = "lesson-text">
-            <li>Two, real and different roots</li>
-            <li>Two, real and the same but repeating roots</li>
-            <li>Two, complex roots (non-real)</li>
-          </ul>
-          <p class = "lesson-text">This is determined by the discriminant $b^2 - 4ac$, which you should already know.</p>
+            You will have met vectors in normal A-Level Maths, but in Further Maths you will go deeper into the topic. This lesson is part of the Vectors CP1 module, which is a core part of the Further Maths curriculum.<br><br>I found 3D vectors to be quite challenging, hence the 4 star difficulty rating. This was mainly due to the fact that textbooks aren't the greatest for visualisations, so watching videos alongside this lesson is highly recommended. I strongly reccomend ExamSolutions on YouTube.
+        </p>
       </div>
     </section>
 
@@ -93,26 +82,66 @@
     <section id="key-concepts" class="lesson-section">
       <h2 class="section-heading">🔑 Key Concepts</h2>
       
-      <h3 class="subsection-heading">Formulae for roots</h3>
+      <h3 class="subsection-heading">Equation of a line in 3D</h3>
       <p class="lesson-text">
-        The formula for the roots of a quadratic equation is given by:
+        The equation of a line in 3D can be represented using a vector equation. The general form of the vector equation of a line is given by:
       </p>
       <div class="math-display">
-        $$\text{Sum of roots: }\alpha + \beta = -\frac{b}{a}$$
-        $$\text{Product of roots: }\alpha \beta = \frac{c}{a}$$
-        $$\alpha, \beta = \text{The roots of the quadratic equation}$$
-        $$a, b, c = \text{The coefficients of the quadratic equation}$$
+        $$\mathbf{r} = \mathbf{a} + \lambda \mathbf{b}$$
       </div>
       <p class="lesson-text">
-        These relationships are derived from the standard form of a quadratic equation $ax^2 + bx + c = 0$. The entire derivation:
-        <br>Starting with the factorized form:
-        $$a(x - \alpha)(x - \beta) = 0$$
-        Expanding this gives:
-        $$ax^2 - a(\alpha + \beta)x + a\alpha\beta = 0$$
-        Comparing coefficients with $ax^2 + bx + c = 0$ leads to:
-        $$b = -a(\alpha + \beta) \quad \Rightarrow \quad  \boxed{\alpha + \beta =-\frac{b}{a}}$$
-        $$c = a\alpha\beta \quad \Rightarrow \quad \boxed{\alpha\beta = \frac{c}{a}}$$
+        Where:<br>
+          $\mathbf{r} \quad$ is the position vector of any point on the line<br>
+          $\mathbf{a} \quad$ is the position vector of a specific point on the line<br>
+          $\mathbf{b} \quad$ is the direction vector of the line<br>
+          $\lambda \quad$ is a scalar parameter/quantity
+          <br><br>
+          A position vector ($\mathbf{r}$) is just a vector that starts at the origin, $(0,0,0)$ and goes anywhere else.<br><br>
+          A direction vector ($\mathbf{b}$) is just the vector that shows direction.<br><br>
+          A scalar ($\lambda$) is just a number that acts like a multiplier, increasing or decreasing the line length.
+          <br><br><br>
+          (Above) is the way everyone else teaches it, but i think this is much more intuitive:
       </p>
+      <div class="math-display">
+        $$\mathbf{r} = \overrightarrow{OA} + \lambda \overrightarrow{AB}$$
+      </div>
+      <p class="lesson-text">
+        Where:<br>
+        $A$ is a point on the line, so $\overrightarrow{OA}$ is the position vector from origin to point A
+        <br>$B$ is another point on the line, so $\overrightarrow{AB}$ is from point A to point B, and is the direction vector
+          <
+        <br>$O$ is the origin, $(0,0,0)$
+          <br><br>
+          This means that you start at point A, and then move in the direction of vector AB, scaled by $\lambda$.<br> By changing the value of $\lambda$, you can move along the line in both directions.
+          <br><br>I created a great visualisation:        </p>
+          <div style="display: flex; justify-content: center; margin: 10px 0;">
+            <iframe src="https://www.desmos.com/calculator/xlkryzow7n?embed" width="1000" height="450" style="border: 1px solid #79137dcd" frameborder=0></iframe>
+          </div>
+          <p class="lesson-text">
+            In the above, the purple line is the result of $\overrightarrow{OA} + \lambda \overrightarrow{AB}$, which is $\mathbf{r}$.
+          </p>
+    </section>
+
+    <!-- more Concepts Section -->
+    <section id="more-concepts" class="lesson-section">
+      <h2 class="section-heading">🔑 More Concepts</h2>
+      <h3 class="subsection-heading">3D must-knows</h3>
+      <p class="lesson-text">
+        Coordinates in a 3D space is represented just like it is in 2D, but with an extra z axis in in the mix, to account for the 3rd dimension.<br>
+        For example: 2D coordinates: (x, y) <br> 3D coordinates: $(x, y, z) \quad \rightarrow \quad$ Example: $(3, -2, 5)$
+        <br><br> Furthermore
+        <br> There are multiple forms of vectors, ijk form:
+        <br><br>
+        In $ijk$ form, a point in 3D space is represented as:
+        $$\mathbf{r} = xi + yj + zk$$
+        <br><br> Column form:
+        $$\begin{bmatrix} x \\ y \\ z \end{bmatrix}$$
+        <br> For example:
+        <div class="math-display">
+          $$\text{The position vector from origin to point } (3, -2, 5) \text{ is:}$$
+          $$\text{Column form: }\begin{bmatrix} 3 \\ -2 \\ 5 \end{bmatrix} \quad | \quad ijk \text{ form: } 3i - 2j + 5k$$
+      </p>
+    </section>
 
     <!-- Worked Examples Section -->
     <section id="examples" class="lesson-section">
@@ -120,83 +149,102 @@
       
       <div class="example-box">
         <h4 class="box-title">📋 Example 1: Simple example:</h4>
-        <p class="lesson-text"><strong>Question:</strong> a quadratic is given: $$15z^2 + 5z - 2 = 0$$
-        The roots of this quadratic are $\alpha$ and $\beta$. find $\alpha \beta$ and $\alpha + \beta$.</p>
+        <p class="lesson-text">We have two points: A and B, which are $(4, 5, -7)$ and $(1, 2, 3)$ respectively. Find the equation of a line passing through these points.</p>
         <div style="display: flex; justify-content: center; margin: 20px 0;">
         </div>
         <div class="solution-steps">
           <h5 class="subsection-heading">Solution:</h5>
           <div class="step">
             <div class="step-number">Step 1:</div>
-            <p class="lesson-text">Recall the formulae:</p>
+            <p class="lesson-text">Recall the formula:</p>
             <div class="math-display">
-              $$\alpha + \beta = -\frac{b}{a}$$
-              $$\alpha \beta = \frac{c}{a}$$
+              $$r = \overrightarrow{OA} + \lambda \overrightarrow{AB} \quad \text{or} \quad r = \mathbf{a} + \lambda \mathbf{b}$$
+              $$\text{Where: } \overrightarrow{OA} = a, \overrightarrow{AB} = b$$
+              $$\overrightarrow{OA} \text{ is simply the position vector from origin to point A}$$
+              $$\overrightarrow{OA} = \begin{bmatrix} 4 \\ 5 \\ -7 \end{bmatrix} \quad \text{or,} \quad = 4i + 5j - 7k$$
             </div>
           </div>
 
           <div class="step">
             <div class="step-number">Step 2:</div>
-            <p class="lesson-text">Now just plug the values.</p>
+            <p class="lesson-text">Lets now find AB.</p>
             <div class="math-display">
-              $$\text{We have } a = 15, b = 5, c = -2$$
-              $$\text{So: } \alpha + \beta = -\frac{5}{15} = -\frac{1}{3}$$
-              $$\text{And: } \alpha \beta = \frac{-2}{15} = -\frac{2}{15}$$
+              $${\small \text{To find } \overrightarrow{AB}, \text{think of it as going from point A to the origin, to point B.}}$$
+              $${\small \text{OA is origin to A. we want AB. so we start from A,}}$$
+              $${\small \text{ and go back to origin then to B.}}$$
+              $${\small \text{From A to origin is just negative OA: }} -\overrightarrow{OA} = -\begin{bmatrix} 4 \\ 5 \\ -7 \end{bmatrix} = \begin{bmatrix} -4 \\ -5 \\ 7 \end{bmatrix}$$
+              $${\small \text{Then from origin to B is just OB: }} \overrightarrow{OB} = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}$$
+              $${\small \text{So: }} \overrightarrow{AB} = -\overrightarrow{OA} + \overrightarrow{OB} \rightarrow \begin{bmatrix} -4 \\ -5 \\ 7 \end{bmatrix} + \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix} = \begin{bmatrix} -3 \\ -3 \\ 10 \end{bmatrix}$$
+              $${\small \text{(just add/subtract the x y and z components separately.)}}$$
+            </div>
+            </div>
+            <div class ="step">
+            <div class="step-number">Step 3:</div>
+            <p class="lesson-text">Now we can write the full equation of the line:</p>
+            <div class="math-display">
+              $$r = \overrightarrow{OA} + \lambda \overrightarrow{AB}$$
+              $${\small \text{We found: }} \overrightarrow{OA} = \begin{bmatrix} 4 \\ 5 \\ -7 \end{bmatrix} {\small \text{ and }} \overrightarrow{AB} = \begin{bmatrix} -3 \\ -3 \\ 10 \end{bmatrix}$$
+              $${\small \text{So: }} r = \begin{bmatrix} 4 \\ 5 \\ -7 \end{bmatrix} + \lambda \begin{bmatrix} -3 \\ -3 \\ 10 \end{bmatrix}$$
+              $${\small \text{Or in ijk form: }} r = (4i + 5j - 7k) + \lambda (-3i - 3j + 10k)$$
+              $${\small \text{This is the equation of the line passing through points A and B.}}$$
+              $${\small \text{ We can also write it as: }}$$
+              $$\boxed{\mathbf{r} = \begin{bmatrix} 4 - 3\lambda \\ 5 - 3\lambda \\ -7 + 10\lambda \end{bmatrix}}$$
             </div>
           </div>
         </div>
       </div>
-          <div class="tip-box">
-            <h4 class="box-title">💡 Tip:</h4>
-            <p class="lesson-text">The quadratic can be written differently.
-          $$\text{If } ax^2 + bx + c = a(x - \alpha)(x - \beta)$$
-          $$\text{Then dividing by } a: \quad x^2 + \frac{b}{a}x + \frac{c}{a} = 0$$
-        </p>          
-      </div>
+            <p class = "lesson-text">
+              For this line to intersect a point, the point must satisfy the equation of the line. The way we can check this is by finding lambda and seeing if it is the same for all: $x$, $y$ and $z$.<br>
+              <br>This means that the point must be a multiple of the direction vector, $\overrightarrow{AB}$.<br>
+              <br>For example, the point $C \rightarrow \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}$, and a direction vector is $\lambda \begin{bmatrix} -1 \\ -2 \\ -3 \end{bmatrix}$.<br>
+              <br>We can solve for $\lambda$ in each, $x$, $y$ and $z$. if $\lambda$ is the same for all three, then the point lies on the line.<br>
+            <br> In this case, $\lambda = -1$, and is consistent for each $x$,$y$ and $z$ meaning C lies on the line.</p>
+
       <div class="example-box">
-        <h4 class="box-title">📋 Example 2: Problem involving roots:</h4>
-        <p class="lesson-text"> The roots of $$f(x) = ax^2 + bx + c$$ are $\alpha$ and $\beta$. Find $a$, $b$, $c$ when:
-          $$\alpha = - \frac{3}{2}, \beta = \frac{5}{4}$$ </p>
+        <h4 class="box-title">📋 Example 2: Line intersecting a point</h4>
+        <p class="lesson-text">The straight line $r = (6i + 3j + k) + \lambda (-3i - 3j + 10k)$ intersects point $C = (a, b, 4)$. Find the values of $a$ and $b$.</p>
         <div style="display: flex; justify-content: center; margin: 20px 0;">
         </div>
         <div class="solution-steps">
           <h5 class="subsection-heading">Solution:</h5>
           <div class="step">
             <div class="step-number">Step 1:</div>
-            <p class="lesson-text">Recall the formulae:</p>
+            <p class="lesson-text">Understand that $C$ must be a multiple of the direction vector $\lambda (-3i - 3j + 10k)$.</p>
             <div class="math-display">
-              $$\alpha + \beta = -\frac{b}{a}$$
-              $$\alpha \beta = \frac{c}{a}$$
-              $$\text{And in this case: }$$
-              $$\alpha = - \frac{3}{2}, \quad \beta = \frac{5}{4}$$
+              $$\text{since we have: } C = (a, b, 4)\text{, we have the z value.}$$
+              $$\text{set the z component of the line equal to 4 and solve.}$$
+              $$\lambda(10k) = 4, \rightarrow \lambda = \underline{\frac{4}{10} = \frac{2}{5}}$$
             </div>
           </div>
           <div class="step">
             <div class="step-number">Step 2:</div>
-            <p class="lesson-text">Lets solve $\alpha + \beta$:</p>
+            <p class="lesson-text">Now we have $\lambda$ we can find $a$ and $b$:</p>
             <div class="math-display">
-              $$\alpha + \beta = -\frac{3}{2} + \frac{5}{4} = -\frac{6}{4} + \frac{5}{4} = -\frac{1}{4}$$
-              $$\text{Since } \alpha+\beta = -\frac{b}{a}, \text{ we have: } -\frac{b}{a} = -\frac{1}{4} \Rightarrow b = \frac{a}{4}$$
+              $$\lambda = \frac{2}{5}$$
+              $$\text{So plug this into the direction vector of the line:}$$
+              $$\lambda \begin{bmatrix} -3 \\ -3 \\ 10 \end{bmatrix} \rightarrow \begin{bmatrix} -3 \lambda \\ -3 \lambda \\ 10 \lambda \end{bmatrix} = \begin{bmatrix} -3 \times \frac{2}{5} \\ -3 \times \frac{2}{5} \\ 10 \times \frac{2}{5} \end{bmatrix} = \begin{bmatrix} -\frac{6}{5} \\ -\frac{6}{5} \\ 4 \end{bmatrix}$$
+              $$\text{Ensure you compute x, y and z separately.}$$
             </div>
           </div>
           <div class="step">
             <div class="step-number">Step 3:</div>
-            <p class="lesson-text">Lets now solve $\alpha \beta$:</p>
+            <p class="lesson-text">Final Answer:</p>
             <div class="math-display">
-              $$\alpha \beta = -\frac{3}{2} \times \frac{5}{4} = -\frac{15}{8}$$
+              $$\boxed{C = \begin{bmatrix} -\frac{6}{5} \\ -\frac{6}{5} \\ 4 \end{bmatrix}}$$
             </div>
-          </div>
-          <div class = "step">
-            <div class="step-number">Step 4:</div>
-            <p class="lesson-text">Now, since $\alpha \beta = \frac{c}{a}$, and we have $\alpha \beta = -\frac{15}{8}$, we can write:</p>
-            <div class="math-display">
-              $$x^2 + \frac{1}{4}x - \frac{15}{8}$$
-              $$\text{Multiplying through by 8 to clear the fractions: }$$
-              $$8x^2 + 2x - 15 \text{ Which is in the form } ax^2 + bx + c$$
-              $$\boxed{\text{So: } a = 8, b = 2, c = -15}$$
-            </div>
-        </div>
       </div>
+      </div>
+      </div>
+            <h3 class="subsection-heading">Cartesian form of Straight line</h3>
+            <p class = "lesson-text">
+              The straight line equation that we have just been working with - $ r = \mathbf{a} + \lambda \mathbf{b} $ - has Cartesian form.<br>
+              <br>The cartesian form is:
+            </p>
+            <div class = "math-display">
+              $$\underbrace{r =  (a_1,a_2,a_3) + \lambda (b_1,b_2,b_3)}_{\text{parametric form}} \quad \rightarrow \quad \underbrace{\frac{x - a_1}{b_1} = \frac{y - a_2}{b_2} = \frac{z - a_3}{b_3}}_{\text{cartesian form}}$$
+            </div>
+            <p clas ="lesson-text">Each of the fractions in the cartesian form are equal to $\lambda$</p>
+            <p class = "lesson-text"> Proof:</p>
     </section>
 
     <!-- Common Mistakes Section -->

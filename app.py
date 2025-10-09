@@ -366,6 +366,23 @@ def adding_and_subtracting_volumes():
 def modelling_with_volumes():
     return render_template("VolumesOfRevolutionCP1/ModellingWithVolumes.html")
 
+
+#========================================================================================
+# vectors cp1 (components/ folder)
+# ========================================================================================.
+
+@app.route("/EquationOfLine3D")
+def equation_of_line_3d():
+    return render_template("VectorsCP1/EquationOfLine3D.html")
+
+@app.route("/ScalarProduct")
+def scalar_product():
+    return render_template("VectorsCP1/ScalarProduct.html")
+
+@app.route("/VectorsCP1")
+def vectors_cp1():
+    return render_template("VectorsCP1/VectorsCP1.html")
+
 #========================================================================================
 # LEGACY ROUTES (for backwards compatibility)
 # ============================================
