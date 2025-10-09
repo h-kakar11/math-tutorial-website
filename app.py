@@ -234,7 +234,7 @@ def intro_to_complex_numbers():
 
 @app.route("/ModArgComplex")
 def mod_arg_complex():
-    return render_template("ComplexNumbersCP1//ModArgComplex.html")
+    return render_template("ComplexNumbersCP1/ModArgComplex.html")
 
 @app.route("/MultiplyComplex")
 def multiply_complex():
