@@ -6,7 +6,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <meta name="description" content="Learn Cubed Series - Step-by-step guide with examples and practice">
+  <meta name="description" content="Learn the equation of a vector line in 3D - Step-by-step guide with examples and practice">
   
   <!-- MathJax for LaTeX rendering -->
   <script>
@@ -243,21 +243,91 @@
             <div class = "math-display">
               $$\underbrace{r =  (a_1,a_2,a_3) + \lambda (b_1,b_2,b_3)}_{\text{parametric form}} \quad \rightarrow \quad \underbrace{\frac{x - a_1}{b_1} = \frac{y - a_2}{b_2} = \frac{z - a_3}{b_3}}_{\text{cartesian form}}$$
             </div>
-            <p clas ="lesson-text">Each of the fractions in the cartesian form are equal to $\lambda$</p>
-            <p class = "lesson-text"> Proof:</p>
+            <p class ="lesson-text">Each of the fractions in the cartesian form are equal to $\lambda$</p>
+            <p class = "lesson-text"> Proof:
+              <div class= "math-display">
+                $$ \begin{bmatrix} x\\y\\z \end{bmatrix} = \begin{bmatrix} a_1 \\ a_2 \\ a_3 \end{bmatrix} + \lambda \begin{bmatrix} b_1 \\ b_2 \\ b_3 \end{bmatrix}$$
+                $$ x = a_1 + \lambda b_1 \rightarrow \text{Rearranging for } \lambda \rightarrow \lambda = \boxed{\frac{x - a_1}{b_1}}$$
+                $$ y = a_2 + \lambda b_2 \rightarrow \text{Rearranging for } \lambda \rightarrow \lambda = \boxed{\frac{y - a_2}{b_2}}$$
+                $$ z = a_3 + \lambda b_3 \rightarrow \text{Rearranging for } \lambda \rightarrow \lambda = \boxed{\frac{z - a_3}{b_3}}$$
+                $$ \underline{\text{As you can see, they're all equal to } \lambda}$$
+              </div>
+            </p>
+            <div class ="tip-box">
+              <h4 class="box-title">💡 Tip:</h4>
+              <p class="lesson-text">
+                Most of the time, its really good practice to compute all the differrent coordinate axis's seperately. In vectors, it gets hard to track things over time so this makes it easier.
+              <br><br>
+              Also, you must know:
+              <ul class = "lesson-text">
+                <li><strong>Collinear:</strong> if points are <strong>collinear,</strong> that means that a line can be made which intersects all points.</li>
+                <li><strong>Magnitude:</strong> its basically how far the line is and is measured as: $$\sqrt{(b_1^2 + b_2^2 + b_3^2)}$$</li>
+                <li><strong>Parallel:</strong> if two lines are parallel, their direction vectors are scalar multiples of each other.</li>
+                <li><strong>Perpendicular:</strong> if two lines are perpendicular, the dot product of their direction vectors is zero. We will learn about this later.</li>
+                <li><strong>Skew:</strong> if two lines are skew, they are not parallel and do not intersect.</li>
+                <li>a vector perpendicular to a plane or another vector is called the <strong>'normal'</strong>.</li>
+              </ul>
+              </p>
+            </div>
     </section>
 
     <!-- Common Mistakes Section -->
     <section class="lesson-section">
       <h2 class="section-heading">⚠️ Common Mistakes</h2>
       <div class="warning-box">
-        <h4 class="box-title">🚫 Mistake 1: Forgetting the formulae</h4>
+        <h4 class="box-title">🚫 Mistake 1: Forgetting cartesian form and other forms</h4>
         <p class="lesson-text">
-          <strong>What students often do wrong:</strong> Just remember the formulae for sum and product of roots. They are easy to forget.
-          $$\alpha + \beta = -\frac{b}{a}$$
-          $$\alpha \beta = \frac{c}{a}$$
+          <strong>What students often do wrong:</strong> Forgettingthe carteesian form is easy but make sure you dont forget. The direction vector is at the denominator.
+          <br><br>Also, if the numerator is $x + a_1$, then that means $a_1$ is negative because $x + a_1 \quad = \quad x - (-a_1)$
         </p>
         </div>
+
+      <div class="example-box">
+        <h4 class="box-title">📋 Example 2: Cartesian form problem with collinear points</h4>
+        <p class="lesson-text">
+          Points A, B, and C have position vectors (with respect to the origin O) given by:<br>
+          $$\vec{a} = \begin{bmatrix} 1 \\ 3 \\ 2 \end{bmatrix}, \quad \quad
+          \vec{b} = \begin{bmatrix} 4 \\ 9 \\ 8 \end{bmatrix},\quad \quad
+          \vec{c} = \begin{bmatrix} 7 \\ 15 \\ 14 \end{bmatrix}$$
+        </p>
+        <ol class="lesson-text" style="margin-left: 1.5em;">
+          <li>
+            <strong>(a)</strong> Show that points A, B, and C are collinear.
+          </li>
+          <li>
+            <strong>(b)</strong> Find the Cartesian equation of the line passing through points A and B.
+          </li>
+        </ol>
+        <div style="display: flex; justify-content: center; margin: 20px 0;">
+        </div>
+        <div class="solution-steps">
+          <h5 class="subsection-heading">Solution:</h5>
+          <div class="step">
+            <div class="step-number">Step 1:</div>
+            <p class="lesson-text">Understand that $C$ must be a multiple of the direction vector $\lambda (-3i - 3j + 10k)$.</p>
+            <div class="math-display">
+              $$\text{since we have: } C = (a, b, 4)\text{, we have the z value.}$$
+              $$\text{set the z component of the line equal to 4 and solve.}$$
+              $$\lambda(10k) = 4, \rightarrow \lambda = \underline{\frac{4}{10} = \frac{2}{5}}$$
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">Step 2:</div>
+            <p class="lesson-text">Now we have $\lambda$ we can find $a$ and $b$:</p>
+            <div class="math-display">
+              $$\lambda = \frac{2}{5}$$
+              $$\text{So plug this into the direction vector of the line:}$$
+              $$\lambda \begin{bmatrix} -3 \\ -3 \\ 10 \end{bmatrix} \rightarrow \begin{bmatrix} -3 \lambda \\ -3 \lambda \\ 10 \lambda \end{bmatrix} = \begin{bmatrix} -3 \times \frac{2}{5} \\ -3 \times \frac{2}{5} \\ 10 \times \frac{2}{5} \end{bmatrix} = \begin{bmatrix} -\frac{6}{5} \\ -\frac{6}{5} \\ 4 \end{bmatrix}$$
+              $$\text{Ensure you compute x, y and z separately.}$$
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">Step 3:</div>
+            <p class="lesson-text">Final Answer:</p>
+            <div class="math-display">
+              $$\boxed{C = \begin{bmatrix} -\frac{6}{5} \\ -\frac{6}{5} \\ 4 \end{bmatrix}}$$
+            </div>
+      </div>
     </section>
 
     <!-- Practice Problems Section -->
@@ -270,17 +340,7 @@
       <div class="example-box">
         <h4 class="box-title">🎯 Practice Questions A</h4>
         <p class="lesson-text">
-          <strong>Part 1:</strong> α and β are the roots of the quadratic equation $7x^2 - 3x + 1 = 0$. Without solving the equation, find the values of:<br>
-          A. $\alpha + \beta$<br>
-          B. $\alpha\beta$<br>
-          C. $\frac{1}{\alpha} + \frac{1}{\beta}$<br>
-          D. $\alpha^2 + \beta^2$<br><br>
 
-          <strong>Part 2:</strong> α and β are the roots of the quadratic equation $6x^2 - 9x + 2 = 0$. Without solving the equation, find the values of:<br>
-          A. $\alpha + \beta$<br>
-          B. $\alpha^2 \times \beta^2$<br>
-          C. $\frac{1}{\alpha} + \frac{1}{\beta}$<br>
-          D. $\alpha^3 + \beta^3$
         </p>
         <details style="margin-top: 15px;">
           <summary style="cursor: pointer; color: var(--accent-blue); font-weight: 600;">🔍 Show Solution</summary>
