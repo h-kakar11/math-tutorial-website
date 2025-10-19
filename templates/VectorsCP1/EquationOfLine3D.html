@@ -6,7 +6,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <meta name="description" content="Learn Cubed Series - Step-by-step guide with examples and practice">
+  <meta name="description" content="Learn the equation of a vector line in 3D - Step-by-step guide with examples and practice">
   
   <!-- MathJax for LaTeX rendering -->
   <script>
@@ -113,7 +113,7 @@
         <br>$O$ is the origin, $(0,0,0)$
           <br><br>
           This means that you start at point A, and then move in the direction of vector AB, scaled by $\lambda$.<br> By changing the value of $\lambda$, you can move along the line in both directions.
-          <br><br>I created a great visualisation:        </p>
+          <br><br>I created a great visualisation:
           <div style="display: flex; justify-content: center; margin: 10px 0;">
             <iframe src="https://www.desmos.com/calculator/xlkryzow7n?embed" width="1000" height="450" style="border: 1px solid #79137dcd" frameborder=0></iframe>
           </div>
@@ -185,9 +185,10 @@
               $$r = \overrightarrow{OA} + \lambda \overrightarrow{AB}$$
               $${\small \text{We found: }} \overrightarrow{OA} = \begin{bmatrix} 4 \\ 5 \\ -7 \end{bmatrix} {\small \text{ and }} \overrightarrow{AB} = \begin{bmatrix} -3 \\ -3 \\ 10 \end{bmatrix}$$
               $${\small \text{So: }} r = \begin{bmatrix} 4 \\ 5 \\ -7 \end{bmatrix} + \lambda \begin{bmatrix} -3 \\ -3 \\ 10 \end{bmatrix}$$
-              $${\small \text{Or in ijk form: }} r = (4i + 5j - 7k) + \lambda (-3i - 3j + 10k)$$
               $${\small \text{This is the equation of the line passing through points A and B.}}$$
               $${\small \text{ We can also write it as: }}$$
+              $$\boxed{\mathbf{r} = \begin{bmatrix} 4 \\ 5 \\ -7 \end{bmatrix} + \lambda \begin{bmatrix} -3 \\ -3 \\ 10 \end{bmatrix}}$$
+              $$\text{Or, equivalently:}$$
               $$\boxed{\mathbf{r} = \begin{bmatrix} 4 - 3\lambda \\ 5 - 3\lambda \\ -7 + 10\lambda \end{bmatrix}}$$
             </div>
           </div>
@@ -243,142 +244,257 @@
             <div class = "math-display">
               $$\underbrace{r =  (a_1,a_2,a_3) + \lambda (b_1,b_2,b_3)}_{\text{parametric form}} \quad \rightarrow \quad \underbrace{\frac{x - a_1}{b_1} = \frac{y - a_2}{b_2} = \frac{z - a_3}{b_3}}_{\text{cartesian form}}$$
             </div>
-            <p clas ="lesson-text">Each of the fractions in the cartesian form are equal to $\lambda$</p>
-            <p class = "lesson-text"> Proof:</p>
+            <p class ="lesson-text">Each of the fractions in the cartesian form are equal to $\lambda$</p>
+            <p class = "lesson-text"> Proof:
+              <div class= "math-display">
+                $$ \begin{bmatrix} x\\y\\z \end{bmatrix} = \begin{bmatrix} a_1 \\ a_2 \\ a_3 \end{bmatrix} + \lambda \begin{bmatrix} b_1 \\ b_2 \\ b_3 \end{bmatrix}$$
+                $$ x = a_1 + \lambda b_1 \rightarrow \text{Rearranging for } \lambda \rightarrow \lambda = \boxed{\frac{x - a_1}{b_1}}$$
+                $$ y = a_2 + \lambda b_2 \rightarrow \text{Rearranging for } \lambda \rightarrow \lambda = \boxed{\frac{y - a_2}{b_2}}$$
+                $$ z = a_3 + \lambda b_3 \rightarrow \text{Rearranging for } \lambda \rightarrow \lambda = \boxed{\frac{z - a_3}{b_3}}$$
+                $$ \underline{\text{As you can see, they're all equal to } \lambda}$$
+              </div>
+            </p>
+            <div class ="tip-box">
+              <h4 class="box-title">💡 Tip:</h4>
+              <p class="lesson-text">
+                Most of the time, its really good practice to compute all the differrent coordinate axis's seperately. In vectors, it gets hard to track things over time so this makes it easier.
+              <br><br>
+              Also, you must know:
+              <ul class = "lesson-text">
+                <li><strong>Collinear:</strong> if points are <strong>collinear,</strong> that means that a line can be made which intersects all points.</li>
+                <li><strong>Magnitude:</strong> its basically how far the line is and is measured as: $$\sqrt{(b_1^2 + b_2^2 + b_3^2)}$$</li>
+                <li><strong>Parallel:</strong> if two lines are parallel, their direction vectors are scalar multiples of each other.</li>
+                <li><strong>Perpendicular:</strong> if two lines are perpendicular, the dot product of their direction vectors is zero. We will learn about this later.</li>
+                <li><strong>Skew:</strong> if two lines are skew, they are not parallel and do not intersect.</li>
+                <li>a vector perpendicular to a plane or another vector is called the <strong>'normal'</strong>.</li>
+              </ul>
+              </p>
+            </div>
     </section>
 
     <!-- Common Mistakes Section -->
     <section class="lesson-section">
       <h2 class="section-heading">⚠️ Common Mistakes</h2>
       <div class="warning-box">
-        <h4 class="box-title">🚫 Mistake 1: Forgetting the formulae</h4>
+        <h4 class="box-title">🚫 Mistake 1: Forgetting cartesian form and other forms</h4>
         <p class="lesson-text">
-          <strong>What students often do wrong:</strong> Just remember the formulae for sum and product of roots. They are easy to forget.
-          $$\alpha + \beta = -\frac{b}{a}$$
-          $$\alpha \beta = \frac{c}{a}$$
+          <strong>What students often do wrong:</strong> Forgetting the carteesian form is easy but make sure you rememeber. The direction vector is at the denominator.
+          <br><br>Also, if the numerator is $x + a_1$, then that means $a_1$ is negative because $x + a_1 \quad = \quad x - (-a_1)$
+          <br><br>You can write each component in $ a + \lambda b$ form to make it easier like this:
+          <br>
+          $$\begin{bmatrix} x \\ y \\ z \end{bmatrix} = \begin{bmatrix} a_1 \\ a_2 \\ a_3 \end{bmatrix} + \lambda \begin{bmatrix} b_1 \\ b_2 \\ b_3 \end{bmatrix} = \underline{\begin{bmatrix} a_1 + \lambda b_1 \\ a_2 + \lambda b_2 \\ a_3 + \lambda b_3 \end{bmatrix}}$$
         </p>
         </div>
+      </section>
+
+<div class="example-box">
+  <h4 class="box-title">📋 Example 3: Cartesian form problem with collinear points</h4>
+  <p class="lesson-text">
+    Points A, B, and C have position vectors (with respect to the origin O) given by:<br>
+    $$\vec{a} = \begin{bmatrix} 1 \\ 3 \\ 2 \end{bmatrix}, \quad 
+    \vec{b} = \begin{bmatrix} 4 \\ 9 \\ 8 \end{bmatrix},\quad 
+    \vec{c} = \begin{bmatrix} 7 \\ 15 \\ 14 \end{bmatrix}$$<br>
+    <strong>(a)</strong> Show that points A, B, and C are collinear by demonstrating that the direction vectors between them are parallel.<br>
+    <strong>(b)</strong> Hence, write the Cartesian equation of the line passing through points A and B, expressing your answer in the form:<br>
+    $$\frac{x - x_1}{d_1} = \frac{y - y_1}{d_2} = \frac{z - z_1}{d_3}$$
+  </p>
+
+  <div class="solution-steps">
+    <h5 class="subsection-heading">Solution:</h5>
+
+    <div class="step">
+      <div class="step-number">Step 1:</div>
+      <p class="lesson-text">Find the direction vectors $\overrightarrow{AB}$ and $\overrightarrow{AC}$:</p>
+      <div class="math-display">
+        $$\overrightarrow{AB}=\vec b-\vec a
+        =\begin{bmatrix}4-1\\[4pt]9-3\\[4pt]8-2\end{bmatrix}
+        =\begin{bmatrix}3\\[4pt]6\\[4pt]6\end{bmatrix},$$
+        $$\overrightarrow{AC}=\vec c-\vec a
+        =\begin{bmatrix}7-1\\[4pt]15-3\\[4pt]14-2\end{bmatrix}
+        =\begin{bmatrix}6\\[4pt]12\\[4pt]12\end{bmatrix}.$$
+        $$\text{Notice that}$$
+        $$\overrightarrow{AC}=2\overrightarrow{AB},$$
+        $$\text{So the direction vectors are parallel and points A, B, C are collinear.}$$
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number">Step 2:</div>
+      <p class="lesson-text">We found from the last question that:</p>
+      <div class="math-display">
+        $$\overrightarrow{AB}=\begin{bmatrix}3\\6\\6\end{bmatrix}.$$
+      </div>
+      <p class="lesson-text">Remember the form i gave you: $r = \overrightarrow{OA} + \lambda\overrightarrow{AB}$</p>
+      <div class = "math-display">
+        $$\text{Remember that } \overrightarrow{OA} \text{ is just the position vector of point A: } \begin{bmatrix}1\\3\\2\end{bmatrix}.$$
+        $$\text{We have: } \overrightarrow{OA} = \begin{bmatrix}1\\3\\2\end{bmatrix} \text{ and } \overrightarrow{AB} = \begin{bmatrix}3\\6\\6\end{bmatrix}.$$
+        $$\text{So the vector equation of the line is: } \quad \overrightarrow{AB} $$
+        $$\mathbf{r} = \begin{bmatrix}1\\3\\2\end{bmatrix} + \lambda \begin{bmatrix}3\\6\\6\end{bmatrix}.$$
+    </div>
+  </div>
+    <div class="step">
+      <div class="step-number">Step 3:</div>
+      <p class="lesson-text">Lastly, lets write it in Cartesian form:</p>
+      <div class="math-display">
+        $$\text{Remember, from Parametric form to Cartesian form:}$$
+        $$\underbrace{r =  (a_1,a_2,a_3) + \lambda (b_1,b_2,b_3)}_{\text{parametric form}} \rightarrow  \underbrace{\frac{x - a_1}{b_1} = \frac{y - a_2}{b_2} = \frac{z - a_3}{b_3}}_{\text{cartesian form}}$$
+        $$\text{So we have: } a_1 = 1, a_2 = 3, a_3 = 2$$
+        $$\text{and } b_1 = 3, b_2 = 6, b_3 = 6$$
+        $$\text{So the Cartesian form is: }$$
+        $$\frac{x - 1}{3} = \frac{y - 3}{6} = \frac{z - 2}{6}.$$
+        $$\text{Equivalently, using the simplified direction vector } \langle1,2,2\rangle,$$
+        $$\boxed{\frac{x - 1}{1} = \frac{y - 3}{2} = \frac{z - 2}{2}.}$$
+      </div>
+      <div class = "tip-box">
+        <h4 class="box-title">💡 Tip:</h4>
+        <p class="lesson-text">
+          Know that you can simplify the direction vector. This is because it shows direction only, and lambda corrects any faulty magnitude, as it acts as a multiplier.
+        </p>
+      </div>
+    </div>
+</div>
+</div>
+<!-- Practice Problems Section -->
+<section id="practice" class="lesson-section">
+  <h2 class="section-heading">💪 Practice Problems</h2>
+  <p class="lesson-text lesson-text-center">
+  Try these problems to test your understanding:
+  </p>
+
+  <div class="example-box">
+  <h4 class="box-title">🎯 Practice Questions A</h4>
+  <p class="lesson-text">
+    <strong>(a)</strong> Find a vector equation of the line that passes through the following pairs of points:<br><br>
+    <strong>i)</strong> (3, -2, 6) and (5, 0, 7)<br>
+    <strong>ii)</strong> (-4, 1, 2) and (6, -3, 5)<br>
+    <strong>iii)</strong> (0, 4, -5) and (3, 1, 1)<br>
+    <strong>iv)</strong> (1, -6, 3) and (8, 2, -1)<br><br>
+
+    <strong>(b)</strong> For each line above, write down the Cartesian equation in the form:<br>
+    $$\frac{x - x_1}{d_1} = \frac{y - y_1}{d_2} = \frac{z - z_1}{d_3}$$
+  </p>
+
+  <details style="margin-top: 15px;">
+    <summary style="cursor: pointer; color: var(--accent-blue); font-weight: 600;">🔍 Show Solution</summary>
+    <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(74, 158, 255, 0.2);">
+    <div class="math-display">
+      <strong>Question 1 Solution:</strong>
+      $$i) \text{ Points: } (3, -2, 6) \text{ and } (5, 0, 7)$$
+      $$\text{Direction vector: } \vec{d} = \begin{bmatrix} 5 - 3 \\ 0 - (-2) \\ 7 - 6 \end{bmatrix} = \begin{bmatrix} 2 \\ 2 \\ 1 \end{bmatrix}$$
+      $$\text{Vector equation: } \vec{r} = \begin{bmatrix} 3 \\ -2 \\ 6 \end{bmatrix} + \lambda \begin{bmatrix} 2 \\ 2 \\ 1 \end{bmatrix}$$
+      <br>
+      $$ii) \text{ Points: } (-4, 1, 2) \text{ and } (6, -3, 5)$$
+      $$\text{Direction vector: } \vec{d} = \begin{bmatrix} 6 - (-4) \\ -3 - 1 \\ 5 - 2 \end{bmatrix} = \begin{bmatrix} 10 \\ -4 \\ 3 \end{bmatrix}$$
+      $$\text{Vector equation: } \vec{r} = \begin{bmatrix} -4 \\ 1 \\ 2 \end{bmatrix} + \lambda \begin{bmatrix} 10 \\ -4 \\ 3 \end{bmatrix}$$
+      <br>
+      $$iii) \text{ Points: } (0, 4, -5) \text{ and } (3, 1, 1)$$
+      $$\text{Direction vector: } \vec{d} = \begin{bmatrix} 3 - 0 \\ 1 - 4 \\ 1 - (-5) \end{bmatrix} = \begin{bmatrix} 3 \\ -3 \\ 6 \end{bmatrix}$$
+      $$\text{Vector equation: } \vec{r} = \begin{bmatrix} 0 \\ 4 \\ -5 \end{bmatrix} + \lambda \begin{bmatrix} 3 \\ -3 \\ 6 \end{bmatrix}$$
+      <br>
+      $$iv) \text{ Points: } (1, -6, 3) \text{ and } (8, 2, -1)$$
+      $$\text{Direction vector: } \vec{d} = \begin{bmatrix} 8 - 1 \\ 2 - (-6) \\ -1 - 3 \end{bmatrix} = \begin{bmatrix} 7 \\ 8 \\ -4 \end{bmatrix}$$
+      $$\text{Vector equation: } \vec{r} = \begin{bmatrix} 1 \\ -6 \\ 3 \end{bmatrix} + \lambda \begin{bmatrix} 7 \\ 8 \\ -4 \end{bmatrix}$$
+      $$(b) \text{ Cartesian equations of the lines}$$
+      $$i) \quad \frac{x - 3}{2} = \frac{y + 2}{2} = \frac{z - 6}{1}$$
+      $$ii) \quad \frac{x - (-4)}{10} = \frac{y - 1}{-4} = \frac{z - 2}{3}$$
+      $$iii) \quad \frac{x - 0}{3} = \frac{y - 4}{-3} = \frac{z - (-5)}{6}$$
+      $$iv) \quad \frac{x - 1}{7} = \frac{y + 6}{8} = \frac{z - 3}{-4}$$
+    </div>
+    </div>
+  </details>
+  </div>
+
+  <div class="example-box">
+  <h4 class="box-title">🎯 Practice Questions B</h4>
+  <p class="lesson-text">
+    <strong>(a)</strong> The points $P(2, 0, 4)$, $Q(a, 5, 1)$, and $R(3, 10, b)$, where $a$ and $b$ are constants, are collinear.<br>
+    Find the values of $a$ and $b$.<br><br>
+
+    <strong>(b)</strong> The line $l_1$ has the equation:<br>
+    $$
+    \vec{r} = (8\mathbf{i} - 5\mathbf{j} + 4\mathbf{k}) + \lambda(3\mathbf{i} + \mathbf{j} - 6\mathbf{k})
+    $$
+    Point $A$ lies on line $l_1$ such that $\lambda = -2$.<br>
+    The line $l_2$ passes through point $A$ and is parallel to the line:<br>
+    $$
+    \vec{r} = (10\mathbf{i} + 3\mathbf{j} - 9\mathbf{k}) + \mu(2\mathbf{i} - 4\mathbf{j} + \mathbf{k})
+    $$
+    Find a vector equation for line $l_2$.<br><br>
+
+    <strong>(c)</strong> The point $A$ with coordinates $(4, a, 0)$ lies on the line $L$ with vector equation:<br>
+    $$
+    \vec{r} = (10\mathbf{i} + 8\mathbf{j} - 12\mathbf{k}) + \lambda(\mathbf{i} - \mathbf{j} + b\mathbf{k})
+    $$
+    where $a$ and $b$ are constants.<br>
+    <strong>i)</strong> Find the values of $a$ and $b$.<br>
+    The point $X$ lies on line $L$ where $\lambda = -1$.<br>
+    <strong>ii)</strong> Find the coordinates of point $X$.
+  </p>
+  
+  <details style="margin-top: 15px;">
+    <summary style="cursor: pointer; color: var(--accent-blue); font-weight: 600;">🔍 Show Solution</summary>
+    <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(74, 158, 255, 0.2);">
+    <strong>(a) Solution:</strong><br>
+    $$\text{Let } P = (2, 0, 4), Q = (a, 5, 1), R = (3, 10, b).$$
+    $$\text{For collinearity, } \overrightarrow{PQ} \text{ and } \overrightarrow{PR} \text{ must be parallel.}$$
+    $$\overrightarrow{PQ} = (a - 2, 5 - 0, 1 - 4) = (a - 2, 5, -3)$$
+    $$\overrightarrow{PR} = (3 - 2, 10 - 0, b - 4) = (1, 10, b - 4)$$
+    $$\text{So, } \overrightarrow{PQ} = k \cdot \overrightarrow{PR} \text{ for some scalar } k.$$
+    $$\text{Set up equations:}$$
+    $$a - 2 = k \cdot 1$$
+    $$5 = k \cdot 10$$
+    $$-3 = k \cdot (b - 4)$$
+    $$\text{From } 5 = 10k, k = 0.5$$
+    $$a - 2 = 0.5 \implies a = 2.5$$
+    $$-3 = 0.5(b - 4) \implies -6 = b - 4 \implies b = -2$$
+    $$\text{Final answers: } \boxed{a = 2.5, \quad b = -2}$$
+
+    <br><br>
+    <strong>(b) Solution:</strong><br>
+    $$\text{First, find point } A \text{ on } l_1 \text{ for } \lambda = -2:$$
+    $$A = (8, -5, 4) + (-2)(3, 1, -6) = (8 - 6, -5 - 2, 4 + 12) = (2, -7, 16)$$
+    $$\text{Direction vector for } l_2 \text{ is the same as the direction vector of the other line: } (2, -4, 1)$$
+    $$\text{So, equation for } l_2 \text{ is:}$$
+    $$\vec{r} = \begin{bmatrix} 2 \\ -7 \\ 16 \end{bmatrix} + \lambda \begin{bmatrix} 2 \\ -4 \\ 1 \end{bmatrix}$$
+    $$\text{Vector equation for } l_2: \boxed{\vec{r} = (2\mathbf{i} - 7\mathbf{j} + 16\mathbf{k}) + \lambda(2\mathbf{i} - 4\mathbf{j} + \mathbf{k})}$$
+
+    <br><br>
+    <strong>(c) Solution:</strong><br>
+    $$\text{i) } A = (4, a, 0) \text{ lies on } L:$$
+    $$\text{Let } \vec{r} = (10, 8, -12) + \lambda(1, -1, b)$$
+    $$\text{Set } x = 4, y = a, z = 0$$
+    $$4 = 10 + \lambda(1) \implies \lambda = -6$$
+    $$a = 8 + \lambda(-1) = 8 - (-6) = 14$$
+    $$0 = -12 + \lambda b \implies -12 + (-6)b = 0 \implies -6b = 12 \implies b = -2$$
+    $$\text{Final answers: } \boxed{a = 14, \quad b = -2}$$
+
+    <br><br>
+    $$\text{ii) For } \lambda = -1:$$
+    $$\vec{r} = (10, 8, -12) + (-1)(1, -1, -2) = (10 - 1, 8 + 1, -12 + 2) = (9, 9, -10)$$
+    $$\text{Coordinates of } X: \boxed{(9, 9, -10)}$$
+    </div>
+  </details>
+  </div>
+</section>
+
+<section class="lesson-section">
+    <h2 class="section-heading">📚 Summary</h2>
+    <p class="lesson-text">
+        In this lesson, we explored the concept of vector equations of lines in 3D space. We learned how to find the vector equation of a line given two points, as well as how to determine if points are collinear by checking if the direction vectors are parallel.
+    </p>
+    <p class="lesson-text">
+        We also covered the Cartesian form of a line and how to convert between parametric and Cartesian forms. Key takeaways include understanding direction vectors, position vectors, and the significance of collinearity in 3D geometry.
+    </p>
     </section>
-
-    <!-- Practice Problems Section -->
-    <section id="practice" class="lesson-section">
-      <h2 class="section-heading">💪 Practice Problems</h2>
-      <p class="lesson-text lesson-text-center">
-        Try these problems to test your understanding:
-      </p>
-
-      <div class="example-box">
-        <h4 class="box-title">🎯 Practice Questions A</h4>
-        <p class="lesson-text">
-          <strong>Part 1:</strong> α and β are the roots of the quadratic equation $7x^2 - 3x + 1 = 0$. Without solving the equation, find the values of:<br>
-          A. $\alpha + \beta$<br>
-          B. $\alpha\beta$<br>
-          C. $\frac{1}{\alpha} + \frac{1}{\beta}$<br>
-          D. $\alpha^2 + \beta^2$<br><br>
-
-          <strong>Part 2:</strong> α and β are the roots of the quadratic equation $6x^2 - 9x + 2 = 0$. Without solving the equation, find the values of:<br>
-          A. $\alpha + \beta$<br>
-          B. $\alpha^2 \times \beta^2$<br>
-          C. $\frac{1}{\alpha} + \frac{1}{\beta}$<br>
-          D. $\alpha^3 + \beta^3$
-        </p>
-        <details style="margin-top: 15px;">
-          <summary style="cursor: pointer; color: var(--accent-blue); font-weight: 600;">🔍 Show Solution</summary>
-          <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(74, 158, 255, 0.2);">
-        <div class="math-display">
-          <strong>Part 1:</strong> For $7x^2 - 3x + 1 = 0$, we have $a = 7$, $b = -3$, $c = 1$
-          $$\text{A. } \alpha + \beta = -\frac{b}{a} = -\frac{(-3)}{7} = \frac{3}{7}$$
-          $$\text{B. } \alpha\beta = \frac{c}{a} = \frac{1}{7}$$
-          $$\text{C. } \frac{1}{\alpha} + \frac{1}{\beta} = \frac{\alpha + \beta}{\alpha\beta} = \frac{\frac{3}{7}}{\frac{1}{7}} = 3$$
-          $$\text{D. } \alpha^2 + \beta^2 = (\alpha + \beta)^2 - 2\alpha\beta = \left(\frac{3}{7}\right)^2 - 2 \cdot \frac{1}{7} = \frac{9}{49} - \frac{2}{7} = \frac{9 - 14}{49} $$
-          $$= -\frac{5}{49}$$
-        </div>
-        <br>
-        <div class="math-display">
-          <strong>Part 2:</strong> For $6x^2 - 9x + 2 = 0$, we have $a = 6$, $b = -9$, $c = 2$
-          $$\text{A. } \alpha + \beta = -\frac{b}{a} = -\frac{(-9)}{6} = \frac{9}{6} = \frac{3}{2}$$
-          $$\text{B. } \alpha^2 \times \beta^2 = (\alpha\beta)^2 = \left(\frac{c}{a}\right)^2 = \left(\frac{2}{6}\right)^2 = \left(\frac{1}{3}\right)^2 = \frac{1}{9}$$
-          $$\text{C. } \frac{1}{\alpha} + \frac{1}{\beta} = \frac{\alpha + \beta}{\alpha\beta} = \frac{\frac{3}{2}}{\frac{1}{3}} = \frac{3}{2} \times 3 = \frac{9}{2}$$
-          $$\text{D. } \alpha^3 + \beta^3 = (\alpha + \beta)^3 - 3\alpha\beta(\alpha + \beta) = \left(\frac{3}{2}\right)^3 - 3 \cdot \frac{1}{3} \cdot \frac{3}{2} = \frac{27}{8} - \frac{3}{2} $$
-          $$= \frac{27 - 12}{8} = \frac{15}{8}$$
-        </div>
-          </div>
-        </details>
-      </div>
-
-      <div class="example-box">
-        <h4 class="box-title">🎯 Practice Questions B</h4>
-        <p class="lesson-text">
-          <strong>Question 1:</strong> The roots of the quadratic equation $px^2 + qx + r = 0$ are $\alpha = \frac{2 + \sqrt{5}}{3}$ and $\beta = \frac{2 - \sqrt{5}}{3}$. Find integer values of $p$, $q$ and $r$.<br><br>
-
-          <strong>Question 2:</strong> One root of the quadratic $ax^2 + bx + c = 0$ is $\alpha = 3 - 2i$.<br>
-          a) Write down the other root $\beta$.<br>
-          b) If $a = 2$, find the integers $b$ and $c$.<br><br>
-
-          <strong>Question 3:</strong> Given that $kx^2 + (k+4)x - 6 = 0$, find the integer value of $k$ if the product of the roots is $-2$.<br><br>
-
-        </p>
-        <details style="margin-top: 15px;">
-          <summary style="cursor: pointer; color: var(--accent-blue); font-weight: 600;">🔍 Show Solution</summary>
-          <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(74, 158, 255, 0.2);">
-        <div class="math-display">
-          <strong>Question 1 Solution:</strong>
-          $$\alpha + \beta = \frac{2 + \sqrt{5}}{3} + \frac{2 - \sqrt{5}}{3} = \frac{4}{3}$$
-          $$\alpha \beta = \frac{2 + \sqrt{5}}{3} \times \frac{2 - \sqrt{5}}{3} = \frac{(2 + \sqrt{5})(2 - \sqrt{5})}{9} = \frac{4 - 5}{9} = -\frac{1}{9}$$
-          $$\text{Using } \alpha + \beta = -\frac{q}{p} \text{ and } \alpha\beta = \frac{r}{p}:$$
-          $$-\frac{q}{p} = \frac{4}{3} \Rightarrow q = -\frac{4p}{3}$$
-          $$\frac{r}{p} = -\frac{1}{9} \Rightarrow r = -\frac{p}{9}$$
-          $$\text{For integer values, let } p = 9: \text{ then } q = -12, r = -1$$
-          $$\boxed{p = 9, q = -12, r = -1}$$
-        </div>
-        <br>
-        <div class="math-display">
-          <strong>Question 2 Solution:</strong>
-          $$\text{a) Since complex roots come in conjugate pairs: } \boxed{\beta = 3 + 2i}$$
-          $$\text{b) } \alpha + \beta = (3 - 2i) + (3 + 2i) = 6$$
-          $$\alpha \beta = (3 - 2i)(3 + 2i) = 9 - (2i)^2 = 9 + 4 = 13$$
-          $$\text{With } a = 2: \alpha + \beta = -\frac{b}{a} = -\frac{b}{2} = 6 \Rightarrow b = -12$$
-          $$\alpha \beta = \frac{c}{a} = \frac{c}{2} = 13 \Rightarrow c = 26$$
-          $$\boxed{b = -12, c = 26}$$
-        </div>
-        <br>
-        <div class="math-display">
-          <strong>Question 3 Solution:</strong>
-          $$\text{For } kx^2 + (k+4)x - 6 = 0: a = k, b = k+4, c = -6$$
-          $$\text{Product of roots } = \frac{c}{a} = \frac{-6}{k} = -2$$
-          $$\frac{-6}{k} = -2 \Rightarrow k = 3$$
-          $$\boxed{k = 3}$$
-        </div>
-        <br>
-          </div>
-        </details>
-      </div>
-
-        <!-- Summary Section -->
-        <section id="summary" class="lesson-section">
-          <h2 class="section-heading">📋 Summary</h2>
-          <div class="definition-box">
-          <h4 class="box-title">🎯 Key Takeaways</h4>
-          <ul class="lesson-text">
-            <li>The sum of roots formula: $\alpha + \beta = -\frac{b}{a}$</li>
-            <li>The product of roots formula: $\alpha \beta = \frac{c}{a}$</li>
-            <li>These formulae work for any quadratic equation in the form $ax^2 + bx + c = 0$</li>
-            <li>You can find coefficients when given the roots using these relationships</li>
-            <li>Complex roots come in conjugate pairs for real coefficient quadratics</li>
-            <li>These relationships are part of Vieta's formulae for polynomials</li>
-          </ul>
-          </div>
-          <div class="tip-box">
-          <h4 class="box-title">📚 What's Next?</h4>
-          <p class="lesson-text">
-            Now that you've mastered quadratic roots, it's time to explore the more complex world of cubic equations. Learn about the sum and product relationships for three roots and tackle more challenging polynomial problems.
-          </p>
-          <p class="lesson-text">
-            <a href="/RootsOfCubicEquations" >🚀 Continue to Roots of Cubic Equations</a>
-          </p>
-          </div>
-        </section>
-
+    <section class="lesson-section">
+    <h2 class="section-heading">🔗 Further resources</h2>
+    <p class="lesson-text">
+        For more mastery:
+    </p>
+    <ul class="lesson-text">
+        <li><a href="/VectorsCP1"> Vectors CP1 - K4Maths.com</a></li>
+        <li><a href="https://www.instagram.com/k4maths/" target="_blank" rel="noopener">Follow us on Instagram (tutorials)</a></li>
+      </ul>
     <!-- Back to top button -->
     <div style="text-align: center; margin: 30px 0;">
       <a href="#top" class="nav-button">⬆️ Back to Top</a>
