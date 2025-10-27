@@ -1,31 +1,31 @@
 {% extends "base.html" %}
 
-{% block title %}Topic Name Here - YourSiteName{% endblock %}
+{% block title %}Vectors CP1 - K4Maths{% endblock %}
 
 {% block head %}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-  <meta name="description" content="Learn about Topic Name Here - Exam Board / Specification (optional)">
+  <meta name="description" content="Learn about Vectors CP1  - Edexcel, Core Pure, Year 1.">
 {% endblock %}
 
 {% block content %}
-  <a href="#" class="back-to-home">🔙 Back to Parent Section</a>
+  <a href="/FurtherMaths" class="back-to-home">🔙 Back to Further Maths</a>
   
   <section class="topic-header">
-    <h1>Topic Name Here - (Exam Boards, Levels)</h1>
-    <h2>Master Topic Name Here with comprehensive guides, examples, and exam practice</h2>
+    <h1>Vectors CP1  - Edexcel</h1>
+    <h2>Master Vectors CP1  with easy guides, easy examples, and easy exam practice</h2>
   </section>
 
   <section class="topic-intro">
     <p style="text-align: center; padding: 5px 0px;">
-      <strong>Topic Name Here</strong> is a key topic in the Specification Name(s). It is also covered in various courses, and is important to understand.
+      <strong>Vectors CP1</strong> forms a fundamental part of Edexcel Core Pure Mathematics Year 1, extending your understanding of vectors into three-dimensional space.
       <br><br>
-      Choose a section below to start your learning journey with this topic.
+      Select any topic below to begin exploring the fascinating world of 3D vector mathematics.
       <br><br>
-      (minor disclaimer: The difficulty rating is subjective and may not reflect your own experience. It is based on personal perspective.)
+      (Please note: Difficulty ratings are subjective and based on general student feedback - your experience may vary depending on your mathematical background.)
       <br><br>
-      Difficulty rating: ⭐⭐⭐ out of 5 stars
+      Overall topic difficulty: ⭐⭐⭐⭐ out of 5 stars
     </p>
   </section>
   
@@ -36,53 +36,71 @@
   <main class="topics-grid">
 
     <!-- Section Template Example -->
-    <a href="#" aria-label="Subtopic 1">
-      <article class="topic-card topic-card-color1">
-        <h3>📚 Subtopic 1 Name Here</h3>
-        <p class="TopicsList">Brief description point 1</p>
-        <p class="TopicsList">Brief description point 2</p>
-        <p class="TopicsList">Difficulty rating: ⭐</p>
+    <a href="/EquationOfLine3D" aria-label="Equation of Straight line in 3D">
+      <article class="topic-card topic-card-pink">
+        <h3>📚 3D straight line equations</h3>
+        <p class="TopicsList">Understand r = a + lambda b</p>
+        <p class="TopicsList">Tackle difficult exam questions easily.</p>
+        <p class="TopicsList">Difficulty rating: ⭐⭐</p>
       </article>
     </a>  
 
-    <a href="#" aria-label="Subtopic 2">
-      <article class="topic-card topic-card-color2">
-        <h3>🔤 Subtopic 2 Name Here</h3>
-        <p class="TopicsList">Brief description point 1</p>
-        <p class="TopicsList">Brief description point 2</p>
-        <p class="TopicsList">Difficulty rating: ⭐⭐</p>
-      </article>
-    </a>
-
-    <a href="#" aria-label="Subtopic 3">
-      <article class="topic-card topic-card-color3">
-        <h3>⚡ Subtopic 3 Name Here</h3>
-        <p class="TopicsList">Brief description point 1</p>
-        <p class="TopicsList">Brief description point 2</p>
+    <a href="/EquationOfPlane3D" aria-label="Equation of Plane in 3D">
+      <article class="topic-card topic-card-green">
+        <h3>🔤 Three dimension plane equations</h3>
+        <p class="TopicsList">Understand the concept of a plane in 3D space.</p>
+        <p class="TopicsList">Learn how to derive the equation of a plane from its normal vector.</p>
         <p class="TopicsList">Difficulty rating: ⭐⭐⭐</p>
       </article>
     </a>
 
-    <!-- Add more subtopic cards as needed -->
-    <!-- 
-    <a href="#X" aria-label="Subtopic X">
-      <article class="topic-card topic-card-colorX">
-        <h3>Icon Subtopic X Name Here</h3>
-        <p class="TopicsList">Description point</p>
+    <a href="/ScalarProduct3D" aria-label="Scalar product in 3D">
+      <article class="topic-card topic-card-orange">
+        <h3>⚡ Three dimension scalar product</h3>
+        <p class="TopicsList">Understand scalar product (dot product) in 3D space.</p>
+        <p class="TopicsList">Learn how to calculate the scalar product using the formula.</p>
         <p class="TopicsList">Difficulty rating: ⭐⭐</p>
       </article>
     </a>
-    -->
 
-    <a href="#revision" aria-label="Revision Summary">
-      <article class="topic-card topic-card-summary">
+    
+    <a href="/CalculatingAngles" aria-label="Calculating angles between lines and planes in 3D">
+      <article class="topic-card topic-card-cyan">
+        <h3>📐 Calculating angles</h3>
+        <p class="TopicsList">Learn how to find the acute angle in 3D space.</p>
+        <p class="TopicsList">Calculate angles between lines and planes using vector methods.</p>
+        <p class="TopicsList">Difficulty rating: ⭐⭐⭐</p>
+      </article>
+    </a>
+
+    <a href="/PointsOfIntersection" aria-label="Points of intersection in 3D">
+      <article class="topic-card topic-card-red">
+        <h3>📐 Points of intersection</h3>
+        <p class="TopicsList">Learn what the scalar product is.</p>
+        <p class="TopicsList">How to calculate the scalar product using the formula.</p>
+        <p class="TopicsList">Difficulty rating: ⭐⭐⭐</p>
+      </article>
+    </a>
+    
+    <a href="/FindingPerpendiculars" aria-label="Finding perpendiculars in 3D">
+      <article class="topic-card topic-card-forestgreen">
+      <h3>📏 Finding perpendiculars</h3>
+      <p class="TopicsList">Learn how to find perpendicular lines and planes in 3D space.</p>
+      <p class="TopicsList">Understand the conditions for perpendicularity using vectors.</p>
+      <p class="TopicsList">Difficulty rating: ⭐⭐⭐⭐</p>
+      </article>
+    </a>
+    
+    <a href="#revision" aria-label="?">
+      <article class="topic-card topic-card-brown">
           <h3>📖 Revision / Exam Questions - COMING SOON</h3>
           <p class="TopicsList">Practice with questions and key points</p>
           <p class="TopicsList">Key formulas, important points, last-minute revision</p>
-          <p class="TopicsList">Difficulty rating: ⭐⭐⭐⭐</p>
+          <p class="TopicsList">Difficulty rating: ♾️</p>
       </article>
     </a>
 
   </main>
+
 
 {% endblock %}
