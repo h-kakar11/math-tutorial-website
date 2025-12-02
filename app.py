@@ -74,6 +74,10 @@ def contact_me():
 def topics_list():
     return render_template("pages/TopicsList.html")
 
+@app.route("/UnderConstruction")
+def under_construction():
+    return render_template("pages/UnderConstruction.html")
+
 @app.route("/submit_contact", methods=['POST'])
 def submit_contact():
     try:

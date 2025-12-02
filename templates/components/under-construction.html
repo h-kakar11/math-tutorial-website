@@ -1,0 +1,154 @@
+<!-- Under Construction Component - Can be included in any template -->
+<div class="under-construction-component">
+  <div class="construction-icon-small">🚧</div>
+  
+  <h2 class="construction-title-small">Coming Soon!</h2>
+  
+  <p class="construction-text-small">
+    {% if custom_message %}
+      {{ custom_message }}
+    {% else %}
+      This content is currently under development. Check back soon for comprehensive tutorials and practice materials.
+    {% endif %}
+  </p>
+
+  <div class="construction-features-small">
+    <div class="feature-item">
+      <span class="feature-icon">📚</span>
+      <span>Interactive Lessons</span>
+    </div>
+    <div class="feature-item">
+      <span class="feature-icon">🧮</span>
+      <span>Practice Problems</span>
+    </div>
+    <div class="feature-item">
+      <span class="feature-icon">📊</span>
+      <span>Visual Examples</span>
+    </div>
+  </div>
+
+  {% if show_buttons %}
+  <div class="construction-actions-small">
+    <a href="{{ url_for('topics_list') }}" class="construction-btn-small">
+      📚 Browse Available Topics
+    </a>
+  </div>
+  {% endif %}
+</div>
+
+<style>
+  .under-construction-component {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(22, 33, 62, 0.8), rgba(82, 0, 58, 0.3));
+    border-radius: 15px;
+    border: 2px solid rgba(74, 158, 255, 0.3);
+    box-shadow: 0 8px 25px rgba(178, 0, 142, 0.2);
+  }
+
+  .construction-icon-small {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    animation: bounce 2s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-15px);
+    }
+    60% {
+      transform: translateY(-8px);
+    }
+  }
+
+  .construction-title-small {
+    color: var(--accent-blue);
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .construction-text-small {
+    color: var(--text-dark);
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 25px;
+  }
+
+  .construction-features-small {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 25px;
+  }
+
+  .feature-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-dark);
+    font-size: 0.9rem;
+    padding: 8px 15px;
+    background: rgba(3, 27, 55, 0.6);
+    border-radius: 20px;
+    border: 1px solid rgba(74, 158, 255, 0.2);
+  }
+
+  .feature-icon {
+    font-size: 1.2rem;
+    animation: rotate 4s linear infinite;
+  }
+
+  @keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  .construction-actions-small {
+    margin-top: 20px;
+  }
+
+  .construction-btn-small {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #4a9eff, #52003a);
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(74, 158, 255, 0.3);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  }
+
+  .construction-btn-small:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(74, 158, 255, 0.5);
+    background: linear-gradient(135deg, #5aa8ff, #62004a);
+  }
+
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .under-construction-component {
+      margin: 20px;
+      padding: 20px;
+    }
+    
+    .construction-features-small {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .construction-title-small {
+      font-size: 1.5rem;
+    }
+  }
+</style>
