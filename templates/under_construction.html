@@ -1,0 +1,205 @@
+{% extends "base.html" %}
+
+{% block title %}Under Construction - K4Maths{% endblock %}
+
+{% block description %}This page is currently under construction. We're working hard to bring you quality educational content. Please check back soon!{% endblock %}
+
+{% block head %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+  <style>
+    .under-construction-container {
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 40px;
+      text-align: center;
+      background: linear-gradient(135deg, var(--card-dark), rgba(82, 0, 58, 0.3));
+      border-radius: 20px;
+      border: 2px solid rgba(74, 158, 255, 0.3);
+      box-shadow: 0 10px 30px var(--shadow-dark);
+    }
+
+    .construction-icon {
+      font-size: 4rem;
+      margin-bottom: 20px;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-20px);
+      }
+      60% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .construction-title {
+      color: var(--accent-blue);
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .construction-text {
+      color: var(--text-dark);
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .construction-features {
+      background: rgba(3, 27, 55, 0.6);
+      border-radius: 15px;
+      padding: 25px;
+      margin: 30px 0;
+      border: 1px solid rgba(74, 158, 255, 0.2);
+    }
+
+    .features-title {
+      color: var(--accent-cyan);
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .features-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .features-list li {
+      color: var(--text-dark);
+      margin: 10px 0;
+      padding-left: 30px;
+      position: relative;
+    }
+
+    .features-list li::before {
+      content: "🔧";
+      position: absolute;
+      left: 0;
+      animation: rotate 3s linear infinite;
+    }
+
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .action-buttons {
+      margin-top: 30px;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .construction-btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background: linear-gradient(135deg, #4a9eff, #52003a);
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(74, 158, 255, 0.3);
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .construction-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(74, 158, 255, 0.5);
+      background: linear-gradient(135deg, #5aa8ff, #62004a);
+    }
+
+    .construction-btn.secondary {
+      background: linear-gradient(135deg, var(--primary-purple), var(--primary-dark));
+      box-shadow: 0 4px 15px rgba(82, 0, 58, 0.3);
+    }
+
+    .construction-btn.secondary:hover {
+      background: linear-gradient(135deg, #62004a, #042247);
+      box-shadow: 0 6px 20px rgba(82, 0, 58, 0.5);
+    }
+
+    .progress-bar {
+      background: rgba(3, 27, 55, 0.6);
+      border-radius: 20px;
+      height: 12px;
+      margin: 20px 0;
+      overflow: hidden;
+      border: 1px solid rgba(74, 158, 255, 0.3);
+    }
+
+    .progress-fill {
+      background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan));
+      height: 100%;
+      width: 25%;
+      animation: pulse 2s ease-in-out infinite;
+      border-radius: 20px;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 0.6; }
+      50% { opacity: 1; }
+      100% { opacity: 0.6; }
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+<a href="{{ url_for('index') }}" class="back-to-home">🏠 Back to Home</a>
+
+<div class="under-construction-container">
+  <div class="construction-icon">🚧</div>
+  
+  <h1 class="construction-title">
+    {% block construction_title %}Page Under Construction{% endblock %}
+  </h1>
+  
+  <p class="construction-text">
+    {% block construction_message %}
+    We're working hard to bring you the best educational content possible. This page is currently being developed with interactive lessons, practice problems, and comprehensive explanations.
+    {% endblock %}
+  </p>
+
+  <div class="progress-bar">
+    <div class="progress-fill"></div>
+  </div>
+  <p style="color: var(--text-muted-dark); font-size: 0.9rem;">Development Progress: 25%</p>
+
+  <div class="construction-features">
+    <h3 class="features-title">What's Coming Soon:</h3>
+    <ul class="features-list">
+      <li>Step-by-step tutorials with clear explanations</li>
+      <li>Interactive practice problems</li>
+      <li>Visual diagrams and examples</li>
+      <li>Exam-focused content for your success</li>
+      <li>Mobile-friendly design</li>
+    </ul>
+  </div>
+
+  <p class="construction-text">
+    In the meantime, explore our other published topics or check out our comprehensive topic list to find content that's ready for you to learn from.
+  </p>
+
+  <div class="action-buttons">
+    <a href="{{ url_for('index') }}" class="construction-btn">
+      🏠 Go to Homepage
+    </a>
+    <a href="{{ url_for('topics_list') }}" class="construction-btn secondary">
+      📚 Browse Topics
+    </a>
+    <a href="{{ url_for('contact_me') }}" class="construction-btn secondary">
+      📧 Contact Us
+    </a>
+  </div>
+</div>
+{% endblock %}
