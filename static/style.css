@@ -713,11 +713,15 @@ img.footer-logo {
 
 .topics-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 24px;
   margin: 40px auto;
   max-width: 1400px;
   padding: 20px;
+}
+
+.topics-grid > a {
+  display: block;
 }
 
 .topic-card {
