@@ -1,25 +1,25 @@
 {% extends "base.html" %}
 
-{% block title %}Topic Name Here - YourSiteName{% endblock %}
+{% block title %}Matrices - K4Maths{% endblock %}
 
 {% block head %}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-  <meta name="description" content="Learn about Topic Name Here - Exam Board / Specification (optional)">
+  <meta name="description" content="Learn about Matrices CP1 - Edexcel / Core Pure 1 (optional)">
 {% endblock %}
 
 {% block content %}
-  <a href="#" class="back-to-home">🔙 Back to Parent Section</a>
+  <a href="{{ url_for('index') }}" class="back-to-home">🔙 Back to Home </a>
   
   <section class="topic-header">
-    <h1>Topic Name Here - (Exam Boards, Levels)</h1>
-    <h2>Master Topic Name Here with comprehensive guides, examples, and exam practice</h2>
+    <h1>Matrices CP1 - (Edexcels, Levels)</h1>
+    <h2>Master Matrices CP1 with comprehensive guides, examples, and exam practice</h2>
   </section>
 
   <section class="topic-intro">
     <p style="text-align: center; padding: 5px 0px;">
-      <strong>Topic Name Here</strong> is a key topic in the Specification Name(s). It is also covered in various courses, and is important to understand.
+      <strong>Matrices CP1</strong> is a key topic in the Core Pure 1 Name(s). It is also covered in various courses, and is important to understand.
       <br><br>
       Choose a section below to start your learning journey with this topic.
       <br><br>
@@ -28,13 +28,9 @@
       Difficulty rating: ⭐⭐⭐ out of 5 stars
     </p>
   </section>
-  
-  <div style="margin-top: 20px;">
-    <a href="{{ url_for('index') }}" style="margin-right: 20px; margin-left: 20px;">🏠︎ - Back to Home<br></a>
-  </div>
 
   <main class="topics-grid">
-  <a href="#" aria-label="Introduction to matrices">
+  <a href="/UnderConstruction" aria-label="Introduction to matrices">
     <article class="topic-card topic-card-color1">
     <h3>📚 Introduction to matrices</h3>
     <p class="TopicsList">Learn the basics of matrices</p>
@@ -43,7 +39,7 @@
     </article>
   </a>  
 
-  <a href="#" aria-label="Matrix multiplication">
+  <a href="/UnderConstruction" aria-label="Matrix multiplication">
     <article class="topic-card topic-card-color2">
     <h3>🔤 Matrix multiplication</h3>
     <p class="TopicsList">Master the rules of matrix multiplication</p>
@@ -52,7 +48,7 @@
     </article>
   </a>
 
-  <a href="#" aria-label="Determinants">
+  <a href="/UnderConstruction" aria-label="Determinants">
     <article class="topic-card topic-card-color3">
     <h3>⚡ Determinants</h3>
     <p class="TopicsList">Understand the concept of determinants</p>
@@ -61,7 +57,7 @@
     </article>
   </a>
 
-  <a href="#" aria-label="Inverting a 2 × 2 matrix">
+  <a href="/UnderConstruction" aria-label="Inverting a 2 × 2 matrix">
     <article class="topic-card topic-card-color4">
     <h3>🔄 Inverting a 2 × 2 matrix</h3>
     <p class="TopicsList">Learn the formula for inverting 2 × 2 matrices</p>
@@ -70,7 +66,7 @@
     </article>
   </a>
 
-  <a href="#" aria-label="Inverting a 3 × 3 matrix">
+  <a href="/UnderConstruction" aria-label="Inverting a 3 × 3 matrix">
     <article class="topic-card topic-card-color5">
     <h3>🔄 Inverting a 3 × 3 matrix</h3>
     <p class="TopicsList">Understand the process for inverting 3 × 3 matrices</p>
@@ -79,16 +75,14 @@
     </article>
   </a>
 
-  <a href="#" aria-label="Solving systems of equations using matrices">
+  <a href="/UnderConstruction" aria-label="Solving systems of equations using matrices">
     <article class="topic-card topic-card-color6">
     <h3>🧮 Solving systems of equations using matrices</h3>
     <p class="TopicsList">Apply matrices to solve linear systems</p>
-    <p class="TopicsList">Explore real-world applications</p>
-    <p class="TopicsList">Difficulty rating: ⭐⭐⭐⭐</p>
+    <p class="TopicsList">Explore real-world applications <br> Difficulty rating: ⭐⭐⭐⭐</p>
     </article>
   </a>
 
-    <a href="#revision" aria-label="Revision Summary">
       <article class="topic-card topic-card-summary">
           <h3>📖 Revision / Exam Questions - COMING SOON</h3>
           <p class="TopicsList">Practice with questions and key points</p>

@@ -1,9 +1,69 @@
-{% extends "under_construction.html" %}
+{% extends "base.html" %}
 
 {% block title %}Under Construction - K4Maths{% endblock %}
 
-{% block construction_title %}Page Under Construction{% endblock %}
+{% block head %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+<meta name="description" content="Learn about Matrices CP1 - Edexcel / Specification ">
+{% endblock %}
 
-{% block construction_message %}
-We're working hard to bring you the best educational content possible. This page is currently being developed with interactive lessons, practice problems, and comprehensive explanations.
+{% block content %}
+<a href="{{ url_for('index') }}" class="back-to-home">🔙 Back to Home </a>
+
+<section class="topic-header">
+    <h1>This page is currently under construction.</h1>
+    <h2>Im still working on this site, so some pages are not working.</h2>
+        <p> Im truly sorry for any inconvenience caused - and I hope to complete this site soon (by the end of 2026.) <br>The countdown below is how long I have left!!</p>
+    <div class="countdown-notice">
+        <strong>Countdown:</strong> <span id="countdown-hours-large">loading...</span> <span id="countdown-hours" style="display:none"></span> until the start of 2027.
+    </div>
+
+<p>Further Questions? Suggestions? <a href="{{ url_for('contact_me') }}">Contact Me here,</a> or just text me on Instagram!</p>
+<div class="topics-container">
+    <div class="list" style="margin-top: 0px;">
+    <h2>Currently Available Topics</h2>
+        <ul id="maths-topics-list">
+        <li><a href = "/AlgebraicExpressions"><span>Algebraic Expressions</span></a></li>
+        <li><a href = "/Series"><span>Series CP1</span></a></li>
+        <li><a href = "/ComplexNumbers"><span>Complex Numbers CP1</span></a></li>
+        <li><a href = "/Vectors"><span>Further Vectors CP1</span></a></li>
+        <li><a href = "/VolumesOfRevolution"><span>Volumes of Revolution CP1</span></a></li>
+        <li><a href = "/RootsOfPolynomials"><span>Roots of Polynomials CP1</span></a></li>
+        </ul>
+    <div class="footer-logos">
+    <img src="{{ url_for('static', filename='maths-navbar.png') }}" alt="K4Maths Logo" class="footer-logo">
+    </div>
+</div>
+</div>  
+
+<!--add email subscription maybe...-->
+{% endblock %}
+
+{% block scripts %}
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const countdownSpan = document.getElementById('countdown-hours');
+    const countdownBig = document.getElementById('countdown-hours-large');
+
+    function updateHoursUntil2027() {
+      const now = new Date();
+      const target = new Date(2027, 0, 1, 0, 0, 0);
+      const diffMs = target - now;
+      const totalSeconds = diffMs > 0 ? Math.floor(diffMs / 1000) : 0;
+      const hours = Math.floor(totalSeconds / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = totalSeconds % 60;
+      const display = `${hours.toLocaleString()} hours, ${minutes.toString().padStart(2, '0')} minutes, ${seconds.toString().padStart(2, '0')} seconds`;
+      if (countdownSpan) countdownSpan.textContent = display;
+      if (countdownBig) countdownBig.textContent = display;
+      const hms = document.getElementById('countdown-hms');
+      if (hms) hms.textContent = display;
+    }
+
+    updateHoursUntil2027();
+    setInterval(updateHoursUntil2027, 1000);
+  });
+</script>
 {% endblock %}

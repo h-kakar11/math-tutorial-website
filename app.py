@@ -58,6 +58,7 @@ def physics():
 # GENERAL PAGES (pages/ folder)
 # ============================================
 
+
 @app.route("/survey")
 def survey():
     return render_template("pages/survey.html")
@@ -75,6 +76,7 @@ def topics_list():
     return render_template("pages/TopicsList.html")
 
 @app.route("/UnderConstruction")
+@app.route("/under-construction")
 def under_construction():
     return render_template("pages/UnderConstruction.html")
 
@@ -390,6 +392,14 @@ def vectors_cp1():
 #========================================================================================
 # LEGACY ROUTES (for backwards compatibility)
 # ============================================
+
+@app.route('/404')
+def preview_404():
+    return render_template('404.html'), 404
+
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template('404.html'), 404
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))

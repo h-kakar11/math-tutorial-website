@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}404 Not Found | K4Maths{% endblock %}
+
+{% block description %}The page you are looking for cannot be found. Return home or explore the site.{% endblock %}
+
+{% block content %}
+<div class="error-page">
+  <div class="error-card">
+    <span class="error-code">404</span>
+    <h1>Page not found</h1>
+    <p>Sorry, the page you are looking for does not exist yet or has moved. Use the links below to get back on track.</p>
+
+    <div class="error-actions">
+      <a href="{{ url_for('index') }}" class="button">Back to home</a>
+      <a href="{{ url_for('under_construction') }}" class="button button-secondary">Under construction</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -510,7 +510,6 @@
     </div>
     </section>
 
-    <!-- Back to top button -->
     <div style="text-align: center; margin: 30px 0;">
       <a href="#top" class="nav-button">⬆️ Back to Top</a>
     </div>
@@ -521,7 +520,6 @@
 {% block scripts %}
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Smooth scrolling for table of contents
     const tocLinks = document.querySelectorAll('.toc-link');
     tocLinks.forEach(link => {
         link.addEventListener('click', function(e) {
@@ -537,7 +535,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Highlight current section in table of contents
     const sections = document.querySelectorAll('.lesson-section');
     const tocNavLinks = document.querySelectorAll('.toc-link');
     
